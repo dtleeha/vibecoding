@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · Chức năng — Đập Chuột</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <p class="topbar__title">ĐẬP CHUỘT · TÀI LIỆU</p>
+    <nav aria-label="Mục lục tài liệu">
+      <a href="index.html">Mục lục</a>
+      <a href="01-tong-quan.html">1. Tổng quan</a>
+      <a href="02-chuc-nang.html" aria-current="page">2. Chức năng</a>
+      <a href="03-man-hinh.html">3. Màn hình</a>
+      <a href="04-quy-tac-du-lieu.html">4. Quy tắc &amp; dữ liệu</a>
+      <a href="05-ke-hoach-test.html">5. Kế hoạch test</a>
+    </nav>
+  </header>
+
+  <h1 class="hero-title">02 · Chức năng</h1>
+  <p class="hero-sub">12 chức năng của game. Số liệu cụ thể nằm ở mục 4.</p>
+
+  <section class="card">
+    <div class="card__header">Bảng tổng hợp</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Chức năng</th><th>Nguồn</th></tr></thead>
+          <tbody>
+            <tr><td class="id">F01</td><td>Hiển thị màn hình Bắt đầu và kỷ lục</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F02</td><td>Bắt đầu lượt chơi</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F03</td><td>Đồng hồ đếm ngược 30 giây</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F04</td><td>Chuột xuất hiện ngẫu nhiên</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F05</td><td>Đập chuột</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F06</td><td>Tính điểm và combo</td><td><span class="badge badge--new">Đã đổi</span></td></tr>
+            <tr><td class="id">F07</td><td>Phạt bấm trượt</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F08</td><td>Bỏ lỡ chuột (chuột tự lặn)</td><td><span class="badge badge--new">Đã đổi</span></td></tr>
+            <tr><td class="id">F09</td><td>Phản hồi hiệu ứng khi bấm</td><td>YEU-CAU.md, thêm hiệu ứng combo và trượt</td></tr>
+            <tr><td class="id">F10</td><td>Kết thúc lượt chơi</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F11</td><td>Chơi lại</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F12</td><td>Lưu và hiển thị kỷ lục</td><td>YEU-CAU.md</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="f01">
+    <div class="card__header card__header--dark">F01 · Hiển thị màn hình Bắt đầu và kỷ lục</div>
+    <div class="card__body">
+      <ul>
+        <li>Mở trang là vào thẳng màn hình Bắt đầu, không báo lỗi.</li>
+        <li>Hiển thị tên game, tóm tắt luật chơi, kỷ lục hiện tại (chưa có thì hiện 0) và nút “Bắt đầu”.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f02">
+    <div class="card__header card__header--dark">F02 · Bắt đầu lượt chơi</div>
+    <div class="card__body">
+      <ul>
+        <li>Bấm “Bắt đầu” chuyển sang màn hình Đang chơi.</li>
+        <li>Điểm = 0, combo = 0, đồng hồ = 30 giây.</li>
+        <li>Đồng hồ bắt đầu đếm ngay; con chuột đầu tiên xuất hiện sau một khoảng nghỉ ngắn (mục 4.1).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f03">
+    <div class="card__header card__header--dark">F03 · Đồng hồ đếm ngược</div>
+    <div class="card__body">
+      <ul>
+        <li>Đếm từ 30 về 0, hiển thị theo giây.</li>
+        <li>Sai lệch so với đồng hồ thật không quá ±0,5 giây trong cả lượt.</li>
+        <li>Khi còn ≤ 5 giây, đồng hồ đổi sang màu cảnh báo.</li>
+        <li>Về 0 thì lượt chơi kết thúc ngay (F10).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f04">
+    <div class="card__header card__header--dark">F04 · Chuột xuất hiện ngẫu nhiên</div>
+    <div class="card__body">
+      <ul>
+        <li>Mỗi thời điểm có tối đa 1 con chuột trên bàn.</li>
+        <li>Mỗi con ở trên bàn ngẫu nhiên từ 0,6 đến 1,2 giây, rồi tự lặn nếu không bị đập.</li>
+        <li>Con tiếp theo xuất hiện sau khoảng nghỉ ngẫu nhiên 0,2 đến 0,5 giây, và không xuất hiện lại đúng ô vừa rồi.</li>
+        <li>Không có con chuột mới nào xuất hiện khi lượt chơi đã kết thúc.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f05">
+    <div class="card__header card__header--dark">F05 · Đập chuột</div>
+    <div class="card__body">
+      <ul>
+        <li>Người chơi bấm bằng chuột (máy tính) hoặc chạm (điện thoại) vào một ô.</li>
+        <li>Nếu ô đang có chuột: chuột biến mất ngay, ghi điểm theo F06, con mới xuất hiện theo nhịp ở F04.</li>
+        <li>Mỗi con chuột chỉ ghi điểm 1 lần. Bấm đúp hoặc chạm nhanh vào cùng ô trong 0,3 giây sau khi đập trúng bị bỏ qua, không cộng điểm và không bị tính là trượt.</li>
+        <li>Nếu ô không có chuột: xử lý theo F07.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f06">
+    <div class="card__header card__header--primary">F06 · Tính điểm và combo <span class="badge badge--new">Đã đổi</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Combo là số con đập trúng liên tiếp. Mỗi lượt bắt đầu với combo = 0.</li>
+        <li>Điểm mỗi lần đập trúng phụ thuộc combo <em>sau khi cộng con vừa đập</em>: con thứ 1–2 được +1, con thứ 3–4 được +2, từ con thứ 5 trở đi được +3 (mức tối đa).</li>
+        <li>Điểm bắt đầu từ 0 mỗi lượt và không bao giờ âm.</li>
+        <li>Thanh thông tin hiển thị combo hiện tại khi combo ≥ 2.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f07">
+    <div class="card__header card__header--primary">F07 · Phạt bấm trượt <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Bấm vào ô không có chuột: −1 điểm và combo về 0.</li>
+        <li>Nếu điểm đang là 0 thì giữ nguyên 0, nhưng combo vẫn về 0.</li>
+        <li>Khoảng bỏ qua 0,3 giây của F05 không bị tính là bấm trượt.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f08">
+    <div class="card__header card__header--primary">F08 · Bỏ lỡ chuột <span class="badge badge--new">Đã đổi</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Chuột tự lặn xuống mà không bị đập: không trừ điểm, nhưng combo về 0.</li>
+        <li>Khoảng nghỉ trước con tiếp theo vẫn theo F04.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f09">
+    <div class="card__header card__header--dark">F09 · Phản hồi hiệu ứng khi bấm</div>
+    <div class="card__body">
+      <ul>
+        <li><strong>Đập trúng:</strong> chuột “bẹp” ngắn và hiện chữ <code>+1</code>, <code>+2</code> hoặc <code>+3</code> tại ô đó.</li>
+        <li><strong>Bấm trượt:</strong> ô nháy đỏ ngắn và hiện chữ <code>−1</code>. Khi điểm đang là 0 chỉ nháy đỏ, không hiện chữ vì không có điểm nào bị trừ.</li>
+        <li><strong>Combo:</strong> chỉ báo combo hiện trên thanh thông tin và nhảy nhẹ mỗi khi tăng; biến mất khi combo về 0.</li>
+        <li>Con trỏ chuột trên máy tính có thể là cái búa.</li>
+        <li>Mọi hiệu ứng ngắn dưới 0,5 giây và không che ô khác.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f10">
+    <div class="card__header card__header--dark">F10 · Kết thúc lượt chơi</div>
+    <div class="card__body">
+      <ul>
+        <li>Khi đồng hồ về 0: chuột đang trên bàn biến mất, không chuột mới xuất hiện.</li>
+        <li>Mọi cú bấm sau thời điểm đó không được tính điểm cũng không bị phạt.</li>
+        <li>Chuyển sang màn hình Kết thúc hiển thị “Hết giờ!”, điểm lượt vừa chơi và kỷ lục.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f11">
+    <div class="card__header card__header--dark">F11 · Chơi lại</div>
+    <div class="card__body">
+      <ul>
+        <li>Bấm “Chơi lại” bắt đầu lượt mới: điểm = 0, combo = 0, đồng hồ = 30.</li>
+        <li>Chơi liên tiếp nhiều lượt vẫn chạy đúng nhịp: không nhanh dần, không có 2 con chuột cùng lúc, đồng hồ không bị trừ 2 lần mỗi giây. Nghĩa là mọi bộ đếm giờ của lượt trước phải được dừng hẳn.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f12">
+    <div class="card__header card__header--dark">F12 · Lưu và hiển thị kỷ lục</div>
+    <div class="card__body">
+      <ul>
+        <li>Cuối lượt, nếu điểm cao hơn kỷ lục và lớn hơn 0, lưu làm kỷ lục mới và hiện dòng “Kỷ lục mới!”.</li>
+        <li>Kỷ lục lưu trên trình duyệt, còn nguyên sau khi tải lại trang.</li>
+        <li>Nếu trình duyệt không cho lưu (ví dụ chế độ ẩn danh), game vẫn chơi bình thường, kỷ lục chỉ giữ trong phiên đang mở và không báo lỗi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Chuyển trang">
+    <a href="01-tong-quan.html">← 01 · Tổng quan</a>
+    <a href="03-man-hinh.html">03 · Màn hình →</a>
+  </nav>
+  <p class="footer">Tài liệu mô tả yêu cầu, chưa bao gồm code game.</p>
+</div>
+</body>
+</html>

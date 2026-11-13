@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · Tổng quan — Đập Chuột</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <p class="topbar__title">ĐẬP CHUỘT · TÀI LIỆU</p>
+    <nav aria-label="Mục lục tài liệu">
+      <a href="index.html">Mục lục</a>
+      <a href="01-tong-quan.html" aria-current="page">1. Tổng quan</a>
+      <a href="02-chuc-nang.html">2. Chức năng</a>
+      <a href="03-man-hinh.html">3. Màn hình</a>
+      <a href="04-quy-tac-du-lieu.html">4. Quy tắc &amp; dữ liệu</a>
+      <a href="05-ke-hoach-test.html">5. Kế hoạch test</a>
+    </nav>
+  </header>
+
+  <h1 class="hero-title">01 · Tổng quan</h1>
+  <p class="hero-sub">Game là gì, làm đến đâu, và những gì đã được chốt.</p>
+
+  <section class="card">
+    <div class="card__header">Mô tả game</div>
+    <div class="card__body">
+      <p>“Đập Chuột” là game phản xạ chạy trên trình duyệt. Chuột ngoi lên ngẫu nhiên từ 9 cái hang. Người chơi đập càng nhiều chuột càng tốt trong 30 giây, đập liên tiếp không trượt sẽ được nhiều điểm hơn.</p>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th>Thể loại</th><td>Game phản xạ, 1 người chơi</td></tr>
+            <tr><th>Nền tảng</th><td>Trình duyệt web, máy tính và điện thoại</td></tr>
+            <tr><th>Bàn chơi</th><td>Lưới 3×3, tổng 9 ô (hang chuột)</td></tr>
+            <tr><th>Thời lượng</th><td>30 giây mỗi lượt</td></tr>
+            <tr><th>Mục tiêu</th><td>Đạt điểm cao nhất có thể trong 30 giây, phá kỷ lục của chính mình</td></tr>
+            <tr><th>Giao diện</th><td>Phẳng, góc vuông, nền đồng cỏ ban ngày, chữ tiêu đề kiểu pixel (theo <code>design/tokens.css</code>)</td></tr>
+            <tr><th>Ngôn ngữ</th><td>Toàn bộ chữ trong game bằng tiếng Việt</td></tr>
+            <tr><th>Cách chạy</th><td>Mở trực tiếp <code>index.html</code>, không cần cài đặt hay server</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--primary">Các quyết định đã chốt khi phỏng vấn</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Câu hỏi</th><th>Quyết định</th></tr></thead>
+          <tbody>
+            <tr><td class="id">Q1</td><td>Xử lý các mục <em>(giả định)</em> trong YEU-CAU.md</td><td>Đổi cách tính điểm, các mục còn lại giữ nguyên</td></tr>
+            <tr><td class="id">Q2</td><td>Hướng đổi cách tính điểm</td><td>Bấm trượt bị trừ điểm <strong>và</strong> có combo nhân điểm</td></tr>
+            <tr><td class="id">Q3</td><td>Combo kết hợp với trượt −1</td><td>Combo nhân dần theo số con đập trúng liên tiếp; bấm trượt thì −1 điểm và mất combo</td></tr>
+            <tr><td class="id">Q4</td><td>Chuột tự lặn (bỏ lỡ) ảnh hưởng combo thế nào</td><td>Mất combo, không trừ điểm</td></tr>
+            <tr><td class="id">Q5</td><td>Giao diện ngày/đêm</td><td>Chỉ ban ngày. Chủ đề ban đêm trong tokens.css để phiên bản sau</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid grid--2">
+    <div class="card">
+      <div class="card__header card__header--dark">Trong phạm vi</div>
+      <div class="card__body">
+        <ul>
+          <li>3 màn hình: Bắt đầu, Đang chơi, Kết thúc</li>
+          <li>Chuột xuất hiện ngẫu nhiên, mỗi lúc tối đa 1 con</li>
+          <li>Tính điểm có combo và phạt bấm trượt</li>
+          <li>Đồng hồ đếm ngược 30 giây</li>
+          <li>Kỷ lục lưu trên trình duyệt</li>
+          <li>Chơi được bằng chuột và bằng chạm</li>
+          <li>Responsive từ 360px trở lên</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__header card__header--dark">Ngoài phạm vi</div>
+      <div class="card__body">
+        <ul>
+          <li>Nhiều mức độ khó, chuột nhanh dần</li>
+          <li>Nhiều loại chuột (chuột vàng, bom…)</li>
+          <li>Âm thanh, nhạc nền</li>
+          <li>Bảng xếp hạng online, đăng nhập, nhiều người chơi</li>
+          <li>Tạm dừng giữa lượt</li>
+          <li>Chủ đề ban đêm và nút chuyển giao diện</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header">Thuật ngữ</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Từ</th><th>Nghĩa trong tài liệu</th></tr></thead>
+          <tbody>
+            <tr><td>Lượt chơi</td><td>Một lần chơi trọn 30 giây, từ lúc bấm “Bắt đầu” hoặc “Chơi lại” đến “Hết giờ!”</td></tr>
+            <tr><td>Ô / hang</td><td>Một trong 9 vị trí trên lưới</td></tr>
+            <tr><td>Đập trúng</td><td>Bấm vào ô đang có chuột</td></tr>
+            <tr><td>Bấm trượt</td><td>Bấm vào ô không có chuột (và không thuộc khoảng bỏ qua 0,3 giây sau khi đập trúng)</td></tr>
+            <tr><td>Bỏ lỡ</td><td>Chuột tự lặn xuống mà không bị đập</td></tr>
+            <tr><td>Combo</td><td>Số con chuột đập trúng liên tiếp, chưa bị bấm trượt hoặc bỏ lỡ chen giữa</td></tr>
+            <tr><td>Kỷ lục</td><td>Điểm cao nhất từng đạt, lưu trên trình duyệt của người chơi</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Chuyển trang">
+    <a href="index.html">← Mục lục</a>
+    <a href="02-chuc-nang.html">02 · Chức năng →</a>
+  </nav>
+  <p class="footer">Tài liệu mô tả yêu cầu, chưa bao gồm code game.</p>
+</div>
+</body>
+</html>

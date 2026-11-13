@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Quy tắc và dữ liệu — Đập Chuột</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <p class="topbar__title">ĐẬP CHUỘT · TÀI LIỆU</p>
+    <nav aria-label="Mục lục tài liệu">
+      <a href="index.html">Mục lục</a>
+      <a href="01-tong-quan.html">1. Tổng quan</a>
+      <a href="02-chuc-nang.html">2. Chức năng</a>
+      <a href="03-man-hinh.html">3. Màn hình</a>
+      <a href="04-quy-tac-du-lieu.html" aria-current="page">4. Quy tắc &amp; dữ liệu</a>
+      <a href="05-ke-hoach-test.html">5. Kế hoạch test</a>
+    </nav>
+  </header>
+
+  <h1 class="hero-title">04 · Quy tắc và dữ liệu</h1>
+  <p class="hero-sub">Con số, công thức và dữ liệu game cần nhớ. Khi có chỗ mâu thuẫn, trang này là nguồn chuẩn.</p>
+
+  <section class="card" id="thong-so">
+    <div class="card__header card__header--primary">4.1 · Thông số</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thông số</th><th>Giá trị</th><th>Nguồn</th></tr></thead>
+          <tbody>
+            <tr><td>Số ô</td><td>9 (lưới 3×3)</td><td>YEU-CAU.md</td></tr>
+            <tr><td>Thời lượng lượt chơi</td><td>30 giây</td><td>YEU-CAU.md</td></tr>
+            <tr><td>Số chuột tối đa cùng lúc</td><td>1</td><td>YEU-CAU.md (giả định)</td></tr>
+            <tr><td>Thời gian chuột ở trên bàn</td><td>Ngẫu nhiên 0,6–1,2 giây</td><td>YEU-CAU.md (giả định)</td></tr>
+            <tr><td>Khoảng nghỉ trước con tiếp theo</td><td>Ngẫu nhiên 0,2–0,5 giây, tính từ lúc con trước biến mất (bị đập hoặc tự lặn)</td><td>YEU-CAU.md (giả định)</td></tr>
+            <tr><td>Ô của con tiếp theo</td><td>Ngẫu nhiên trong 8 ô còn lại (khác ô vừa rồi)</td><td>YEU-CAU.md (giả định)</td></tr>
+            <tr><td>Ngưỡng cảnh báo đồng hồ</td><td>≤ 5 giây</td><td>YEU-CAU.md (giả định)</td></tr>
+            <tr><td>Điểm bấm trượt</td><td>−1</td><td><span class="badge badge--new">Đổi</span> Q2</td></tr>
+            <tr><td>Bậc điểm theo combo</td><td>Xem 4.2</td><td><span class="badge badge--new">Đổi</span> Q3</td></tr>
+            <tr><td>Thời gian bỏ qua sau khi đập trúng</td><td>0,3 giây (chỉ ô vừa đập)</td><td><span class="badge badge--new">Mới</span> cần xác nhận</td></tr>
+            <tr><td>Điểm tối thiểu</td><td>0</td><td>YEU-CAU.md</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="diem-combo">
+    <div class="card__header card__header--primary">4.2 · Cách tính điểm và combo</div>
+    <div class="card__body">
+      <h4 style="margin-top:0">Điểm mỗi lần đập trúng</h4>
+      <p>Gọi <code>c</code> là combo sau khi cộng con vừa đập (con đập trúng đầu tiên sau lượt bắt đầu hoặc sau lần mất combo có <code>c = 1</code>).</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Combo c</th><th>Điểm cộng</th></tr></thead>
+          <tbody>
+            <tr><td>1 – 2</td><td>+1</td></tr>
+            <tr><td>3 – 4</td><td>+2</td></tr>
+            <tr><td>5 trở lên</td><td>+3 (mức tối đa, không tăng thêm)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Các sự kiện làm thay đổi điểm và combo</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Sự kiện</th><th>Điểm</th><th>Combo</th></tr></thead>
+          <tbody>
+            <tr><td>Đập trúng chuột</td><td>+1 / +2 / +3 theo bảng trên</td><td>Tăng 1</td></tr>
+            <tr><td>Bấm trượt (ô trống)</td><td>−1, nhưng không xuống dưới 0</td><td>Về 0</td></tr>
+            <tr><td>Bỏ lỡ (chuột tự lặn)</td><td>Không đổi</td><td>Về 0</td></tr>
+            <tr><td>Bấm lại ô vừa đập trúng trong 0,3 giây</td><td>Không đổi</td><td>Không đổi</td></tr>
+            <tr><td>Bấm sau khi hết giờ</td><td>Không đổi</td><td>Không đổi</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Ví dụ</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Bước</th><th>Sự kiện</th><th>Combo sau</th><th>Điểm thay đổi</th><th>Tổng điểm</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Đập trúng</td><td>1</td><td>+1</td><td>1</td></tr>
+            <tr><td>2</td><td>Đập trúng</td><td>2</td><td>+1</td><td>2</td></tr>
+            <tr><td>3</td><td>Đập trúng</td><td>3</td><td>+2</td><td>4</td></tr>
+            <tr><td>4</td><td>Đập trúng</td><td>4</td><td>+2</td><td>6</td></tr>
+            <tr><td>5</td><td>Đập trúng</td><td>5</td><td>+3</td><td>9</td></tr>
+            <tr><td>6</td><td>Đập trúng</td><td>6</td><td>+3</td><td>12</td></tr>
+            <tr><td>7</td><td>Bấm trượt</td><td>0</td><td>−1</td><td>11</td></tr>
+            <tr><td>8</td><td>Đập trúng</td><td>1</td><td>+1</td><td>12</td></tr>
+            <tr><td>9</td><td>Bỏ lỡ (chuột tự lặn)</td><td>0</td><td>0</td><td>12</td></tr>
+            <tr><td>10</td><td>Đập trúng</td><td>1</td><td>+1</td><td>13</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p><strong>Ví dụ điểm 0:</strong> đầu lượt, điểm 0, bấm trượt → điểm vẫn là 0. Đập trúng một con → điểm 1.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="xu-ly-bam">
+    <div class="card__header card__header--dark">4.3 · Xử lý một cú bấm</div>
+    <div class="card__body">
+      <p>Mỗi cú bấm được xét <strong>một lần</strong>, tại thời điểm ngón tay hoặc chuột nhấn xuống, theo thứ tự sau:</p>
+      <ol>
+        <li>Lượt chơi đã kết thúc hoặc chưa bắt đầu? → bỏ qua.</li>
+        <li>Ô vừa được đập trúng chưa quá 0,3 giây? → bỏ qua (chống bấm đúp).</li>
+        <li>Ô đang có chuột? → <strong>đập trúng</strong>: chuột biến mất, tăng combo, cộng điểm theo bảng.</li>
+        <li>Còn lại → <strong>bấm trượt</strong>: trừ 1 điểm (không xuống dưới 0), combo về 0.</li>
+      </ol>
+      <div class="note note--warn">
+        <p><strong>Vì sao có bước 2:</strong> khi có phạt trượt, bấm đúp vào con chuột vừa đập sẽ rơi vào ô trống và bị trừ điểm, làm người chơi mất oan. Bước này giữ đúng quy tắc cũ “bấm nhiều lần vào một con chỉ +1” mà không bị phạt. Đây là chi tiết mới, cần anh/chị xác nhận.</p>
+      </div>
+      <p>Nếu một cú bấm và thời điểm chuột tự lặn gần như trùng nhau, cú bấm nào có thời điểm sớm hơn được xử lý trước.</p>
+    </div>
+  </section>
+
+  <section class="card" id="trang-thai">
+    <div class="card__header card__header--dark">4.4 · Trạng thái game</div>
+    <div class="card__body">
+      <h4 style="margin-top:0">Màn hình</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trạng thái</th><th>Vào khi</th><th>Chuyển sang</th></tr></thead>
+          <tbody>
+            <tr><td><code>start</code></td><td>Mở trang</td><td><code>playing</code> khi bấm “Bắt đầu”</td></tr>
+            <tr><td><code>playing</code></td><td>Bấm “Bắt đầu” hoặc “Chơi lại”</td><td><code>over</code> khi đồng hồ về 0</td></tr>
+            <tr><td><code>over</code></td><td>Hết giờ</td><td><code>playing</code> khi bấm “Chơi lại”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Dữ liệu của một lượt chơi</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dữ liệu</th><th>Kiểu</th><th>Giá trị đầu lượt</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td><code>score</code></td><td>Số nguyên ≥ 0</td><td>0</td><td>Không âm</td></tr>
+            <tr><td><code>combo</code></td><td>Số nguyên ≥ 0</td><td>0</td><td>Số con đập trúng liên tiếp</td></tr>
+            <tr><td><code>timeLeft</code></td><td>Số giây</td><td>30</td><td>Hiển thị làm tròn lên theo giây</td></tr>
+            <tr><td><code>activeCell</code></td><td>0–8 hoặc không có</td><td>Không có</td><td>Ô đang có chuột; tối đa 1 ô</td></tr>
+            <tr><td><code>lastCell</code></td><td>0–8 hoặc không có</td><td>Không có</td><td>Ô của con chuột trước, để không lặp lại</td></tr>
+            <tr><td><code>lastHitCell</code>, <code>lastHitTime</code></td><td>Ô và thời điểm</td><td>Không có</td><td>Dùng cho khoảng bỏ qua 0,3 giây</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Mọi giá trị trên được đặt lại khi bắt đầu lượt mới. Đồng hồ đếm theo thời gian thực (so với đồng hồ hệ thống), không cộng dồn theo số lần chạy của bộ đếm, để tránh sai lệch và lỗi trừ 2 lần.</p>
+    </div>
+  </section>
+
+  <section class="card" id="du-lieu-luu">
+    <div class="card__header card__header--dark">4.5 · Dữ liệu lưu trên trình duyệt</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dữ liệu</th><th>Nơi lưu</th><th>Quy tắc</th></tr></thead>
+          <tbody>
+            <tr><td>Kỷ lục</td><td>Bộ nhớ trình duyệt (<code>localStorage</code>), khóa riêng cho game này, ví dụ <code>dapchuot.kyluc</code></td><td>Ghi khi điểm cuối lượt &gt; kỷ lục cũ và &gt; 0. Đọc khi mở trang. Giá trị không hợp lệ (không phải số nguyên ≥ 0) coi như 0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Không lưu điểm từng lượt, combo hay lịch sử.</li>
+        <li>Nếu đọc hoặc ghi lỗi (chế độ ẩn danh, bị chặn), game không báo lỗi và vẫn chơi được. Kỷ lục lúc đó chỉ giữ trong phiên đang mở.</li>
+        <li>Kỷ lục khác nhau giữa các trình duyệt và thiết bị; không đồng bộ.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="truong-hop-bien">
+    <div class="card__header card__header--dark">4.6 · Trường hợp biên</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tình huống</th><th>Kết quả</th></tr></thead>
+          <tbody>
+            <tr><td>Bấm vào ô trống ngay khi bắt đầu lượt, điểm đang 0</td><td>Điểm giữ 0; combo giữ 0</td></tr>
+            <tr><td>Bấm đúng khoảnh khắc đồng hồ về 0</td><td>Tính theo thời điểm bấm: sớm hơn 0 thì được xử lý, muộn hơn thì bỏ qua</td></tr>
+            <tr><td>Chuột đang trên bàn khi hết giờ</td><td>Biến mất, không tính bỏ lỡ, không ảnh hưởng điểm</td></tr>
+            <tr><td>Bấm “Chơi lại” liên tiếp nhanh</td><td>Chỉ một lượt mới được bắt đầu, không có hai bộ đếm chạy song song</td></tr>
+            <tr><td>Tab trình duyệt bị ẩn rồi quay lại giữa lượt</td><td>Đồng hồ vẫn theo thời gian thực; nếu đã quá 30 giây thì lượt kết thúc</td></tr>
+            <tr><td>Kỷ lục 0 và điểm lượt này cũng 0</td><td>Không hiện “Kỷ lục mới!”</td></tr>
+            <tr><td>Điểm lượt này bằng kỷ lục</td><td>Không hiện “Kỷ lục mới!”</td></tr>
+            <tr><td>Combo ở mức 5 trở lên</td><td>Tiếp tục +3 mỗi con, combo vẫn đếm lên nhưng không đổi điểm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Chuyển trang">
+    <a href="03-man-hinh.html">← 03 · Màn hình</a>
+    <a href="05-ke-hoach-test.html">05 · Kế hoạch test →</a>
+  </nav>
+  <p class="footer">Tài liệu mô tả yêu cầu, chưa bao gồm code game.</p>
+</div>
+</body>
+</html>

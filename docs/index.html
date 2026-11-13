@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đập Chuột — Bộ tài liệu</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <p class="topbar__title">ĐẬP CHUỘT · TÀI LIỆU</p>
+    <nav aria-label="Mục lục tài liệu">
+      <a href="index.html" aria-current="page">Mục lục</a>
+      <a href="01-tong-quan.html">1. Tổng quan</a>
+      <a href="02-chuc-nang.html">2. Chức năng</a>
+      <a href="03-man-hinh.html">3. Màn hình</a>
+      <a href="04-quy-tac-du-lieu.html">4. Quy tắc &amp; dữ liệu</a>
+      <a href="05-ke-hoach-test.html">5. Kế hoạch test</a>
+    </nav>
+  </header>
+
+  <h1 class="hero-title">Đập Chuột</h1>
+  <p class="hero-sub">Bộ tài liệu mô tả game. Phiên bản này chưa có code.</p>
+
+  <section class="grid grid--2" aria-label="Danh sách tài liệu">
+    <a class="toc-item" href="01-tong-quan.html">
+      <div class="toc-item__no">01</div>
+      <div class="toc-item__body">
+        <p class="toc-item__title">Tổng quan</p>
+        <p class="toc-item__desc">Mục tiêu, phạm vi, các quyết định đã chốt khi phỏng vấn.</p>
+      </div>
+    </a>
+    <a class="toc-item" href="02-chuc-nang.html">
+      <div class="toc-item__no">02</div>
+      <div class="toc-item__body">
+        <p class="toc-item__title">Chức năng</p>
+        <p class="toc-item__desc">Danh sách chức năng F01–F12, mỗi chức năng có tiêu chí hoàn thành.</p>
+      </div>
+    </a>
+    <a class="toc-item" href="03-man-hinh.html">
+      <div class="toc-item__no">03</div>
+      <div class="toc-item__body">
+        <p class="toc-item__title">Màn hình</p>
+        <p class="toc-item__desc">3 màn hình, bố cục phác thảo, chữ hiển thị, yêu cầu responsive.</p>
+      </div>
+    </a>
+    <a class="toc-item" href="04-quy-tac-du-lieu.html">
+      <div class="toc-item__no">04</div>
+      <div class="toc-item__body">
+        <p class="toc-item__title">Quy tắc &amp; dữ liệu</p>
+        <p class="toc-item__desc">Thông số, cách tính điểm và combo, trạng thái game, dữ liệu lưu.</p>
+      </div>
+    </a>
+    <a class="toc-item" href="05-ke-hoach-test.html">
+      <div class="toc-item__no">05</div>
+      <div class="toc-item__body">
+        <p class="toc-item__title">Kế hoạch test</p>
+        <p class="toc-item__desc">Các ca kiểm thử TC01–TC30 và danh sách kiểm tra trước khi giao.</p>
+      </div>
+    </a>
+  </section>
+
+  <section class="card" style="margin-top: var(--space-5)">
+    <div class="card__header card__header--primary">Tóm tắt nhanh</div>
+    <div class="card__body">
+      <ul>
+        <li>Game phản xạ 1 người chơi, lưới 3×3, mỗi lượt 30 giây, chạy bằng cách mở <code>index.html</code>.</li>
+        <li>Điểm: đập trúng được <strong>+1 / +2 / +3</strong> theo combo, bấm trượt <strong>−1</strong> (không xuống dưới 0).</li>
+        <li>Giao diện: chỉ <strong>ban ngày</strong>, dùng <code>design/tokens.css</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">Những điểm khác YEU-CAU.md</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Nội dung</th><th>YEU-CAU.md</th><th>Bộ tài liệu này</th></tr></thead>
+          <tbody>
+            <tr><td>Bấm trượt</td><td>0 điểm, không trừ</td><td>−1 điểm (không xuống dưới 0)</td></tr>
+            <tr><td>Điểm mỗi lần đập</td><td>Luôn +1</td><td>+1 / +2 / +3 theo combo</td></tr>
+            <tr><td>Chuột tự lặn</td><td>Không ảnh hưởng gì</td><td>Mất combo, không trừ điểm</td></tr>
+            <tr><td>Thanh thông tin</td><td>Điểm, thời gian</td><td>Thêm chỉ báo combo</td></tr>
+            <tr><td>Giao diện</td><td>Không nói rõ</td><td>Chỉ ban ngày</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Các nội dung còn lại giữ nguyên như YEU-CAU.md, kể cả các mục <em>(giả định)</em> về nhịp chuột và kỷ lục.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">Cần anh/chị xác nhận</div>
+    <div class="card__body">
+      <p>Hai chi tiết em tự thêm để luật chơi không mâu thuẫn. Chúng chưa được hỏi trong buổi phỏng vấn:</p>
+      <ol>
+        <li><strong>Chống bấm đúp bị phạt:</strong> sau khi đập trúng một ô, ô đó bỏ qua mọi lần bấm trong <strong>0,3 giây</strong>. Nếu không có luật này, bấm đúp vào con chuột vừa đập sẽ bị tính là trượt và mất combo. Chi tiết ở mục 4.</li>
+        <li><strong>Kỷ lục mới:</strong> chỉ hiện khi điểm cao hơn kỷ lục cũ <em>và</em> lớn hơn 0.</li>
+      </ol>
+    </div>
+  </section>
+
+  <p class="footer">Cập nhật 13/11/2026 · Tài liệu mô tả yêu cầu, chưa bao gồm code game.</p>
+</div>
+</body>
+</html>

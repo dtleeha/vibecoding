@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 · Kế hoạch test — Đập Chuột</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <p class="topbar__title">ĐẬP CHUỘT · TÀI LIỆU</p>
+    <nav aria-label="Mục lục tài liệu">
+      <a href="index.html">Mục lục</a>
+      <a href="01-tong-quan.html">1. Tổng quan</a>
+      <a href="02-chuc-nang.html">2. Chức năng</a>
+      <a href="03-man-hinh.html">3. Màn hình</a>
+      <a href="04-quy-tac-du-lieu.html">4. Quy tắc &amp; dữ liệu</a>
+      <a href="05-ke-hoach-test.html" aria-current="page">5. Kế hoạch test</a>
+    </nav>
+  </header>
+
+  <h1 class="hero-title">05 · Kế hoạch test</h1>
+  <p class="hero-sub">30 ca kiểm thử. Game được xem là xong khi đạt hết, kèm danh sách kiểm tra ở cuối trang.</p>
+
+  <section class="card">
+    <div class="card__header card__header--primary">Cách kiểm thử</div>
+    <div class="card__body">
+      <ul>
+        <li>Test bằng tay trên trình duyệt thật, mở trực tiếp file <code>index.html</code>.</li>
+        <li>Các ca về điểm và combo (TC08–TC16) cần chuột xuất hiện đúng lúc. Khi viết code, nên có cách xem hoặc ghi lại ô đang có chuột (ví dụ chế độ gỡ lỗi, tắt trước khi giao) để người test không phải đoán.</li>
+        <li>Ca về thời gian (TC06, TC17) dùng đồng hồ bấm giờ bên ngoài đối chiếu.</li>
+        <li>Mỗi ca ghi kết quả: Đạt / Không đạt, kèm ghi chú và trình duyệt đã dùng.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">A. Mở game, bắt đầu và chuột xuất hiện</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC01</td><td>Mở <code>index.html</code></td><td>Hiện màn hình Bắt đầu với tên game, luật chơi, kỷ lục, nút “Bắt đầu”; Console không báo lỗi</td><td>F01</td></tr>
+            <tr><td class="id">TC02</td><td>Bấm “Bắt đầu”</td><td>Sang màn hình Đang chơi; điểm 0, không hiện combo, đồng hồ 30</td><td>F02</td></tr>
+            <tr><td class="id">TC03</td><td>Nhìn lưới khi đang chơi</td><td>Đúng 9 ô, 3 hàng × 3 cột, bằng nhau, lưới vuông</td><td>F04</td></tr>
+            <tr><td class="id">TC04</td><td>Chơi hết một lượt, ghi lại ô chuột xuất hiện</td><td>Chuột xuất hiện ở nhiều ô khác nhau (ít nhất 5 trong 9 ô sau 1 lượt)</td><td>F04</td></tr>
+            <tr><td class="id">TC05</td><td>Quan sát cả lượt, không bấm gì</td><td>Mọi lúc có tối đa 1 con chuột trên bàn</td><td>F04</td></tr>
+            <tr><td class="id">TC06</td><td>Không bấm, đo thời gian một số con chuột (ít nhất 20 con)</td><td>Mỗi con ở trên bàn trong 0,6–1,2 giây; khoảng nghỉ trước con kế tiếp 0,2–0,5 giây</td><td>F04</td></tr>
+            <tr><td class="id">TC07</td><td>Ghi 20 vị trí chuột liên tiếp</td><td>Không có hai con liên tiếp ở cùng một ô</td><td>F04</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">B. Tính điểm, combo, bấm trượt</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC08</td><td>Đập trúng con chuột đầu tiên</td><td>Điểm +1 (từ 0 lên 1); chuột biến mất; hiện “+1”</td><td>F05, F06</td></tr>
+            <tr><td class="id">TC09</td><td>Đập trúng liên tiếp 4 con</td><td>Điểm thay đổi lần lượt +1, +1, +2, +2 (tổng 6); combo hiện từ con thứ 2</td><td>F06</td></tr>
+            <tr><td class="id">TC10</td><td>Đập trúng liên tiếp 7 con</td><td>Con thứ 5, 6, 7 đều +3; tổng 15</td><td>F06</td></tr>
+            <tr><td class="id">TC11</td><td>Đang có combo 3, bấm vào ô trống</td><td>Điểm −1; combo về 0; hiện “−1”, ô nháy đỏ</td><td>F07</td></tr>
+            <tr><td class="id">TC12</td><td>Đầu lượt (điểm 0), bấm vào ô trống nhiều lần</td><td>Điểm giữ 0, không bao giờ âm</td><td>F07</td></tr>
+            <tr><td class="id">TC13</td><td>Đang có combo 3, để chuột tự lặn</td><td>Điểm không đổi; combo về 0</td><td>F08</td></tr>
+            <tr><td class="id">TC14</td><td>Bấm đúp nhanh (trong 0,3 giây) vào con chuột vừa đập</td><td>Điểm chỉ tăng đúng 1 lần; không bị trừ điểm; combo không mất</td><td>F05</td></tr>
+            <tr><td class="id">TC15</td><td>Làm theo chuỗi ví dụ ở mục 4.2 (6 trúng, 1 trượt, 1 trúng, 1 bỏ lỡ, 1 trúng)</td><td>Tổng điểm lần lượt: 1, 2, 4, 6, 9, 12, 11, 12, 12, 13</td><td>F06, F07, F08</td></tr>
+            <tr><td class="id">TC16</td><td>Quan sát chỉ báo combo</td><td>Hiện “Combo xN” khi N ≥ 2, ẩn khi combo 0 hoặc 1; cập nhật đúng sau mỗi trúng, trượt, bỏ lỡ</td><td>F09</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">C. Đồng hồ, kết thúc, chơi lại</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC17</td><td>Bấm giờ bên ngoài từ lúc bấm “Bắt đầu” đến lúc hiện “Hết giờ!”</td><td>30 giây, sai lệch không quá ±0,5 giây</td><td>F03</td></tr>
+            <tr><td class="id">TC18</td><td>Quan sát đồng hồ ở giây 6, 5, 1</td><td>Giây 6 màu thường; từ 5 trở xuống đổi sang màu cảnh báo</td><td>F03</td></tr>
+            <tr><td class="id">TC19</td><td>Bấm liên tục vào lưới đúng lúc và sau khi hết giờ</td><td>Chuột trên bàn biến mất; không chuột mới; bấm sau đó không đổi điểm, không bị trừ</td><td>F10</td></tr>
+            <tr><td class="id">TC20</td><td>Xem màn hình Kết thúc</td><td>Hiện “Hết giờ!”, đúng điểm lượt vừa chơi, đúng kỷ lục, nút “Chơi lại”</td><td>F10</td></tr>
+            <tr><td class="id">TC21</td><td>Bấm “Chơi lại”</td><td>Điểm 0, combo ẩn, đồng hồ 30, lượt mới chạy bình thường</td><td>F11</td></tr>
+            <tr><td class="id">TC22</td><td>Chơi liên tiếp ít nhất 5 lượt</td><td>Nhịp chuột không nhanh dần; không có 2 chuột cùng lúc; đồng hồ không giảm 2 giây mỗi giây; mỗi lượt vẫn đúng 30 giây</td><td>F11</td></tr>
+            <tr><td class="id">TC23</td><td>Ở màn hình Kết thúc, bấm “Chơi lại” nhiều lần thật nhanh</td><td>Chỉ có một lượt mới chạy, nhịp bình thường</td><td>F11</td></tr>
+            <tr><td class="id">TC24</td><td>Giữa lượt, chuyển sang tab khác khoảng 10 giây rồi quay lại</td><td>Đồng hồ đã tính theo thời gian thực (mất khoảng 10 giây); không lỗi; hết 30 giây thì kết thúc đúng</td><td>F03</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">D. Kỷ lục</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC25</td><td>Lần đầu chơi, ghi được điểm &gt; 0</td><td>Kỷ lục cập nhật bằng điểm đó; hiện “Kỷ lục mới!”</td><td>F12</td></tr>
+            <tr><td class="id">TC26</td><td>Tải lại trang (F5)</td><td>Màn hình Bắt đầu vẫn hiện đúng kỷ lục cũ</td><td>F01, F12</td></tr>
+            <tr><td class="id">TC27</td><td>Chơi lượt có điểm bằng hoặc thấp hơn kỷ lục; chơi lượt điểm 0 khi kỷ lục là 0</td><td>Kỷ lục không đổi; không hiện “Kỷ lục mới!”</td><td>F12</td></tr>
+            <tr><td class="id">TC28</td><td>Chơi trong chế độ chặn lưu trữ (ví dụ cửa sổ ẩn danh nghiêm ngặt hoặc tắt dữ liệu trang)</td><td>Game chơi bình thường, không báo lỗi trong Console; kỷ lục giữ trong phiên đang mở</td><td>F12</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">E. Giao diện và tương thích</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Mục</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC29</td><td>Chơi trên điện thoại dọc (hoặc thu cửa sổ về 360px): chạm nhanh nhiều lần, chạm hai lần liên tiếp, kéo ngón trên lưới</td><td>Hiển thị đủ không cần cuộn; ô ≥ 80×80px; không zoom, không chọn chữ, không cuộn trang; chữ đều tiếng Việt có dấu</td><td>4.4</td></tr>
+            <tr><td class="id">TC30</td><td>Chạy trên Chrome, Edge (máy tính) và Safari, Chrome (điện thoại); ngắt Internet rồi mở lại <code>index.html</code></td><td>Chơi được bằng chuột và bằng chạm; không cần server; không có lỗi Console; không yêu cầu tải thứ gì từ Internet</td><td>5.2, 5.3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--primary">Danh sách kiểm tra trước khi giao</div>
+    <div class="card__body">
+      <ul style="list-style: none; padding-left: 0">
+        <li>☐ TC01–TC30 đều Đạt trên Chrome máy tính</li>
+        <li>☐ TC29–TC30 đạt trên Edge, Safari và Chrome điện thoại</li>
+        <li>☐ Giao diện đúng <code>design/tokens.css</code>: chỉ ban ngày, góc vuông, màu và cỡ chữ theo token</li>
+        <li>☐ Chế độ gỡ lỗi (nếu có) đã tắt hoặc gỡ</li>
+        <li>☐ Anh/chị đã xác nhận hai chi tiết em thêm: khoảng bỏ qua 0,3 giây và điều kiện “Kỷ lục mới!”</li>
+        <li>☐ Các mục <em>(giả định)</em> còn lại trong YEU-CAU.md được giữ hoặc đã chỉnh trong mục 4.1</li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Chuyển trang">
+    <a href="04-quy-tac-du-lieu.html">← 04 · Quy tắc &amp; dữ liệu</a>
+    <a href="index.html">Mục lục →</a>
+  </nav>
+  <p class="footer">Tài liệu mô tả yêu cầu, chưa bao gồm code game.</p>
+</div>
+</body>
+</html>

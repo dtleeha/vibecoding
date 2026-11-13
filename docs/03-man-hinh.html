@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · Màn hình — Đập Chuột</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <p class="topbar__title">ĐẬP CHUỘT · TÀI LIỆU</p>
+    <nav aria-label="Mục lục tài liệu">
+      <a href="index.html">Mục lục</a>
+      <a href="01-tong-quan.html">1. Tổng quan</a>
+      <a href="02-chuc-nang.html">2. Chức năng</a>
+      <a href="03-man-hinh.html" aria-current="page">3. Màn hình</a>
+      <a href="04-quy-tac-du-lieu.html">4. Quy tắc &amp; dữ liệu</a>
+      <a href="05-ke-hoach-test.html">5. Kế hoạch test</a>
+    </nav>
+  </header>
+
+  <h1 class="hero-title">03 · Màn hình</h1>
+  <p class="hero-sub">3 màn hình trên cùng một trang. Hình dưới chỉ là phác thảo bố cục, không phải sản phẩm cuối.</p>
+
+  <section class="grid grid--3" aria-label="Phác thảo 3 màn hình">
+    <div>
+      <div class="wire">
+        <p class="wire__title">ĐẬP CHUỘT</p>
+        <p class="wire__text">Đập trúng chuột được điểm. Đập liên tiếp để nhân combo. Bạn có 30 giây!</p>
+        <div class="wire__panel">Kỷ lục<br><span class="wire__big">0</span></div>
+        <div class="wire__btn">Bắt đầu</div>
+      </div>
+      <p class="wire__cap">4.1 · Màn hình Bắt đầu</p>
+    </div>
+    <div>
+      <div class="wire">
+        <div class="wire__bar"><span>Điểm: 12</span><span>Combo x4</span><span class="warn">Còn 4 giây</span></div>
+        <div class="wire__grid" aria-hidden="true">
+          <div class="wire__hole"></div><div class="wire__hole"></div><div class="wire__hole"></div>
+          <div class="wire__hole"></div><div class="wire__hole">🐭</div><div class="wire__hole"></div>
+          <div class="wire__hole"></div><div class="wire__hole"></div><div class="wire__hole"></div>
+        </div>
+      </div>
+      <p class="wire__cap">4.2 · Màn hình Đang chơi</p>
+    </div>
+    <div>
+      <div class="wire">
+        <p class="wire__title">HẾT GIỜ!</p>
+        <div class="wire__panel">Điểm của bạn<br><span class="wire__big">27</span></div>
+        <div class="wire__panel">Kỷ lục: 27<br><span style="color: var(--color-status-yellow)">Kỷ lục mới!</span></div>
+        <div class="wire__btn">Chơi lại</div>
+      </div>
+      <p class="wire__cap">4.3 · Màn hình Kết thúc</p>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top: var(--space-5)">
+    <div class="card__header card__header--primary">4.1 · Màn hình Bắt đầu</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Tên game</td><td>“Đập Chuột”, chữ hiển thị cỡ lớn (<code>--font-size-3xl</code>)</td></tr>
+            <tr><td>Luật chơi</td><td>1–2 dòng: “Đập trúng chuột được điểm, đập liên tiếp để nhân combo, bấm trượt bị trừ 1 điểm. Bạn có 30 giây!”</td></tr>
+            <tr><td>Kỷ lục</td><td>“Kỷ lục: N”, N = 0 nếu chưa có</td></tr>
+            <tr><td>Nút</td><td>“Bắt đầu”. Cao tối thiểu 44px</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--primary">4.2 · Màn hình Đang chơi</div>
+    <div class="card__body">
+      <h4 style="margin-top:0">Thanh thông tin (phía trên lưới)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Hiển thị</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td>Điểm</td><td>“Điểm: N”</td><td>Cập nhật ngay khi ghi điểm hoặc bị trừ</td></tr>
+            <tr><td>Combo <span class="badge badge--new">Mới</span></td><td>“Combo xN”</td><td>Chỉ hiện khi combo ≥ 2. Ẩn khi về 0 hoặc 1</td></tr>
+            <tr><td>Thời gian</td><td>“Còn N giây”, N từ 30 về 0</td><td>Đổi sang màu cảnh báo (cam/đỏ, <code>--color-danger</code>) khi còn ≤ 5 giây</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Lưới 3×3</h4>
+      <ul>
+        <li>9 ô bằng nhau, khoảng cách đều, lưới luôn vuông và nằm trọn trong màn hình.</li>
+        <li>Ô trống: hiển thị hang/lỗ. Ô có chuột: hình chuột ngoi lên khỏi hang.</li>
+        <li>Kích thước ô tối thiểu khoảng 80×80px trên điện thoại.</li>
+      </ul>
+
+      <h4>Trạng thái của một ô</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trạng thái</th><th>Hình ảnh</th><th>Thời gian</th></tr></thead>
+          <tbody>
+            <tr><td>Trống</td><td>Hang tối trên nền cỏ</td><td>Mặc định</td></tr>
+            <tr><td>Có chuột</td><td>Chuột ngoi lên khỏi hang</td><td>0,6–1,2 giây</td></tr>
+            <tr><td>Vừa đập trúng</td><td>Chuột bẹp, chữ “+1/+2/+3” nổi lên, màu <code>--color-status-lime</code></td><td>Dưới 0,5 giây</td></tr>
+            <tr><td>Vừa bấm trượt</td><td>Ô nháy đỏ, chữ “−1” (<code>--color-danger</code>)</td><td>Dưới 0,5 giây</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--primary">4.3 · Màn hình Kết thúc</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Thông báo</td><td>“Hết giờ!”</td></tr>
+            <tr><td>Điểm</td><td>Điểm của lượt vừa chơi</td></tr>
+            <tr><td>Kỷ lục</td><td>“Kỷ lục: N”. Nếu phá kỷ lục, thêm dòng “Kỷ lục mới!” màu <code>--color-status-yellow</code></td></tr>
+            <tr><td>Nút</td><td>“Chơi lại”</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Chuyển giữa các màn hình: Bắt đầu → Đang chơi (bấm “Bắt đầu”) → Kết thúc (hết giờ) → Đang chơi (bấm “Chơi lại”). Không quay lại màn hình Bắt đầu.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">4.4 · Yêu cầu chung về giao diện</div>
+    <div class="card__body">
+      <ul>
+        <li><strong>Responsive:</strong> chơi được từ điện thoại dọc (khoảng 360px chiều ngang) đến máy tính; không cần cuộn trang khi chơi.</li>
+        <li><strong>Chạm:</strong> không zoom, không chọn chữ, không cuộn trang khi chạm vào lưới.</li>
+        <li><strong>Phong cách:</strong> góc vuông, nền đồng cỏ ban ngày, thanh thông tin nền đen mờ (<code>--color-overlay</code>), chữ tiêu đề và điểm dùng <code>--font-display</code>, nút dùng <code>--color-primary</code>.</li>
+        <li><strong>Không dùng Internet:</strong> chỉ dùng font có sẵn trên máy; hình chuột và hang vẽ bằng CSS hoặc emoji/SVG nhúng trong file.</li>
+        <li><strong>Ngôn ngữ:</strong> toàn bộ chữ bằng tiếng Việt có dấu.</li>
+        <li><strong>Chủ đề:</strong> chỉ ban ngày, không dùng <code>data-theme="night"</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Chuyển trang">
+    <a href="02-chuc-nang.html">← 02 · Chức năng</a>
+    <a href="04-quy-tac-du-lieu.html">04 · Quy tắc &amp; dữ liệu →</a>
+  </nav>
+  <p class="footer">Tài liệu mô tả yêu cầu, chưa bao gồm code game.</p>
+</div>
+</body>
+</html>
