@@ -1,0 +1,180 @@
+/* ==========================================================================
+   tokens.css — Design tokens cho mini game (phong cách "clicker" retro, phẳng)
+   Lấy cảm hứng phong cách: giao diện phẳng góc vuông, nền đồng cỏ, chữ pixel
+   cho tiêu đề, thanh phủ đen mờ. Không chứa logo, hình ảnh hay nội dung gốc.
+   Không phụ thuộc Internet: chỉ dùng font có sẵn trên máy.
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. MÀU SẮC
+     ------------------------------------------------------------------------ */
+
+  /* Màu chính (nút, link, trạng thái được chọn) */
+  --color-primary:            #008cba;
+  --color-primary-hover:      #0079a1;
+  --color-primary-active:     #006687;
+  --color-primary-soft:       #d9eef6;
+
+  /* Màu ngữ nghĩa */
+  --color-success:            #43ac6a;
+  --color-success-hover:      #3a945b;
+  --color-danger:             #f04124;
+  --color-danger-hover:       #dc2f11;
+  --color-warning:            #e99002;
+  --color-warning-hover:      #c87b02;
+  --color-info:               #5bc0de;
+  --color-info-hover:         #3db5d8;
+
+  /* Màu phụ / trung tính */
+  --color-secondary:          #eeeeee;
+  --color-secondary-hover:    #dadada;
+  --color-dark:               #222222;
+  --color-dark-hover:         #0f0f0f;
+
+  /* Nền */
+  --color-bg-field:           #7dad71;   /* nền đồng cỏ (ban ngày) */
+  --color-bg-field-dark:      #5e8f53;   /* cỏ đậm — viền, hoa văn nền */
+  --color-bg-night:           #030206;   /* nền ban đêm */
+  --color-surface:            #ffffff;   /* thẻ, ô nhập */
+  --color-surface-alt:        #f7f7f7;   /* đầu thẻ, hàng xen kẽ */
+  --color-surface-hover:      #ededed;   /* hover hàng / mục */
+  --color-surface-selected:   #dedede;   /* mục đang chọn */
+  --color-overlay:            rgba(0, 0, 0, 0.7);  /* thanh phủ trên hình */
+  --color-backdrop:           rgba(0, 0, 0, 0.5);  /* nền mờ sau hộp thoại */
+
+  /* Chữ */
+  --color-text:               #222222;
+  --color-text-muted:         #888888;
+  --color-text-on-dark:       #f5f5f5;   /* whitesmoke */
+  --color-text-on-primary:    #ffffff;
+  --color-link:               var(--color-primary);
+
+  /* Viền */
+  --color-border:             rgba(0, 0, 0, 0.125);
+  --color-border-strong:      #cccccc;   /* viền ô nhập */
+  --color-focus-ring:         rgba(0, 140, 186, 0.35);
+
+  /* Thanh tiến trình / thanh cuộn */
+  --color-track:              #555555;
+  --color-track-light:        #f5f5f5;
+  --color-selection:          #529ede;
+
+  /* Màu trạng thái game (chấm, viền ô, nhãn) — rực, kiểu đèn báo retro */
+  --color-status-orange:      #ff9100;   /* chưa hoàn thành */
+  --color-status-lime:        #55ff00;   /* có nhiệm vụ */
+  --color-status-blue:        #3498db;   /* còn thiếu */
+  --color-status-crimson:     #a11131;   /* hiếm / nguy hiểm */
+  --color-status-purple:      #c939fe;   /* đặc biệt */
+  --color-status-yellow:      #ffee00;   /* lấp lánh / kỷ lục */
+  --color-status-cyan:        #57e3ff;   /* thành tích */
+  --color-status-pink:        #f6807a;
+
+  /* ------------------------------------------------------------------------
+     2. KIỂU CHỮ
+     ------------------------------------------------------------------------ */
+
+  /* Chữ thân: sans-serif hệ thống, hiển thị đủ dấu tiếng Việt */
+  --font-body:    "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto,
+                  "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  /* Chữ hiển thị (tiêu đề, menu, điểm số): monospace cho cảm giác pixel/retro.
+     Có thể thay bằng file font pixel hỗ trợ tiếng Việt, đặt tên "Game Pixel"
+     qua @font-face, nó sẽ được ưu tiên. */
+  --font-display: "Game Pixel", "Consolas", "Lucida Console", "Courier New",
+                  ui-monospace, monospace;
+  --font-mono:    "Consolas", "Courier New", ui-monospace, monospace;
+
+  /* Độ đậm (giao diện gốc dùng nét mảnh cho tiêu đề & nút) */
+  --font-weight-light:    300;
+  --font-weight-regular:  400;
+  --font-weight-bold:     700;
+
+  /* Độ cao dòng */
+  --line-height-tight:    1.2;
+  --line-height-base:     1.5;
+
+  /* Giãn chữ cho chữ hiển thị */
+  --letter-spacing-display: 0.02em;
+  --letter-spacing-caps:    0.08em;
+
+  /* Bóng chữ cứng kiểu pixel (cho tiêu đề trên nền cỏ / tối) */
+  --text-shadow-pixel:    2px 2px 0 rgba(0, 0, 0, 0.45);
+
+  /* ------------------------------------------------------------------------
+     3. CỠ CHỮ  (cơ sở 15px — gọn, nhiều thông tin như game clicker)
+     ------------------------------------------------------------------------ */
+  --font-size-2xs:  0.625rem;   /* 10px — chú thích nhỏ nhất */
+  --font-size-xs:   0.75rem;    /* 12px — nhãn, badge */
+  --font-size-sm:   0.875rem;   /* 14px — chữ phụ, nút nhỏ */
+  --font-size-base: 0.9375rem;  /* 15px — chữ thân */
+  --font-size-md:   1.125rem;   /* 18px — tiêu đề thẻ */
+  --font-size-lg:   1.375rem;   /* 22px — tiêu đề mục (h3) */
+  --font-size-xl:   1.75rem;    /* 28px — h2 */
+  --font-size-2xl:  2.25rem;    /* 36px — h1 */
+  --font-size-3xl:  3rem;       /* 48px — số điểm lớn, tên game */
+
+  /* ------------------------------------------------------------------------
+     4. KHOẢNG CÁCH  (bước 4px)
+     ------------------------------------------------------------------------ */
+  --space-0:   0;
+  --space-1:   0.25rem;  /*  4px */
+  --space-2:   0.5rem;   /*  8px */
+  --space-3:   0.75rem;  /* 12px */
+  --space-4:   1rem;     /* 16px */
+  --space-5:   1.5rem;   /* 24px */
+  --space-6:   2rem;     /* 32px */
+  --space-7:   3rem;     /* 48px */
+  --space-8:   4rem;     /* 64px */
+
+  /* Kích thước điều khiển */
+  --control-height-sm:  1.875rem;  /* 30px */
+  --control-height:     2.375rem;  /* 38px */
+  --control-height-lg:  3rem;      /* 48px */
+  --touch-target-min:   2.75rem;   /* 44px — tối thiểu cho ngón tay */
+
+  /* Bố cục */
+  --container-max:      70rem;
+  --gutter:             var(--space-4);
+
+  /* ------------------------------------------------------------------------
+     5. BO GÓC  (phong cách phẳng: mặc định GÓC VUÔNG)
+     ------------------------------------------------------------------------ */
+  --radius-none:  0;
+  --radius-sm:    2px;      /* chỉ khi thật cần mềm đi một chút */
+  --radius-md:    4px;
+  --radius-pill:  999px;    /* công tắc bật/tắt, badge dạng viên */
+  --radius-round: 50%;      /* nút tròn, núm công tắc */
+
+  /* Gán mặc định cho thành phần */
+  --radius-button: var(--radius-none);
+  --radius-input:  var(--radius-none);
+  --radius-card:   var(--radius-none);
+  --radius-badge:  var(--radius-none);
+
+  /* ------------------------------------------------------------------------
+     6. VIỀN, BÓNG, CHUYỂN ĐỘNG (bổ trợ)
+     ------------------------------------------------------------------------ */
+  --border-width:      1px;
+  --border-width-bold: 2px;
+
+  --shadow-none:   none;
+  --shadow-card:   0 1px 0 rgba(0, 0, 0, 0.08);
+  --shadow-raised: 0 4px 0 rgba(0, 0, 0, 0.25);      /* bóng cứng, không nhòe */
+  --shadow-inset:  inset 0 0 6px rgba(0, 0, 0, 0.3); /* rãnh, thanh cuộn */
+  --shadow-focus:  0 0 0 3px var(--color-focus-ring);
+
+  --duration-fast: 100ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --easing:        ease;
+
+  --z-overlay: 1000;
+  --z-modal:   1050;
+  --z-toast:   1100;
+}
+
+/* Chủ đề ban đêm: chỉ đổi nền & chữ trên nền, giữ nguyên màu thành phần */
+[data-theme="night"] {
+  --color-bg-field:      var(--color-bg-night);
+  --color-bg-field-dark: #15121f;
+}
