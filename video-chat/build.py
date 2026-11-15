@@ -22,20 +22,20 @@ def chat_html(s):
     for k,t in s["msgs"]:
         side="flex-end" if k=="out" else "flex-start"
         if t.startswith("IMG:"):
-            rows+=f'<div style="display:flex;flex:none;justify-content:{side}"><div style="background:{out if k=="out" else inb};padding:10px;border-radius:34px"><img src="{imgsrc(t[4:])}" style="width:380px;height:340px;object-fit:cover;object-position:center 30%;border-radius:26px;display:block"></div></div>'
+            rows+=f'<div style="display:flex;flex:none;justify-content:{side}"><div style="background:{out if k=="out" else inb};padding:10px;border-radius:34px"><img src="{imgsrc(t[4:])}" style="width:340px;height:290px;object-fit:cover;object-position:center 30%;border-radius:26px;display:block"></div></div>'
         else:
-            rows+=f'<div style="display:flex;flex:none;justify-content:{side}"><div style="max-width:760px;font-size:50px;line-height:1.3;padding:20px 34px;border-radius:40px;background:{out if k=="out" else inb};color:{"#fff" if k=="out" else tx}">{html.escape(t)}</div></div>'
+            rows+=f'<div style="display:flex;flex:none;justify-content:{side}"><div style="max-width:680px;font-size:46px;line-height:1.28;padding:16px 30px;border-radius:40px;background:{out if k=="out" else inb};color:{"#fff" if k=="out" else tx}">{html.escape(t)}</div></div>'
     return f"""<html><body style="background:{col}">{BASE}{snow()}
-<div style="position:absolute;top:70px;left:0;right:0;text-align:center;color:#fff;font-weight:900;font-size:68px;letter-spacing:2px;padding:0 60px;line-height:1.2">{html.escape(s['poster'])}</div>
-<div style="position:absolute;top:270px;left:50px;width:980px;height:1330px;background:{card};border-radius:60px;box-shadow:0 20px 60px #0007;display:flex;flex-direction:column;overflow:hidden">
+<div style="position:absolute;top:160px;left:0;right:0;text-align:center;color:#fff;font-weight:900;font-size:62px;letter-spacing:2px;padding:0 140px 0 60px;line-height:1.2">{html.escape(s['poster'])}</div>
+<div style="position:absolute;top:330px;left:60px;width:880px;height:960px;background:{card};border-radius:60px;box-shadow:0 20px 60px #0007;display:flex;flex-direction:column;overflow:hidden">
  <div style="height:120px;display:flex;align-items:center;padding:0 40px;gap:24px;border-bottom:2px solid #8883;flex:none"><div style="width:72px;height:72px;border-radius:50%;background:{out}"></div><div style="font-size:46px;font-weight:800;color:{tx}">{html.escape(s['contact'])}</div><div style="margin-left:auto;font-size:34px;color:#999">{s['time']}</div></div>
- <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding:30px 36px">{rows}</div></div>
-<div style="position:absolute;bottom:130px;left:0;right:0;text-align:center;color:#fff;font-size:60px;font-weight:900;padding:0 60px">{html.escape(s['caption'])}</div></body></html>"""
+ <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:18px;padding:24px 30px">{rows}</div></div>
+<div style="position:absolute;top:1330px;left:0;right:0;text-align:center;color:#fff;font-size:56px;font-weight:900;padding:0 140px 0 60px">{html.escape(s['caption'])}</div></body></html>"""
 def prod_html(s):
     return f"""<html><body style="background:#9a1427">{BASE}{snow()}
-<div style="position:absolute;top:150px;left:110px;width:860px;height:1080px;background:#fff;border-radius:60px;padding:24px;box-shadow:0 20px 60px #0007"><img src="{imgsrc(s['img'].split('.')[0])}" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:40px"></div>
-<div style="position:absolute;top:1290px;left:0;right:0;text-align:center;color:#fff;font-size:68px;font-weight:900;padding:0 60px;line-height:1.2">{html.escape(s['name'])}</div>
-<div style="position:absolute;top:1510px;left:120px;right:120px;text-align:center;background:#ffd34d;color:#7a0f20;font-size:54px;font-weight:900;padding:26px;border-radius:50px">{html.escape(s['note'].replace('👈','◀'))}</div></body></html>"""
+<div style="position:absolute;top:170px;left:100px;width:760px;height:880px;background:#fff;border-radius:60px;padding:24px;box-shadow:0 20px 60px #0007"><img src="{imgsrc(s['img'].split('.')[0])}" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:40px"></div>
+<div style="position:absolute;top:1090px;left:0;right:0;text-align:center;color:#fff;font-size:62px;font-weight:900;padding:0 140px 0 60px;line-height:1.2">{html.escape(s['name'])}</div>
+<div style="position:absolute;top:1280px;left:100px;right:220px;text-align:center;background:#ffd34d;color:#7a0f20;font-size:54px;font-weight:900;padding:26px;border-radius:50px">{html.escape(s['note'].replace('👈','◀'))}</div></body></html>"""
 def meme_html(s):
     u=imgsrc(s['file'].split('.')[0]) if False else "file://"+os.path.abspath("memes/"+s['file'] if os.path.exists("memes/"+s['file']) else "products/"+s['file'])
     t=f'<div style="position:absolute;bottom:170px;left:30px;right:30px;text-align:center;color:#fff;font-size:92px;font-weight:900;line-height:1.15;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 #000">{html.escape(s["text"])}</div>' if s.get("text") else ""
@@ -132,15 +132,15 @@ MD=os.environ.get("MEME_DIR","/home/claude/memezip/MEME").rstrip("/")+"/"
 def meme_clip(s,vid,i):
     src=MD+s["file"]; d=s.get("dur",1.6); ss=s.get("ss",1.0)
     ov=f"audio/{vid}_{i}_txt.png"
-    t=f'<div style="position:absolute;bottom:200px;left:30px;right:30px;text-align:center;color:#fff;font-size:92px;font-weight:900;line-height:1.15;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 #000">{html.escape(s["text"])}</div>' if s.get("text") else ""
+    t=f'<div style="position:absolute;bottom:540px;left:60px;right:140px;text-align:center;color:#fff;font-size:84px;font-weight:900;line-height:1.15;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 #000">{html.escape(s["text"])}</div>' if s.get("text") else ""
     open("tmp.html","w").write(f"<html><body style='background:transparent'>{BASE.replace('overflow:hidden','overflow:hidden;background:transparent')}{t}</body></html>")
     PG.goto("file://"+os.path.abspath("tmp.html")); PG.wait_for_timeout(300); PG.screenshot(path=ov,omit_background=True)
     out=f"audio/{vid}_{i}_meme.mp4"
     if s.get("green"):
-        fc="[0:v]chromakey=0x00ff00:0.18:0.1,despill=type=green,scale=1000:1500:force_original_aspect_ratio=decrease[fg];[1:v][fg]overlay=(W-w)/2:(H-h)/2:shortest=1[b];[b][2:v]overlay=0:0,format=yuv420p[o]"
+        fc="[0:v]chromakey=0x00ff00:0.18:0.1,despill=type=green,scale=860:1250:force_original_aspect_ratio=decrease[fg];[1:v][fg]overlay=(W-w)/2-40:(H-h)/2-110:shortest=1[b];[b][2:v]overlay=0:0,format=yuv420p[o]"
         sh(f"ffmpeg -y -loglevel error -ss {ss} -t {d} -i \"{src}\" -f lavfi -i color=c=0x9a1427:s=1080x1920:r=30 -i {ov} -filter_complex \"{fc}\" -map '[o]' -t {d} -r 30 -c:v libx264 -preset veryfast -crf 20 {out}")
     else:
-        fc="[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=40,eq=brightness=-0.25[bg];[b]scale=1000:1500:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[x];[x][1:v]overlay=0:0,format=yuv420p[o]"
+        fc="[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=40,eq=brightness=-0.25[bg];[b]scale=860:1250:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2-40:(H-h)/2-110[x];[x][1:v]overlay=0:0,format=yuv420p[o]"
         sh(f"ffmpeg -y -loglevel error -ss {ss} -t {d} -i \"{src}\" -i {ov} -filter_complex \"{fc}\" -map '[o]' -t {d} -r 30 -c:v libx264 -preset veryfast -crf 20 {out}")
     wav=f"audio/{vid}_{i}_meme.wav"
     r=subprocess.run(f"ffmpeg -y -loglevel error -ss {ss} -t {d} -i \"{src}\" -vn -ac 1 -ar 44100 -af 'volume={s.get('vol',0.5)},afade=t=out:st={d-0.2}:d=0.2' {wav}",shell=True)
@@ -148,7 +148,7 @@ def meme_clip(s,vid,i):
 
 def cover_html(s):
     A=lambda n:"file://"+os.path.abspath("assets/"+n)
-    return open("assets/cover_tpl.html").read().replace("{PAPER}",A("paper.png")).replace("{LOGO}",A("logo_clean.png")).replace("{TITLE}",html.escape(s["hook"]).replace("|","<br>"))
+    return open("assets/cover_tpl.html").read().replace("{PAPER}",A("paper.png")).replace("{LOGO}",A("logo_clean.png")).replace("{TITLE}",html.escape(s["hook"]).replace("//","<br>"))
 
 def main(script):
     ids=None

@@ -18,7 +18,7 @@ def load_script(path):
             elif k=="meme":
                 sc={"meme":True,"file":p[1],"text":p[2],"ss":float(p[3] or 1),"dur":float(p[4] or 1.6),"green":p[5]!="0","vol":float(p[6] or 0.5)}
             elif k=="cover":
-                sc={"cover":True,"hook":p[1],"vo":p[1].replace("|",", ")}
+                sc={"cover":True,"hook":p[1],"vo":p[1].replace("//",",")}
             elif k=="product":
                 sc={"product":True,"name":p[1],"note":p[2] or "Giỏ hàng ở góc trái video 👈","img":p[3],"vo":""}
             cur["scenes"].append(sc); continue

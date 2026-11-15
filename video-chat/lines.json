@@ -1,157 +1,157 @@
 [
  {
-  "key": "tuyentap2_0_vo",
+  "key": "botmemua_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "4 cuộc chat ai cũng từng gặp"
+  "text": "Những món kì lạ , bố mẹ tôi mua trên mạng"
  },
  {
-  "key": "tuyentap2_1_0",
+  "key": "botmemua_1_0",
   "voice": "Ngọc Huyền",
-  "text": "con ăn cơm chưa"
+  "text": "con ơi mai nhà mình có đồ mới"
  },
  {
-  "key": "tuyentap2_1_1",
+  "key": "botmemua_1_1",
   "voice": "Phạm Tuyên",
-  "text": "rồi mẹ"
+  "text": "mẹ lại mua gì đấy"
  },
  {
-  "key": "tuyentap2_1_2",
+  "key": "botmemua_1_2",
   "voice": "Ngọc Huyền",
-  "text": "ăn gì"
+  "text": "cái ghế massage, giảm bảy mươi phần trăm, hôm nay thôi"
  },
  {
-  "key": "tuyentap2_1_3",
+  "key": "botmemua_1_3",
   "voice": "Phạm Tuyên",
-  "text": "cơm với mì gói"
+  "text": "nhà mình có chỗ để đâu mẹ"
  },
  {
-  "key": "tuyentap2_1_4",
+  "key": "botmemua_1_4",
   "voice": "Ngọc Huyền",
-  "text": "trời ơi, mẹ gửi đồ ăn lên liền"
+  "text": "mẹ để tạm ở phòng khách"
  },
  {
-  "key": "tuyentap2_1_5",
+  "key": "botmemua_1_5",
   "voice": "Phạm Tuyên",
-  "text": "dạ thôi mẹ, con tự lo được"
+  "text": "phòng khách đang có ghế sofa mà"
  },
  {
-  "key": "tuyentap2_1_6",
+  "key": "botmemua_1_6",
   "voice": "Ngọc Huyền",
-  "text": "mẹ gửi rồi, xe đang chạy"
+  "text": "thì kê sát lại"
  },
  {
-  "key": "tuyentap2_3_0",
+  "key": "botmemua_3_0",
   "voice": "Hải Đăng",
-  "text": "mày làm xong báo cáo chưa"
+  "text": "con gái, bố mới mua máy kéo giãn cột sống"
  },
  {
-  "key": "tuyentap2_3_1",
-  "voice": "Phạm Tuyên",
-  "text": "xong rồi"
- },
- {
-  "key": "tuyentap2_3_2",
-  "voice": "Hải Đăng",
-  "text": "gửi tao xem đi"
- },
- {
-  "key": "tuyentap2_3_3",
-  "voice": "Phạm Tuyên",
-  "text": "đợi tí, tao đang làm"
- },
- {
-  "key": "tuyentap2_3_4",
-  "voice": "Hải Đăng",
-  "text": "mày vừa nói xong rồi mà"
- },
- {
-  "key": "tuyentap2_3_5",
-  "voice": "Phạm Tuyên",
-  "text": "xong trong đầu"
- },
- {
-  "key": "tuyentap2_3_6",
-  "voice": "Hải Đăng",
-  "text": "deadline là sáng mai đó"
- },
- {
-  "key": "tuyentap2_3_7",
-  "voice": "Phạm Tuyên",
-  "text": "tao biết, đang chuẩn bị tinh thần"
- },
- {
-  "key": "tuyentap2_5_0",
+  "key": "botmemua_3_1",
   "voice": "Trúc Ly",
-  "text": "tao nhắn crush rồi"
+  "text": "bố có đau lưng đâu"
  },
  {
-  "key": "tuyentap2_5_1",
-  "voice": "Ngọc Huyền",
-  "text": "nhắn gì"
- },
- {
-  "key": "tuyentap2_5_2",
-  "voice": "Trúc Ly",
-  "text": "chào bạn, bạn ăn cơm chưa"
- },
- {
-  "key": "tuyentap2_5_3",
-  "voice": "Ngọc Huyền",
-  "text": "nó trả lời sao"
- },
- {
-  "key": "tuyentap2_5_4",
-  "voice": "Trúc Ly",
-  "text": "nó seen"
- },
- {
-  "key": "tuyentap2_5_5",
-  "voice": "Ngọc Huyền",
-  "text": "seen bao lâu rồi"
- },
- {
-  "key": "tuyentap2_5_6",
-  "voice": "Trúc Ly",
-  "text": "ba tiếng"
- },
- {
-  "key": "tuyentap2_5_7",
-  "voice": "Ngọc Huyền",
-  "text": "chắc nó đang ăn cơm"
- },
- {
-  "key": "tuyentap2_7_0",
-  "voice": "Phạm Tuyên",
-  "text": "bro cho tao mượn năm trăm"
- },
- {
-  "key": "tuyentap2_7_1",
+  "key": "botmemua_3_2",
   "voice": "Hải Đăng",
-  "text": "mượn làm gì"
+  "text": "cô livestream nói cái này phòng bệnh"
  },
  {
-  "key": "tuyentap2_7_2",
-  "voice": "Phạm Tuyên",
-  "text": "mua trà sữa"
+  "key": "botmemua_3_3",
+  "voice": "Trúc Ly",
+  "text": "còn mấy lọ detox trên bàn là gì"
  },
  {
-  "key": "tuyentap2_7_3",
+  "key": "botmemua_3_4",
   "voice": "Hải Đăng",
-  "text": "trà sữa mà năm trăm hả"
+  "text": "của cô ấy luôn"
  },
  {
-  "key": "tuyentap2_7_4",
-  "voice": "Phạm Tuyên",
-  "text": "mua cho cả công ty"
+  "key": "botmemua_3_5",
+  "voice": "Trúc Ly",
+  "text": "bố ơi bác sĩ nói gì bố có nghe đâu"
  },
  {
-  "key": "tuyentap2_7_5",
+  "key": "botmemua_3_6",
   "voice": "Hải Đăng",
-  "text": "mày hết tiền thì nói thẳng đi"
+  "text": "bác sĩ không gọi bố bằng con"
  },
  {
-  "key": "tuyentap2_7_6",
+  "key": "botmemua_5_0",
+  "voice": "Trúc Ly",
+  "text": "mẹ ơi sao hôm nay shipper tới ba lần"
+ },
+ {
+  "key": "botmemua_5_1",
+  "voice": "Ngọc Huyền",
+  "text": "ba món khác nhau con à"
+ },
+ {
+  "key": "botmemua_5_2",
+  "voice": "Trúc Ly",
+  "text": "mẹ mua gì thế"
+ },
+ {
+  "key": "botmemua_5_3",
+  "voice": "Ngọc Huyền",
+  "text": "máy đo huyết áp đời mới, nồi hâm nóng, với một cái hộp mẹ chưa mở"
+ },
+ {
+  "key": "botmemua_5_4",
+  "voice": "Trúc Ly",
+  "text": "mẹ chưa mở mà đã mua tiếp à"
+ },
+ {
+  "key": "botmemua_5_5",
+  "voice": "Ngọc Huyền",
+  "text": "chú shipper bảo mẹ là khách thân thiết"
+ },
+ {
+  "key": "botmemua_5_6",
+  "voice": "Trúc Ly",
+  "text": "thế con là gì"
+ },
+ {
+  "key": "botmemua_5_7",
+  "voice": "Ngọc Huyền",
+  "text": "con là người nhận hàng hộ"
+ },
+ {
+  "key": "botmemua_7_0",
   "voice": "Phạm Tuyên",
-  "text": "ừ, hết thật"
+  "text": "con ơi gói hàng của bố tới chưa"
+ },
+ {
+  "key": "botmemua_7_1",
+  "voice": "Hải Đăng",
+  "text": "tới rồi bố, một thùng to"
+ },
+ {
+  "key": "botmemua_7_2",
+  "voice": "Phạm Tuyên",
+  "text": "mở ra xem có phụ kiện sở thích không"
+ },
+ {
+  "key": "botmemua_7_3",
+  "voice": "Hải Đăng",
+  "text": "có sáu cái cốc hình con hamster"
+ },
+ {
+  "key": "botmemua_7_4",
+  "voice": "Phạm Tuyên",
+  "text": "đẹp mà"
+ },
+ {
+  "key": "botmemua_7_5",
+  "voice": "Hải Đăng",
+  "text": "còn tấm che nắng ô tô nữa"
+ },
+ {
+  "key": "botmemua_7_6",
+  "voice": "Phạm Tuyên",
+  "text": "bố mua cái đó cho cả xe máy luôn"
+ },
+ {
+  "key": "botmemua_7_7",
+  "voice": "Hải Đăng",
+  "text": "xe máy làm gì có kính"
  }
 ]
