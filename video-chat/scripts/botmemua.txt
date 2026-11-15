@@ -4,6 +4,7 @@
 a: con ơi mai nhà mình có đồ mới
 b: mẹ lại mua gì đấy
 a: cái ghế massage, giảm bảy mươi phần trăm, hôm nay thôi
+a: IMG:chair
 b: nhà mình có chỗ để đâu mẹ
 a: mẹ để tạm ở phòng khách
 b: phòng khách đang có ghế sofa mà
@@ -12,8 +13,10 @@ a: thì kê sát lại
 -- chat | MÁY KÉO GIÃN CỘT SỐNG | 20:45 | Bố | dark | Tin cô livestream hơn tin con | M2F2
 a: con gái, bố mới mua máy kéo giãn cột sống
 b: bố có đau lưng đâu
+a: IMG:spine
 a: cô livestream nói cái này phòng bệnh
 b: còn mấy lọ detox trên bàn là gì
+b: IMG:detox
 a: của cô ấy luôn
 b: bố ơi bác sĩ nói gì bố có nghe đâu
 a: bác sĩ không gọi bố bằng con
@@ -33,6 +36,7 @@ a: con ơi gói hàng của bố tới chưa
 b: tới rồi bố, một thùng to
 a: mở ra xem có phụ kiện sở thích không
 b: có sáu cái cốc hình con hamster
+b: IMG:hamster
 a: đẹp mà
 b: còn tấm che nắng ô tô nữa
 a: bố mua cái đó cho cả xe máy luôn
