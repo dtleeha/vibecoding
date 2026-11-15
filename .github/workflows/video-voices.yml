@@ -2,7 +2,7 @@ name: video-voices
 on:
   workflow_dispatch:
   push:
-    paths: ["video-voices/lines.json", "video-voices/voices.json", "video-voices/gen_voices.py"]
+    paths: ["video-chat/lines.json", "video-chat/voices.json", "video-chat/gen_voices.py"]
 permissions:
   contents: write
 jobs:
@@ -14,11 +14,11 @@ jobs:
         with: { python-version: "3.12" }
       - run: sudo apt-get update && sudo apt-get install -y espeak-ng ffmpeg
       - run: pip install vieneu
-      - run: python video-voices/gen_voices.py
+      - run: python video-chat/gen_voices.py
       - name: Commit voices
         if: always()
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add video-voices/voice_ext
+          git add video-chat/voice_ext
           git diff --cached --quiet || (git commit -m "Add VieNeu voices" && git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }})

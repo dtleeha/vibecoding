@@ -4,7 +4,6 @@ from vieneu import Vieneu
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "voice_ext"); os.makedirs(OUT, exist_ok=True)
 lines = json.load(open(os.path.join(HERE, "lines.json"), encoding="utf-8"))
-spk = json.load(open(os.path.join(HERE, "voices.json"), encoding="utf-8"))
 def flat(s): return unicodedata.normalize("NFD", s.replace("đ","d").replace("Đ","D")).encode("ascii","ignore").decode().lower().strip()
 tts = Vieneu()
 catalog = tts.list_preset_voices()
@@ -25,7 +24,7 @@ for it in lines:
     out = os.path.join(OUT, it["key"] + ".wav")
     if os.path.exists(out): continue
     try:
-        audio = tts.infer(text=it["text"], voice=voice_for(spk[it["spk"]]))
+        audio = tts.infer(text=it["text"], voice=voice_for(it["voice"]))
         tmp = os.path.join(OUT, "_tmp.wav"); tts.save(audio, tmp)
         import shutil
         try: subprocess.run(["ffmpeg","-y","-loglevel","error","-i",tmp,"-ac","1","-ar","44100",out], check=True)
