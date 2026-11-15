@@ -17,6 +17,8 @@ def load_script(path):
                 sc={"poster":p[1],"time":p[2],"contact":p[3],"dark":p[4]=="dark","caption":p[5],"pair":p[6] or "F1M1","color":"#9a1427","msgs":[],"vo":""}
             elif k=="meme":
                 sc={"meme":True,"file":p[1],"text":p[2],"ss":float(p[3] or 1),"dur":float(p[4] or 1.6),"green":p[5]!="0","vol":float(p[6] or 0.5)}
+            elif k=="cover":
+                sc={"cover":True,"hook":p[1],"vo":p[1].replace("|",", ")}
             elif k=="product":
                 sc={"product":True,"name":p[1],"note":p[2] or "Giỏ hàng ở góc trái video 👈","img":p[3],"vo":""}
             cur["scenes"].append(sc); continue
@@ -29,7 +31,7 @@ def lines_for(path,voices):
     for v in load_script(path):
         for i,s in enumerate(v["scenes"]):
             if s.get("meme"): continue
-            if s.get("product"): L.append({"key":f"{v['id']}_{i}_vo","voice":voices["narr"],"text":s["vo"]}); continue
+            if s.get("product") or s.get("cover"): L.append({"key":f"{v['id']}_{i}_vo","voice":voices["narr"],"text":s["vo"]}); continue
             pr=s.get("pair","F1M1"); vm={"in":voices[pr[:2]],"out":voices[pr[2:]]}
             for j,(k,t) in enumerate(s["msgs"]):
                 if not t.startswith("IMG:"): L.append({"key":f"{v['id']}_{i}_{j}","voice":vm[k],"text":norm(t)})

@@ -1,151 +1,156 @@
 [
  {
-  "key": "tuyentap2_0_0",
+  "key": "tuyentap2_0_vo",
+  "voice": "Ngọc Huyền",
+  "text": "4 cuộc chat ai cũng từng gặp"
+ },
+ {
+  "key": "tuyentap2_1_0",
   "voice": "Ngọc Huyền",
   "text": "con ăn cơm chưa"
  },
  {
-  "key": "tuyentap2_0_1",
+  "key": "tuyentap2_1_1",
   "voice": "Phạm Tuyên",
   "text": "rồi mẹ"
  },
  {
-  "key": "tuyentap2_0_2",
+  "key": "tuyentap2_1_2",
   "voice": "Ngọc Huyền",
   "text": "ăn gì"
  },
  {
-  "key": "tuyentap2_0_3",
+  "key": "tuyentap2_1_3",
   "voice": "Phạm Tuyên",
   "text": "cơm với mì gói"
  },
  {
-  "key": "tuyentap2_0_4",
+  "key": "tuyentap2_1_4",
   "voice": "Ngọc Huyền",
   "text": "trời ơi, mẹ gửi đồ ăn lên liền"
  },
  {
-  "key": "tuyentap2_0_5",
+  "key": "tuyentap2_1_5",
   "voice": "Phạm Tuyên",
   "text": "dạ thôi mẹ, con tự lo được"
  },
  {
-  "key": "tuyentap2_0_6",
+  "key": "tuyentap2_1_6",
   "voice": "Ngọc Huyền",
   "text": "mẹ gửi rồi, xe đang chạy"
  },
  {
-  "key": "tuyentap2_2_0",
+  "key": "tuyentap2_3_0",
   "voice": "Hải Đăng",
   "text": "mày làm xong báo cáo chưa"
  },
  {
-  "key": "tuyentap2_2_1",
+  "key": "tuyentap2_3_1",
   "voice": "Phạm Tuyên",
   "text": "xong rồi"
  },
  {
-  "key": "tuyentap2_2_2",
+  "key": "tuyentap2_3_2",
   "voice": "Hải Đăng",
   "text": "gửi tao xem đi"
  },
  {
-  "key": "tuyentap2_2_3",
+  "key": "tuyentap2_3_3",
   "voice": "Phạm Tuyên",
   "text": "đợi tí, tao đang làm"
  },
  {
-  "key": "tuyentap2_2_4",
+  "key": "tuyentap2_3_4",
   "voice": "Hải Đăng",
   "text": "mày vừa nói xong rồi mà"
  },
  {
-  "key": "tuyentap2_2_5",
+  "key": "tuyentap2_3_5",
   "voice": "Phạm Tuyên",
   "text": "xong trong đầu"
  },
  {
-  "key": "tuyentap2_2_6",
+  "key": "tuyentap2_3_6",
   "voice": "Hải Đăng",
   "text": "deadline là sáng mai đó"
  },
  {
-  "key": "tuyentap2_2_7",
+  "key": "tuyentap2_3_7",
   "voice": "Phạm Tuyên",
   "text": "tao biết, đang chuẩn bị tinh thần"
  },
  {
-  "key": "tuyentap2_4_0",
+  "key": "tuyentap2_5_0",
   "voice": "Trúc Ly",
   "text": "tao nhắn crush rồi"
  },
  {
-  "key": "tuyentap2_4_1",
+  "key": "tuyentap2_5_1",
   "voice": "Ngọc Huyền",
   "text": "nhắn gì"
  },
  {
-  "key": "tuyentap2_4_2",
+  "key": "tuyentap2_5_2",
   "voice": "Trúc Ly",
   "text": "chào bạn, bạn ăn cơm chưa"
  },
  {
-  "key": "tuyentap2_4_3",
+  "key": "tuyentap2_5_3",
   "voice": "Ngọc Huyền",
   "text": "nó trả lời sao"
  },
  {
-  "key": "tuyentap2_4_4",
+  "key": "tuyentap2_5_4",
   "voice": "Trúc Ly",
   "text": "nó seen"
  },
  {
-  "key": "tuyentap2_4_5",
+  "key": "tuyentap2_5_5",
   "voice": "Ngọc Huyền",
   "text": "seen bao lâu rồi"
  },
  {
-  "key": "tuyentap2_4_6",
+  "key": "tuyentap2_5_6",
   "voice": "Trúc Ly",
   "text": "ba tiếng"
  },
  {
-  "key": "tuyentap2_4_7",
+  "key": "tuyentap2_5_7",
   "voice": "Ngọc Huyền",
   "text": "chắc nó đang ăn cơm"
  },
  {
-  "key": "tuyentap2_6_0",
+  "key": "tuyentap2_7_0",
   "voice": "Phạm Tuyên",
   "text": "bro cho tao mượn năm trăm"
  },
  {
-  "key": "tuyentap2_6_1",
+  "key": "tuyentap2_7_1",
   "voice": "Hải Đăng",
   "text": "mượn làm gì"
  },
  {
-  "key": "tuyentap2_6_2",
+  "key": "tuyentap2_7_2",
   "voice": "Phạm Tuyên",
   "text": "mua trà sữa"
  },
  {
-  "key": "tuyentap2_6_3",
+  "key": "tuyentap2_7_3",
   "voice": "Hải Đăng",
   "text": "trà sữa mà năm trăm hả"
  },
  {
-  "key": "tuyentap2_6_4",
+  "key": "tuyentap2_7_4",
   "voice": "Phạm Tuyên",
   "text": "mua cho cả công ty"
  },
  {
-  "key": "tuyentap2_6_5",
+  "key": "tuyentap2_7_5",
   "voice": "Hải Đăng",
   "text": "mày hết tiền thì nói thẳng đi"
  },
  {
-  "key": "tuyentap2_6_6",
+  "key": "tuyentap2_7_6",
   "voice": "Phạm Tuyên",
   "text": "ừ, hết thật"
  }

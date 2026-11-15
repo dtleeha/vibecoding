@@ -146,6 +146,10 @@ def meme_clip(s,vid,i):
     r=subprocess.run(f"ffmpeg -y -loglevel error -ss {ss} -t {d} -i \"{src}\" -vn -ac 1 -ar 44100 -af 'volume={s.get('vol',0.5)},afade=t=out:st={d-0.2}:d=0.2' {wav}",shell=True)
     return out,(wav if r.returncode==0 and os.path.exists(wav) else None)
 
+def cover_html(s):
+    A=lambda n:"file://"+os.path.abspath("assets/"+n)
+    return open("assets/cover_tpl.html").read().replace("{PAPER}",A("paper.png")).replace("{LOGO}",A("logo_clean.png")).replace("{TITLE}",html.escape(s["hook"]).replace("|","<br>"))
+
 def main(script):
     ids=None
     for d_ in ("audio","out2","voice_ext"): os.makedirs(d_,exist_ok=True)
@@ -160,8 +164,8 @@ def main(script):
             if s.get("meme"):
                 clip,wav=meme_clip(s,vid,i)
                 info.append((png,s.get("dur",1.6),wav,[],True,clip))
-            elif s.get("product"):
-                open("tmp.html","w").write(prod_html(s)); pg.goto("file://"+os.path.abspath("tmp.html")); pg.wait_for_timeout(400); pg.screenshot(path=png)
+            elif s.get("product") or s.get("cover"):
+                open("tmp.html","w").write(cover_html(s) if s.get("cover") else prod_html(s)); pg.goto("file://"+os.path.abspath("tmp.html")); pg.wait_for_timeout(400); pg.screenshot(path=png)
                 a=f"audio/{vid}_{i}.wav"
                 if os.path.exists(f"voice_ext/{vid}_{i}_vo.wav"):
                     sh(f"ffmpeg -y -loglevel error -i voice_ext/{vid}_{i}_vo.wav -ac 1 -ar 44100 -af atempo={SPEED} {a}"); sents=[x.strip() for x in re.split(r"(?<=[.!?])\s+",s["vo"]) if x.strip()]
@@ -184,6 +188,7 @@ def main(script):
         inp=" ".join(f"-i audio/{vid}_{k}.mp4" for k in range(len(info)))
         fc="";prev="[0:v]";cum=0
         tr=["fade","smoothup","fade","circleopen"]
+        if v["scenes"][0].get("cover"): tr=["slideleft"]+tr
         for k in range(1,len(info)):
             cum+=info[k-1][1]-T; fc+=f"{prev}[{k}:v]xfade=transition={tr[(k-1)%4]}:duration={T}:offset={cum-T+T-T if False else starts[k]}[v{k}];"; prev=f"[v{k}]"
         # audio
