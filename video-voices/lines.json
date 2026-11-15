@@ -1,0 +1,237 @@
+[
+ {
+  "key": "gauheo3_0_0",
+  "spk": "in",
+  "text": "mày ngủ chưa"
+ },
+ {
+  "key": "gauheo3_0_1",
+  "spk": "out",
+  "text": "chưa, sao"
+ },
+ {
+  "key": "gauheo3_0_2",
+  "spk": "in",
+  "text": "sếp tao vừa nhắn: em rảnh không"
+ },
+ {
+  "key": "gauheo3_0_3",
+  "spk": "out",
+  "text": "trời, rồi mày trả lời chưa"
+ },
+ {
+  "key": "gauheo3_0_4",
+  "spk": "in",
+  "text": "chưa, tao đang giả vờ ngủ rồi"
+ },
+ {
+  "key": "gauheo3_0_5",
+  "spk": "out",
+  "text": "mày xem tin nhắn rồi mà"
+ },
+ {
+  "key": "gauheo3_0_6",
+  "spk": "in",
+  "text": "tao quên"
+ },
+ {
+  "key": "gauheo3_2_0",
+  "spk": "in",
+  "text": "tao nhắn lại: dạ em ngủ rồi ạ"
+ },
+ {
+  "key": "gauheo3_2_1",
+  "spk": "out",
+  "text": "hả hả hả"
+ },
+ {
+  "key": "gauheo3_2_2",
+  "spk": "out",
+  "text": "ngủ mà biết nhắn tin hả"
+ },
+ {
+  "key": "gauheo3_2_3",
+  "spk": "in",
+  "text": "đúng rồi, tao mộng du"
+ },
+ {
+  "key": "gauheo3_2_4",
+  "spk": "out",
+  "text": "sếp mày tin mới lạ"
+ },
+ {
+  "key": "gauheo3_2_5",
+  "spk": "in",
+  "text": "tao nhục quá, cần ôm cái gì đó"
+ },
+ {
+  "key": "gauheo3_4_0",
+  "spk": "in",
+  "text": "mày biết tao vừa sắm gì không"
+ },
+ {
+  "key": "gauheo3_4_1",
+  "spk": "out",
+  "text": "gì"
+ },
+ {
+  "key": "gauheo3_4_3",
+  "spk": "in",
+  "text": "mặt nó giống sếp tao y chang"
+ },
+ {
+  "key": "gauheo3_4_4",
+  "spk": "out",
+  "text": "ha ha ha giống thật"
+ },
+ {
+  "key": "gauheo3_4_5",
+  "spk": "in",
+  "text": "ôm nó phát đỡ sợ sếp hẳn"
+ },
+ {
+  "key": "gauheo3_6_0",
+  "spk": "out",
+  "text": "bán ở đâu vậy, gửi tao"
+ },
+ {
+  "key": "gauheo3_6_2",
+  "spk": "in",
+  "text": "cao bốn lăm xăng ti mét, lông dày, ôm êm lắm"
+ },
+ {
+  "key": "gauheo3_6_3",
+  "spk": "in",
+  "text": "còn bản hồng mặc yếm nữa"
+ },
+ {
+  "key": "gauheo3_6_5",
+  "spk": "out",
+  "text": "tao lấy bản cau có, hợp với sếp"
+ },
+ {
+  "key": "gauheo3_8_vo",
+  "spk": "narr",
+  "text": "Em này cao bốn lăm xăng ti, mặt cau có nhưng ôm rất êm. Muốn rước về thì bấm giỏ hàng góc trái nha."
+ },
+ {
+  "key": "hoibanthan_0_0",
+  "spk": "in",
+  "text": "ê mai đi ăn không"
+ },
+ {
+  "key": "hoibanthan_0_1",
+  "spk": "out",
+  "text": "đi, mày bao hả"
+ },
+ {
+  "key": "hoibanthan_0_2",
+  "spk": "in",
+  "text": "tao đang cai tiêu tiền"
+ },
+ {
+  "key": "hoibanthan_0_3",
+  "spk": "out",
+  "text": "cai từ bao giờ"
+ },
+ {
+  "key": "hoibanthan_0_4",
+  "spk": "in",
+  "text": "từ hồi sáng"
+ },
+ {
+  "key": "hoibanthan_0_5",
+  "spk": "out",
+  "text": "mới có nửa ngày hả"
+ },
+ {
+  "key": "hoibanthan_2_0",
+  "spk": "in",
+  "text": "tao vừa đặt hàng cái này"
+ },
+ {
+  "key": "hoibanthan_2_1",
+  "spk": "out",
+  "text": "mày vừa nói cai mà"
+ },
+ {
+  "key": "hoibanthan_2_2",
+  "spk": "in",
+  "text": "cái này không tính, là đầu tư"
+ },
+ {
+  "key": "hoibanthan_2_3",
+  "spk": "out",
+  "text": "đầu tư cái gì"
+ },
+ {
+  "key": "hoibanthan_2_5",
+  "spk": "in",
+  "text": "đầu tư tình cảm"
+ },
+ {
+  "key": "hoibanthan_2_6",
+  "spk": "out",
+  "text": "mặt nó đòi nợ mày kìa"
+ },
+ {
+  "key": "hoibanthan_4_0",
+  "spk": "out",
+  "text": "gấu đâu, cho tao xem"
+ },
+ {
+  "key": "hoibanthan_4_2",
+  "spk": "in",
+  "text": "tới rồi, cao bốn lăm xăng ti mét"
+ },
+ {
+  "key": "hoibanthan_4_3",
+  "spk": "out",
+  "text": "nhìn dễ ghét mà muốn ôm"
+ },
+ {
+  "key": "hoibanthan_4_4",
+  "spk": "in",
+  "text": "đúng, ghét mà thương"
+ },
+ {
+  "key": "hoibanthan_4_5",
+  "spk": "out",
+  "text": "mày bảo cai tiêu tiền mà"
+ },
+ {
+  "key": "hoibanthan_4_6",
+  "spk": "in",
+  "text": "tao cai tiêu tiền, đồ dễ thương thì không"
+ },
+ {
+  "key": "hoibanthan_6_0",
+  "spk": "out",
+  "text": "bán ở đâu, gửi link"
+ },
+ {
+  "key": "hoibanthan_6_2",
+  "spk": "in",
+  "text": "còn bản hồng mặc yếm nữa"
+ },
+ {
+  "key": "hoibanthan_6_3",
+  "spk": "out",
+  "text": "tao lấy cả hai"
+ },
+ {
+  "key": "hoibanthan_6_4",
+  "spk": "in",
+  "text": "mày cai tiêu tiền chưa"
+ },
+ {
+  "key": "hoibanthan_6_5",
+  "spk": "out",
+  "text": "cai từ ngày mai"
+ },
+ {
+  "key": "hoibanthan_8_vo",
+  "spk": "narr",
+  "text": "Em này cao bốn lăm xăng ti, mặt cau có nhưng ôm rất êm. Muốn rước về thì bấm giỏ hàng góc trái nha."
+ }
+]
