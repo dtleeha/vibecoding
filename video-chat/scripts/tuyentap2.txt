@@ -1,0 +1,38 @@
+== tuyentap2 | 4 hội thoại hài, 3 meme
+-- chat | MẸ HỎI HAN | 19:30 | Mẹ | light | Mẹ là số một | F1M1
+a: con ăn cơm chưa
+b: rồi mẹ
+a: ăn gì
+b: cơm với mì gói
+a: trời ơi, mẹ gửi đồ ăn lên liền
+b: dạ thôi mẹ, con tự lo được
+a: mẹ gửi rồi, xe đang chạy
+-- meme | Grey-kitten-smiling-Green-Screen-Meme.mp4 | Mẹ là số một | 1 | 1.6 | 1
+-- chat | SÁNG MAI NỘP BÁO CÁO | 23:50 | Đồng nghiệp | dark | Xong trong đầu | M2M1
+a: mày làm xong báo cáo chưa
+b: xong rồi
+a: gửi tao xem đi
+b: đợi tí, tao đang làm
+a: mày vừa nói xong rồi mà
+b: xong trong đầu
+a: deadline là sáng mai đó
+b: tao biết, đang chuẩn bị tinh thần
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Chuẩn bị tinh thần | 1 | 1.6 | 1
+-- chat | NHẮN CHO CRUSH | 21:05 | Nhỏ Bạn | light | Seen ba tiếng | F2F1
+a: tao nhắn crush rồi
+b: nhắn gì
+a: chào bạn, bạn ăn cơm chưa
+b: nó trả lời sao
+a: nó seen
+b: seen bao lâu rồi
+a: ba tiếng
+b: chắc nó đang ăn cơm
+-- meme | Cat-sipping-tea-green-screen.mp4 | Đang hóng đây | 1 | 1.6 | 1
+-- chat | MƯỢN TIỀN | 16:20 | Thằng Bạn | dark | Hết tiền thì nói thẳng | M1M2
+a: bro cho tao mượn năm trăm
+b: mượn làm gì
+a: mua trà sữa
+b: trà sữa mà năm trăm hả
+a: mua cho cả công ty
+b: mày hết tiền thì nói thẳng đi
+a: ừ, hết thật
