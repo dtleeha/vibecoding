@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đập Chuột</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+
+  <!-- 4.1 · Màn hình Bắt đầu -->
+  <section class="screen screen--start" id="screenStart" aria-labelledby="titleStart">
+    <div class="panel panel--center">
+      <h1 class="game-title" id="titleStart">Đập Chuột</h1>
+      <p class="rules">Đập trúng chuột được điểm, đập liên tiếp để nhân combo, bấm trượt bị trừ 1 điểm. Bạn có 30 giây!</p>
+      <p class="record-line">Kỷ lục: <span id="startRecord">0</span></p>
+      <button type="button" class="btn btn--action" id="btnStart">Bắt đầu</button>
+    </div>
+  </section>
+
+  <!-- 4.2 · Màn hình Đang chơi -->
+  <section class="screen screen--play" id="screenPlay" hidden aria-label="Đang chơi">
+    <div class="hud" role="status">
+      <span class="hud__item">Điểm: <span id="hudScore">0</span></span>
+      <span class="hud__combo" id="hudCombo" hidden>Combo x<span id="hudComboValue">2</span></span>
+      <span class="hud__item hud__time" id="hudTime">Còn <span id="hudTimeValue">30</span> giây</span>
+    </div>
+    <div class="board" id="board" aria-label="Lưới 3×3"></div>
+  </section>
+
+  <!-- 4.3 · Màn hình Kết thúc -->
+  <section class="screen screen--over" id="screenOver" hidden aria-labelledby="titleOver">
+    <div class="panel panel--center panel--dark">
+      <h2 class="over-title" id="titleOver">Hết giờ!</h2>
+      <p class="over-label">Điểm của bạn</p>
+      <p class="over-score" id="overScore">0</p>
+      <p class="record-line">Kỷ lục: <span id="overRecord">0</span></p>
+      <p class="new-record" id="newRecord" hidden>Kỷ lục mới!</p>
+      <button type="button" class="btn btn--action" id="btnRestart">Chơi lại</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- Chế độ gỡ lỗi: chỉ hiện khi mở index.html?debug=1 -->
+<aside class="debug" id="debugPanel" hidden>
+  <div class="debug__head">GỠ LỖI · <span id="debugActive">ô đang có chuột: —</span></div>
+  <ol class="debug__log" id="debugLog"></ol>
+</aside>
+
+<script src="game.js"></script>
+</body>
+</html>
