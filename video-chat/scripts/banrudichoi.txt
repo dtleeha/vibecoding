@@ -11,8 +11,8 @@ a: tin tao đi, tao không lừa mày đâu
 b: mày tới đâu rồi, tao ngồi quán hai chục phút rồi
 a: đang kẹt xe nè, xe cộ kinh khủng luôn
 b: gửi định vị đi
-a: gửi rồi đó, nhà của bạn thân
-b: sao mày đứng yên ở nhà vậy
+a: gửi rồi đó
+b: sao lại là nhà mày vậy
 a: thì kẹt xe trong nhà
 -- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Kẹt xe trong nhà | 0.5 | 1.6 | 1
 -- chat | VOUCHER HẾT HẠN | 21:05 | Bạn thân | dark | Cái kết cho người đi trước | M1F1

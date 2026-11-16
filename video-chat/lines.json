@@ -1,167 +1,92 @@
 [
  {
-  "key": "noidoisep_0_vo",
+  "key": "banrudichoi_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Những cách nói dối sếp , để đi làm muộn"
+  "text": "Bạn rủ đi chơi , và cái kết"
  },
  {
-  "key": "noidoisep_1_0",
-  "voice": "Hải Đăng",
-  "text": "em đâu rồi, chín giờ họp rồi"
- },
- {
-  "key": "noidoisep_1_1",
-  "voice": "Trúc Ly",
-  "text": "sếp ơi em đang kẹt xe ở cầu"
- },
- {
-  "key": "noidoisep_1_2",
-  "voice": "Hải Đăng",
-  "text": "sếp cũng đang đi qua cầu nè"
- },
- {
-  "key": "noidoisep_1_3",
-  "voice": "Hải Đăng",
-  "text": "sao sếp không thấy xe em"
- },
- {
-  "key": "noidoisep_1_4",
-  "voice": "Trúc Ly",
-  "text": "em ở làn bên kia ạ"
- },
- {
-  "key": "noidoisep_1_5",
-  "voice": "Hải Đăng",
-  "text": "làn bên kia là sông"
- },
- {
-  "key": "noidoisep_1_6",
-  "voice": "Trúc Ly",
-  "text": "dạ em đi ca nô"
- },
- {
-  "key": "noidoisep_3_0",
-  "voice": "Ngọc Huyền",
-  "text": "em xin nghỉ buổi sáng à"
- },
- {
-  "key": "noidoisep_3_1",
+  "key": "banrudichoi_1_0",
   "voice": "Phạm Tuyên",
-  "text": "dạ em đau bụng, em đang ở bệnh viện"
+  "text": "mày ơi, tối nay đi chơi không, tao bao hết"
  },
  {
-  "key": "noidoisep_3_2",
+  "key": "banrudichoi_1_1",
   "voice": "Ngọc Huyền",
-  "text": "bệnh viện nào để sếp ghé thăm"
+  "text": "thiệt hả, mày bị sao vậy"
  },
  {
-  "key": "noidoisep_3_3",
+  "key": "banrudichoi_1_2",
   "voice": "Phạm Tuyên",
-  "text": "dạ bệnh viện Trà Sữa"
+  "text": "thiệt chứ, tao có cái voucher năm chục"
  },
  {
-  "key": "noidoisep_3_4",
+  "key": "banrudichoi_1_3",
   "voice": "Ngọc Huyền",
-  "text": "sếp thấy em vừa đăng story ly trà sữa"
+  "text": "voucher năm chục mà bao hết hả"
  },
  {
-  "key": "noidoisep_3_5",
+  "key": "banrudichoi_1_4",
   "voice": "Phạm Tuyên",
-  "text": "đó là thuốc ạ"
+  "text": "tin tao đi, tao không lừa mày đâu"
  },
  {
-  "key": "noidoisep_3_6",
+  "key": "banrudichoi_3_0",
   "voice": "Ngọc Huyền",
-  "text": "thuốc có thêm trân châu à"
+  "text": "mày tới đâu rồi, tao ngồi quán hai chục phút rồi"
  },
  {
-  "key": "noidoisep_5_0",
+  "key": "banrudichoi_3_1",
   "voice": "Phạm Tuyên",
-  "text": "em vào ca chưa"
+  "text": "đang kẹt xe nè, xe cộ kinh khủng luôn"
  },
  {
-  "key": "noidoisep_5_1",
-  "voice": "Hải Đăng",
-  "text": "dạ chưa ạ, wifi nhà em hỏng"
+  "key": "banrudichoi_3_2",
+  "voice": "Ngọc Huyền",
+  "text": "gửi định vị đi"
  },
  {
-  "key": "noidoisep_5_2",
+  "key": "banrudichoi_3_3",
   "voice": "Phạm Tuyên",
-  "text": "em làm tại văn phòng mà"
+  "text": "gửi rồi đó"
  },
  {
-  "key": "noidoisep_5_3",
-  "voice": "Hải Đăng",
-  "text": "dạ wifi ở văn phòng hỏng ạ"
+  "key": "banrudichoi_3_4",
+  "voice": "Ngọc Huyền",
+  "text": "sao lại là nhà mày vậy"
  },
  {
-  "key": "noidoisep_5_4",
+  "key": "banrudichoi_3_5",
   "voice": "Phạm Tuyên",
-  "text": "sếp đang ngồi văn phòng, mạng rất tốt"
+  "text": "thì kẹt xe trong nhà"
  },
  {
-  "key": "noidoisep_5_5",
-  "voice": "Hải Đăng",
-  "text": "dạ wifi ở trong tim em hỏng"
- },
- {
-  "key": "noidoisep_7_0",
+  "key": "banrudichoi_5_0",
   "voice": "Ngọc Huyền",
-  "text": "sếp ơi em xin đi muộn nửa tiếng"
+  "text": "tao gọi hai ly với một dĩa bánh rồi nha"
  },
  {
-  "key": "noidoisep_7_1",
-  "voice": "Hải Đăng",
-  "text": "lý do"
- },
- {
-  "key": "noidoisep_7_2",
+  "key": "banrudichoi_5_1",
   "voice": "Ngọc Huyền",
-  "text": "xe em bị hỏng ạ"
+  "text": "voucher hết hạn hồi tám giờ, mày chuyển tao một trăm tám chục"
  },
  {
-  "key": "noidoisep_7_3",
-  "voice": "Hải Đăng",
-  "text": "ok"
+  "key": "banrudichoi_5_2",
+  "voice": "Phạm Tuyên",
+  "text": "ủa sao tao chuyển, tao đâu có ở đó"
  },
  {
-  "key": "noidoisep_7_4",
+  "key": "banrudichoi_5_3",
   "voice": "Ngọc Huyền",
-  "text": "ê mày, tao ngủ nướng, tao bảo sếp xe hỏng, nhớ hùa theo nha"
+  "text": "mày nói bao hết mà"
  },
  {
-  "key": "noidoisep_7_5",
-  "voice": "Hải Đăng",
-  "text": "sếp đây"
+  "key": "banrudichoi_5_4",
+  "voice": "Phạm Tuyên",
+  "text": "tao chuyển bằng tình bạn được không"
  },
  {
-  "key": "noidoisep_7_6",
+  "key": "banrudichoi_5_5",
   "voice": "Ngọc Huyền",
-  "text": "hả"
- },
- {
-  "key": "noidoisep_7_7",
-  "voice": "Hải Đăng",
-  "text": "xe em hỏng thì sếp đang đứng dưới nhà em, sếp chở đi"
- },
- {
-  "key": "noidoisep_7_8",
-  "voice": "Ngọc Huyền",
-  "text": "hả"
- },
- {
-  "key": "noidoisep_7_9",
-  "voice": "Hải Đăng",
-  "text": "xuống đi"
- },
- {
-  "key": "noidoisep_7_10",
-  "voice": "Ngọc Huyền",
-  "text": "dạ xe em vừa tự sửa được rồi ạ"
- },
- {
-  "key": "noidoisep_7_11",
-  "voice": "Hải Đăng",
-  "text": "kỳ diệu thật, mai xe tự sửa thì em tự dậy luôn nhé"
+  "text": "được, nhưng tình bạn của mày hết hạn rồi"
  }
 ]
