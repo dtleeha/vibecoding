@@ -1,157 +1,102 @@
 [
  {
-  "key": "botmemua_0_vo",
+  "key": "goihoicham_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Những món kì lạ , bố mẹ tôi mua trên mạng"
+  "text": "Cái gối hình dấu hỏi , ai thấy cũng hỏi"
  },
  {
-  "key": "botmemua_1_0",
+  "key": "goihoicham_1_0",
   "voice": "Ngọc Huyền",
-  "text": "con ơi mai nhà mình có đồ mới"
+  "text": "ê tao mới mua cái này"
  },
  {
-  "key": "botmemua_1_1",
+  "key": "goihoicham_1_2",
   "voice": "Phạm Tuyên",
-  "text": "mẹ lại mua gì đấy"
+  "text": "gì đây, toàn dấu hỏi"
  },
  {
-  "key": "botmemua_1_2",
+  "key": "goihoicham_1_3",
   "voice": "Ngọc Huyền",
-  "text": "cái ghế massage, giảm bảy mươi phần trăm, hôm nay thôi"
+  "text": "gối tựa cổ đó, hình dấu hỏi"
  },
  {
-  "key": "botmemua_1_4",
+  "key": "goihoicham_1_4",
   "voice": "Phạm Tuyên",
-  "text": "nhà mình có chỗ để đâu mẹ"
+  "text": "nhìn như bộ đồ chơi"
  },
  {
-  "key": "botmemua_1_5",
+  "key": "goihoicham_1_5",
   "voice": "Ngọc Huyền",
-  "text": "mẹ để tạm ở phòng khách"
+  "text": "mà êm lắm, tao ôm ngủ luôn"
  },
  {
-  "key": "botmemua_1_6",
+  "key": "goihoicham_1_6",
   "voice": "Phạm Tuyên",
-  "text": "phòng khách đang có ghế sofa mà"
+  "text": "gửi link cho tao đi"
  },
  {
-  "key": "botmemua_1_7",
+  "key": "goihoicham_3_0",
+  "voice": "Hải Đăng",
+  "text": "em ơi tối nay họp nhanh thôi"
+ },
+ {
+  "key": "goihoicham_3_1",
+  "voice": "Trúc Ly",
+  "text": "dạ bao nhiêu phút ạ"
+ },
+ {
+  "key": "goihoicham_3_2",
+  "voice": "Hải Đăng",
+  "text": "ba mươi phút"
+ },
+ {
+  "key": "goihoicham_3_3",
+  "voice": "Trúc Ly",
+  "text": "sếp nói nhanh thôi mà"
+ },
+ {
+  "key": "goihoicham_3_4",
+  "voice": "Hải Đăng",
+  "text": "thì ba mươi phút thôi"
+ },
+ {
+  "key": "goihoicham_3_5",
+  "voice": "Trúc Ly",
+  "text": "lần trước cũng nhanh thôi, hai tiếng"
+ },
+ {
+  "key": "goihoicham_5_0",
+  "voice": "Trúc Ly",
+  "text": "mày thích con nào"
+ },
+ {
+  "key": "goihoicham_5_2",
   "voice": "Ngọc Huyền",
-  "text": "thì kê sát lại"
+  "text": "hổ cam kia trông dữ ghê"
  },
  {
-  "key": "botmemua_3_0",
-  "voice": "Hải Đăng",
-  "text": "con gái, bố mới mua máy kéo giãn cột sống"
- },
- {
-  "key": "botmemua_3_1",
+  "key": "goihoicham_5_3",
   "voice": "Trúc Ly",
-  "text": "bố có đau lưng đâu"
+  "text": "còn con này"
  },
  {
-  "key": "botmemua_3_2",
-  "voice": "Hải Đăng",
-  "text": "cô livestream nói cái này phòng bệnh"
- },
- {
-  "key": "botmemua_3_3",
-  "voice": "Trúc Ly",
-  "text": "còn mấy lọ detox trên bàn là gì"
- },
- {
-  "key": "botmemua_3_4",
-  "voice": "Hải Đăng",
-  "text": "của cô ấy luôn"
- },
- {
-  "key": "botmemua_3_5",
-  "voice": "Trúc Ly",
-  "text": "bố ơi bác sĩ nói gì bố có nghe đâu"
- },
- {
-  "key": "botmemua_3_6",
-  "voice": "Hải Đăng",
-  "text": "bác sĩ không gọi bố bằng con"
- },
- {
-  "key": "botmemua_5_0",
-  "voice": "Trúc Ly",
-  "text": "mẹ ơi sao hôm nay shipper tới ba lần"
- },
- {
-  "key": "botmemua_5_1",
+  "key": "goihoicham_5_5",
   "voice": "Ngọc Huyền",
-  "text": "ba món khác nhau con à"
+  "text": "cua xanh nhìn hiền hơn"
  },
  {
-  "key": "botmemua_5_2",
+  "key": "goihoicham_5_6",
   "voice": "Trúc Ly",
-  "text": "mẹ mua gì thế"
+  "text": "mày quàng cua đi, có hai cái càng"
  },
  {
-  "key": "botmemua_5_3",
+  "key": "goihoicham_5_7",
   "voice": "Ngọc Huyền",
-  "text": "máy đo huyết áp đời mới, nồi hâm nóng, với một cái hộp mẹ chưa mở"
+  "text": "hai cái càng là điểm nhấn"
  },
  {
-  "key": "botmemua_5_4",
-  "voice": "Trúc Ly",
-  "text": "mẹ chưa mở mà đã mua tiếp à"
- },
- {
-  "key": "botmemua_5_5",
+  "key": "goihoicham_7_vo",
   "voice": "Ngọc Huyền",
-  "text": "chú shipper bảo mẹ là khách thân thiết"
- },
- {
-  "key": "botmemua_5_6",
-  "voice": "Trúc Ly",
-  "text": "thế con là gì"
- },
- {
-  "key": "botmemua_5_7",
-  "voice": "Ngọc Huyền",
-  "text": "con là người nhận hàng hộ"
- },
- {
-  "key": "botmemua_7_0",
-  "voice": "Phạm Tuyên",
-  "text": "con ơi gói hàng của bố tới chưa"
- },
- {
-  "key": "botmemua_7_1",
-  "voice": "Hải Đăng",
-  "text": "tới rồi bố, một thùng to"
- },
- {
-  "key": "botmemua_7_2",
-  "voice": "Phạm Tuyên",
-  "text": "mở ra xem có đồ sở thích không"
- },
- {
-  "key": "botmemua_7_3",
-  "voice": "Hải Đăng",
-  "text": "có cái bình nước to bằng nửa người con"
- },
- {
-  "key": "botmemua_7_5",
-  "voice": "Phạm Tuyên",
-  "text": "bố mua để uống đủ hai lít mỗi ngày"
- },
- {
-  "key": "botmemua_7_6",
-  "voice": "Hải Đăng",
-  "text": "còn bọc yên xe hình Hello Kitty nữa"
- },
- {
-  "key": "botmemua_7_8",
-  "voice": "Phạm Tuyên",
-  "text": "bố mua cho xe điện mới, đẹp mà"
- },
- {
-  "key": "botmemua_7_9",
-  "voice": "Hải Đăng",
-  "text": "xe trắng tinh mà bố bọc hồng chói luôn"
+  "text": "Gối tựa cổ hình dấu hỏi, có nhiều màu nhiều hình thú để chọn. Ai thích thì bấm giỏ hàng ở góc trái video nha."
  }
 ]
