@@ -1,137 +1,92 @@
 [
  {
-  "key": "goihoicham_0_vo",
+  "key": "banrudichoi_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Cái gối hình dấu hỏi , ai thấy cũng hỏi"
+  "text": "Bạn rủ đi chơi , và cái kết"
  },
  {
-  "key": "goihoicham_1_0",
-  "voice": "Ngọc Huyền",
-  "text": "ê tao mới mua cái này"
- },
- {
-  "key": "goihoicham_1_2",
+  "key": "banrudichoi_1_0",
   "voice": "Phạm Tuyên",
-  "text": "hả"
+  "text": "mày ơi, tối nay đi chơi không, tao bao hết"
  },
  {
-  "key": "goihoicham_1_3",
+  "key": "banrudichoi_1_1",
+  "voice": "Ngọc Huyền",
+  "text": "thiệt hả, mày bị sao vậy"
+ },
+ {
+  "key": "banrudichoi_1_2",
   "voice": "Phạm Tuyên",
-  "text": "tao nhìn ảnh mà thấy hoang mang"
+  "text": "thiệt chứ, tao có cái voucher năm chục"
  },
  {
-  "key": "goihoicham_1_4",
+  "key": "banrudichoi_1_3",
   "voice": "Ngọc Huyền",
-  "text": "hoang mang cái gì"
+  "text": "voucher năm chục mà bao hết hả"
  },
  {
-  "key": "goihoicham_1_5",
+  "key": "banrudichoi_1_4",
   "voice": "Phạm Tuyên",
-  "text": "sáu cái dấu hỏi, tao chưa biết hỏi gì"
+  "text": "tin tao đi, tao không lừa mày đâu"
  },
  {
-  "key": "goihoicham_1_6",
+  "key": "banrudichoi_3_0",
   "voice": "Ngọc Huyền",
-  "text": "gối tựa cổ đó bà"
+  "text": "mày tới đâu rồi, tao ngồi quán hai chục phút rồi"
  },
  {
-  "key": "goihoicham_1_7",
+  "key": "banrudichoi_3_1",
   "voice": "Phạm Tuyên",
-  "text": "gối gì mà nhìn như đang chất vấn tao"
+  "text": "đang kẹt xe nè, xe cộ kinh khủng luôn"
  },
  {
-  "key": "goihoicham_1_8",
+  "key": "banrudichoi_3_2",
   "voice": "Ngọc Huyền",
-  "text": "thì hỏi mua ở đâu"
+  "text": "gửi định vị đi"
  },
  {
-  "key": "goihoicham_1_9",
+  "key": "banrudichoi_3_3",
   "voice": "Phạm Tuyên",
-  "text": "ừ, mua ở đâu"
+  "text": "gửi rồi đó, nhà của bạn thân"
  },
  {
-  "key": "goihoicham_3_0",
-  "voice": "Hải Đăng",
-  "text": "em ơi, sao em nhảm nhí ở cuộc họp vậy"
- },
- {
-  "key": "goihoicham_3_1",
-  "voice": "Trúc Ly",
-  "text": "dạ sao vậy sếp"
- },
- {
-  "key": "goihoicham_3_2",
-  "voice": "Hải Đăng",
-  "text": "sếp thấy em đeo cái gối kia"
- },
- {
-  "key": "goihoicham_3_3",
-  "voice": "Trúc Ly",
-  "text": "đây là gối tựa cổ đi xe cho đỡ mỏi mà sếp"
- },
- {
-  "key": "goihoicham_3_5",
-  "voice": "Hải Đăng",
-  "text": "nhưng sao nó lại hình dấu hỏi"
- },
- {
-  "key": "goihoicham_3_6",
-  "voice": "Trúc Ly",
-  "text": "hả"
- },
- {
-  "key": "goihoicham_3_7",
-  "voice": "Hải Đăng",
-  "text": "hả"
- },
- {
-  "key": "goihoicham_3_8",
-  "voice": "Trúc Ly",
-  "text": "hả"
- },
- {
-  "key": "goihoicham_5_0",
-  "voice": "Trúc Ly",
-  "text": "tao đặt cho mày hai con rồi"
- },
- {
-  "key": "goihoicham_5_3",
+  "key": "banrudichoi_3_4",
   "voice": "Ngọc Huyền",
-  "text": "hổ nhìn như đang tính tiền tao"
+  "text": "sao mày đứng yên ở nhà vậy"
  },
  {
-  "key": "goihoicham_5_4",
+  "key": "banrudichoi_3_5",
+  "voice": "Phạm Tuyên",
+  "text": "thì kẹt xe trong nhà"
+ },
+ {
+  "key": "banrudichoi_5_0",
   "voice": "Ngọc Huyền",
-  "text": "cua nhìn như đang kẹp cổ tao"
+  "text": "tao gọi hai ly với một dĩa bánh rồi nha"
  },
  {
-  "key": "goihoicham_5_5",
-  "voice": "Trúc Ly",
-  "text": "thế là đủ bộ, hổ đòi nợ, cua giữ cổ"
- },
- {
-  "key": "goihoicham_5_6",
+  "key": "banrudichoi_5_1",
   "voice": "Ngọc Huyền",
-  "text": "tao đeo cả hai thì thành con tin à"
+  "text": "voucher hết hạn hồi tám giờ, mày chuyển tao một trăm tám chục"
  },
  {
-  "key": "goihoicham_5_7",
-  "voice": "Trúc Ly",
-  "text": "con tin sang chảnh"
+  "key": "banrudichoi_5_2",
+  "voice": "Phạm Tuyên",
+  "text": "ủa sao tao chuyển, tao đâu có ở đó"
  },
  {
-  "key": "goihoicham_5_8",
+  "key": "banrudichoi_5_3",
   "voice": "Ngọc Huyền",
-  "text": "hả"
+  "text": "mày nói bao hết mà"
  },
  {
-  "key": "goihoicham_5_9",
-  "voice": "Trúc Ly",
-  "text": "sếp hỏi thì cứ nói gối tựa cổ đi xe"
+  "key": "banrudichoi_5_4",
+  "voice": "Phạm Tuyên",
+  "text": "tao chuyển bằng tình bạn được không"
  },
  {
-  "key": "goihoicham_7_vo",
+  "key": "banrudichoi_5_5",
   "voice": "Ngọc Huyền",
-  "text": "Gối tựa cổ hình dấu hỏi, có hổ, có cua, đủ màu để chọn. Còn hỏi mua ở đâu thì giỏ hàng ở góc trái video nha."
+  "text": "được, nhưng tình bạn của mày hết hạn rồi"
  }
 ]

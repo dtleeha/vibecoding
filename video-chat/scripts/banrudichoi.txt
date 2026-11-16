@@ -1,0 +1,24 @@
+== banrudichoi | Bạn rủ đi chơi và cái kết
+-- cover | Bạn rủ đi chơi // và cái kết
+-- chat | BAO HẾT, THIỆT ĐÓ | 18:30 | Bạn thân | light | Bạn rủ đi chơi, còn nói bao hết | M1F1
+a: mày ơi, tối nay đi chơi không, tao bao hết
+b: thiệt hả, mày bị sao vậy
+a: thiệt chứ, tao có cái voucher năm chục
+b: voucher năm chục mà bao hết hả
+a: tin tao đi, tao không lừa mày đâu
+-- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Bao hết hả? | 0.5 | 1.6 | 1
+-- chat | ĐỊNH VỊ KHÔNG NÓI DỐI | 19:40 | Bạn thân | light | Ngồi quán hai chục phút, bạn vẫn chưa tới | M1F1
+b: mày tới đâu rồi, tao ngồi quán hai chục phút rồi
+a: đang kẹt xe nè, xe cộ kinh khủng luôn
+b: gửi định vị đi
+a: gửi rồi đó, nhà của bạn thân
+b: sao mày đứng yên ở nhà vậy
+a: thì kẹt xe trong nhà
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Kẹt xe trong nhà | 0.5 | 1.6 | 1
+-- chat | VOUCHER HẾT HẠN | 21:05 | Bạn thân | dark | Cái kết cho người đi trước | M1F1
+b: tao gọi hai ly với một dĩa bánh rồi nha
+b: voucher hết hạn hồi tám giờ, mày chuyển tao một trăm tám chục
+a: ủa sao tao chuyển, tao đâu có ở đó
+b: mày nói bao hết mà
+a: tao chuyển bằng tình bạn được không
+b: được, nhưng tình bạn của mày hết hạn rồi
