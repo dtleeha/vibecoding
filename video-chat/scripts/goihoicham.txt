@@ -1,14 +1,16 @@
 == goihoicham | Gối tựa cổ dấu hỏi
 -- cover | Cái gối hình dấu hỏi // ai thấy cũng hỏi
--- chat | BẠN MỚI MUA ĐỒ GÌ | 20:05 | Bạn thân | light | Gối gì mà lạ | F1M1
+-- chat | BẠN MỚI MUA ĐỒ GÌ | 20:05 | Bạn thân | light | Mua ở đâu | F1M1
 a: ê tao mới mua cái này
 a: IMG:grp
-b: gì đây, toàn dấu hỏi
-a: gối tựa cổ đó, hình dấu hỏi
-b: nhìn như bộ đồ chơi
-a: mà êm lắm, tao ôm ngủ luôn
-b: gửi link cho tao đi
--- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Gì đây vậy | 1 | 1.6 | 1
+b: tao nhìn ảnh mà thấy hoang mang
+a: hoang mang cái gì
+b: sáu cái dấu hỏi, tao chưa biết hỏi gì
+a: gối tựa cổ đó bà
+b: gối gì mà nhìn như đang chất vấn tao
+a: thì hỏi mua ở đâu
+b: ừ, mua ở đâu
+-- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Mua ở đâu | 1 | 1.6 | 1
 -- chat | HỌP NHANH THÔI | 17:58 | Sếp | dark | Nhanh là bao lâu | M2F2
 a: em ơi tối nay họp nhanh thôi
 b: dạ bao nhiêu phút ạ
@@ -17,15 +19,19 @@ b: sếp nói nhanh thôi mà
 a: thì ba mươi phút thôi
 b: lần trước cũng nhanh thôi, hai tiếng
 -- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Hai tiếng | 1 | 1.6 | 1
--- chat | CHỌN CON NÀO | 21:30 | Chị gái | light | Chọn hổ hay cua | F2F1
-a: mày thích con nào
+-- chat | CHỌN CON NÀO | 21:30 | Chị gái | light | Con nào cũng nhìn tao | F2F1
+a: mày chọn con nào
 a: IMG:tiger
-b: hổ cam kia trông dữ ghê
-a: còn con này
+b: sao con hổ nhìn như đang tính tiền tao
+a: im đi, con này thì sao
 a: IMG:crab
-b: cua xanh nhìn hiền hơn
-a: mày quàng cua đi, có hai cái càng
-b: hai cái càng là điểm nhấn
--- meme | Cat-laughing-Green-Screen-Meme.mp4 | Có càng nữa | 1 | 1.6 | 1
+b: cua hai càng, quàng vô là kẹp cổ luôn hả
+a: không, càng để làm cảnh
+b: cảnh gì mà nhìn như bị bắt cóc
+a: vậy mua hổ đi
+b: hổ cũng nhìn như đang đòi nợ
+a: thế mày muốn con nào
+b: con nào cũng được, miễn đừng nhìn tao
+-- meme | Cat-laughing-Green-Screen-Meme.mp4 | Đừng nhìn tao | 1 | 1.6 | 1
 -- product | Gối tựa cổ hình dấu hỏi | Giỏ hàng ở góc trái video 👈 | grp
-vo: Gối tựa cổ hình dấu hỏi, có nhiều màu nhiều hình thú để chọn. Ai thích thì bấm giỏ hàng ở góc trái video nha.
+vo: Gối tựa cổ hình dấu hỏi, có hổ, có cua, đủ màu để chọn. Còn hỏi mua ở đâu thì giỏ hàng ở góc trái video nha.

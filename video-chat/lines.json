@@ -12,27 +12,37 @@
  {
   "key": "goihoicham_1_2",
   "voice": "Phạm Tuyên",
-  "text": "gì đây, toàn dấu hỏi"
+  "text": "tao nhìn ảnh mà thấy hoang mang"
  },
  {
   "key": "goihoicham_1_3",
   "voice": "Ngọc Huyền",
-  "text": "gối tựa cổ đó, hình dấu hỏi"
+  "text": "hoang mang cái gì"
  },
  {
   "key": "goihoicham_1_4",
   "voice": "Phạm Tuyên",
-  "text": "nhìn như bộ đồ chơi"
+  "text": "sáu cái dấu hỏi, tao chưa biết hỏi gì"
  },
  {
   "key": "goihoicham_1_5",
   "voice": "Ngọc Huyền",
-  "text": "mà êm lắm, tao ôm ngủ luôn"
+  "text": "gối tựa cổ đó bà"
  },
  {
   "key": "goihoicham_1_6",
   "voice": "Phạm Tuyên",
-  "text": "gửi link cho tao đi"
+  "text": "gối gì mà nhìn như đang chất vấn tao"
+ },
+ {
+  "key": "goihoicham_1_7",
+  "voice": "Ngọc Huyền",
+  "text": "thì hỏi mua ở đâu"
+ },
+ {
+  "key": "goihoicham_1_8",
+  "voice": "Phạm Tuyên",
+  "text": "ừ, mua ở đâu"
  },
  {
   "key": "goihoicham_3_0",
@@ -67,36 +77,56 @@
  {
   "key": "goihoicham_5_0",
   "voice": "Trúc Ly",
-  "text": "mày thích con nào"
+  "text": "mày chọn con nào"
  },
  {
   "key": "goihoicham_5_2",
   "voice": "Ngọc Huyền",
-  "text": "hổ cam kia trông dữ ghê"
+  "text": "sao con hổ nhìn như đang tính tiền tao"
  },
  {
   "key": "goihoicham_5_3",
   "voice": "Trúc Ly",
-  "text": "còn con này"
+  "text": "im đi, con này thì sao"
  },
  {
   "key": "goihoicham_5_5",
   "voice": "Ngọc Huyền",
-  "text": "cua xanh nhìn hiền hơn"
+  "text": "cua hai càng, quàng vô là kẹp cổ luôn hả"
  },
  {
   "key": "goihoicham_5_6",
   "voice": "Trúc Ly",
-  "text": "mày quàng cua đi, có hai cái càng"
+  "text": "không, càng để làm cảnh"
  },
  {
   "key": "goihoicham_5_7",
   "voice": "Ngọc Huyền",
-  "text": "hai cái càng là điểm nhấn"
+  "text": "cảnh gì mà nhìn như bị bắt cóc"
+ },
+ {
+  "key": "goihoicham_5_8",
+  "voice": "Trúc Ly",
+  "text": "vậy mua hổ đi"
+ },
+ {
+  "key": "goihoicham_5_9",
+  "voice": "Ngọc Huyền",
+  "text": "hổ cũng nhìn như đang đòi nợ"
+ },
+ {
+  "key": "goihoicham_5_10",
+  "voice": "Trúc Ly",
+  "text": "thế mày muốn con nào"
+ },
+ {
+  "key": "goihoicham_5_11",
+  "voice": "Ngọc Huyền",
+  "text": "con nào cũng được, miễn đừng nhìn tao"
  },
  {
   "key": "goihoicham_7_vo",
   "voice": "Ngọc Huyền",
-  "text": "Gối tựa cổ hình dấu hỏi, có nhiều màu nhiều hình thú để chọn. Ai thích thì bấm giỏ hàng ở góc trái video nha."
+  "text": "Gối tựa cổ hình dấu hỏi, có hổ, có cua, đủ màu để chọn. Còn hỏi mua ở đâu thì giỏ hàng ở góc trái video nha."
  }
 ]
