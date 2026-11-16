@@ -1,0 +1,42 @@
+== noidoisep | Nói dối sếp xin đi muộn
+-- cover | Những cách nói dối sếp // để đi làm muộn
+-- chat | KẸT XE | 08:55 | Sếp | dark | Sếp cũng đang ở đó | M2F2
+a: em đâu rồi, chín giờ họp rồi
+b: sếp ơi em đang kẹt xe ở cầu
+a: sếp cũng đang đi qua cầu nè
+a: sao sếp không thấy xe em
+b: em ở làn bên kia ạ
+a: làn bên kia là sông
+b: dạ em đi ca nô
+-- meme | Cat-sipping-tea-green-screen.mp4 | Sếp biết hết | 1 | 1.6 | 1
+-- chat | ĐI KHÁM BỆNH | 09:10 | Sếp | light | Bệnh viện trà sữa | F1M1
+a: em xin nghỉ buổi sáng à
+b: dạ em đau bụng, em đang ở bệnh viện
+a: bệnh viện nào để sếp ghé thăm
+b: dạ... bệnh viện Trà Sữa
+a: sếp thấy em vừa đăng story ly trà sữa
+b: đó là thuốc ạ
+a: thuốc có thêm trân châu à
+-- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Thuốc có trân châu | 1 | 1.6 | 1
+-- chat | MẠNG HỎNG | 09:30 | Sếp | dark | Wifi hỏng ở đâu | M1M2
+a: em vào ca chưa
+b: dạ chưa ạ, wifi nhà em hỏng
+a: em làm tại văn phòng mà
+b: dạ wifi ở văn phòng hỏng ạ
+a: sếp đang ngồi văn phòng, mạng rất tốt
+b: dạ wifi ở trong tim em hỏng
+-- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Wifi trong tim | 1 | 1.6 | 1
+-- chat | NHẮN NHẦM | 07:40 | Sếp | light | Nhắn nhầm người | M2F1
+b: sếp ơi em xin đi muộn nửa tiếng
+a: lý do
+b: xe em bị hỏng ạ
+a: ok
+b: ê mày, tao ngủ nướng, tao bảo sếp xe hỏng, nhớ hùa theo nha
+a: sếp đây
+b: ?
+a: xe em hỏng thì sếp đang đứng dưới nhà em, sếp chở đi
+b: ??
+a: xuống đi
+b: dạ... xe em vừa tự sửa được rồi ạ
+a: kỳ diệu thật, mai xe tự sửa thì em tự dậy luôn nhé
+-- meme | Cat-laughing-Green-Screen-Meme.mp4 | Xe tự sửa | 1 | 1.6 | 1
