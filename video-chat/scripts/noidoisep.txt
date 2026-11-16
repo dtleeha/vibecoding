@@ -1,31 +1,32 @@
 == noidoisep | Nói dối sếp xin đi muộn
 -- cover | Những cách nói dối sếp // để đi làm muộn
--- chat | KẸT XE | 08:55 | Sếp | dark | Sếp cũng đang ở đó | M2F2
+-- chat | KẸT XE | 08:55 | Sếp | dark | Tìm chỗ kẹt xe | M2F2
 a: em đâu rồi, chín giờ họp rồi
 b: sếp ơi em đang kẹt xe ở cầu
-a: sếp cũng đang đi qua cầu nè
-a: sao sếp không thấy xe em
-b: em ở làn bên kia ạ
-a: làn bên kia là sông
-b: dạ em đi ca nô
--- meme | Cat-sipping-tea-green-screen.mp4 | Sếp biết hết | 1 | 1.6 | 1
--- chat | ĐI KHÁM BỆNH | 09:10 | Sếp | light | Bệnh viện trà sữa | F1M1
-a: em xin nghỉ buổi sáng à
-b: dạ em đau bụng, em đang ở bệnh viện
-a: bệnh viện nào để sếp ghé thăm
-b: dạ... bệnh viện Trà Sữa
-a: sếp thấy em vừa đăng story ly trà sữa
-b: đó là thuốc ạ
-a: thuốc có thêm trân châu à
--- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Thuốc có trân châu | 1 | 1.6 | 1
--- chat | MẠNG HỎNG | 09:30 | Sếp | dark | Wifi hỏng ở đâu | M1M2
-a: em vào ca chưa
-b: dạ chưa ạ, wifi nhà em hỏng
-a: em làm tại văn phòng mà
-b: dạ wifi ở văn phòng hỏng ạ
-a: sếp đang ngồi văn phòng, mạng rất tốt
-b: dạ wifi ở trong tim em hỏng
--- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Wifi trong tim | 1 | 1.6 | 1
+a: sếp cũng vừa qua cầu, có thấy kẹt đâu
+b: dạ em kẹt ở đoạn trước cầu
+a: đoạn đó sếp đi qua, vắng tanh
+b: vậy chắc xe em tự kẹt ạ
+a: mười phút nữa sếp gọi video xem em kẹt ở đâu
+b: dạ để em đi tìm chỗ nào kẹt cho sếp xem
+-- meme | Cat-sipping-tea-green-screen.mp4 | Đi tìm chỗ kẹt | 1 | 1.6 | 1
+-- chat | ĐI KHÁM BỆNH | 21:10 | Sếp | light | Thuốc bằng trà sữa | F1M1
+a: sáng nay em nghỉ vì đau bụng đúng không
+b: dạ em đang ở bệnh viện Hồng Đức ạ
+a: ừ em nghỉ ngơi đi
+a: mà tối nay sếp thấy em đăng story uống trà sữa
+b: dạ hết nước nên em uống thuốc bằng trà sữa
+a: thuốc gì mà uống kèm trân châu
+b: dạ thuốc bổ ạ
+-- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Thuốc bằng trà sữa | 1 | 1.6 | 1
+-- chat | BÁO THỨC HỎNG | 09:30 | Sếp | dark | Tự im lặng | M1M2
+a: em đâu rồi, sếp gọi năm cuộc rồi
+b: dạ điện thoại em để chế độ im lặng ạ
+a: vậy sao em trả lời tin này được
+b: dạ nó tự bật lại khi sếp nhắn
+a: vậy sếp nhắn luôn, hôm nay em tăng ca
+b: dạ điện thoại em vừa im lặng lại rồi
+-- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Tự im lặng | 1 | 1.6 | 1
 -- chat | NHẮN NHẦM | 07:40 | Sếp | light | Nhắn nhầm người | M2F1
 b: sếp ơi em xin đi muộn nửa tiếng
 a: lý do
