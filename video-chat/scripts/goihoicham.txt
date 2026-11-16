@@ -16,27 +16,24 @@ b: ừ, mua ở đâu
 a: em ơi, sao em nhảm nhí ở cuộc họp vậy
 b: dạ sao vậy sếp
 a: sếp thấy em đeo cái gối kia
-b: đây là gối tựa chống gù cổ mà sếp
+b: đây là gối tựa cổ đi xe cho đỡ mỏi mà sếp
 b: IMG:grp2
 a: nhưng sao nó lại hình dấu hỏi
 b: ?
 a: ?
 b: ?
 -- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Dấu hỏi chấm | 1 | 1.6 | 1
--- chat | CHỌN CON NÀO | 21:30 | Chị gái | light | Con nào cũng nhìn tao | F2F1
-a: mày chọn con nào
+-- chat | ĐẶT HAI CON | 21:30 | Bạn thân | light | Con tin sang chảnh | F2F1
+a: tao đặt cho mày hai con rồi
 a: IMG:tiger
-b: sao con hổ nhìn như đang tính tiền tao
-a: im đi, con này thì sao
 a: IMG:crab
-b: ??
-b: cua hai càng, quàng vô là kẹp cổ luôn hả
-a: không, càng để làm cảnh
-b: cảnh gì mà nhìn như bị bắt cóc
-a: vậy mua hổ đi
-b: hổ cũng nhìn như đang đòi nợ
-a: thế mày muốn con nào
-b: con nào cũng được, miễn đừng nhìn tao
--- meme | Cat-laughing-Green-Screen-Meme.mp4 | Đừng nhìn tao | 1 | 1.6 | 1
+b: hổ nhìn như đang tính tiền tao
+b: cua nhìn như đang kẹp cổ tao
+a: thế là đủ bộ, hổ đòi nợ, cua giữ cổ
+b: tao đeo cả hai thì thành con tin à
+a: con tin sang chảnh
+b: ?
+a: sếp hỏi thì cứ nói gối tựa cổ đi xe
+-- meme | Cat-laughing-Green-Screen-Meme.mp4 | Con tin sang chảnh | 1 | 1.6 | 1
 -- product | Gối tựa cổ hình dấu hỏi | Giỏ hàng ở góc trái video 👈 | grp
 vo: Gối tựa cổ hình dấu hỏi, có hổ, có cua, đủ màu để chọn. Còn hỏi mua ở đâu thì giỏ hàng ở góc trái video nha.
