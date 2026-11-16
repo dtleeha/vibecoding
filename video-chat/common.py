@@ -2,7 +2,8 @@ import json,re
 NORM=[("???","hả hả hả"),("...",""),("45cm","bốn lăm xăng ti mét"),("cm"," xăng ti mét")]
 def norm(t):
     for a,b in NORM: t=t.replace(a,b)
-    return t.strip()
+    t=t.strip()
+    return 'hả' if re.fullmatch(r'\?+',t) else t
 def load_script(path):
     if path.endswith(".json"): return json.load(open(path,encoding="utf-8"))
     vids=[];cur=None;sc=None

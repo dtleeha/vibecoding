@@ -3,6 +3,7 @@
 -- chat | BẠN MỚI MUA ĐỒ GÌ | 20:05 | Bạn thân | light | Mua ở đâu | F1M1
 a: ê tao mới mua cái này
 a: IMG:grp
+b: ?
 b: tao nhìn ảnh mà thấy hoang mang
 a: hoang mang cái gì
 b: sáu cái dấu hỏi, tao chưa biết hỏi gì
@@ -11,20 +12,24 @@ b: gối gì mà nhìn như đang chất vấn tao
 a: thì hỏi mua ở đâu
 b: ừ, mua ở đâu
 -- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Mua ở đâu | 1 | 1.6 | 1
--- chat | HỌP NHANH THÔI | 17:58 | Sếp | dark | Nhanh là bao lâu | M2F2
-a: em ơi tối nay họp nhanh thôi
-b: dạ bao nhiêu phút ạ
-a: ba mươi phút
-b: sếp nói nhanh thôi mà
-a: thì ba mươi phút thôi
-b: lần trước cũng nhanh thôi, hai tiếng
--- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Hai tiếng | 1 | 1.6 | 1
+-- chat | ĐEO GỐI ĐI HỌP | 17:58 | Sếp | dark | Sếp hỏi thật đó | M2F2
+a: em ơi, sao em nhảm nhí ở cuộc họp vậy
+b: dạ sao vậy sếp
+a: sếp thấy em đeo cái gối kia
+b: đây là gối tựa chống gù cổ mà sếp
+b: IMG:grp2
+a: nhưng sao nó lại hình dấu hỏi
+b: ?
+a: ?
+b: ?
+-- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Dấu hỏi chấm | 1 | 1.6 | 1
 -- chat | CHỌN CON NÀO | 21:30 | Chị gái | light | Con nào cũng nhìn tao | F2F1
 a: mày chọn con nào
 a: IMG:tiger
 b: sao con hổ nhìn như đang tính tiền tao
 a: im đi, con này thì sao
 a: IMG:crab
+b: ??
 b: cua hai càng, quàng vô là kẹp cổ luôn hả
 a: không, càng để làm cảnh
 b: cảnh gì mà nhìn như bị bắt cóc

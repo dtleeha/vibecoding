@@ -70,7 +70,8 @@ def tts(vo,out):
 NORM=[("???","hả hả hả"),("...",""),("45cm","bốn lăm xăng ti mét"),("cm"," xăng ti mét")]
 def norm(t):
     for a,b in NORM: t=t.replace(a,b)
-    return t.strip()
+    t=t.strip()
+    return 'hả' if re.fullmatch(r'\?+',t) else t
 VF={"in":"asetrate=22050*1.2,aresample=44100,atempo=0.86,equalizer=f=3500:t=q:w=1:g=3,equalizer=f=180:t=q:w=1:g=-3",
     "out":"asetrate=22050*0.93,aresample=44100,atempo=1.08,equalizer=f=200:t=q:w=1:g=2"}
 def say(text,spk,out,key=None):

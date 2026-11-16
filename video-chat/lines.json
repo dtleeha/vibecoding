@@ -12,67 +12,82 @@
  {
   "key": "goihoicham_1_2",
   "voice": "Phạm Tuyên",
-  "text": "tao nhìn ảnh mà thấy hoang mang"
+  "text": "hả"
  },
  {
   "key": "goihoicham_1_3",
+  "voice": "Phạm Tuyên",
+  "text": "tao nhìn ảnh mà thấy hoang mang"
+ },
+ {
+  "key": "goihoicham_1_4",
   "voice": "Ngọc Huyền",
   "text": "hoang mang cái gì"
  },
  {
-  "key": "goihoicham_1_4",
+  "key": "goihoicham_1_5",
   "voice": "Phạm Tuyên",
   "text": "sáu cái dấu hỏi, tao chưa biết hỏi gì"
  },
  {
-  "key": "goihoicham_1_5",
+  "key": "goihoicham_1_6",
   "voice": "Ngọc Huyền",
   "text": "gối tựa cổ đó bà"
  },
  {
-  "key": "goihoicham_1_6",
+  "key": "goihoicham_1_7",
   "voice": "Phạm Tuyên",
   "text": "gối gì mà nhìn như đang chất vấn tao"
  },
  {
-  "key": "goihoicham_1_7",
+  "key": "goihoicham_1_8",
   "voice": "Ngọc Huyền",
   "text": "thì hỏi mua ở đâu"
  },
  {
-  "key": "goihoicham_1_8",
+  "key": "goihoicham_1_9",
   "voice": "Phạm Tuyên",
   "text": "ừ, mua ở đâu"
  },
  {
   "key": "goihoicham_3_0",
   "voice": "Hải Đăng",
-  "text": "em ơi tối nay họp nhanh thôi"
+  "text": "em ơi, sao em nhảm nhí ở cuộc họp vậy"
  },
  {
   "key": "goihoicham_3_1",
   "voice": "Trúc Ly",
-  "text": "dạ bao nhiêu phút ạ"
+  "text": "dạ sao vậy sếp"
  },
  {
   "key": "goihoicham_3_2",
   "voice": "Hải Đăng",
-  "text": "ba mươi phút"
+  "text": "sếp thấy em đeo cái gối kia"
  },
  {
   "key": "goihoicham_3_3",
   "voice": "Trúc Ly",
-  "text": "sếp nói nhanh thôi mà"
- },
- {
-  "key": "goihoicham_3_4",
-  "voice": "Hải Đăng",
-  "text": "thì ba mươi phút thôi"
+  "text": "đây là gối tựa chống gù cổ mà sếp"
  },
  {
   "key": "goihoicham_3_5",
+  "voice": "Hải Đăng",
+  "text": "nhưng sao nó lại hình dấu hỏi"
+ },
+ {
+  "key": "goihoicham_3_6",
   "voice": "Trúc Ly",
-  "text": "lần trước cũng nhanh thôi, hai tiếng"
+  "text": "hả"
+ },
+ {
+  "key": "goihoicham_3_7",
+  "voice": "Hải Đăng",
+  "text": "hả"
+ },
+ {
+  "key": "goihoicham_3_8",
+  "voice": "Trúc Ly",
+  "text": "hả"
  },
  {
   "key": "goihoicham_5_0",
@@ -92,35 +107,40 @@
  {
   "key": "goihoicham_5_5",
   "voice": "Ngọc Huyền",
-  "text": "cua hai càng, quàng vô là kẹp cổ luôn hả"
+  "text": "hả"
  },
  {
   "key": "goihoicham_5_6",
+  "voice": "Ngọc Huyền",
+  "text": "cua hai càng, quàng vô là kẹp cổ luôn hả"
+ },
+ {
+  "key": "goihoicham_5_7",
   "voice": "Trúc Ly",
   "text": "không, càng để làm cảnh"
  },
  {
-  "key": "goihoicham_5_7",
+  "key": "goihoicham_5_8",
   "voice": "Ngọc Huyền",
   "text": "cảnh gì mà nhìn như bị bắt cóc"
  },
  {
-  "key": "goihoicham_5_8",
+  "key": "goihoicham_5_9",
   "voice": "Trúc Ly",
   "text": "vậy mua hổ đi"
  },
  {
-  "key": "goihoicham_5_9",
+  "key": "goihoicham_5_10",
   "voice": "Ngọc Huyền",
   "text": "hổ cũng nhìn như đang đòi nợ"
  },
  {
-  "key": "goihoicham_5_10",
+  "key": "goihoicham_5_11",
   "voice": "Trúc Ly",
   "text": "thế mày muốn con nào"
  },
  {
-  "key": "goihoicham_5_11",
+  "key": "goihoicham_5_12",
   "voice": "Ngọc Huyền",
   "text": "con nào cũng được, miễn đừng nhìn tao"
  },
