@@ -10,13 +10,14 @@ a: tin tao đi, tao không lừa mày đâu
 -- chat | ĐỊNH VỊ KHÔNG NÓI DỐI | 19:40 | Bạn thân | light | Ngồi quán hai chục phút, bạn vẫn chưa tới | M1F1
 b: mày tới đâu rồi, tao ngồi quán hai chục phút rồi
 a: đang kẹt xe nè, xe cộ kinh khủng luôn
-b: gửi định vị đi
-a: gửi rồi đó
-b: sao lại là nhà mày vậy
-a: thì kẹt xe trong nhà
--- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Kẹt xe trong nhà | 0.5 | 1.6 | 1
+b: gửi định vị cho tao đi
+a: gửi rồi đó nha
+b: sao lại ở nhà mày vậy
+a: thì kẹt xe ngay cửa nhà
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Kẹt xe ngay cửa nhà | 0.5 | 1.6 | 1
 -- chat | VOUCHER HẾT HẠN | 21:05 | Bạn thân | dark | Cái kết cho người đi trước | M1F1
 b: tao gọi hai ly với một dĩa bánh rồi nha
+b: mày sắp ra chưa, quán chuẩn bị đóng cửa rồi
 b: voucher hết hạn hồi tám giờ, mày chuyển tao một trăm tám chục
 a: ủa sao tao chuyển, tao đâu có ở đó
 b: mày nói bao hết mà

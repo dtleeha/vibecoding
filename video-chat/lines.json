@@ -42,22 +42,22 @@
  {
   "key": "banrudichoi_3_2",
   "voice": "Ngọc Huyền",
-  "text": "gửi định vị đi"
+  "text": "gửi định vị cho tao đi"
  },
  {
   "key": "banrudichoi_3_3",
   "voice": "Phạm Tuyên",
-  "text": "gửi rồi đó"
+  "text": "gửi rồi đó nha"
  },
  {
   "key": "banrudichoi_3_4",
   "voice": "Ngọc Huyền",
-  "text": "sao lại là nhà mày vậy"
+  "text": "sao lại ở nhà mày vậy"
  },
  {
   "key": "banrudichoi_3_5",
   "voice": "Phạm Tuyên",
-  "text": "thì kẹt xe trong nhà"
+  "text": "thì kẹt xe ngay cửa nhà"
  },
  {
   "key": "banrudichoi_5_0",
@@ -67,25 +67,30 @@
  {
   "key": "banrudichoi_5_1",
   "voice": "Ngọc Huyền",
-  "text": "voucher hết hạn hồi tám giờ, mày chuyển tao một trăm tám chục"
+  "text": "mày sắp ra chưa, quán chuẩn bị đóng cửa rồi"
  },
  {
   "key": "banrudichoi_5_2",
+  "voice": "Ngọc Huyền",
+  "text": "voucher hết hạn hồi tám giờ, mày chuyển tao một trăm tám chục"
+ },
+ {
+  "key": "banrudichoi_5_3",
   "voice": "Phạm Tuyên",
   "text": "ủa sao tao chuyển, tao đâu có ở đó"
  },
  {
-  "key": "banrudichoi_5_3",
+  "key": "banrudichoi_5_4",
   "voice": "Ngọc Huyền",
   "text": "mày nói bao hết mà"
  },
  {
-  "key": "banrudichoi_5_4",
+  "key": "banrudichoi_5_5",
   "voice": "Phạm Tuyên",
   "text": "tao chuyển bằng tình bạn được không"
  },
  {
-  "key": "banrudichoi_5_5",
+  "key": "banrudichoi_5_6",
   "voice": "Ngọc Huyền",
   "text": "được, nhưng tình bạn của mày hết hạn rồi"
  }
