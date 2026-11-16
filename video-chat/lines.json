@@ -50,27 +50,27 @@
   "text": "bố có đau lưng đâu"
  },
  {
-  "key": "botmemua_3_3",
+  "key": "botmemua_3_2",
   "voice": "Hải Đăng",
   "text": "cô livestream nói cái này phòng bệnh"
  },
  {
-  "key": "botmemua_3_4",
+  "key": "botmemua_3_3",
   "voice": "Trúc Ly",
   "text": "còn mấy lọ detox trên bàn là gì"
  },
  {
-  "key": "botmemua_3_6",
+  "key": "botmemua_3_4",
   "voice": "Hải Đăng",
   "text": "của cô ấy luôn"
  },
  {
-  "key": "botmemua_3_7",
+  "key": "botmemua_3_5",
   "voice": "Trúc Ly",
   "text": "bố ơi bác sĩ nói gì bố có nghe đâu"
  },
  {
-  "key": "botmemua_3_8",
+  "key": "botmemua_3_6",
   "voice": "Hải Đăng",
   "text": "bác sĩ không gọi bố bằng con"
  },
@@ -127,31 +127,31 @@
  {
   "key": "botmemua_7_2",
   "voice": "Phạm Tuyên",
-  "text": "mở ra xem có phụ kiện sở thích không"
+  "text": "mở ra xem có đồ sở thích không"
  },
  {
   "key": "botmemua_7_3",
   "voice": "Hải Đăng",
-  "text": "có sáu cái cốc hình con hamster"
+  "text": "có cái bình nước to bằng nửa người con"
  },
  {
   "key": "botmemua_7_5",
   "voice": "Phạm Tuyên",
-  "text": "đẹp mà"
+  "text": "bố mua để uống đủ hai lít mỗi ngày"
  },
  {
   "key": "botmemua_7_6",
   "voice": "Hải Đăng",
-  "text": "còn tấm che nắng ô tô nữa"
- },
- {
-  "key": "botmemua_7_7",
-  "voice": "Phạm Tuyên",
-  "text": "bố mua cái đó cho cả xe máy luôn"
+  "text": "còn bọc yên xe hình Hello Kitty nữa"
  },
  {
   "key": "botmemua_7_8",
+  "voice": "Phạm Tuyên",
+  "text": "bố mua cho xe điện mới, đẹp mà"
+ },
+ {
+  "key": "botmemua_7_9",
   "voice": "Hải Đăng",
-  "text": "xe máy làm gì có kính"
+  "text": "xe trắng tinh mà bố bọc hồng chói luôn"
  }
 ]

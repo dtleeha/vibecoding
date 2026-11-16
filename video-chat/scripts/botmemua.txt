@@ -13,10 +13,8 @@ a: thì kê sát lại
 -- chat | MÁY KÉO GIÃN CỘT SỐNG | 20:45 | Bố | dark | Tin cô livestream hơn tin con | M2F2
 a: con gái, bố mới mua máy kéo giãn cột sống
 b: bố có đau lưng đâu
-a: IMG:spine
 a: cô livestream nói cái này phòng bệnh
 b: còn mấy lọ detox trên bàn là gì
-b: IMG:detox
 a: của cô ấy luôn
 b: bố ơi bác sĩ nói gì bố có nghe đâu
 a: bác sĩ không gọi bố bằng con
@@ -34,11 +32,12 @@ b: con là người nhận hàng hộ
 -- chat | BỐ TEMU | 19:20 | Bố | dark | Bố có sở thích mới | M1M2
 a: con ơi gói hàng của bố tới chưa
 b: tới rồi bố, một thùng to
-a: mở ra xem có phụ kiện sở thích không
-b: có sáu cái cốc hình con hamster
-b: IMG:hamster
-a: đẹp mà
-b: còn tấm che nắng ô tô nữa
-a: bố mua cái đó cho cả xe máy luôn
-b: xe máy làm gì có kính
+a: mở ra xem có đồ sở thích không
+b: có cái bình nước to bằng nửa người con
+b: IMG:bottle
+a: bố mua để uống đủ hai lít mỗi ngày
+b: còn bọc yên xe hình Hello Kitty nữa
+b: IMG:seat
+a: bố mua cho xe điện mới, đẹp mà
+b: xe trắng tinh mà bố bọc hồng chói luôn
 -- meme | Cat-laughing-Green-Screen-Meme.mp4 | Bố vẫn vui | 1 | 1.6 | 1
