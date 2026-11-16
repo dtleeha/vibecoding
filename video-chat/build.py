@@ -3,6 +3,8 @@ import json,sys,os,re,wave,subprocess,glob,html,base64
 from playwright.sync_api import sync_playwright
 W,H=1080,1920
 SPEED=float(os.environ.get("VOICE_SPEED","1.3"))
+TRIM=os.environ.get("TRIM","0")=="1"; GAP=float(os.environ.get("CHAT_GAP","0.35"))
+TRIMF="silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse," if TRIM else ""
 FONT="'Inter','DejaVu Sans',sans-serif"
 def sh(c): subprocess.run(c,shell=True,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
 def dur(f):
@@ -76,7 +78,7 @@ VF={"in":"asetrate=22050*1.2,aresample=44100,atempo=0.86,equalizer=f=3500:t=q:w=
     "out":"asetrate=22050*0.93,aresample=44100,atempo=1.08,equalizer=f=200:t=q:w=1:g=2"}
 def say(text,spk,out,key=None):
     if key and os.path.exists(f"voice_ext/{key}.wav"):
-        sh(f"ffmpeg -y -loglevel error -i voice_ext/{key}.wav -ac 1 -ar 44100 -af atempo={SPEED} {out}"); return
+        sh(f"ffmpeg -y -loglevel error -i voice_ext/{key}.wav -ac 1 -ar 44100 -af {TRIMF}atempo={SPEED} {out}"); return
     w=wave.open("audio/_raw.wav","wb")
     piper_voice().synthesize_wav(norm(text),w,syn_config=CFG) if CFG else piper_voice().synthesize_wav(norm(text),w)
     w.close()
@@ -91,7 +93,7 @@ def mksfx():
 def chat_scene(i,s,vid):
     segs=[];wavs=[];lines=[];t=0.0
     sh("ffmpeg -y -loglevel error -f lavfi -i anullsrc=r=44100:cl=mono -t 0.3 audio/_s03.wav")
-    sh("ffmpeg -y -loglevel error -f lavfi -i anullsrc=r=44100:cl=mono -t 0.35 audio/_s035.wav")
+    sh(f"ffmpeg -y -loglevel error -f lavfi -i anullsrc=r=44100:cl=mono -t {GAP} audio/_s035.wav")
     sh("ffmpeg -y -loglevel error -f lavfi -i anullsrc=r=44100:cl=mono -t 0.6 audio/_s06.wav")
     sh("ffmpeg -y -loglevel error -f lavfi -i anullsrc=r=44100:cl=mono -t 0.12 audio/_s012.wav")
     mksfx(); sfxs=[]
@@ -108,7 +110,7 @@ def chat_scene(i,s,vid):
         else:
             a=f"audio/{vid}_{i}_{j}.wav"; say(txt,k,a,key=f"{vid}_{i}_{j}")
             gap="audio/_s06.wav" if j==n-1 else "audio/_s035.wav"
-            wavs+= ["audio/_s012.wav",a,gap]; d=dur(a)+0.12+(0.6 if j==n-1 else 0.35)
+            wavs+= ["audio/_s012.wav",a,gap]; d=dur(a)+0.12+(0.6 if j==n-1 else GAP)
             lines.append((t+0.12,t+0.12+dur(a),txt))
         if j==0: d+=0.3
         segs.append((png,d)); t+=d if j>0 else d-0.3
