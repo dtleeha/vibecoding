@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+npm-debug.log*
+*.log
+
+# Biến môi trường, bí mật
+.env
+.env.*
+
+# Không cần trong image
+docs
+README.md
+YEU-CAU.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Trình soạn thảo, hệ điều hành
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+desktop.ini
