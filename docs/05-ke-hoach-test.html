@@ -146,6 +146,109 @@
     </div>
   </section>
 
+  <section class="card" id="test-bo-sung">
+    <div class="card__header card__header--primary">Bổ sung · Test đăng ký người chơi và trang admin (TC31–TC65) <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>35 ca mới, chạy thêm sau 30 ca ở trên. Các ca TC01–TC30 vẫn phải đạt. Với người chưa đăng ký, TC02 sẽ hiện form đăng ký trước khi vào chơi; hãy test bằng trình duyệt đã đăng ký, hoặc đăng ký trước.</li>
+        <li>Cần Internet và một dự án thử nghiệm riêng trên dịch vụ lưu trữ (không dùng dữ liệu thật). Tạo trước tài khoản admin thử và ít nhất 45 người chơi mẫu để thử chia trang.</li>
+        <li>Để thử “người chưa đăng ký”, xoá dữ liệu trang của game trong trình duyệt (hoặc dùng cửa sổ mới) trước mỗi ca cần.</li>
+        <li>Ca về quyền truy cập (TC51, TC52) cần người có chút kỹ thuật, dùng công cụ gọi thẳng vào dịch vụ.</li>
+        <li>Mỗi ca ghi kết quả: Đạt / Không đạt, kèm ghi chú và trình duyệt đã dùng.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">F. Đăng ký người chơi</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC31</td><td>Xoá dữ liệu trình duyệt, mở game, bấm “Bắt đầu”</td><td>Hiện form Đăng ký với 3 ô; chưa vào màn hình Đang chơi</td><td>F13</td></tr>
+            <tr><td class="id">TC32</td><td>Để trống cả 3 ô, bấm “Đăng ký và chơi”</td><td>Báo lỗi dưới từng ô; không gửi lên database; không vào chơi</td><td>F14</td></tr>
+            <tr><td class="id">TC33</td><td>Nhập họ tên “A”, “An123” và một tên dài hơn 100 ký tự</td><td>Cả ba đều báo lỗi họ tên</td><td>F14</td></tr>
+            <tr><td class="id">TC34</td><td>Nhập email sai: <code>abc</code>, <code>a@b</code>, <code>a b@c.com</code></td><td>Báo “Email không hợp lệ.”</td><td>F14</td></tr>
+            <tr><td class="id">TC35</td><td>Nhập số điện thoại sai: <code>12345</code>, <code>0123456789</code>, <code>09abc12345</code>; rồi nhập <code>+84 912 345 678</code>, <code>0912.345.678</code>, <code>84912345678</code></td><td>Ba số đầu bị từ chối; ba số sau được chấp nhận và lưu thành <code>0912345678</code></td><td>F14</td></tr>
+            <tr><td class="id">TC36</td><td>Nhập thông tin hợp lệ (email có chữ hoa, họ tên có khoảng trắng thừa), bấm đăng ký</td><td>Vào màn hình Đang chơi; trong database có đúng 1 dòng mới; email lưu chữ thường; họ tên đã gọn khoảng trắng</td><td>F14</td></tr>
+            <tr><td class="id">TC37</td><td>Đăng ký lần nữa bằng email đã có nhưng đổi hoa/thường</td><td>Báo “Email này đã được đăng ký.”; không vào chơi; database không thêm dòng</td><td>F14</td></tr>
+            <tr><td class="id">TC38</td><td>Đăng ký bằng số điện thoại đã có nhưng email mới</td><td>Đăng ký được</td><td>F14</td></tr>
+            <tr><td class="id">TC39</td><td>Bấm “Đăng ký và chơi” nhiều lần thật nhanh với dữ liệu hợp lệ</td><td>Chỉ có 1 bản ghi; nút khoá và hiện “Đang gửi…”</td><td>F14</td></tr>
+            <tr><td class="id">TC40</td><td>Tắt mạng rồi bấm đăng ký; sau đó bật mạng và bấm lại</td><td>Lần đầu báo lỗi kết nối, giữ nguyên nội dung, không vào chơi; lần sau đăng ký thành công</td><td>F14</td></tr>
+            <tr><td class="id">TC41</td><td>Sau khi đăng ký, tải lại trang, bấm “Bắt đầu”; chơi hết giờ rồi bấm “Chơi lại”</td><td>Vào chơi ngay, không hiện form; “Chơi lại” không hiện form</td><td>F11, F15</td></tr>
+            <tr><td class="id">TC42</td><td>Xoá dữ liệu trình duyệt rồi đăng ký lại bằng email đã đăng ký trước đó</td><td>Bị chặn, báo email đã đăng ký (đúng quy tắc 4.13)</td><td>F14, F15</td></tr>
+            <tr><td class="id">TC43</td><td>Dùng chế độ chặn lưu trữ: đăng ký, chơi, rồi mở lại game</td><td>Đăng ký xong vẫn chơi được, không báo lỗi Console; mở lại thì hiện form</td><td>F15</td></tr>
+            <tr><td class="id">TC44</td><td>Mở form ở 360px, chạm vào ô Email và ô Số điện thoại</td><td>Không cuộn ngang; ô cao ≥ 44px; bàn phím email và bàn phím số; chữ tiếng Việt có dấu</td><td>4.9 trang 03</td></tr>
+            <tr><td class="id">TC45</td><td>Nhập họ tên <code>&lt;b&gt;x&lt;/b&gt;</code> hoặc <code>&lt;script&gt;alert(1)&lt;/script&gt;</code></td><td>Bị từ chối ở bước kiểm tra; không có cảnh báo hay chữ đậm nào xuất hiện ở bất kỳ màn hình nào</td><td>F14</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">G. Admin: đăng nhập và quyền truy cập</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC46</td><td>Chưa đăng nhập, mở <code>admin.html</code></td><td>Chỉ thấy màn hình đăng nhập, không có dữ liệu người chơi</td><td>F16</td></tr>
+            <tr><td class="id">TC47</td><td>Đăng nhập sai mật khẩu; đăng nhập bằng email không tồn tại</td><td>Cùng một thông báo “Email hoặc mật khẩu không đúng.”</td><td>F16</td></tr>
+            <tr><td class="id">TC48</td><td>Đăng nhập đúng email và mật khẩu admin</td><td>Vào màn hình danh sách</td><td>F16</td></tr>
+            <tr><td class="id">TC49</td><td>Đăng nhập Google bằng email admin; rồi bằng một email Google khác</td><td>Email admin vào được; email khác báo “Tài khoản này không có quyền quản trị.” và không thấy dữ liệu</td><td>F16</td></tr>
+            <tr><td class="id">TC50</td><td>Bấm “Đăng xuất”, sau đó bấm nút Back của trình duyệt và tải lại trang</td><td>Về màn hình đăng nhập; không xem lại được dữ liệu</td><td>F16</td></tr>
+            <tr><td class="id">TC51</td><td>Không đăng nhập, dùng công cụ gọi thẳng vào dịch vụ để đọc, sửa và xoá bản ghi</td><td>Bị từ chối cả ba; chỉ thêm mới được</td><td>4.11</td></tr>
+            <tr><td class="id">TC52</td><td>Thử tự tạo một tài khoản đăng nhập mới</td><td>Không tạo được (đã tắt đăng ký tài khoản mới)</td><td>4.11</td></tr>
+            <tr><td class="id">TC53</td><td>Tìm trong game mọi màn hình xem có liên kết hoặc nút nào dẫn tới trang admin</td><td>Không có</td><td>F16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">H. Admin: danh sách, tìm kiếm, xoá, xuất CSV</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC54</td><td>Đăng nhập khi có hơn 20 người chơi</td><td>Đủ cột STT, Họ và tên, Email, Số điện thoại, Ngày đăng ký; mới nhất lên đầu; tổng số đúng; chia trang và chuyển trang đúng</td><td>F17</td></tr>
+            <tr><td class="id">TC55</td><td>Dùng dự án thử chưa có ai đăng ký</td><td>Hiện “Chưa có người chơi nào đăng ký.”; bấm “Xuất CSV” báo “Không có dữ liệu để xuất.”</td><td>F17, F20</td></tr>
+            <tr><td class="id">TC56</td><td>Tìm theo một phần họ tên, một phần email, một phần số điện thoại; tìm bằng chữ hoa; gõ <code>nguyen</code> khi có “Nguyễn”</td><td>Mỗi lần ra đúng những người khớp; không phân biệt hoa/thường và dấu; tổng số cập nhật</td><td>F18</td></tr>
+            <tr><td class="id">TC57</td><td>Tìm chuỗi không có ai khớp; rồi bấm xoá bộ lọc; tìm <code>%</code> và <code>_</code></td><td>Hiện “Không tìm thấy người chơi nào.”; xoá bộ lọc ra lại danh sách đầy đủ; <code>%</code> và <code>_</code> không trả về mọi người</td><td>F18</td></tr>
+            <tr><td class="id">TC58</td><td>Bấm “Xoá” rồi bấm “Huỷ”</td><td>Không xoá; danh sách không đổi</td><td>F19</td></tr>
+            <tr><td class="id">TC59</td><td>Bấm “Xoá” rồi xác nhận; tải lại trang; đăng ký lại bằng email vừa xoá</td><td>Dòng biến mất, tổng giảm 1, tải lại vẫn mất; đăng ký lại được</td><td>F19, F14</td></tr>
+            <tr><td class="id">TC60</td><td>Xoá người duy nhất ở trang cuối</td><td>Tự lùi về trang trước, không hiện trang trống</td><td>F19</td></tr>
+            <tr><td class="id">TC61</td><td>Không lọc, bấm “Xuất CSV”</td><td>Tải file <code>nguoi-choi-YYYY-MM-DD.csv</code>; số dòng = tổng số người + 1 dòng tiêu đề; thứ tự giống danh sách; có đủ mọi người, không chỉ trang đang xem</td><td>F20</td></tr>
+            <tr><td class="id">TC62</td><td>Mở file CSV bằng Excel</td><td>Tiếng Việt đúng dấu; số điện thoại giữ số 0 đầu; ngày dạng dd/mm/yyyy HH:mm giờ Việt Nam</td><td>F20</td></tr>
+            <tr><td class="id">TC63</td><td>Tạo (trực tiếp trong database) người có tên chứa dấu phẩy, dấu nháy kép, xuống dòng, và một tên bắt đầu bằng <code>=</code>; xuất CSV</td><td>Mở trong Excel vẫn đúng cột; ô bắt đầu bằng <code>=</code> không chạy như công thức</td><td>F20</td></tr>
+            <tr><td class="id">TC64</td><td>Gõ tìm kiếm cho còn một số người rồi bấm “Xuất CSV”</td><td>File chỉ có những người trong kết quả lọc (theo mặc định ở 4.14)</td><td>F18, F20</td></tr>
+            <tr><td class="id">TC65</td><td>Đăng xuất ở một tab khác (hoặc chờ phiên hết hạn), rồi ở tab cũ bấm “Xoá” và “Xuất CSV”</td><td>Báo “Phiên đăng nhập đã hết, vui lòng đăng nhập lại.”; về màn hình đăng nhập; dữ liệu không đổi</td><td>F19, F20</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="kiem-tra-bo-sung">
+    <div class="card__header card__header--primary">Danh sách kiểm tra bổ sung trước khi giao <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul style="list-style: none; padding-left: 0">
+        <li>☐ TC31–TC65 đều Đạt trên Chrome máy tính; TC44 đạt trên điện thoại</li>
+        <li>☐ TC01–TC30 vẫn Đạt (với trình duyệt đã đăng ký) và game vẫn chơi được khi không có mạng</li>
+        <li>☐ Khóa bí mật của dịch vụ không có trong file web và không nằm trong kho mã</li>
+        <li>☐ Đã tắt tự đăng ký tài khoản mới; chỉ có đúng 1 tài khoản admin</li>
+        <li>☐ Đã kiểm tra quyền trực tiếp trong database (TC51)</li>
+        <li>☐ Anh/chị đã chốt các điểm ở mục 4.14 trang 04</li>
+        <li>☐ Đã có thông báo dữ liệu cá nhân (và ô đồng ý nếu chốt dùng)</li>
+        <li>☐ Đã xuất CSV mẫu và mở được bằng Excel</li>
+      </ul>
+    </div>
+  </section>
+
   <nav class="pager" aria-label="Chuyển trang">
     <a href="04-quy-tac-du-lieu.html">← 04 · Quy tắc &amp; dữ liệu</a>
     <a href="index.html">Mục lục →</a>

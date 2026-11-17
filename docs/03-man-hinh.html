@@ -143,6 +143,132 @@
     </div>
   </section>
 
+  <section class="card" id="man-hinh-moi">
+    <div class="card__header card__header--primary">Bổ sung · 3 màn hình mới <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Phác thảo bố cục màn hình đăng ký (trong game) và hai màn hình của trang admin. Chỉ là hình minh hoạ, không phải sản phẩm cuối.</p>
+      <div class="grid grid--3">
+        <div>
+          <div class="wire">
+            <p class="wire__title">ĐĂNG KÝ</p>
+            <p class="wire__text">Nhập thông tin một lần để bắt đầu chơi.</p>
+            <div class="wire__panel" style="text-align:left">Họ và tên<br>Nguyễn Văn A</div>
+            <div class="wire__panel" style="text-align:left">Email<br>a@email.com</div>
+            <div class="wire__panel" style="text-align:left">Số điện thoại<br>0912 345 678</div>
+            <div class="wire__btn">Đăng ký và chơi</div>
+          </div>
+          <p class="wire__cap">4.5 · Màn hình Đăng ký</p>
+        </div>
+        <div>
+          <div class="wire">
+            <p class="wire__title">QUẢN TRỊ</p>
+            <div class="wire__panel" style="text-align:left">Email</div>
+            <div class="wire__panel" style="text-align:left">Mật khẩu</div>
+            <div class="wire__btn">Đăng nhập</div>
+            <p class="wire__text" style="margin-top:var(--space-2)">hoặc</p>
+            <div class="wire__btn">Đăng nhập bằng Google</div>
+          </div>
+          <p class="wire__cap">4.6 · Admin: Đăng nhập</p>
+        </div>
+        <div>
+          <div class="wire">
+            <div class="wire__bar"><span>128 người chơi</span><span>Đăng xuất</span></div>
+            <div class="wire__panel" style="text-align:left">Tìm: nguyen…</div>
+            <div class="wire__panel" style="text-align:left;font-size:var(--font-size-xs)">1 · Nguyễn Văn A<br>a@email.com · 0912345678<br>17/11/2026 17:08 · [Xoá]</div>
+            <div class="wire__panel" style="text-align:left;font-size:var(--font-size-xs)">2 · Trần Thị B<br>b@email.com · 0987654321<br>17/11/2026 16:40 · [Xoá]</div>
+            <div class="wire__btn">Xuất CSV</div>
+          </div>
+          <p class="wire__cap">4.7 · Admin: Danh sách</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="man-hinh-dang-ky">
+    <div class="card__header card__header--primary">4.5 · Màn hình Đăng ký <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Tiêu đề</td><td>“Đăng ký”, kèm 1 dòng “Nhập thông tin một lần để bắt đầu chơi.”</td></tr>
+            <tr><td>Ô Họ và tên</td><td>Nhãn “Họ và tên”. Bắt buộc</td></tr>
+            <tr><td>Ô Email</td><td>Nhãn “Email”. Bàn phím điện thoại kiểu email. Bắt buộc</td></tr>
+            <tr><td>Ô Số điện thoại</td><td>Nhãn “Số điện thoại”. Bàn phím điện thoại kiểu số. Bắt buộc</td></tr>
+            <tr><td>Thông báo lỗi</td><td>Chữ màu <code>--color-danger</code> ngay dưới ô sai; nội dung lỗi theo mục 4.9. Lỗi chung (mất mạng) hiện phía trên nút</td></tr>
+            <tr><td>Nút</td><td>“Đăng ký và chơi”, cao tối thiểu 44px. Khi đang gửi: khoá nút và đổi chữ thành “Đang gửi…”</td></tr>
+            <tr><td>Dòng thông báo dữ liệu <span class="badge badge--muted">Đề xuất</span></td><td>1 dòng nhỏ dưới nút: thông tin chỉ dùng để liên hệ người chơi; kèm ô tích đồng ý (xem 4.14)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="man-hinh-admin-dang-nhap">
+    <div class="card__header card__header--primary">4.6 · Admin: Đăng nhập <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Tiêu đề</td><td>“Quản trị”</td></tr>
+            <tr><td>Ô Email và Mật khẩu</td><td>Mật khẩu che dấu; có thể bấm để hiện/ẩn</td></tr>
+            <tr><td>Nút</td><td>“Đăng nhập” và “Đăng nhập bằng Google”</td></tr>
+            <tr><td>Thông báo lỗi</td><td>“Email hoặc mật khẩu không đúng.” hoặc “Tài khoản này không có quyền quản trị.”</td></tr>
+            <tr><td>Liên kết</td><td>Không có liên kết nào từ game tới trang này. Địa chỉ trang chỉ admin biết</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="man-hinh-admin-danh-sach">
+    <div class="card__header card__header--primary">4.7 · Admin: Danh sách người chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Thanh trên cùng</td><td>Tổng số người chơi (“128 người chơi”), nút “Xuất CSV”, nút “Đăng xuất”</td></tr>
+            <tr><td>Ô tìm kiếm</td><td>Có chữ gợi ý “Tìm theo tên, email hoặc số điện thoại”; nút xoá bộ lọc khi đang lọc</td></tr>
+            <tr><td>Bảng</td><td>Cột: STT, Họ và tên, Email, Số điện thoại, Ngày đăng ký (dd/mm/yyyy HH:mm, giờ Việt Nam), Thao tác (nút “Xoá”). Mới nhất lên đầu</td></tr>
+            <tr><td>Chuyển trang</td><td>“Trước”, “Sau”, số trang; 20 dòng mỗi trang <span class="badge badge--muted">Đề xuất</span></td></tr>
+            <tr><td>Hộp xác nhận xoá</td><td>Chữ “Xoá người chơi này?” kèm họ tên, email; nút “Xoá” và “Huỷ”</td></tr>
+            <tr><td>Trạng thái đặc biệt</td><td>Danh sách rỗng: “Chưa có người chơi nào đăng ký.” Tìm không thấy: “Không tìm thấy người chơi nào.” Đang tải: “Đang tải…”</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p>Trang admin ưu tiên dùng trên máy tính. Trên điện thoại (360px) bảng được cuộn ngang, các nút vẫn bấm được và không bị che.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="luong-man-hinh-moi">
+    <div class="card__header card__header--dark">4.8 · Luồng chuyển màn hình khi có đăng ký <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li><strong>Lần đầu (chưa nhớ người chơi):</strong> Bắt đầu → bấm “Bắt đầu” → Đăng ký → bấm “Đăng ký và chơi” (thành công) → Đang chơi → hết giờ → Kết thúc.</li>
+        <li><strong>Những lần sau (đã nhớ):</strong> như cũ: Bắt đầu → Đang chơi → Kết thúc → “Chơi lại” → Đang chơi.</li>
+        <li>Đăng ký thất bại (email trùng, mất mạng, dữ liệu sai) thì ở lại màn hình Đăng ký.</li>
+        <li>Màn hình Đăng ký không có nút quay lại; muốn thoát chỉ cần tải lại trang, không mất gì.</li>
+        <li>Mục 4.3 ở trên (“Không quay lại màn hình Bắt đầu”) vẫn đúng sau khi đã vào chơi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="giao-dien-bo-sung">
+    <div class="card__header card__header--dark">4.9 · Yêu cầu giao diện bổ sung <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Form đăng ký dùng được từ 360px, không cuộn ngang, ô nhập cao tối thiểu 44px, chữ tiếng Việt có dấu, cùng phong cách và token với game.</li>
+        <li>Khi gõ phím trên điện thoại: ô Email hiện bàn phím email, ô Số điện thoại hiện bàn phím số.</li>
+        <li>Nội dung người chơi nhập luôn hiển thị dưới dạng chữ thường, không chạy như mã (kể cả ở trang admin).</li>
+        <li>Mục 4.4 ghi “Không dùng Internet”: vẫn đúng cho việc chơi của người đã đăng ký. Riêng đăng ký lần đầu và trang admin cần Internet. Phần cần cho kết nối dịch vụ chỉ được nạp khi người chơi mở form, để game vẫn mở và chơi được khi không có mạng.</li>
+      </ul>
+    </div>
+  </section>
+
   <nav class="pager" aria-label="Chuyển trang">
     <a href="02-chuc-nang.html">← 02 · Chức năng</a>
     <a href="04-quy-tac-du-lieu.html">04 · Quy tắc &amp; dữ liệu →</a>

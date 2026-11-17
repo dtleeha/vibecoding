@@ -185,6 +185,129 @@
     </div>
   </section>
 
+  <section class="card" id="bo-sung-dang-ky">
+    <div class="card__header card__header--primary">Bổ sung · Đăng ký người chơi và trang quản trị <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="note note--warn">
+        <p><strong>Phần bổ sung.</strong> 12 chức năng F01–F12 ở trên giữ nguyên. Các chức năng F13–F20 dưới đây thêm việc đăng ký người chơi trước khi chơi, lưu vào database và một trang admin có đăng nhập. Số liệu, quy tắc kiểm tra và bảo mật nằm ở mục 4.7–4.14 của trang 04.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Chức năng</th><th>Nguồn</th></tr></thead>
+          <tbody>
+            <tr><td class="id">F13</td><td>Hiện form đăng ký trước lượt chơi đầu tiên</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F14</td><td>Kiểm tra dữ liệu và lưu đăng ký (chặn email trùng)</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F15</td><td>Nhớ người chơi đã đăng ký trên trình duyệt</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F16</td><td>Admin đăng nhập và đăng xuất</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F17</td><td>Admin xem danh sách người chơi</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F18</td><td>Admin tìm kiếm</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F19</td><td>Admin xoá người chơi</td><td><span class="badge badge--new">Mới</span></td></tr>
+            <tr><td class="id">F20</td><td>Admin xuất danh sách ra file CSV</td><td><span class="badge badge--new">Mới</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="f13">
+    <div class="card__header card__header--primary">F13 · Hiện form đăng ký trước lượt chơi đầu tiên <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Khi bấm “Bắt đầu” mà trình duyệt chưa nhớ người chơi nào (F15), hiện màn hình Đăng ký thay vì vào chơi ngay.</li>
+        <li>Form có 3 ô bắt buộc: Họ và tên, Email, Số điện thoại; nút “Đăng ký và chơi”.</li>
+        <li>Chưa đăng ký thành công thì không vào được màn hình Đang chơi.</li>
+        <li>Nếu trình duyệt đã nhớ người chơi: “Bắt đầu” vào chơi ngay như cũ, không hiện form.</li>
+        <li>“Chơi lại” (F11) không bao giờ hiện form.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f14">
+    <div class="card__header card__header--primary">F14 · Kiểm tra dữ liệu và lưu đăng ký <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Kiểm tra dữ liệu theo mục 4.9 ngay trên form; báo lỗi dưới từng ô sai, không gửi đi khi còn lỗi.</li>
+        <li>Dữ liệu hợp lệ được gửi lên database; thành công thì vào chơi (F02).</li>
+        <li>Email đã có trong database (không phân biệt chữ hoa/thường): chặn đăng ký, báo “Email này đã được đăng ký.”, không tạo bản ghi mới và không cho vào chơi.</li>
+        <li>Gửi không được (mất mạng, dịch vụ lỗi hoặc đang tạm dừng): báo “Chưa đăng ký được. Kiểm tra kết nối rồi thử lại.”, giữ nguyên nội dung đã nhập, không vào chơi.</li>
+        <li>Trong lúc đang gửi, nút bị khoá để không tạo trùng khi bấm nhiều lần.</li>
+        <li>Database cũng tự kiểm tra lại dữ liệu và chặn email trùng, không chỉ dựa vào kiểm tra trên trình duyệt.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f15">
+    <div class="card__header card__header--primary">F15 · Nhớ người chơi đã đăng ký <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Đăng ký thành công thì lưu một dấu nhận biết trên trình duyệt (mục 4.10).</li>
+        <li>Những lần mở sau trên cùng trình duyệt: bấm “Bắt đầu” vào chơi ngay, không phải nhập lại.</li>
+        <li>Nếu trình duyệt không cho lưu (ví dụ chế độ ẩn danh): vẫn chơi được trong phiên đang mở, nhưng lần mở sau sẽ phải đăng ký lại, và vì email đã có nên sẽ bị chặn (xem 4.13, 4.14).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f16">
+    <div class="card__header card__header--primary">F16 · Admin đăng nhập và đăng xuất <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Trang admin là một trang riêng, không có liên kết hay nút nào dẫn tới từ game.</li>
+        <li>Đăng nhập bằng email và mật khẩu, hoặc bằng Google.</li>
+        <li>Chỉ 1 tài khoản admin được phép. Email khác, kể cả đăng nhập Google thành công, bị từ chối: “Tài khoản này không có quyền quản trị.”</li>
+        <li>Sai email hoặc mật khẩu: chỉ báo chung “Email hoặc mật khẩu không đúng.”, không nói sai ô nào.</li>
+        <li>Chưa đăng nhập mà mở trang danh sách: chuyển về màn hình đăng nhập, không lộ dữ liệu.</li>
+        <li>Nút “Đăng xuất” đưa về màn hình đăng nhập; sau đó không xem lại được dữ liệu.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f17">
+    <div class="card__header card__header--primary">F17 · Admin xem danh sách <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Hiện bảng gồm: STT, Họ và tên, Email, Số điện thoại, Ngày đăng ký; người mới nhất lên đầu.</li>
+        <li>Hiện tổng số người chơi; chia trang, mỗi trang 20 dòng <span class="badge badge--muted">Đề xuất</span>.</li>
+        <li>Chưa có ai đăng ký: hiện “Chưa có người chơi nào đăng ký.”</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f18">
+    <div class="card__header card__header--primary">F18 · Admin tìm kiếm <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Một ô tìm: khớp một phần họ tên, email hoặc số điện thoại.</li>
+        <li>Không phân biệt chữ hoa/thường và không phân biệt dấu tiếng Việt (gõ “nguyen” tìm được “Nguyễn”) <span class="badge badge--muted">Đề xuất</span>.</li>
+        <li>Kết quả cập nhật danh sách và tổng số (“Tìm thấy N người”); có nút xoá bộ lọc để về danh sách đầy đủ.</li>
+        <li>Không có kết quả: hiện “Không tìm thấy người chơi nào.”</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f19">
+    <div class="card__header card__header--primary">F19 · Admin xoá người chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Mỗi dòng có nút “Xoá”. Bấm vào hiện hộp xác nhận ghi rõ họ tên và email; chỉ xoá khi bấm xác nhận, bấm “Huỷ” thì không đổi gì.</li>
+        <li>Xoá là vĩnh viễn, không hoàn tác. Xoá xong dòng biến mất và tổng số giảm 1.</li>
+        <li>Sau khi xoá, email đó có thể đăng ký lại.</li>
+        <li>Chỉ xoá từng người một; xoá hàng loạt chưa làm (ngoài phạm vi).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f20">
+    <div class="card__header card__header--primary">F20 · Admin xuất danh sách ra CSV <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Nút “Xuất CSV” tải về một file chứa toàn bộ danh sách, không chỉ trang đang xem.</li>
+        <li>Khi đang có bộ lọc tìm kiếm thì chỉ xuất những người trong kết quả lọc <span class="badge badge--new">Mới · cần xác nhận</span>.</li>
+        <li>Quy cách file (cột, mã hoá, tên file) ở mục 4.12.</li>
+        <li>Danh sách rỗng: báo “Không có dữ liệu để xuất.”, không tải file.</li>
+      </ul>
+    </div>
+  </section>
+
   <nav class="pager" aria-label="Chuyển trang">
     <a href="01-tong-quan.html">← 01 · Tổng quan</a>
     <a href="03-man-hinh.html">03 · Màn hình →</a>

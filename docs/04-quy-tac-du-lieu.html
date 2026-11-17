@@ -193,6 +193,188 @@
     </div>
   </section>
 
+  <section class="card" id="dich-vu">
+    <div class="card__header card__header--primary">4.7 · Dịch vụ lưu trữ và giới hạn <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="note note--warn">
+        <p><strong>Phần bổ sung.</strong> Từ đây game có kết nối mạng, nên các điều “không cần server” và “ngoài phạm vi: đăng nhập” ở trang 01 và mục 4.4 trang 03 không còn đúng cho đăng ký và trang admin. Phần chơi game và mục 4.1–4.6 giữ nguyên.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Nội dung</th><th>Quyết định</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td>Nơi lưu database và đăng nhập admin</td><td>Dịch vụ có sẵn, miễn phí, đơn giản. Dự kiến dùng <strong>Supabase</strong> (database Postgres + đăng nhập email/mật khẩu và Google)</td><td>Không phải tự dựng máy chủ. Có thể đổi sang dịch vụ tương đương nếu cần</td></tr>
+            <tr><td>Trang web</td><td>Game (<code>index.html</code>) và trang admin (<code>admin.html</code>) là file tĩnh; đưa lên một nơi chạy được trên mạng</td><td>Nơi đưa lên (hosting) chưa chốt</td></tr>
+            <tr><td>Chi phí</td><td>Gói miễn phí</td><td>Theo trang giá của Supabase: 500 MB database, 50.000 người dùng đăng nhập mỗi tháng. Kiểm tra lại lúc triển khai vì giá có thể đổi</td></tr>
+            <tr><td>Dung lượng</td><td>Mỗi người chơi chiếm rất ít (một dòng chữ ngắn)</td><td>500 MB đủ cho hàng trăm nghìn dòng</td></tr>
+            <tr><td>Tạm dừng khi ít dùng</td><td>Gói miễn phí tự tạm dừng sau 7 ngày không có hoạt động</td><td>Khi đó đăng ký lỗi như mất mạng cho tới khi admin bật lại trong trang quản lý dịch vụ. Xem 4.13, 4.14</td></tr>
+            <tr><td>Sao lưu</td><td>Gói miễn phí không có sao lưu tự động</td><td>Admin nên xuất CSV (F20) định kỳ để giữ bản dự phòng <span class="badge badge--muted">Đề xuất</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="du-lieu-nguoi-choi">
+    <div class="card__header card__header--primary">4.8 · Dữ liệu người chơi (database) <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trường</th><th>Kiểu</th><th>Quy tắc</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td><code>id</code></td><td>Mã định danh tự sinh</td><td>Duy nhất, không đổi</td><td>Dùng nội bộ, không hiển thị</td></tr>
+            <tr><td><code>full_name</code></td><td>Chữ</td><td>Bắt buộc, 2–100 ký tự (mục 4.9)</td><td>Họ và tên</td></tr>
+            <tr><td><code>email</code></td><td>Chữ</td><td>Bắt buộc, tối đa 254 ký tự, lưu chữ thường, <strong>duy nhất</strong></td><td>Không có hai bản ghi cùng email</td></tr>
+            <tr><td><code>phone</code></td><td>Chữ</td><td>Bắt buộc, lưu dạng 10 số bắt đầu bằng 0</td><td>Không bắt buộc duy nhất</td></tr>
+            <tr><td><code>created_at</code></td><td>Thời điểm</td><td>Tự ghi lúc đăng ký</td><td>Hiển thị theo giờ Việt Nam (GMT+7)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Không lưu điểm hay lịch sử lượt chơi lên database; mục 4.5 (“Không lưu điểm từng lượt”) giữ nguyên. Kỷ lục vẫn chỉ lưu trên trình duyệt.</li>
+        <li>Không có mật khẩu của người chơi và không có đăng nhập cho người chơi.</li>
+        <li>Chưa xác minh email và số điện thoại có thật hay của đúng người (xem 4.14).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="kiem-tra-du-lieu">
+    <div class="card__header card__header--primary">4.9 · Quy tắc kiểm tra dữ liệu đăng ký <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ô</th><th>Xử lý trước khi kiểm tra</th><th>Hợp lệ khi</th><th>Thông báo lỗi</th></tr></thead>
+          <tbody>
+            <tr><td>Họ và tên</td><td>Cắt khoảng trắng đầu/cuối, gộp nhiều khoảng trắng thành một</td><td>2–100 ký tự; chỉ gồm chữ cái (có dấu), khoảng trắng, dấu nháy <code>'</code>, gạch ngang <code>-</code>, dấu chấm <code>.</code>; không có chữ số</td><td>“Vui lòng nhập họ và tên (2–100 ký tự, không chứa số).”</td></tr>
+            <tr><td>Email</td><td>Cắt khoảng trắng, đổi sang chữ thường</td><td>Dạng <code>ten@ten-mien.đuôi</code>, tối đa 254 ký tự, không có khoảng trắng</td><td>“Email không hợp lệ.” Nếu trùng: “Email này đã được đăng ký.”</td></tr>
+            <tr><td>Số điện thoại</td><td>Bỏ khoảng trắng, dấu chấm, gạch ngang, ngoặc. <code>+84</code> hoặc <code>84</code> ở đầu đổi thành <code>0</code></td><td>Đúng 10 chữ số, bắt đầu bằng <code>03</code>, <code>05</code>, <code>07</code>, <code>08</code> hoặc <code>09</code> (giả định: chỉ số di động)</td><td>“Số điện thoại không hợp lệ (10 số, ví dụ 0912345678).”</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Ví dụ chấp nhận: <code>0912345678</code>, <code>0912 345 678</code>, <code>+84 912.345.678</code>, <code>84912345678</code>; tất cả lưu thành <code>0912345678</code>.</li>
+        <li>Ô trống được coi là lỗi, báo “Vui lòng nhập …” theo từng ô.</li>
+        <li>Kiểm tra làm ở hai nơi: trên form (để báo lỗi sớm) và ở database (để không ai gửi thẳng dữ liệu sai).</li>
+        <li>Chỉ email phải duy nhất. Hai người cùng số điện thoại nhưng khác email đều đăng ký được.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="nho-nguoi-choi">
+    <div class="card__header card__header--dark">4.10 · Nhớ người chơi trên trình duyệt <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dữ liệu</th><th>Nơi lưu</th><th>Quy tắc</th></tr></thead>
+          <tbody>
+            <tr><td>Dấu đã đăng ký</td><td>Bộ nhớ trình duyệt (<code>localStorage</code>), khóa riêng, ví dụ <code>dapchuot.nguoichoi</code></td><td>Ghi sau khi đăng ký thành công. Chỉ lưu mã người chơi và họ tên, <strong>không</strong> lưu email hay số điện thoại. Có khóa hợp lệ thì bỏ qua form. Khóa hỏng hoặc không hợp lệ coi như chưa đăng ký</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Đọc hoặc ghi lỗi (chế độ ẩn danh, bị chặn): game không báo lỗi, vẫn chơi trong phiên; lần mở sau phải đăng ký lại.</li>
+        <li>Khác trình duyệt hoặc thiết bị là chưa đăng ký.</li>
+        <li>Dấu này chỉ để bỏ qua form, không phải đăng nhập. Admin xoá người chơi trong database không làm mất dấu trên trình duyệt của người đó.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="bao-mat">
+    <div class="card__header card__header--dark">4.11 · Quyền truy cập và bảo mật <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ai</th><th>Được</th><th>Không được</th></tr></thead>
+          <tbody>
+            <tr><td>Người chơi (chưa đăng nhập)</td><td>Thêm một bản ghi đăng ký của chính mình</td><td>Đọc, sửa hay xoá bất kỳ bản ghi nào, kể cả của mình</td></tr>
+            <tr><td>Admin (1 tài khoản)</td><td>Đọc, tìm kiếm, xoá, xuất CSV toàn bộ danh sách</td><td>Sửa thông tin người chơi (chưa làm)</td></tr>
+            <tr><td>Người khác đăng nhập Google hoặc tự tạo tài khoản</td><td>Không có quyền gì</td><td>Mọi thao tác trên danh sách</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Quyền được kiểm tra ngay trong database (quy tắc theo từng dòng), không chỉ ẩn nút trên giao diện. Có người thử gọi thẳng vào dịch vụ cũng bị từ chối.</li>
+        <li>Tắt việc tự đăng ký tài khoản mới trong phần đăng nhập của dịch vụ. Tài khoản admin do chủ dự án tạo tay; Google chỉ chấp nhận đúng email admin.</li>
+        <li>Mật khẩu admin dài tối thiểu 12 ký tự <span class="badge badge--muted">Đề xuất</span>.</li>
+        <li>Trong file web chỉ đặt khóa công khai của dịch vụ. Khóa quản trị (khóa bí mật) tuyệt đối không đưa vào file trên web hay vào kho mã.</li>
+        <li>Mọi nội dung người chơi nhập đều hiển thị như chữ thường, không chạy như mã, ở trang admin và khi xuất CSV.</li>
+        <li>Dữ liệu chỉ dùng để liên hệ và được giữ cho tới khi admin xoá. Cần thêm thông báo và ô đồng ý cho người chơi (xem 4.14).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="xuat-csv">
+    <div class="card__header card__header--dark">4.12 · Quy cách file CSV <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mục</th><th>Quy cách</th></tr></thead>
+          <tbody>
+            <tr><td>Tên file</td><td><code>nguoi-choi-YYYY-MM-DD.csv</code>, ngày theo giờ Việt Nam</td></tr>
+            <tr><td>Cột và thứ tự</td><td>STT, Họ và tên, Email, Số điện thoại, Ngày đăng ký. Dòng đầu là tiêu đề tiếng Việt</td></tr>
+            <tr><td>Dòng dữ liệu</td><td>Mỗi người một dòng, mới nhất lên đầu (giống danh sách). Xuất toàn bộ, không giới hạn theo trang</td></tr>
+            <tr><td>Mã hoá và phân cách</td><td>UTF-8 có BOM để Excel đọc đúng tiếng Việt; phân cách bằng dấu phẩy; ô có dấu phẩy, dấu nháy kép hoặc xuống dòng được bọc trong nháy kép đúng chuẩn</td></tr>
+            <tr><td>Số điện thoại</td><td>Giữ nguyên số 0 đầu khi mở bằng Excel (ghi thành chữ, không để Excel đổi thành số)</td></tr>
+            <tr><td>Ngày đăng ký</td><td><code>dd/mm/yyyy HH:mm</code>, giờ Việt Nam (GMT+7)</td></tr>
+            <tr><td>Chống công thức</td><td>Ô bắt đầu bằng <code>=</code>, <code>+</code>, <code>-</code> hoặc <code>@</code> được thêm dấu nháy đơn ở đầu để Excel không chạy như công thức</td></tr>
+            <tr><td>Phạm vi</td><td>Toàn bộ danh sách; đang tìm kiếm thì chỉ kết quả lọc <span class="badge badge--new">Mới · cần xác nhận</span></td></tr>
+            <tr><td>Danh sách rỗng</td><td>Không tải file, báo “Không có dữ liệu để xuất.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="truong-hop-bien-moi">
+    <div class="card__header card__header--dark">4.13 · Trường hợp biên của đăng ký và admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tình huống</th><th>Kết quả</th></tr></thead>
+          <tbody>
+            <tr><td>Email giống nhau nhưng khác chữ hoa/thường (<code>A@B.com</code> và <code>a@b.com</code>)</td><td>Coi là một email: bị chặn, báo “Email này đã được đăng ký.”</td></tr>
+            <tr><td>Hai người cùng gửi một email gần như cùng lúc</td><td>Database chỉ nhận một; người còn lại nhận thông báo trùng</td></tr>
+            <tr><td>Cùng số điện thoại, khác email</td><td>Cho phép đăng ký</td></tr>
+            <tr><td>Mất mạng giữa lúc gửi</td><td>Báo lỗi kết nối, giữ nội dung ô nhập, không vào chơi. Nếu bản ghi thực ra đã lưu thì lần thử lại sẽ báo trùng email (xem 4.14)</td></tr>
+            <tr><td>Dịch vụ đang tạm dừng (gói miễn phí không hoạt động 7 ngày)</td><td>Đăng ký lỗi như mất mạng; admin bật lại dịch vụ thì đăng ký chạy lại</td></tr>
+            <tr><td>Người đã đăng ký nhưng đổi máy, xoá dữ liệu trình duyệt hoặc dùng ẩn danh</td><td>Form hiện lại; nhập email cũ bị chặn nên không chơi được (đúng quy tắc “chặn email trùng”, xem 4.14)</td></tr>
+            <tr><td>Admin xoá một người chơi</td><td>Email đó đăng ký lại được; trình duyệt cũ của người đó vẫn nhớ nên vẫn chơi được</td></tr>
+            <tr><td>Họ tên chứa <code>&lt;script&gt;</code> hoặc ký tự lạ</td><td>Bị từ chối ở bước kiểm tra; nếu vẫn có trong database thì hiển thị như chữ thường, không chạy</td></tr>
+            <tr><td>Tìm kiếm có ký tự <code>%</code> hoặc <code>_</code></td><td>Coi như chữ thường, không khớp với mọi người</td></tr>
+            <tr><td>Xoá dòng cuối cùng của trang cuối</td><td>Tự lùi về trang trước, không hiện trang trống</td></tr>
+            <tr><td>Phiên đăng nhập admin hết hạn rồi bấm Xoá hoặc Xuất CSV</td><td>Báo “Phiên đăng nhập đã hết, vui lòng đăng nhập lại.”, về màn hình đăng nhập, dữ liệu không đổi</td></tr>
+            <tr><td>Người chơi đã đăng ký, mở game khi không có mạng</td><td>Vẫn chơi được vì chỉ cần dấu trên trình duyệt (TC30 vẫn đúng với trường hợp này)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="can-xac-nhan">
+    <div class="card__header card__header--primary">4.14 · Các điểm cần anh/chị xác nhận <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="note note--warn">
+        <p>Các điểm dưới đây em đã đặt mặc định để viết tài liệu, nhưng ảnh hưởng tới cách làm. Mỗi điểm cần anh/chị chốt hoặc chỉnh trước khi làm.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Điểm</th><th>Mặc định đang ghi</th><th>Vì sao cần chốt</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Người đã đăng ký nhưng mất dấu trình duyệt</td><td>Bị chặn vì trùng email, không chơi được nữa</td><td>Đây là hệ quả trực tiếp của “chặn email trùng”. Người đổi điện thoại hoặc dùng ẩn danh sẽ không chơi được. Có thể thêm đường thoát (ví dụ nhập lại email đã đăng ký để chơi tiếp), nhưng đó là chức năng mới</td></tr>
+            <tr><td>2</td><td>Xác minh email và số điện thoại</td><td>Chưa làm</td><td>Người chơi có thể nhập email hoặc số của người khác. Xác minh qua email hay SMS sẽ thêm việc và có thể tốn phí</td></tr>
+            <tr><td>3</td><td>Xuất CSV khi đang lọc</td><td>Chỉ xuất kết quả đang lọc</td><td>Có người muốn luôn xuất toàn bộ</td></tr>
+            <tr><td>4</td><td>Thông báo và ô đồng ý dữ liệu cá nhân</td><td>Đề xuất có 1 dòng thông báo và ô tích đồng ý</td><td>Thu họ tên, email, số điện thoại là dữ liệu cá nhân; nên kiểm tra quy định bảo vệ dữ liệu cá nhân của Việt Nam và nội dung cần ghi</td></tr>
+            <tr><td>5</td><td>“1 và 3” ở câu hỏi về admin</td><td>Hiểu là một tài khoản admin duy nhất, đăng nhập được bằng cả email/mật khẩu và Google</td><td>Nếu ý là hai cách khác, cần chỉnh F16</td></tr>
+            <tr><td>6</td><td>Tạm dừng sau 7 ngày và không có sao lưu (gói miễn phí)</td><td>Chấp nhận; admin xuất CSV định kỳ</td><td>Có thể cần gói trả phí hoặc cách giữ dịch vụ luôn hoạt động nếu game dùng không đều</td></tr>
+            <tr><td>7</td><td>Điểm số</td><td>Vẫn không lưu lên database</td><td>Nếu muốn gắn điểm với người chơi hoặc có bảng xếp hạng, đó là chức năng khác</td></tr>
+            <tr><td>8</td><td>Chống đăng ký rác</td><td>Chưa có ngoài việc khoá nút khi đang gửi</td><td>Ai cũng gửi được form; nếu bị spam cần thêm biện pháp</td></tr>
+            <tr><td>9</td><td>Số điện thoại</td><td>Chỉ nhận số di động 10 chữ số</td><td>Số bàn hoặc số nước ngoài sẽ bị từ chối</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <nav class="pager" aria-label="Chuyển trang">
     <a href="03-man-hinh.html">← 03 · Màn hình</a>
     <a href="05-ke-hoach-test.html">05 · Kế hoạch test →</a>
