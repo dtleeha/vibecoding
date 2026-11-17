@@ -1,172 +1,92 @@
 [
  {
-  "key": "botchuyentien_0_vo",
+  "key": "nguoiyeucu_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Bố chuyển tiền , cho con gái"
+  "text": "Người yêu cũ nhắn tin , lúc một giờ sáng"
  },
  {
-  "key": "botchuyentien_1_0",
+  "key": "nguoiyeucu_1_0",
   "voice": "Phạm Tuyên",
-  "text": "con ơi bố chuyển thử một trăm đồng rồi đó"
+  "text": "em ngủ chưa"
  },
  {
-  "key": "botchuyentien_1_1",
+  "key": "nguoiyeucu_1_1",
   "voice": "Ngọc Huyền",
-  "text": "dạ con nhận được rồi bố"
+  "text": "anh cần gì"
  },
  {
-  "key": "botchuyentien_1_2",
+  "key": "nguoiyeucu_1_2",
   "voice": "Phạm Tuyên",
-  "text": "nhận được thật không"
+  "text": "anh nhớ em"
  },
  {
-  "key": "botchuyentien_1_3",
+  "key": "nguoiyeucu_1_3",
   "voice": "Ngọc Huyền",
-  "text": "thật ạ, có thông báo hẳn hoi"
+  "text": "anh say hả"
  },
  {
-  "key": "botchuyentien_1_4",
+  "key": "nguoiyeucu_1_4",
   "voice": "Phạm Tuyên",
-  "text": "vậy bố chuyển thêm một trăm đồng nữa cho chắc"
+  "text": "say một chút thôi"
  },
  {
-  "key": "botchuyentien_1_5",
+  "key": "nguoiyeucu_3_0",
+  "voice": "Phạm Tuyên",
+  "text": "hay mình nói chuyện lại đi"
+ },
+ {
+  "key": "nguoiyeucu_3_1",
   "voice": "Ngọc Huyền",
-  "text": "bố chuyển tiền ăn luôn đi"
+  "text": "nói chuyện gì"
  },
  {
-  "key": "botchuyentien_1_6",
+  "key": "nguoiyeucu_3_2",
   "voice": "Phạm Tuyên",
-  "text": "đó là tiền ăn tuần này"
+  "text": "chuyện của hai đứa mình"
  },
  {
-  "key": "botchuyentien_1_7",
+  "key": "nguoiyeucu_3_3",
   "voice": "Ngọc Huyền",
-  "text": "hai trăm đồng là tiền ăn cả tuần ạ"
+  "text": "anh còn nợ em hai triệu"
  },
  {
-  "key": "botchuyentien_1_8",
+  "key": "nguoiyeucu_3_4",
   "voice": "Phạm Tuyên",
-  "text": "thì con ăn ít cho khỏe"
+  "text": "em nhớ dai vậy"
  },
  {
-  "key": "botchuyentien_3_0",
-  "voice": "Trúc Ly",
-  "text": "bố ơi sao nội dung chuyển khoản dài vậy"
- },
- {
-  "key": "botchuyentien_3_1",
-  "voice": "Hải Đăng",
-  "text": "bố viết để dặn con"
- },
- {
-  "key": "botchuyentien_3_2",
-  "voice": "Trúc Ly",
-  "text": "con đọc nè, không mua trà sữa, không thức khuya, nhớ gọi cho mẹ"
- },
- {
-  "key": "botchuyentien_3_3",
-  "voice": "Hải Đăng",
-  "text": "còn thiếu gì không"
- },
- {
-  "key": "botchuyentien_3_4",
-  "voice": "Trúc Ly",
-  "text": "thiếu dấu chấm ạ"
- },
- {
-  "key": "botchuyentien_3_5",
-  "voice": "Hải Đăng",
-  "text": "ngân hàng cho viết nhiều mà"
- },
- {
-  "key": "botchuyentien_3_6",
-  "voice": "Trúc Ly",
-  "text": "bố dặn nhiều hơn số tiền luôn"
- },
- {
-  "key": "botchuyentien_3_7",
-  "voice": "Hải Đăng",
-  "text": "tiền ít thì lời dặn phải nhiều"
- },
- {
-  "key": "botchuyentien_5_0",
-  "voice": "Hải Đăng",
-  "text": "con nhớ học tốt nha, không thì bố thu hồi tiền"
- },
- {
-  "key": "botchuyentien_5_1",
+  "key": "nguoiyeucu_3_5",
   "voice": "Ngọc Huyền",
-  "text": "bố thu hồi tiền được á"
+  "text": "còn nhớ cả cái nồi cơm điện nữa"
  },
  {
-  "key": "botchuyentien_5_2",
-  "voice": "Hải Đăng",
-  "text": "bố đang tìm nút thu hồi"
+  "key": "nguoiyeucu_5_0",
+  "voice": "Phạm Tuyên",
+  "text": "anh đang đứng trước cửa nhà em nè"
  },
  {
-  "key": "botchuyentien_5_3",
+  "key": "nguoiyeucu_5_1",
   "voice": "Ngọc Huyền",
-  "text": "tiền chuyển thành công rồi bố"
+  "text": "em chuyển nhà ba tháng rồi"
  },
  {
-  "key": "botchuyentien_5_4",
-  "voice": "Hải Đăng",
-  "text": "vậy bố tìm nút thu hồi lời dặn"
+  "key": "nguoiyeucu_5_2",
+  "voice": "Phạm Tuyên",
+  "text": "sao em không nói anh"
  },
  {
-  "key": "botchuyentien_5_5",
+  "key": "nguoiyeucu_5_3",
   "voice": "Ngọc Huyền",
-  "text": "không có nút đó đâu bố"
+  "text": "anh chặn em mà"
  },
  {
-  "key": "botchuyentien_5_6",
-  "voice": "Hải Đăng",
-  "text": "thế con nhớ hết lời dặn nha"
- },
- {
-  "key": "botchuyentien_7_0",
+  "key": "nguoiyeucu_5_4",
   "voice": "Phạm Tuyên",
-  "text": "con ơi bố chuyển nhầm thêm một số không"
+  "text": "chặn rồi sao tin nhắn vẫn gửi được"
  },
  {
-  "key": "botchuyentien_7_1",
-  "voice": "Trúc Ly",
-  "text": "dạ con thấy năm triệu thay vì năm trăm nghìn"
- },
- {
-  "key": "botchuyentien_7_2",
-  "voice": "Phạm Tuyên",
-  "text": "con chuyển lại bốn triệu rưỡi cho bố nha"
- },
- {
-  "key": "botchuyentien_7_3",
-  "voice": "Trúc Ly",
-  "text": "dạ để con chuyển thử một trăm đồng trước đã"
- },
- {
-  "key": "botchuyentien_7_4",
-  "voice": "Phạm Tuyên",
-  "text": "sao con giống bố vậy"
- },
- {
-  "key": "botchuyentien_7_5",
-  "voice": "Trúc Ly",
-  "text": "con học bố mà"
- },
- {
-  "key": "botchuyentien_7_6",
-  "voice": "Phạm Tuyên",
-  "text": "thôi con giữ luôn, từ giờ tự chuyển thử cho bố"
- },
- {
-  "key": "botchuyentien_7_7",
-  "voice": "Trúc Ly",
-  "text": "con chuyển rồi, một trăm đồng"
- },
- {
-  "key": "botchuyentien_7_8",
-  "voice": "Phạm Tuyên",
-  "text": "ừ nhận rồi, đủ tiền ăn tuần này"
+  "key": "nguoiyeucu_5_5",
+  "voice": "Ngọc Huyền",
+  "text": "em đổi nhà chứ đâu có đổi số, còn phải đòi nợ anh"
  }
 ]
