@@ -1,0 +1,43 @@
+== botchuyentien | Bố chuyển tiền cho con gái
+-- cover | Bố chuyển tiền // cho con gái
+-- chat | CHUYỂN THỬ | 19:05 | Bố | light | Tiền ăn cả tuần | M1F1
+a: con ơi bố chuyển thử một đồng rồi đó
+b: dạ con nhận được rồi bố
+a: nhận được thật không
+b: thật ạ, có thông báo hẳn hoi
+a: vậy bố chuyển thêm một đồng nữa cho chắc
+b: bố chuyển tiền ăn luôn đi
+a: đó là tiền ăn tuần này
+b: hai đồng là tiền ăn cả tuần ạ
+a: thì con ăn ít cho khỏe
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Hai đồng | 1 | 1.6 | 1
+-- chat | NỘI DUNG CHUYỂN KHOẢN | 20:15 | Bố | dark | Lời dặn đắt hơn tiền | M2F2
+b: bố ơi sao nội dung chuyển khoản dài vậy
+a: bố viết để dặn con
+b: con đọc nè, không mua trà sữa, không thức khuya, nhớ gọi cho mẹ
+a: còn thiếu gì không
+b: thiếu dấu chấm ạ
+a: ngân hàng cho viết nhiều mà
+b: bố dặn nhiều hơn số tiền luôn
+a: tiền ít thì lời dặn phải nhiều
+-- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Lời dặn đắt hơn tiền | 1 | 1.6 | 1
+-- chat | THU HỒI TIỀN | 21:00 | Bố | light | Nút thu hồi lời dặn | M2F1
+a: con nhớ học tốt nha, không thì bố thu hồi tiền
+b: bố thu hồi tiền được á
+a: bố đang tìm nút thu hồi
+b: tiền chuyển thành công rồi bố
+a: vậy bố tìm nút thu hồi lời dặn
+b: không có nút đó đâu bố
+a: thế con nhớ hết lời dặn nha
+-- meme | Cat-staring-down-a-cat-green-screen-.mp4 | Tìm nút thu hồi | 1 | 1.6 | 1
+-- chat | CHUYỂN NHẦM | 22:30 | Bố | dark | Đủ tiền ăn tuần này | M1F2
+a: con ơi bố chuyển nhầm thêm một số không
+b: dạ con thấy năm triệu thay vì năm trăm nghìn
+a: con chuyển lại bốn triệu rưỡi cho bố nha
+b: dạ để con chuyển thử một đồng trước đã
+a: sao con giống bố vậy
+b: con học bố mà
+a: thôi con giữ luôn, từ giờ tự chuyển thử cho bố
+b: con chuyển rồi, một đồng
+a: ừ nhận rồi, đủ tiền ăn tuần này
+-- meme | Cat-laughing-Green-Screen-Meme.mp4 | Đủ tiền ăn tuần này | 1 | 1.6 | 1

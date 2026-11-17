@@ -28,7 +28,7 @@ def chat_html(s):
         else:
             rows+=f'<div style="display:flex;flex:none;justify-content:{side}"><div style="max-width:680px;font-size:46px;line-height:1.28;padding:16px 30px;border-radius:40px;background:{out if k=="out" else inb};color:{"#fff" if k=="out" else tx}">{html.escape(t)}</div></div>'
     return f"""<html><body style="background:{col}">{BASE}{snow()}
-<div style="position:absolute;top:160px;left:0;right:0;text-align:center;color:#fff;font-weight:900;font-size:62px;letter-spacing:2px;padding:0 60px;line-height:1.2">{html.escape(s['poster'])}</div>
+<div style="position:absolute;top:170px;left:0;right:0;text-align:center;color:#fff;font-weight:900;font-size:50px;letter-spacing:2px;padding:0 60px;line-height:1.2">{html.escape(s['poster'])}</div>
 <div style="position:absolute;top:330px;left:100px;width:880px;height:960px;background:{card};border-radius:60px;box-shadow:0 20px 60px #0007;display:flex;flex-direction:column;overflow:hidden">
  <div style="height:120px;display:flex;align-items:center;padding:0 40px;gap:24px;border-bottom:2px solid #8883;flex:none"><div style="width:72px;height:72px;border-radius:50%;background:{out}"></div><div style="font-size:46px;font-weight:800;color:{tx}">{html.escape(s['contact'])}</div><div style="margin-left:auto;font-size:34px;color:#999">{s['time']}</div></div>
  <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:18px;padding:24px 30px">{rows}</div></div>
