@@ -1,0 +1,28 @@
+== emhaixindothu | Em hai xin đủ thứ
+-- cover | Em hai xin // đủ thứ
+-- chat | EM HAI XIN TIỀN | 20:15 | Em Hai | light | Anh hai đang làm việc thì em nhắn | F1M1
+a: anh hai ơi, anh đang làm gì đó
+b: anh đang làm việc, sao vậy em
+a: anh cho em mượn hai trăm nghìn đi
+b: em mượn làm gì
+a: em mua chai nước
+b: chai nước hai trăm nghìn hả
+a: nước hoa hồng đó anh, nước thôi mà
+-- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Chai nước hai trăm | 1 | 1.6 | 1
+-- chat | EM HAI XIN TIẾP | 20:40 | Em Hai | dark | Gu của em đổi nhanh hơn thời tiết | F1M1
+a: anh ơi, em còn thiếu cái ốp điện thoại
+b: tuần trước anh mới mua cho em rồi mà
+a: cái đó em đổi gu rồi anh
+b: gu của em đổi nhanh hơn thời tiết nữa
+a: vậy anh mua cho em hai cái nha, một cái thay phiên
+b: anh mua cho em cái nhà luôn cho rồi
+a: thiệt hả anh
+b: anh nói chơi thôi
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Anh nói chơi thôi | 0.5 | 1.6 | 1
+-- chat | EM HAI ĐƯỢC ĐIỂM CAO | 22:30 | Em Hai | light | Cái kết cho anh hai | F1M1
+a: anh hai, hôm nay em thi được chín điểm nè
+b: giỏi quá, em muốn anh thưởng gì
+a: em chỉ muốn anh khen em thôi
+b: thiệt hả, vậy anh khen em hết hôm nay luôn
+a: dạ, rồi anh chuyển khoản khen luôn nha
+b: khen thì miễn phí, chuyển khoản thì không

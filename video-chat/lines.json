@@ -1,172 +1,112 @@
 [
  {
-  "key": "noidoisep_0_vo",
+  "key": "emhaixindothu_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Những cách nói dối sếp , để đi làm muộn"
+  "text": "Em hai xin , đủ thứ"
  },
  {
-  "key": "noidoisep_1_0",
-  "voice": "Hải Đăng",
-  "text": "em đâu rồi, chín giờ họp rồi"
- },
- {
-  "key": "noidoisep_1_1",
-  "voice": "Trúc Ly",
-  "text": "sếp ơi em đang kẹt xe ở cầu"
- },
- {
-  "key": "noidoisep_1_2",
-  "voice": "Hải Đăng",
-  "text": "sếp cũng vừa qua cầu, có thấy kẹt đâu"
- },
- {
-  "key": "noidoisep_1_3",
-  "voice": "Trúc Ly",
-  "text": "dạ em kẹt ở đoạn trước cầu"
- },
- {
-  "key": "noidoisep_1_4",
-  "voice": "Hải Đăng",
-  "text": "đoạn đó sếp đi qua, vắng tanh"
- },
- {
-  "key": "noidoisep_1_5",
-  "voice": "Trúc Ly",
-  "text": "vậy chắc xe em tự kẹt ạ"
- },
- {
-  "key": "noidoisep_1_6",
-  "voice": "Hải Đăng",
-  "text": "mười phút nữa sếp gọi video xem em kẹt ở đâu"
- },
- {
-  "key": "noidoisep_1_7",
-  "voice": "Trúc Ly",
-  "text": "dạ để em đi tìm chỗ nào kẹt cho sếp xem"
- },
- {
-  "key": "noidoisep_3_0",
+  "key": "emhaixindothu_1_0",
   "voice": "Ngọc Huyền",
-  "text": "sáng nay em nghỉ vì đau bụng đúng không"
+  "text": "anh hai ơi, anh đang làm gì đó"
  },
  {
-  "key": "noidoisep_3_1",
+  "key": "emhaixindothu_1_1",
   "voice": "Phạm Tuyên",
-  "text": "dạ em đang ở bệnh viện Hồng Đức ạ"
+  "text": "anh đang làm việc, sao vậy em"
  },
  {
-  "key": "noidoisep_3_2",
+  "key": "emhaixindothu_1_2",
   "voice": "Ngọc Huyền",
-  "text": "ừ em nghỉ ngơi đi"
+  "text": "anh cho em mượn hai trăm nghìn đi"
  },
  {
-  "key": "noidoisep_3_3",
-  "voice": "Ngọc Huyền",
-  "text": "mà tối nay sếp thấy em đăng story uống trà sữa"
- },
- {
-  "key": "noidoisep_3_4",
+  "key": "emhaixindothu_1_3",
   "voice": "Phạm Tuyên",
-  "text": "dạ hết nước nên em uống thuốc bằng trà sữa"
+  "text": "em mượn làm gì"
  },
  {
-  "key": "noidoisep_3_5",
+  "key": "emhaixindothu_1_4",
   "voice": "Ngọc Huyền",
-  "text": "thuốc gì mà uống kèm trân châu"
+  "text": "em mua chai nước"
  },
  {
-  "key": "noidoisep_3_6",
+  "key": "emhaixindothu_1_5",
   "voice": "Phạm Tuyên",
-  "text": "dạ thuốc bổ ạ"
+  "text": "chai nước hai trăm nghìn hả"
  },
  {
-  "key": "noidoisep_5_0",
+  "key": "emhaixindothu_1_6",
+  "voice": "Ngọc Huyền",
+  "text": "nước hoa hồng đó anh, nước thôi mà"
+ },
+ {
+  "key": "emhaixindothu_3_0",
+  "voice": "Ngọc Huyền",
+  "text": "anh ơi, em còn thiếu cái ốp điện thoại"
+ },
+ {
+  "key": "emhaixindothu_3_1",
   "voice": "Phạm Tuyên",
-  "text": "em đâu rồi, sếp gọi năm cuộc rồi"
+  "text": "tuần trước anh mới mua cho em rồi mà"
  },
  {
-  "key": "noidoisep_5_1",
-  "voice": "Hải Đăng",
-  "text": "dạ điện thoại em để chế độ im lặng ạ"
+  "key": "emhaixindothu_3_2",
+  "voice": "Ngọc Huyền",
+  "text": "cái đó em đổi gu rồi anh"
  },
  {
-  "key": "noidoisep_5_2",
+  "key": "emhaixindothu_3_3",
   "voice": "Phạm Tuyên",
-  "text": "vậy sao em trả lời tin này được"
+  "text": "gu của em đổi nhanh hơn thời tiết nữa"
  },
  {
-  "key": "noidoisep_5_3",
-  "voice": "Hải Đăng",
-  "text": "dạ nó tự bật lại khi sếp nhắn"
+  "key": "emhaixindothu_3_4",
+  "voice": "Ngọc Huyền",
+  "text": "vậy anh mua cho em hai cái nha, một cái thay phiên"
  },
  {
-  "key": "noidoisep_5_4",
+  "key": "emhaixindothu_3_5",
   "voice": "Phạm Tuyên",
-  "text": "vậy sếp nhắn luôn, hôm nay em tăng ca"
+  "text": "anh mua cho em cái nhà luôn cho rồi"
  },
  {
-  "key": "noidoisep_5_5",
-  "voice": "Hải Đăng",
-  "text": "dạ điện thoại em vừa im lặng lại rồi"
- },
- {
-  "key": "noidoisep_7_0",
+  "key": "emhaixindothu_3_6",
   "voice": "Ngọc Huyền",
-  "text": "sếp ơi em xin đi muộn nửa tiếng"
+  "text": "thiệt hả anh"
  },
  {
-  "key": "noidoisep_7_1",
-  "voice": "Hải Đăng",
-  "text": "lý do"
+  "key": "emhaixindothu_3_7",
+  "voice": "Phạm Tuyên",
+  "text": "anh nói chơi thôi"
  },
  {
-  "key": "noidoisep_7_2",
+  "key": "emhaixindothu_5_0",
   "voice": "Ngọc Huyền",
-  "text": "xe em bị hỏng ạ"
+  "text": "anh hai, hôm nay em thi được chín điểm nè"
  },
  {
-  "key": "noidoisep_7_3",
-  "voice": "Hải Đăng",
-  "text": "ok"
+  "key": "emhaixindothu_5_1",
+  "voice": "Phạm Tuyên",
+  "text": "giỏi quá, em muốn anh thưởng gì"
  },
  {
-  "key": "noidoisep_7_4",
+  "key": "emhaixindothu_5_2",
   "voice": "Ngọc Huyền",
-  "text": "ê mày, tao ngủ nướng, tao bảo sếp xe hỏng, nhớ hùa theo nha"
+  "text": "em chỉ muốn anh khen em thôi"
  },
  {
-  "key": "noidoisep_7_5",
-  "voice": "Hải Đăng",
-  "text": "sếp đây"
+  "key": "emhaixindothu_5_3",
+  "voice": "Phạm Tuyên",
+  "text": "thiệt hả, vậy anh khen em hết hôm nay luôn"
  },
  {
-  "key": "noidoisep_7_6",
+  "key": "emhaixindothu_5_4",
   "voice": "Ngọc Huyền",
-  "text": "hả"
+  "text": "dạ, rồi anh chuyển khoản khen luôn nha"
  },
  {
-  "key": "noidoisep_7_7",
-  "voice": "Hải Đăng",
-  "text": "xe em hỏng thì sếp đang đứng dưới nhà em, sếp chở đi"
- },
- {
-  "key": "noidoisep_7_8",
-  "voice": "Ngọc Huyền",
-  "text": "hả"
- },
- {
-  "key": "noidoisep_7_9",
-  "voice": "Hải Đăng",
-  "text": "xuống đi"
- },
- {
-  "key": "noidoisep_7_10",
-  "voice": "Ngọc Huyền",
-  "text": "dạ xe em vừa tự sửa được rồi ạ"
- },
- {
-  "key": "noidoisep_7_11",
-  "voice": "Hải Đăng",
-  "text": "kỳ diệu thật, mai xe tự sửa thì em tự dậy luôn nhé"
+  "key": "emhaixindothu_5_5",
+  "voice": "Phạm Tuyên",
+  "text": "khen thì miễn phí, chuyển khoản thì không"
  }
 ]
