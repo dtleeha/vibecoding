@@ -1,16 +1,16 @@
 == botchuyentien | Bố chuyển tiền cho con gái
 -- cover | Bố chuyển tiền // cho con gái
 -- chat | CHUYỂN THỬ | 19:05 | Bố | light | Tiền ăn cả tuần | M1F1
-a: con ơi bố chuyển thử một đồng rồi đó
+a: con ơi bố chuyển thử một trăm đồng rồi đó
 b: dạ con nhận được rồi bố
 a: nhận được thật không
 b: thật ạ, có thông báo hẳn hoi
-a: vậy bố chuyển thêm một đồng nữa cho chắc
+a: vậy bố chuyển thêm một trăm đồng nữa cho chắc
 b: bố chuyển tiền ăn luôn đi
 a: đó là tiền ăn tuần này
-b: hai đồng là tiền ăn cả tuần ạ
+b: hai trăm đồng là tiền ăn cả tuần ạ
 a: thì con ăn ít cho khỏe
--- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Hai đồng | 1 | 1.6 | 1
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Hai trăm đồng | 1 | 1.6 | 1
 -- chat | NỘI DUNG CHUYỂN KHOẢN | 20:15 | Bố | dark | Lời dặn đắt hơn tiền | M2F2
 b: bố ơi sao nội dung chuyển khoản dài vậy
 a: bố viết để dặn con
@@ -34,10 +34,10 @@ a: thế con nhớ hết lời dặn nha
 a: con ơi bố chuyển nhầm thêm một số không
 b: dạ con thấy năm triệu thay vì năm trăm nghìn
 a: con chuyển lại bốn triệu rưỡi cho bố nha
-b: dạ để con chuyển thử một đồng trước đã
+b: dạ để con chuyển thử một trăm đồng trước đã
 a: sao con giống bố vậy
 b: con học bố mà
 a: thôi con giữ luôn, từ giờ tự chuyển thử cho bố
-b: con chuyển rồi, một đồng
+b: con chuyển rồi, một trăm đồng
 a: ừ nhận rồi, đủ tiền ăn tuần này
 -- meme | Cat-laughing-Green-Screen-Meme.mp4 | Đủ tiền ăn tuần này | 1 | 1.6 | 1
