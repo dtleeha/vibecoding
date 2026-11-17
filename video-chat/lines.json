@@ -1,92 +1,162 @@
 [
  {
-  "key": "nguoiyeucu_0_vo",
+  "key": "emtraichoigame_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Người yêu cũ nhắn tin , lúc một giờ sáng"
+  "text": "Em trai xin chơi game , đủ mọi chiêu"
  },
  {
-  "key": "nguoiyeucu_1_0",
+  "key": "emtraichoigame_1_0",
   "voice": "Phạm Tuyên",
-  "text": "em ngủ chưa"
+  "text": "mẹ ơi cho con chơi game nửa tiếng thôi"
  },
  {
-  "key": "nguoiyeucu_1_1",
+  "key": "emtraichoigame_1_1",
   "voice": "Ngọc Huyền",
-  "text": "anh cần gì"
+  "text": "con làm bài tập chưa"
  },
  {
-  "key": "nguoiyeucu_1_2",
+  "key": "emtraichoigame_1_2",
   "voice": "Phạm Tuyên",
-  "text": "anh nhớ em"
+  "text": "xong rồi ạ"
  },
  {
-  "key": "nguoiyeucu_1_3",
+  "key": "emtraichoigame_1_3",
   "voice": "Ngọc Huyền",
-  "text": "anh say hả"
+  "text": "chụp bài gửi mẹ xem"
  },
  {
-  "key": "nguoiyeucu_1_4",
+  "key": "emtraichoigame_1_4",
   "voice": "Phạm Tuyên",
-  "text": "say một chút thôi"
+  "text": "dạ đây ạ"
  },
  {
-  "key": "nguoiyeucu_3_0",
-  "voice": "Phạm Tuyên",
-  "text": "hay mình nói chuyện lại đi"
- },
- {
-  "key": "nguoiyeucu_3_1",
+  "key": "emtraichoigame_1_5",
   "voice": "Ngọc Huyền",
-  "text": "nói chuyện gì"
+  "text": "sao mẹ chỉ thấy cái tay cầm game"
  },
  {
-  "key": "nguoiyeucu_3_2",
+  "key": "emtraichoigame_1_6",
   "voice": "Phạm Tuyên",
-  "text": "chuyện của hai đứa mình"
+  "text": "tay cầm là dụng cụ học tập ạ"
  },
  {
-  "key": "nguoiyeucu_3_3",
-  "voice": "Ngọc Huyền",
-  "text": "anh còn nợ em hai triệu"
- },
- {
-  "key": "nguoiyeucu_3_4",
+  "key": "emtraichoigame_3_0",
   "voice": "Phạm Tuyên",
-  "text": "em nhớ dai vậy"
+  "text": "chị ơi cho em mượn máy chơi game"
  },
  {
-  "key": "nguoiyeucu_3_5",
-  "voice": "Ngọc Huyền",
-  "text": "còn nhớ cả cái nồi cơm điện nữa"
+  "key": "emtraichoigame_3_1",
+  "voice": "Trúc Ly",
+  "text": "em trả chị cái gì"
  },
  {
-  "key": "nguoiyeucu_5_0",
+  "key": "emtraichoigame_3_2",
   "voice": "Phạm Tuyên",
-  "text": "anh đang đứng trước cửa nhà em nè"
+  "text": "em rửa chén giùm chị một bữa"
  },
  {
-  "key": "nguoiyeucu_5_1",
-  "voice": "Ngọc Huyền",
-  "text": "em chuyển nhà ba tháng rồi"
+  "key": "emtraichoigame_3_3",
+  "voice": "Trúc Ly",
+  "text": "ba tuần"
  },
  {
-  "key": "nguoiyeucu_5_2",
+  "key": "emtraichoigame_3_4",
   "voice": "Phạm Tuyên",
-  "text": "sao em không nói anh"
+  "text": "sao chị đổi giá vậy"
  },
  {
-  "key": "nguoiyeucu_5_3",
-  "voice": "Ngọc Huyền",
-  "text": "anh chặn em mà"
+  "key": "emtraichoigame_3_5",
+  "voice": "Trúc Ly",
+  "text": "giá cũ lỗi thời rồi"
  },
  {
-  "key": "nguoiyeucu_5_4",
+  "key": "emtraichoigame_3_6",
   "voice": "Phạm Tuyên",
-  "text": "chặn rồi sao tin nhắn vẫn gửi được"
+  "text": "chị là doanh nhân hả"
  },
  {
-  "key": "nguoiyeucu_5_5",
+  "key": "emtraichoigame_3_7",
+  "voice": "Trúc Ly",
+  "text": "chị tính thêm phí thuê máy"
+ },
+ {
+  "key": "emtraichoigame_5_0",
+  "voice": "Phạm Tuyên",
+  "text": "bố ơi chơi game cùng con không"
+ },
+ {
+  "key": "emtraichoigame_5_1",
+  "voice": "Hải Đăng",
+  "text": "được, bố vào rồi"
+ },
+ {
+  "key": "emtraichoigame_5_2",
+  "voice": "Phạm Tuyên",
+  "text": "sao bố đứng yên vậy"
+ },
+ {
+  "key": "emtraichoigame_5_3",
+  "voice": "Hải Đăng",
+  "text": "bố đang ngắm cái cây đẹp"
+ },
+ {
+  "key": "emtraichoigame_5_4",
+  "voice": "Phạm Tuyên",
+  "text": "bố ơi địch bắn bố rồi"
+ },
+ {
+  "key": "emtraichoigame_5_5",
+  "voice": "Hải Đăng",
+  "text": "ủa bố chết rồi à"
+ },
+ {
+  "key": "emtraichoigame_5_6",
+  "voice": "Phạm Tuyên",
+  "text": "bố ơi con xin chơi một mình"
+ },
+ {
+  "key": "emtraichoigame_7_0",
+  "voice": "Phạm Tuyên",
+  "text": "mẹ ơi con nộp đơn xin chơi game"
+ },
+ {
+  "key": "emtraichoigame_7_1",
   "voice": "Ngọc Huyền",
-  "text": "em đổi nhà chứ đâu có đổi số, còn phải đòi nợ anh"
+  "text": "đơn đâu con"
+ },
+ {
+  "key": "emtraichoigame_7_2",
+  "voice": "Phạm Tuyên",
+  "text": "ba trang mẹ ạ, lý do, cam kết, và hình con đáng yêu"
+ },
+ {
+  "key": "emtraichoigame_7_3",
+  "voice": "Ngọc Huyền",
+  "text": "cam kết gì"
+ },
+ {
+  "key": "emtraichoigame_7_4",
+  "voice": "Phạm Tuyên",
+  "text": "con cam kết chơi đúng một tiếng"
+ },
+ {
+  "key": "emtraichoigame_7_5",
+  "voice": "Ngọc Huyền",
+  "text": "mẹ duyệt, nhưng mẹ giữ máy"
+ },
+ {
+  "key": "emtraichoigame_7_6",
+  "voice": "Phạm Tuyên",
+  "text": "dạ được ạ"
+ },
+ {
+  "key": "emtraichoigame_7_7",
+  "voice": "Ngọc Huyền",
+  "text": "một tiếng của mẹ là đến khi mẹ thắng"
+ },
+ {
+  "key": "emtraichoigame_7_8",
+  "voice": "Phạm Tuyên",
+  "text": "mẹ ơi"
  }
 ]

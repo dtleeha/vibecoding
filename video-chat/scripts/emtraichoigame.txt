@@ -1,0 +1,41 @@
+== emtraichoigame | Em trai xin chơi game
+-- cover | Em trai xin chơi game // đủ mọi chiêu
+-- chat | XIN CHƠI NỬA TIẾNG | 19:10 | Mẹ | light | Dụng cụ học tập | F1M1
+b: mẹ ơi cho con chơi game nửa tiếng thôi
+a: con làm bài tập chưa
+b: xong rồi ạ
+a: chụp bài gửi mẹ xem
+b: dạ đây ạ
+a: sao mẹ chỉ thấy cái tay cầm game
+b: tay cầm là dụng cụ học tập ạ
+-- meme | Cat-staring-down-a-cat-green-screen-.mp4 | Dụng cụ học tập | 1 | 1.6 | 1
+-- chat | MƯỢN MÁY CỦA CHỊ | 20:00 | Chị hai | dark | Chị là doanh nhân | F2M1
+b: chị ơi cho em mượn máy chơi game
+a: em trả chị cái gì
+b: em rửa chén giùm chị một bữa
+a: ba tuần
+b: sao chị đổi giá vậy
+a: giá cũ lỗi thời rồi
+b: chị là doanh nhân hả
+a: chị tính thêm phí thuê máy
+-- meme | Cat-sipping-tea-green-screen.mp4 | Chị là doanh nhân | 1 | 1.6 | 1
+-- chat | BỐ CHƠI CÙNG | 21:00 | Bố | light | Bố ngắm cảnh | M2M1
+b: bố ơi chơi game cùng con không
+a: được, bố vào rồi
+b: sao bố đứng yên vậy
+a: bố đang ngắm cái cây đẹp
+b: bố ơi địch bắn bố rồi
+a: ủa bố chết rồi à
+b: bố ơi con xin chơi một mình
+-- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Bố chết rồi | 1 | 1.6 | 1
+-- chat | NỘP ĐƠN XIN | 21:40 | Mẹ | dark | Đến khi mẹ thắng | F1M1
+b: mẹ ơi con nộp đơn xin chơi game
+a: đơn đâu con
+b: ba trang mẹ ạ, lý do, cam kết, và hình con đáng yêu
+a: cam kết gì
+b: con cam kết chơi đúng một tiếng
+a: mẹ duyệt, nhưng mẹ giữ máy
+b: dạ được ạ
+a: một tiếng của mẹ là đến khi mẹ thắng
+b: mẹ ơi
+-- meme | Cat-laughing-Green-Screen-Meme.mp4 | Đến khi mẹ thắng | 1 | 1.6 | 1
