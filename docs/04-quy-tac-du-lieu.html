@@ -193,6 +193,221 @@
     </div>
   </section>
 
+  <section class="card" id="dang-ky-admin">
+    <div class="card__header card__header--primary">Quy tắc mới: Đăng ký người chơi và trang admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Các mục 4.7–4.16 dưới đây áp dụng cho F13–F21. Mục 4.1–4.6 ở trên giữ nguyên. Chỗ ghi <em>(giả định)</em> là đề xuất, cần xác nhận trước khi viết code.</p>
+    </div>
+  </section>
+
+  <section class="card" id="nhap-lieu">
+    <div class="card__header card__header--primary">4.7 · Quy tắc nhập liệu khi đăng ký <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Trước khi kiểm tra: bỏ khoảng trắng ở đầu và cuối. Form và server dùng <strong>cùng</strong> một bộ quy tắc.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trường</th><th>Hợp lệ khi</th><th>Chuẩn hoá trước khi lưu</th><th>Thông báo lỗi</th></tr></thead>
+          <tbody>
+            <tr><td>Họ và tên</td><td>Bắt buộc; 2–60 ký tự; chỉ gồm chữ cái (có dấu tiếng Việt), khoảng trắng, dấu nháy <code>'</code> và gạch nối <code>-</code> <em>(giả định)</em></td><td>Gộp nhiều khoảng trắng liền nhau thành một; giữ nguyên chữ hoa/thường người chơi nhập</td><td>“Vui lòng nhập họ tên.” / “Họ tên từ 2 đến 60 ký tự, chỉ gồm chữ cái.”</td></tr>
+            <tr><td>Email</td><td>Bắt buộc; tối đa 254 ký tự; đúng dạng <code>ten@tenmien.duoi</code> (có đúng một <code>@</code>, tên miền có dấu chấm, không có khoảng trắng)</td><td>Chuyển toàn bộ thành chữ thường</td><td>“Vui lòng nhập email.” / “Email chưa đúng định dạng.”</td></tr>
+            <tr><td>Số điện thoại</td><td>Bắt buộc; số di động Việt Nam: sau khi chuẩn hoá có đúng 10 chữ số, bắt đầu bằng <code>03</code>, <code>05</code>, <code>07</code>, <code>08</code> hoặc <code>09</code> <em>(giả định)</em></td><td>Bỏ khoảng trắng, dấu chấm, gạch nối, ngoặc; đổi <code>+84</code> hoặc <code>84</code> ở đầu thành <code>0</code>. Lưu dạng <code>0912345678</code></td><td>“Vui lòng nhập số điện thoại.” / “Số điện thoại chưa đúng (VD: 0912 345 678).”</td></tr>
+            <tr><td>Đồng ý xử lý dữ liệu</td><td>Bắt buộc tick</td><td>Lưu thời điểm đồng ý và phiên bản thông báo đã đồng ý</td><td>“Bạn cần đồng ý để tiếp tục.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p><strong>Ví dụ chuẩn hoá SĐT:</strong> “0912 345 678”, “0912.345.678”, “+84 912 345 678”, “84912345678” đều lưu thành <code>0912345678</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="trung-du-lieu">
+    <div class="card__header card__header--primary">4.8 · Email hoặc SĐT đã có (coi là cùng người) <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Đã chốt: email hoặc số điện thoại đã có thì coi là <strong>cùng một người chơi</strong>, cập nhật thông tin, không tạo người chơi mới. So sánh sau khi chuẩn hoá (4.7). Email và SĐT đều là duy nhất trong database.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tình huống</th><th>Kết quả</th></tr></thead>
+          <tbody>
+            <tr><td>Email mới, SĐT mới</td><td>Tạo người chơi mới</td></tr>
+            <tr><td>Email đã có (SĐT trùng hoặc mới)</td><td>Cùng người: cập nhật họ tên và SĐT theo lần nhập mới; giữ nguyên ngày đăng ký và toàn bộ điểm cũ</td></tr>
+            <tr><td>Email mới, SĐT đã có</td><td>Cùng người (người đang dùng SĐT đó): cập nhật họ tên và email theo lần nhập mới; giữ điểm cũ <em>(giả định)</em></td></tr>
+            <tr><td>Email thuộc người A, SĐT thuộc người B khác</td><td><strong>Không</strong> gộp, không cập nhật. Báo lỗi ở ô SĐT: “Số điện thoại này đã được đăng ký với email khác.” <em>(giả định)</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note note--warn">
+        <p><strong>Cần anh/chị cân nhắc:</strong> vì không có bước xác minh email/SĐT, ai biết email hoặc SĐT của người khác có thể nhập lại và <strong>đổi tên, đổi SĐT</strong> của người đó, đồng thời điểm sẽ cộng vào người đó. Nếu chỉ dùng cho sự kiện nhỏ thì chấp nhận được; nếu có trao giải theo điểm, nên thêm bước xác minh (mã OTP qua email) ở phiên bản sau.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="du-lieu-trinh-duyet-moi">
+    <div class="card__header card__header--dark">4.9 · Dữ liệu lưu trên trình duyệt (bổ sung cho 4.5) <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Khoá</th><th>Nội dung</th><th>Quy tắc</th></tr></thead>
+          <tbody>
+            <tr><td><code>dapchuot.thietbi</code></td><td>Mã thiết bị (chuỗi ngẫu nhiên do server cấp) và tên hiển thị</td><td>Ghi khi đăng ký thành công. Xoá khi bấm “Không phải bạn?” hoặc khi server báo mã không hợp lệ</td></tr>
+            <tr><td><code>dapchuot.diemcho</code></td><td>Hàng chờ các lượt chưa gửi được: mã lượt, điểm, thời điểm kết thúc</td><td>Tối đa 20 lượt; đầy thì bỏ lượt cũ nhất <em>(giả định)</em>. Gửi thành công lượt nào thì xoá lượt đó</td></tr>
+            <tr><td><code>dapchuot.kyluc</code></td><td>Kỷ lục (như 4.5)</td><td>Không đổi</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Trình duyệt <strong>không</strong> lưu email và số điện thoại.</li>
+        <li>Mã thiết bị chỉ dùng để nhận ra máy đã đăng ký, không dùng để đăng nhập admin.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="luu-diem">
+    <div class="card__header card__header--dark">4.10 · Quy tắc lưu điểm <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Quy tắc</th><th>Giá trị</th></tr></thead>
+          <tbody>
+            <tr><td>Khi nào gửi</td><td>Ngay khi lượt kết thúc (F10), kể cả điểm 0</td></tr>
+            <tr><td>Dữ liệu gửi</td><td>Mã thiết bị, mã lượt (ngẫu nhiên, mỗi lượt một mã), điểm, thời điểm kết thúc</td></tr>
+            <tr><td>Chống lưu trùng</td><td>Cùng mã lượt gửi nhiều lần → chỉ lưu 1 bản ghi, các lần sau vẫn trả “thành công”</td></tr>
+            <tr><td>Điểm hợp lệ</td><td>Số nguyên từ 0 đến 150 <em>(giả định)</em>. Ngoài khoảng này server từ chối và ghi log cảnh báo</td></tr>
+            <tr><td>Tần suất</td><td>Hai lượt của cùng một máy phải cách nhau ít nhất 25 giây theo thời điểm kết thúc <em>(giả định)</em></td></tr>
+            <tr><td>Mã thiết bị không hợp lệ</td><td>Server trả lỗi “cần đăng ký lại”; game xoá mã, bỏ hàng chờ và hiện màn hình Đăng ký ở lần về màn hình Bắt đầu kế tiếp</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p><strong>Giới hạn:</strong> điểm do trình duyệt tính rồi gửi lên, nên người rành kỹ thuật vẫn có thể gửi điểm giả trong khoảng hợp lệ. Hai giới hạn trên chỉ chặn trường hợp lộ liễu. Nếu dùng điểm để trao giải, cần biện pháp chặt hơn ở phiên bản sau.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="admin-bao-mat">
+    <div class="card__header card__header--primary">4.11 · Tài khoản admin và bảo mật <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Quy tắc</th><th>Giá trị</th></tr></thead>
+          <tbody>
+            <tr><td>Admin đầu tiên</td><td>Khi khởi động mà bảng admin <strong>trống</strong>: tạo admin từ <code>ADMIN_EMAIL</code>, <code>ADMIN_PASSWORD</code>, <code>ADMIN_NAME</code> trong file <code>.env</code>. Bảng đã có admin thì bỏ qua (đổi <code>.env</code> không ghi đè mật khẩu)</td></tr>
+            <tr><td>File <code>.env</code></td><td>Chứa mật khẩu database và admin đầu tiên; <strong>không</strong> đưa lên GitHub (đã có trong <code>.gitignore</code>). Kèm file mẫu <code>.env.example</code> không chứa mật khẩu thật</td></tr>
+            <tr><td>Mật khẩu</td><td>Tối thiểu 10 ký tự; không được trùng email. Lưu dạng băm một chiều (bcrypt hoặc argon2), không bao giờ lưu hay ghi log mật khẩu gốc</td></tr>
+            <tr><td>Đăng nhập sai</td><td>5 lần liên tiếp với cùng email → khoá 15 phút <em>(giả định)</em>. Thông báo lỗi chung, không lộ email có tồn tại hay không</td></tr>
+            <tr><td>Phiên đăng nhập</td><td>Cookie <code>HttpOnly</code>, <code>SameSite=Strict</code>, <code>Secure</code> khi chạy HTTPS. Hết hạn sau 30 phút không thao tác, tối đa 8 giờ <em>(giả định)</em>. Đăng xuất, đổi mật khẩu hoặc bị khoá → huỷ mọi phiên của admin đó</td></tr>
+            <tr><td>Chống giả mạo yêu cầu</td><td>Mọi thao tác thay đổi dữ liệu (xoá, thêm/khoá admin, đổi mật khẩu) phải kèm mã chống CSRF</td></tr>
+            <tr><td>Quyền</td><td>Mọi admin ngang quyền <em>(giả định)</em>. Không được tự xoá/tự khoá; không xoá/khoá admin cuối cùng đang hoạt động</td></tr>
+            <tr><td>Admin bị khoá</td><td>Không đăng nhập được; báo chung “Email hoặc mật khẩu không đúng.”</td></tr>
+            <tr><td>Truy cập public</td><td>Khi mở ra Internet (ví dụ qua ngrok) bắt buộc dùng HTTPS</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="xuat-csv">
+    <div class="card__header card__header--dark">4.12 · Định dạng file CSV <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Quy tắc</th><th>Giá trị</th></tr></thead>
+          <tbody>
+            <tr><td>Bảng mã</td><td>UTF-8 có BOM (để Excel trên Windows hiện đúng tiếng Việt)</td></tr>
+            <tr><td>Dấu phân cách / xuống dòng</td><td>Dấu phẩy <code>,</code> · CRLF. Ô có dấu phẩy, dấu nháy kép hoặc xuống dòng thì bọc trong <code>"…"</code>, nháy kép bên trong viết thành <code>""</code></td></tr>
+            <tr><td>Cột (theo thứ tự)</td><td>STT, Họ tên, Email, Số điện thoại, Ngày đăng ký, Số lượt chơi, Điểm cao nhất, Lần chơi gần nhất, Ngày đồng ý xử lý dữ liệu</td></tr>
+            <tr><td>Ngày giờ</td><td>Giờ Việt Nam, dạng <code>17/11/2026 16:30</code>; chưa chơi lượt nào thì để trống</td></tr>
+            <tr><td>Phạm vi</td><td>Toàn bộ kết quả đang lọc (mọi trang), theo thứ tự sắp xếp đang chọn</td></tr>
+            <tr><td>Chống chèn công thức</td><td>Ô bắt đầu bằng <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>, Tab hoặc xuống dòng → thêm dấu <code>'</code> ở đầu, để Excel không chạy như công thức</td></tr>
+            <tr><td>Tên file</td><td><code>dapchuot-nguoi-choi-YYYYMMDD-HHmm.csv</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p><strong>Lưu ý Excel:</strong> mở file CSV bằng cách bấm đúp, Excel có thể tự bỏ số 0 đầu của số điện thoại. File vẫn đúng; muốn giữ số 0, dùng Excel → Dữ liệu → Từ Văn bản/CSV và chọn cột SĐT là kiểu Văn bản.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="xoa-nhat-ky">
+    <div class="card__header card__header--dark">4.13 · Xoá và nhật ký thao tác admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li><strong>Xoá hẳn</strong> (không có thùng rác): xoá người chơi, mọi lượt chơi và mọi mã thiết bị của người đó trong một lần, hoặc không xoá gì nếu có lỗi giữa chừng.</li>
+        <li>Mỗi thao tác đăng nhập, đăng xuất, xoá người chơi, xuất CSV, thêm/khoá/mở khoá/xoá admin, đổi mật khẩu được ghi vào <strong>nhật ký</strong>: admin nào, làm gì, lúc nào, bao nhiêu bản ghi.</li>
+        <li>Nhật ký <strong>không</strong> chứa họ tên, email, SĐT của người chơi bị xoá (chỉ ghi số lượng và mã nội bộ), để xoá là xoá hết thông tin cá nhân.</li>
+        <li>Phiên bản này chỉ ghi nhật ký, chưa có màn hình xem nhật ký. <em>(giả định)</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="database">
+    <div class="card__header card__header--primary">4.14 · Database (PostgreSQL) <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Docker Compose có thêm dịch vụ <code>db</code> (PostgreSQL), dữ liệu nằm trong volume riêng để không mất khi tắt/khởi động lại container. Cổng database <strong>không</strong> mở ra ngoài máy.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Bảng</th><th>Cột chính</th><th>Ràng buộc</th></tr></thead>
+          <tbody>
+            <tr><td><code>players</code> · người chơi</td><td>id, họ tên, email, SĐT, ngày đăng ký, ngày cập nhật, thời điểm đồng ý, phiên bản thông báo đã đồng ý</td><td>email duy nhất (chữ thường); SĐT duy nhất (dạng chuẩn)</td></tr>
+            <tr><td><code>player_devices</code> · mã thiết bị</td><td>id, người chơi, mã thiết bị (lưu dạng băm), ngày tạo, lần dùng gần nhất</td><td>Xoá người chơi → xoá theo</td></tr>
+            <tr><td><code>rounds</code> · lượt chơi</td><td>id, người chơi, mã lượt, điểm, thời điểm kết thúc, ngày nhận</td><td>mã lượt duy nhất; điểm 0–150; xoá người chơi → xoá theo</td></tr>
+            <tr><td><code>admins</code> · tài khoản admin</td><td>id, họ tên, email, mật khẩu đã băm, trạng thái, phải đổi mật khẩu, số lần sai, khoá đến lúc, đăng nhập gần nhất, ngày tạo</td><td>email duy nhất</td></tr>
+            <tr><td><code>admin_sessions</code> · phiên đăng nhập</td><td>id (băm), admin, ngày tạo, hết hạn, thao tác gần nhất</td><td>Xoá/khoá admin → xoá theo</td></tr>
+            <tr><td><code>audit_logs</code> · nhật ký</td><td>id, admin, hành động, số bản ghi, ghi chú, thời điểm</td><td>Không chứa thông tin cá nhân người chơi</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>“Số lượt”, “Điểm cao nhất”, “Lần chơi gần nhất” trên trang admin được tính từ bảng <code>rounds</code>, không lưu riêng.</li>
+        <li>Mọi thời điểm lưu theo UTC, hiển thị theo giờ Việt Nam.</li>
+        <li>Cấu trúc database được tạo tự động khi khởi động (migration), không cần làm tay.</li>
+        <li>Sao lưu database: chưa thuộc phạm vi phiên bản này. <em>(giả định)</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="du-lieu-ca-nhan">
+    <div class="card__header card__header--primary">4.15 · Bảo vệ dữ liệu cá nhân <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Họ tên, email, số điện thoại là dữ liệu cá nhân. Từ 01/01/2026 áp dụng <strong>Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15</strong> và <strong>Nghị định 356/2025/NĐ-CP</strong> (thay Nghị định 13/2023/NĐ-CP).</p>
+      <ul>
+        <li><strong>Đồng ý rõ ràng:</strong> ô đồng ý không tick sẵn; không đồng ý thì không đăng ký được. Lưu thời điểm và phiên bản thông báo đã đồng ý.</li>
+        <li><strong>Thông báo xử lý dữ liệu</strong> (mở từ màn hình Đăng ký) nêu: ai thu thập, thu thập gì, để làm gì, lưu bao lâu, ai được xem, và cách yêu cầu xem/sửa/xoá dữ liệu. <strong>Nội dung do anh/chị cung cấp</strong>; em chỉ để chỗ trống.</li>
+        <li><strong>Chỉ thu thập đủ dùng:</strong> 3 trường trên, không thu thập thêm.</li>
+        <li><strong>Quyền xoá:</strong> người chơi yêu cầu xoá dữ liệu → admin dùng F19.</li>
+        <li><strong>Người chơi nhỏ tuổi:</strong> luật có quy định riêng về dữ liệu của trẻ em. Đề xuất thêm vào nội dung ô đồng ý: “Tôi từ 16 tuổi trở lên, hoặc đã được cha mẹ/người giám hộ đồng ý.” <em>(giả định)</em></li>
+        <li><strong>Thời gian lưu:</strong> chưa xác định, cần anh/chị quyết định (ví dụ xoá sau khi kết thúc sự kiện).</li>
+      </ul>
+      <div class="note note--warn">
+        <p>Mục này chỉ ghi các yêu cầu kỹ thuật để tôn trọng quyền của người chơi, <strong>không phải tư vấn pháp lý</strong>. Nếu dùng cho chiến dịch của công ty hoặc thu thập số lượng lớn, nên hỏi bộ phận pháp chế về nội dung thông báo và các nghĩa vụ khác.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="truong-hop-bien-moi">
+    <div class="card__header card__header--dark">4.16 · Trường hợp biên mới <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tình huống</th><th>Kết quả</th></tr></thead>
+          <tbody>
+            <tr><td>Bấm “Vào chơi” hai lần liên tiếp rất nhanh</td><td>Chỉ gửi một yêu cầu; chỉ có một người chơi được tạo</td></tr>
+            <tr><td>Hai máy đăng ký cùng email gần như cùng lúc</td><td>Chỉ có một người chơi; cả hai máy đều vào chơi được, điểm gộp chung</td></tr>
+            <tr><td>Mất mạng giữa lượt chơi</td><td>Lượt vẫn chơi bình thường; điểm vào hàng chờ, gửi lại sau</td></tr>
+            <tr><td>Admin xoá người chơi đang chơi dở</td><td>Lượt đang chơi vẫn chơi hết; điểm gửi lên bị từ chối; lần sau phải đăng ký lại</td></tr>
+            <tr><td>Họ tên có ký tự lạ hoặc mã HTML (VD <code>&lt;script&gt;</code>)</td><td>Bị từ chối ở bước kiểm tra; nếu có dữ liệu cũ lọt vào thì mọi nơi hiển thị đều in ra dạng chữ, không chạy mã</td></tr>
+            <tr><td>Tìm kiếm có ký tự đặc biệt (<code>%</code>, <code>_</code>, <code>'</code>)</td><td>Tìm đúng ký tự đó, không lỗi, không ảnh hưởng database</td></tr>
+            <tr><td>Xuất CSV khi danh sách trống</td><td>Vẫn tải được file, chỉ có dòng tiêu đề</td></tr>
+            <tr><td>Hai admin cùng xoá một người chơi</td><td>Người sau nhận thông báo “Người chơi không còn tồn tại”, không báo lỗi hệ thống</td></tr>
+            <tr><td>Phiên admin hết hạn khi đang thao tác</td><td>Chuyển về trang Đăng nhập; đăng nhập lại thì quay về trang đang làm dở</td></tr>
+            <tr><td>Database tạm thời không chạy</td><td>Game: đăng ký báo “Không kết nối được máy chủ”, người đã đăng ký vẫn chơi được, điểm vào hàng chờ. Admin: báo lỗi dễ hiểu, không lộ chi tiết kỹ thuật</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <nav class="pager" aria-label="Chuyển trang">
     <a href="03-man-hinh.html">← 03 · Màn hình</a>
     <a href="05-ke-hoach-test.html">05 · Kế hoạch test →</a>

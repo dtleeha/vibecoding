@@ -44,6 +44,15 @@
             <tr><td class="id">F10</td><td>Kết thúc lượt chơi</td><td>YEU-CAU.md</td></tr>
             <tr><td class="id">F11</td><td>Chơi lại</td><td>YEU-CAU.md</td></tr>
             <tr><td class="id">F12</td><td>Lưu và hiển thị kỷ lục</td><td>YEU-CAU.md</td></tr>
+            <tr><td class="id">F13</td><td>Đăng ký người chơi trước khi chơi</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F14</td><td>Nhớ người chơi trên máy</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F15</td><td>Lưu điểm từng lượt vào database</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F16</td><td>Đăng nhập, đăng xuất trang admin</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F17</td><td>Xem danh sách người chơi</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F18</td><td>Tìm kiếm người chơi</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F19</td><td>Xoá người chơi</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F20</td><td>Xuất danh sách ra file CSV</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
+            <tr><td class="id">F21</td><td>Quản lý tài khoản admin</td><td><span class="badge badge--new">Mới</span> Đăng ký &amp; admin</td></tr>
           </tbody>
         </table>
       </div>
@@ -181,6 +190,147 @@
         <li>Cuối lượt, nếu điểm cao hơn kỷ lục và lớn hơn 0, lưu làm kỷ lục mới và hiện dòng “Kỷ lục mới!”.</li>
         <li>Kỷ lục lưu trên trình duyệt, còn nguyên sau khi tải lại trang.</li>
         <li>Nếu trình duyệt không cho lưu (ví dụ chế độ ẩn danh), game vẫn chơi bình thường, kỷ lục chỉ giữ trong phiên đang mở và không báo lỗi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="dang-ky-admin">
+    <div class="card__header card__header--primary">Tính năng mới: Đăng ký người chơi và trang admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Bổ sung 9 chức năng F13–F21. Các chức năng F01–F12 ở trên giữ nguyên, chỉ thêm bước đăng ký trước màn hình Bắt đầu.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Quyết định</th><th>Đã chốt</th></tr></thead>
+          <tbody>
+            <tr><td>Tần suất đăng ký</td><td>1 lần trên mỗi máy (trình duyệt). Lần sau mở game vào thẳng màn hình Bắt đầu</td></tr>
+            <tr><td>Điểm</td><td>Lưu điểm từng lượt, gắn với người chơi</td></tr>
+            <tr><td>Email / SĐT đã có</td><td>Coi là cùng một người, cập nhật thông tin, không tạo người chơi mới (chi tiết ở 04 · 4.8)</td></tr>
+            <tr><td>Database</td><td>PostgreSQL, chạy thành dịch vụ thứ hai trong Docker Compose</td></tr>
+            <tr><td>Admin</td><td>Nhiều tài khoản admin, quyền ngang nhau</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note note--warn">
+        <p><strong>Thay đổi về cách chạy:</strong> đăng ký và lưu điểm cần server và database. Mở trực tiếp file <code>app/index.html</code> (không qua server) sẽ <strong>không đăng ký được</strong>. Từ nay cách chạy chuẩn là Docker Compose (xem README). Ca TC30 cũ được điều chỉnh ở TC74.</p>
+      </div>
+      <p>Những chỗ đánh dấu <em>(giả định)</em> là chi tiết em tự đề xuất, cần anh/chị xác nhận trước khi viết code.</p>
+    </div>
+  </section>
+
+  <section class="card" id="f13">
+    <div class="card__header card__header--dark">F13 · Đăng ký người chơi trước khi chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Khi máy chưa đăng ký, mở game sẽ hiện <strong>màn hình Đăng ký</strong> (03 · 4.5) thay cho màn hình Bắt đầu.</li>
+        <li>Người chơi nhập <strong>họ tên, email, số điện thoại</strong> và tick ô <strong>đồng ý cho xử lý dữ liệu cá nhân</strong>. Thiếu bất kỳ mục nào thì không gửi được.</li>
+        <li>Kiểm tra dữ liệu ngay trên form khi rời ô nhập và khi bấm gửi; server kiểm tra lại lần nữa theo đúng quy tắc 04 · 4.7. Lỗi hiện ngay dưới ô bị sai.</li>
+        <li>Bấm “Vào chơi”: nút khoá lại và hiện “Đang gửi…” cho đến khi có kết quả, để không gửi hai lần.</li>
+        <li>Gửi thành công → chuyển sang màn hình Bắt đầu, có dòng chào “Xin chào, &lt;tên&gt;!”.</li>
+        <li>Email hoặc SĐT đã có trong danh sách → coi là cùng người, cập nhật thông tin (04 · 4.8), vẫn vào chơi bình thường.</li>
+        <li>Không kết nối được server → hiện “Không kết nối được máy chủ. Vui lòng thử lại.”, giữ nguyên dữ liệu đã nhập, không vào chơi được. <em>(giả định)</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f14">
+    <div class="card__header card__header--dark">F14 · Nhớ người chơi trên máy <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Đăng ký xong, server trả về một <strong>mã thiết bị</strong> ngẫu nhiên; trình duyệt lưu mã này (04 · 4.9). Không lưu họ tên, email, SĐT trên trình duyệt ngoài tên hiển thị.</li>
+        <li>Lần sau mở game: có mã hợp lệ → vào thẳng màn hình Bắt đầu. Mã không còn hợp lệ (người chơi đã bị admin xoá) → xoá mã cũ, hiện lại màn hình Đăng ký.</li>
+        <li>Màn hình Bắt đầu có liên kết “Không phải bạn? Đăng ký lại” → xoá mã trên máy và mở màn hình Đăng ký. <em>(giả định)</em></li>
+        <li>Một người có thể đăng ký trên nhiều máy bằng cùng email; mỗi máy có mã riêng, điểm gộp chung về một người chơi.</li>
+        <li>Trình duyệt chặn lưu (ẩn danh) → vẫn đăng ký và chơi được trong phiên đang mở; đóng trình duyệt thì lần sau phải đăng ký lại (cùng email nên vẫn là cùng người).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f15">
+    <div class="card__header card__header--dark">F15 · Lưu điểm từng lượt vào database <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Mỗi khi kết thúc lượt (F10), game gửi điểm của lượt đó lên server kèm mã thiết bị. Kể cả điểm 0.</li>
+        <li>Việc gửi chạy ngầm, <strong>không làm chậm</strong> màn hình Kết thúc và nút “Chơi lại”.</li>
+        <li>Gửi lỗi → điểm được giữ trong hàng chờ trên trình duyệt và gửi lại ở lần kết thúc lượt sau hoặc lần mở game sau; hàng chờ giữ tối đa 20 lượt. <em>(giả định)</em></li>
+        <li>Mỗi lượt có một mã lượt riêng, nên gửi lại nhiều lần cũng chỉ lưu <strong>một</strong> bản ghi.</li>
+        <li>Kỷ lục trên màn hình (F12) vẫn tính trên trình duyệt như cũ; không đổi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f16">
+    <div class="card__header card__header--dark">F16 · Đăng nhập, đăng xuất trang admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Trang admin ở địa chỉ <code>/admin</code>. Chưa đăng nhập thì mọi trang và dữ liệu admin đều chuyển về trang Đăng nhập.</li>
+        <li>Đăng nhập bằng email + mật khẩu. Sai thì chỉ báo chung “Email hoặc mật khẩu không đúng”, không nói rõ sai cái nào.</li>
+        <li>Sai 5 lần liên tiếp → khoá đăng nhập email đó 15 phút. <em>(giả định)</em></li>
+        <li>Phiên đăng nhập hết hạn sau 30 phút không thao tác hoặc tối đa 8 giờ. <em>(giả định)</em></li>
+        <li>Nút “Đăng xuất” ở góc trên mọi trang admin; đăng xuất xong quay về trang Đăng nhập.</li>
+        <li>Admin đầu tiên được tạo tự động khi khởi động lần đầu, từ email và mật khẩu đặt trong file <code>.env</code> (04 · 4.11).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f17">
+    <div class="card__header card__header--dark">F17 · Xem danh sách người chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Bảng người chơi gồm: họ tên, email, SĐT, ngày đăng ký, số lượt đã chơi, điểm cao nhất, lần chơi gần nhất.</li>
+        <li>Mặc định sắp xếp mới đăng ký lên đầu; bấm tiêu đề cột để sắp xếp theo cột đó (tăng/giảm).</li>
+        <li>Phân trang 20 người mỗi trang, có tổng số người chơi. <em>(giả định)</em></li>
+        <li>Bấm vào một người → xem lịch sử các lượt chơi của người đó (điểm, thời điểm). <em>(giả định)</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f18">
+    <div class="card__header card__header--dark">F18 · Tìm kiếm người chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Một ô tìm kiếm chung, tìm trong họ tên, email và SĐT; khớp một phần.</li>
+        <li>Không phân biệt hoa thường và <strong>không phân biệt dấu</strong> tiếng Việt: gõ “nguyen” vẫn ra “Nguyễn”. <em>(giả định)</em></li>
+        <li>Tìm SĐT không phân biệt cách viết: “0912 345 678”, “0912.345.678” hay “+84912345678” đều ra cùng người.</li>
+        <li>Kết quả tìm vẫn phân trang và sắp xếp được; nút “Xoá tìm kiếm” để về danh sách đầy đủ.</li>
+        <li>Không có kết quả → hiện “Không tìm thấy người chơi nào”.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f19">
+    <div class="card__header card__header--dark">F19 · Xoá người chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Mỗi dòng có nút “Xoá”; có thể tick chọn nhiều người rồi bấm “Xoá đã chọn”. <em>(giả định)</em></li>
+        <li>Luôn hiện hộp xác nhận ghi rõ số người sẽ bị xoá và câu “Không thể hoàn tác”.</li>
+        <li>Xoá là <strong>xoá hẳn</strong>: thông tin người chơi, toàn bộ điểm và mã thiết bị của người đó (04 · 4.13).</li>
+        <li>Máy của người bị xoá, lần mở game sau sẽ phải đăng ký lại (F14).</li>
+        <li>Mỗi lần xoá được ghi vào nhật ký thao tác admin (04 · 4.13).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f20">
+    <div class="card__header card__header--dark">F20 · Xuất danh sách ra file CSV <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Nút “Xuất CSV” xuất <strong>đúng danh sách đang xem</strong>: nếu đang tìm kiếm thì chỉ xuất kết quả tìm, gồm mọi trang (không chỉ trang hiện tại).</li>
+        <li>Mở bằng Excel hiển thị đúng tiếng Việt có dấu. Định dạng chi tiết ở 04 · 4.12.</li>
+        <li>Tên file có ngày giờ xuất, ví dụ <code>dapchuot-nguoi-choi-20261117-1630.csv</code>.</li>
+        <li>Mỗi lần xuất được ghi vào nhật ký thao tác admin.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="f21">
+    <div class="card__header card__header--dark">F21 · Quản lý tài khoản admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Trang “Tài khoản admin” liệt kê các admin: họ tên, email, trạng thái, lần đăng nhập gần nhất.</li>
+        <li>Thêm admin: nhập họ tên, email, mật khẩu tạm. Admin mới phải đổi mật khẩu ở lần đăng nhập đầu. <em>(giả định)</em></li>
+        <li>Khoá / mở khoá và xoá admin khác. <strong>Không</strong> được tự xoá hoặc tự khoá chính mình, và không được xoá hoặc khoá admin cuối cùng còn hoạt động.</li>
+        <li>Mỗi admin tự đổi mật khẩu của mình (phải nhập mật khẩu hiện tại).</li>
+        <li>Mọi admin có quyền như nhau. <em>(giả định)</em></li>
       </ul>
     </div>
   </section>

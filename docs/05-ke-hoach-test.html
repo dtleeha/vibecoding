@@ -146,6 +146,162 @@
     </div>
   </section>
 
+  <section class="card" id="test-dang-ky-admin">
+    <div class="card__header card__header--primary">Kiểm thử tính năng mới: Đăng ký người chơi và trang admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Thêm 49 ca <strong>TC31–TC79</strong> cho F13–F21. Các ca TC01–TC30 ở trên vẫn giữ và vẫn phải đạt (game không được hỏng sau khi thêm đăng ký); riêng phần “không cần server” của TC30 được thay bằng TC74.</p>
+      <ul>
+        <li><strong>Môi trường:</strong> chạy bằng <code>docker compose up -d --build</code> với file <code>.env</code> dành riêng cho test (database test, admin test). Không test trên dữ liệu người chơi thật.</li>
+        <li><strong>Dữ liệu mẫu:</strong> khi viết code, nên có lệnh tạo dữ liệu mẫu (ít nhất 45 người chơi, mỗi người vài lượt, có tên tiếng Việt có dấu) chỉ dùng khi test, cho TC60–TC68.</li>
+        <li><strong>Công cụ:</strong> DevTools của trình duyệt (tab Network để ngắt mạng và xem yêu cầu gửi đi, tab Application để xem cookie và <code>localStorage</code>); xem database bằng <code>docker compose exec db psql</code>.</li>
+        <li><strong>Ca cần “gửi dữ liệu giả”</strong> (TC48–TC50, TC52, TC71) dùng DevTools hoặc công cụ gọi API; người test không rành có thể nhờ người viết code chạy cùng.</li>
+        <li>Mỗi ca ghi: Đạt / Không đạt, ghi chú, trình duyệt đã dùng.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">F. Đăng ký người chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC31</td><td>Mở game trên trình duyệt chưa từng đăng ký</td><td>Hiện màn hình Đăng ký, không hiện màn hình Bắt đầu; Console không lỗi</td><td>F13</td></tr>
+            <tr><td class="id">TC32</td><td>Để trống cả 4 mục, bấm “Vào chơi”</td><td>Hiện đủ 4 lỗi đúng chữ ở 04 · 4.7, ô sai viền đỏ, con trỏ nhảy về ô đầu tiên; không gửi gì lên server</td><td>F13, 04 · 4.7</td></tr>
+            <tr><td class="id">TC33</td><td>Họ tên lần lượt: “A”, 61 ký tự, “An123”, “Nguyễn Thị Ánh-Dương”, “O'Neil”, “  Lê   Văn   Tí  ”</td><td>3 giá trị đầu báo lỗi; 3 giá trị sau hợp lệ; giá trị cuối lưu thành “Lê Văn Tí”</td><td>04 · 4.7</td></tr>
+            <tr><td class="id">TC34</td><td>Email lần lượt: “an@”, “an.example.com”, “an @x.com”, “An@Example.COM”</td><td>3 giá trị đầu báo lỗi; giá trị cuối hợp lệ và lưu thành “an@example.com”</td><td>04 · 4.7</td></tr>
+            <tr><td class="id">TC35</td><td>SĐT lần lượt: “0912 345 678”, “+84 912 345 678”, “84912.345.678”, “0212345678”, “091234567”, “abc”</td><td>3 giá trị đầu hợp lệ, đều lưu thành <code>0912345678</code>; 3 giá trị sau báo lỗi</td><td>04 · 4.7</td></tr>
+            <tr><td class="id">TC36</td><td>Nhập đúng 3 ô, không tick đồng ý, bấm “Vào chơi”</td><td>Báo “Bạn cần đồng ý để tiếp tục.”; ô đồng ý lúc mới mở form không tick sẵn</td><td>F13, 04 · 4.15</td></tr>
+            <tr><td class="id">TC37</td><td>Đăng ký hợp lệ</td><td>Sang màn hình Bắt đầu với “Xin chào, &lt;tên&gt;!”; admin thấy người chơi mới kèm thời điểm đồng ý</td><td>F13</td></tr>
+            <tr><td class="id">TC38</td><td>Sau TC37, tải lại trang; đóng mở lại trình duyệt</td><td>Vào thẳng màn hình Bắt đầu, không hỏi đăng ký lại</td><td>F14</td></tr>
+            <tr><td class="id">TC39</td><td>Ở trình duyệt khác, đăng ký lại cùng email (khác hoa thường) nhưng họ tên và SĐT mới</td><td>Không tạo người mới; admin thấy họ tên và SĐT được cập nhật, số lượt và điểm cũ giữ nguyên</td><td>04 · 4.8</td></tr>
+            <tr><td class="id">TC40</td><td>Đăng ký email mới nhưng SĐT của một người đã có</td><td>Không tạo người mới; người đang dùng SĐT đó được đổi email và họ tên</td><td>04 · 4.8</td></tr>
+            <tr><td class="id">TC41</td><td>Đăng ký với email của người A và SĐT của người B</td><td>Báo lỗi ở ô SĐT “Số điện thoại này đã được đăng ký với email khác.”; dữ liệu A và B không đổi</td><td>04 · 4.8</td></tr>
+            <tr><td class="id">TC42</td><td>Ở màn hình Bắt đầu bấm “Không phải bạn? Đăng ký lại”, rồi tải lại trang</td><td>Hiện màn hình Đăng ký; tải lại vẫn ở màn hình Đăng ký</td><td>F14</td></tr>
+            <tr><td class="id">TC43</td><td>Dừng server (<code>docker compose stop app</code>) rồi bấm “Vào chơi” trên form đã điền</td><td>Báo “Không kết nối được máy chủ. Vui lòng thử lại.”; dữ liệu đã nhập vẫn còn; không vào chơi được</td><td>F13</td></tr>
+            <tr><td class="id">TC44</td><td>Điền đúng, bấm “Vào chơi” 5 lần thật nhanh</td><td>Nút khoá và hiện “Đang gửi…”; chỉ 1 yêu cầu được gửi; admin chỉ có 1 người chơi</td><td>F13, 04 · 4.16</td></tr>
+            <tr><td class="id">TC45</td><td>Mở form trên điện thoại dọc (360px)</td><td>Đủ 4 mục, nhãn rõ, ô cao ≥ 44px; ô email hiện bàn phím có @, ô SĐT hiện bàn phím số; Enter ở ô cuối gửi form</td><td>03 · 4.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">G. Lưu điểm từng lượt <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC46</td><td>Người đã đăng ký chơi 3 lượt, trong đó 1 lượt 0 điểm</td><td>Admin: số lượt = 3, điểm cao nhất và lần chơi gần nhất đúng; lượt 0 điểm cũng được lưu</td><td>F15</td></tr>
+            <tr><td class="id">TC47</td><td>Bật chế độ Offline trong DevTools, chơi 2 lượt; bật mạng lại, chơi thêm 1 lượt</td><td>Màn hình Kết thúc và “Chơi lại” không chậm khi mất mạng; màn hình Bắt đầu báo “Có 2 lượt chưa lưu…”; sau khi có mạng admin thấy đủ 3 lượt, không trùng</td><td>F15, 04 · 4.9</td></tr>
+            <tr><td class="id">TC48</td><td>Gửi lại đúng một yêu cầu lưu điểm 3 lần (cùng mã lượt)</td><td>Chỉ có 1 bản ghi; cả 3 lần đều trả thành công</td><td>04 · 4.10</td></tr>
+            <tr><td class="id">TC49</td><td>Gửi điểm 999, rồi −5, rồi 12,5</td><td>Cả 3 bị từ chối, không lưu</td><td>04 · 4.10</td></tr>
+            <tr><td class="id">TC50</td><td>Gửi 2 lượt của cùng một máy cách nhau 10 giây</td><td>Lượt thứ hai bị từ chối</td><td>04 · 4.10</td></tr>
+            <tr><td class="id">TC51</td><td>Admin xoá người chơi khi người đó đang chơi dở</td><td>Lượt đang chơi vẫn chơi hết; điểm không được lưu; lần mở game sau hiện màn hình Đăng ký</td><td>04 · 4.10, 04 · 4.16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">H. Đăng nhập admin và bảo mật <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC52</td><td>Chưa đăng nhập, mở <code>/admin</code> và trang danh sách; gọi thẳng địa chỉ lấy dữ liệu người chơi</td><td>Trang nào cũng chuyển về Đăng nhập; gọi thẳng bị từ chối, không trả dữ liệu</td><td>F16</td></tr>
+            <tr><td class="id">TC53</td><td>Khởi động lần đầu với database trống và <code>.env</code> có ADMIN_EMAIL/ADMIN_PASSWORD; sau đó đổi ADMIN_PASSWORD trong <code>.env</code> và khởi động lại</td><td>Đăng nhập được bằng tài khoản trong <code>.env</code>; sau khi đổi, mật khẩu cũ vẫn dùng được (không bị ghi đè)</td><td>04 · 4.11</td></tr>
+            <tr><td class="id">TC54</td><td>Đăng nhập với email đúng + mật khẩu sai; email không tồn tại</td><td>Cả hai đều báo cùng một câu “Email hoặc mật khẩu không đúng.”</td><td>04 · 4.11</td></tr>
+            <tr><td class="id">TC55</td><td>Nhập sai mật khẩu 5 lần, rồi nhập đúng; chờ 15 phút rồi nhập đúng</td><td>Sau lần sai thứ 5 báo tạm khoá; nhập đúng trong lúc khoá vẫn không vào; sau 15 phút vào được</td><td>F16, 04 · 4.11</td></tr>
+            <tr><td class="id">TC56</td><td>Đăng xuất rồi bấm nút Back của trình duyệt</td><td>Không xem được dữ liệu; bị chuyển về Đăng nhập</td><td>F16</td></tr>
+            <tr><td class="id">TC57</td><td>Đăng nhập, để yên 31 phút rồi bấm sang trang khác</td><td>Chuyển về Đăng nhập; đăng nhập lại thì quay về đúng trang đang làm</td><td>04 · 4.11, 04 · 4.16</td></tr>
+            <tr><td class="id">TC58</td><td>Xem cookie phiên trong DevTools, cả khi chạy localhost và khi chạy qua link HTTPS</td><td>Có <code>HttpOnly</code> và <code>SameSite=Strict</code>; qua HTTPS có thêm <code>Secure</code></td><td>04 · 4.11</td></tr>
+            <tr><td class="id">TC59</td><td>Xem bảng <code>admins</code> trong database và log server sau khi đăng nhập</td><td>Mật khẩu là chuỗi băm, không có mật khẩu gốc ở bất kỳ đâu</td><td>04 · 4.11</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">I. Danh sách, tìm kiếm, xoá, xuất CSV <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC60</td><td>Với ≥ 45 người mẫu, mở danh sách; bấm từng tiêu đề cột</td><td>20 người mỗi trang, tổng đúng, mới đăng ký lên đầu; sắp xếp tăng/giảm đúng theo cột bấm</td><td>F17</td></tr>
+            <tr><td class="id">TC61</td><td>Tìm “nguyen”, “AN@EXAMPLE”, “0912.345”, “+84912”, “%”, “'”, “zzzz”</td><td>Ra đúng người (không phân biệt dấu, hoa thường, cách viết SĐT); ký tự đặc biệt không gây lỗi; “zzzz” báo “Không tìm thấy người chơi nào.”</td><td>F18, 04 · 4.16</td></tr>
+            <tr><td class="id">TC62</td><td>Bấm vào họ tên một người đã chơi vài lượt</td><td>Hiện chi tiết và lịch sử lượt chơi đúng điểm và thời điểm</td><td>F17</td></tr>
+            <tr><td class="id">TC63</td><td>Bấm “Xoá” một người; lần lượt thử Huỷ, Esc, rồi Xoá</td><td>Hộp xác nhận ghi họ tên và email; Huỷ/Esc không đổi gì; Xoá → người đó biến mất, database không còn lượt chơi và mã thiết bị của người đó</td><td>F19, 04 · 4.13</td></tr>
+            <tr><td class="id">TC64</td><td>Tick 3 người, bấm “Xoá đã chọn”, xác nhận; xem nhật ký trong database</td><td>Đúng 3 người bị xoá; nhật ký có 1 dòng ghi admin, hành động, số lượng 3, không chứa họ tên/email/SĐT</td><td>F19, 04 · 4.13</td></tr>
+            <tr><td class="id">TC65</td><td>Bấm “Xuất CSV”, mở file bằng Excel (bấm đúp)</td><td>Tiếng Việt hiển thị đúng; đủ cột đúng thứ tự 04 · 4.12; số dòng = tổng người chơi; ngày giờ theo giờ Việt Nam; tên file đúng mẫu</td><td>F20, 04 · 4.12</td></tr>
+            <tr><td class="id">TC66</td><td>Tìm “nguyen” (kết quả nhiều hơn 1 trang), bấm “Xuất CSV”</td><td>File chỉ có kết quả tìm, gồm mọi trang</td><td>F20</td></tr>
+            <tr><td class="id">TC67</td><td>Chèn thẳng vào database một người tên <code>=1+1</code> và một người tên có dấu phẩy và dấu nháy kép; xuất CSV và mở bằng Excel</td><td>Ô <code>=1+1</code> hiện dạng chữ, không thành 2; tên có phẩy/nháy nằm gọn trong một ô</td><td>04 · 4.12</td></tr>
+            <tr><td class="id">TC68</td><td>Xoá hết người chơi (database test), bấm “Xuất CSV”</td><td>Tải được file chỉ có dòng tiêu đề</td><td>04 · 4.16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">K. Quản lý tài khoản admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC69</td><td>Thêm admin mới với mật khẩu 8 ký tự, rồi với mật khẩu trùng email, rồi mật khẩu hợp lệ; đăng nhập bằng admin mới</td><td>Hai lần đầu bị từ chối; lần ba tạo được; đăng nhập lần đầu bị buộc đổi mật khẩu trước khi vào</td><td>F21, 04 · 4.11</td></tr>
+            <tr><td class="id">TC70</td><td>Admin A khoá admin B khi B đang đăng nhập ở máy khác; sau đó mở khoá</td><td>B bị đẩy ra ở thao tác kế tiếp và không đăng nhập được; mở khoá xong B đăng nhập lại được</td><td>F21, 04 · 4.11</td></tr>
+            <tr><td class="id">TC71</td><td>Xem dòng của chính mình; gọi thẳng yêu cầu xoá chính mình; khi chỉ còn 1 admin hoạt động, thử khoá/xoá admin đó</td><td>Dòng của mình ghi “(bạn)”, không có nút Khoá/Xoá; mọi yêu cầu trên bị từ chối</td><td>F21</td></tr>
+            <tr><td class="id">TC72</td><td>Đổi mật khẩu với mật khẩu hiện tại sai; rồi đúng (đang đăng nhập ở 2 trình duyệt)</td><td>Sai thì báo lỗi; đúng thì đổi được và phiên ở trình duyệt còn lại bị đăng xuất</td><td>F21, 04 · 4.11</td></tr>
+            <tr><td class="id">TC73</td><td>Hai admin mở cùng một người chơi, cả hai bấm Xoá</td><td>Người xoá sau thấy “Người chơi không còn tồn tại”, không có lỗi hệ thống</td><td>04 · 4.16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--dark">L. Dữ liệu cá nhân, bảo mật và chạy bằng Docker <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mã</th><th>Cách làm</th><th>Kết quả mong đợi</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td class="id">TC74</td><td><strong>(Thay phần “không cần server” của TC30)</strong> Trên máy có Docker, tạo <code>.env</code> từ <code>.env.example</code>, chạy <code>docker compose up -d --build</code>; sau đó ngắt Internet</td><td>Cả <code>app</code> và <code>db</code> báo healthy; game và trang admin dùng được; ngắt Internet vẫn chơi và đăng ký được trên máy đó (không tải gì từ Internet)</td><td>04 · 4.14, 03 · 4.4</td></tr>
+            <tr><td class="id">TC75</td><td>Đăng ký vài người, chạy <code>docker compose down</code> rồi <code>up -d</code>; kiểm tra cổng 5432 từ máy khác</td><td>Dữ liệu vẫn còn; database không truy cập được từ ngoài</td><td>04 · 4.14</td></tr>
+            <tr><td class="id">TC76</td><td>Đăng ký họ tên <code>&lt;script&gt;alert(1)&lt;/script&gt;</code>; chèn thẳng tên đó vào database rồi mở game và trang admin</td><td>Form từ chối; tên chèn thẳng hiện dạng chữ ở lời chào và trang admin, không hiện hộp alert</td><td>04 · 4.16</td></tr>
+            <tr><td class="id">TC77</td><td>Bấm “Thông báo xử lý dữ liệu” trên form; đăng ký rồi xem database</td><td>Mở được nội dung thông báo; database lưu thời điểm đồng ý và phiên bản thông báo</td><td>04 · 4.15</td></tr>
+            <tr><td class="id">TC78</td><td>Chạy <code>git status</code> và xem repo trên GitHub</td><td>Không có file <code>.env</code>; có <code>.env.example</code> không chứa mật khẩu thật</td><td>04 · 4.11</td></tr>
+            <tr><td class="id">TC79</td><td>Đang chạy thì dừng database (<code>docker compose stop db</code>): người đã đăng ký chơi 1 lượt, mở trang admin; bật lại database</td><td>Game vẫn chơi được, điểm vào hàng chờ; admin báo lỗi dễ hiểu, không lộ chi tiết kỹ thuật; bật lại database thì lượt chờ được lưu</td><td>04 · 4.16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--primary">Danh sách kiểm tra trước khi giao tính năng Đăng ký &amp; Admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul style="list-style: none; padding-left: 0">
+        <li>☐ TC01–TC29 vẫn Đạt; TC30 Đạt theo TC74</li>
+        <li>☐ TC31–TC79 đều Đạt trên Chrome máy tính</li>
+        <li>☐ TC45 (form trên điện thoại) đạt trên Safari và Chrome điện thoại</li>
+        <li>☐ Anh/chị đã xác nhận các mục <em>(giả định)</em> trong 02, 03, 04 (đặc biệt: tình huống email A + SĐT B, giới hạn điểm 0–150, khoá đăng nhập 5 lần/15 phút, thời hạn phiên)</li>
+        <li>☐ Đã có nội dung “Thông báo xử lý dữ liệu” và quyết định thời gian lưu dữ liệu (04 · 4.15)</li>
+        <li>☐ <code>.env</code> thật không nằm trên GitHub; mật khẩu admin đầu tiên đã đổi sau lần đăng nhập đầu</li>
+        <li>☐ Dữ liệu mẫu dùng để test đã được xoá khỏi database thật</li>
+      </ul>
+    </div>
+  </section>
+
   <nav class="pager" aria-label="Chuyển trang">
     <a href="04-quy-tac-du-lieu.html">← 04 · Quy tắc &amp; dữ liệu</a>
     <a href="index.html">Mục lục →</a>

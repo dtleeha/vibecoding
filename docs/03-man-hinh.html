@@ -143,6 +143,185 @@
     </div>
   </section>
 
+  <section class="card" id="man-hinh-moi" style="margin-top: var(--space-5)">
+    <div class="card__header card__header--primary">Màn hình mới: Đăng ký người chơi và trang admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Thêm 1 màn hình cho người chơi (Đăng ký) và 4 trang admin ở địa chỉ <code>/admin</code>. Ba màn hình 4.1–4.3 ở trên giữ nguyên; màn hình Bắt đầu chỉ thêm dòng chào và liên kết “Không phải bạn?”. Hình dưới chỉ là phác thảo bố cục.</p>
+    </div>
+  </section>
+
+  <section class="grid grid--3" aria-label="Phác thảo màn hình mới">
+    <div>
+      <div class="wire">
+        <p class="wire__title">ĐẬP CHUỘT</p>
+        <p class="wire__text">Đăng ký để bắt đầu chơi</p>
+        <p style="color:var(--color-text-on-dark);text-shadow:var(--text-shadow-pixel);font-size:var(--font-size-xs);margin:0 0 2px">Họ và tên</p><div style="background:var(--color-surface);color:var(--color-text-muted);text-align:left;padding:var(--space-2);margin-bottom:var(--space-2);font-size:var(--font-size-sm);border:1px solid var(--color-border-strong)">Nguyễn Văn An</div>
+        <p style="color:var(--color-text-on-dark);text-shadow:var(--text-shadow-pixel);font-size:var(--font-size-xs);margin:0 0 2px">Email</p><div style="background:var(--color-surface);color:var(--color-text-muted);text-align:left;padding:var(--space-2);margin-bottom:var(--space-2);font-size:var(--font-size-sm);border:1px solid var(--color-border-strong)">an@example.com</div>
+        <p style="color:var(--color-text-on-dark);text-shadow:var(--text-shadow-pixel);font-size:var(--font-size-xs);margin:0 0 2px">Số điện thoại</p><div style="background:var(--color-surface);color:var(--color-text-muted);text-align:left;padding:var(--space-2);margin-bottom:var(--space-2);font-size:var(--font-size-sm);border:1px solid var(--color-border-strong)">0912 345 678</div>
+        <p style="color:var(--color-text-on-dark);text-shadow:var(--text-shadow-pixel);font-size:var(--font-size-xs);margin:0 0 2px">☑ Tôi đồng ý cho xử lý dữ liệu cá nhân theo <u>Thông báo</u></p>
+        <div class="wire__btn">Vào chơi</div>
+      </div>
+      <p class="wire__cap">4.5 · Màn hình Đăng ký</p>
+    </div>
+    <div>
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);padding:var(--space-3);max-width:22rem;margin:0 auto;font-size:var(--font-size-xs)">
+        <div style="background:var(--color-dark);color:var(--color-text-on-dark);padding:var(--space-1) var(--space-2);display:flex;justify-content:space-between;font-family:var(--font-display);margin:calc(var(--space-3)*-1) calc(var(--space-3)*-1) var(--space-3)"><span>ĐẬP CHUỘT · ADMIN</span></div>
+        <p style="margin:0 0 2px">Email</p><div style="background:var(--color-surface);color:var(--color-text-muted);text-align:left;padding:var(--space-2);margin-bottom:var(--space-2);font-size:var(--font-size-sm);border:1px solid var(--color-border-strong)">admin@example.com</div>
+        <p style="margin:0 0 2px">Mật khẩu</p><div style="background:var(--color-surface);color:var(--color-text-muted);text-align:left;padding:var(--space-2);margin-bottom:var(--space-2);font-size:var(--font-size-sm);border:1px solid var(--color-border-strong)">••••••••••</div>
+        <div style="display:inline-block;background:var(--color-primary);color:#fff;padding:2px 8px;margin:0 4px 4px 0">Đăng nhập</div>
+      </div>
+      <p class="wire__cap">4.7 · Admin: Đăng nhập</p>
+    </div>
+    <div>
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);padding:var(--space-3);max-width:22rem;margin:0 auto;font-size:var(--font-size-xs)">
+        <div style="background:var(--color-dark);color:var(--color-text-on-dark);padding:var(--space-1) var(--space-2);display:flex;justify-content:space-between;font-family:var(--font-display);margin:calc(var(--space-3)*-1) calc(var(--space-3)*-1) var(--space-3)"><span>NGƯỜI CHƠI</span><span>Tài khoản · Đăng xuất</span></div>
+        <div style="background:var(--color-surface);color:var(--color-text-muted);text-align:left;padding:var(--space-2);margin-bottom:var(--space-2);font-size:var(--font-size-sm);border:1px solid var(--color-border-strong)">🔍 Tìm họ tên, email, SĐT…</div>
+        <div style="display:inline-block;background:var(--color-primary);color:#fff;padding:2px 8px;margin:0 4px 4px 0">Xuất CSV</div><div style="display:inline-block;background:var(--color-danger);color:#fff;padding:2px 6px">Xoá đã chọn</div>
+        <table style="width:100%;min-width:0;table-layout:fixed;margin-top:var(--space-2);font-size:10px">
+          <tr><th>☐</th><th>Họ tên</th><th>SĐT</th><th>Lượt</th><th>Cao nhất</th><th></th></tr>
+          <tr><td>☐</td><td>Nguyễn Văn An</td><td>0912…</td><td>12</td><td>41</td><td>Xoá</td></tr>
+          <tr><td>☐</td><td>Trần Thị Bình</td><td>0987…</td><td>3</td><td>18</td><td>Xoá</td></tr>
+        </table>
+        <p style="margin:var(--space-2) 0 0;text-align:right">Tổng 128 · ‹ 1 2 3 … 7 ›</p>
+      </div>
+      <p class="wire__cap">4.8 · Admin: Danh sách người chơi</p>
+    </div>
+  </section>
+
+  <section class="card" id="mh-dang-ky" style="margin-top: var(--space-5)">
+    <div class="card__header card__header--primary">4.5 · Màn hình Đăng ký <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <p>Hiện thay cho màn hình Bắt đầu khi máy chưa đăng ký (F13). Cùng phong cách game: nền cỏ, khung trắng giữa màn hình, góc vuông.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Tiêu đề</td><td>“ĐẬP CHUỘT”, dòng phụ “Đăng ký để bắt đầu chơi”</td></tr>
+            <tr><td>Ô “Họ và tên”</td><td>Ô chữ, gợi ý “VD: Nguyễn Văn An”</td></tr>
+            <tr><td>Ô “Email”</td><td>Ô email (bàn phím điện thoại hiện @), gợi ý “VD: ban@email.com”</td></tr>
+            <tr><td>Ô “Số điện thoại”</td><td>Ô số điện thoại (bàn phím số), gợi ý “VD: 0912 345 678”</td></tr>
+            <tr><td>Ô đồng ý</td><td>Ô tick “Tôi đồng ý cho xử lý dữ liệu cá nhân theo Thông báo xử lý dữ liệu”. Bấm “Thông báo xử lý dữ liệu” mở hộp nội dung (04 · 4.15). Mặc định <strong>không</strong> tick sẵn</td></tr>
+            <tr><td>Nút</td><td>“Vào chơi”, màu <code>--color-primary</code>. Khi đang gửi: khoá nút, chữ đổi thành “Đang gửi…”</td></tr>
+            <tr><td>Thông báo lỗi</td><td>Chữ đỏ <code>--color-danger</code> ngay dưới ô sai; ô sai có viền đỏ. Lỗi chung (mất kết nối, server lỗi) hiện phía trên nút</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Mọi ô đều có nhãn hiện rõ (không chỉ dùng chữ gợi ý), ô cao ≥ 44px để dễ chạm.</li>
+        <li>Bấm Enter ở ô cuối = bấm “Vào chơi”. Khi có lỗi, con trỏ nhảy về ô sai đầu tiên.</li>
+        <li>Điện thoại 360px: hiển thị đủ form; khi bàn phím bật lên có thể cuộn trong form (khác màn hình Đang chơi).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="mh-bat-dau-bo-sung">
+    <div class="card__header card__header--dark">4.6 · Bổ sung cho màn hình Bắt đầu <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần thêm</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Dòng chào</td><td>“Xin chào, &lt;tên&gt;!” ngay dưới tên game. Tên dài quá 20 ký tự thì cắt và thêm “…”</td></tr>
+            <tr><td>Liên kết</td><td>“Không phải bạn? Đăng ký lại” (chữ nhỏ, cuối khung) → mở màn hình Đăng ký (F14)</td></tr>
+            <tr><td>Thông báo điểm chưa lưu</td><td>Nếu hàng chờ còn điểm chưa gửi được: dòng nhỏ “Có N lượt chưa lưu lên máy chủ, sẽ thử lại sau.” <em>(giả định)</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="mh-admin-dang-nhap">
+    <div class="card__header card__header--primary">4.7 · Admin: Đăng nhập <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Thanh trên</td><td>Nền tối <code>--color-dark</code>, chữ “ĐẬP CHUỘT · ADMIN”</td></tr>
+            <tr><td>Ô nhập</td><td>“Email”, “Mật khẩu” (có nút hiện/ẩn mật khẩu)</td></tr>
+            <tr><td>Nút</td><td>“Đăng nhập”</td></tr>
+            <tr><td>Lỗi</td><td>“Email hoặc mật khẩu không đúng.” / “Đăng nhập tạm khoá do nhập sai nhiều lần. Thử lại sau 15 phút.”</td></tr>
+            <tr><td>Đổi mật khẩu lần đầu</td><td>Admin mới đăng nhập lần đầu → chuyển sang form “Đặt mật khẩu mới” (mật khẩu mới + nhập lại) trước khi vào trang khác</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="mh-admin-danh-sach">
+    <div class="card__header card__header--primary">4.8 · Admin: Danh sách người chơi <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Thanh trên (mọi trang admin)</td><td>Tên trang; menu “Người chơi”, “Tài khoản admin”; tên admin đang đăng nhập; “Đổi mật khẩu”; “Đăng xuất”</td></tr>
+            <tr><td>Ô tìm kiếm</td><td>“Tìm họ tên, email, SĐT…”, tìm sau khi ngừng gõ khoảng 0,3 giây hoặc bấm Enter; nút “Xoá tìm kiếm”</td></tr>
+            <tr><td>Nút</td><td>“Xuất CSV” (xanh), “Xoá đã chọn” (đỏ, chỉ bật khi có người được tick)</td></tr>
+            <tr><td>Bảng</td><td>Cột: ô tick · Họ tên · Email · SĐT · Ngày đăng ký · Số lượt · Điểm cao nhất · Chơi gần nhất · nút “Xoá”. Tiêu đề cột bấm được để sắp xếp, có mũi tên ▲▼</td></tr>
+            <tr><td>Phân trang</td><td>“Tổng N người chơi”, nút trang trước/sau, số trang</td></tr>
+            <tr><td>Trống</td><td>Chưa có ai: “Chưa có người chơi nào đăng ký.” · Tìm không ra: “Không tìm thấy người chơi nào.”</td></tr>
+            <tr><td>Chi tiết người chơi</td><td>Bấm họ tên → khung chi tiết: thông tin, ngày đồng ý xử lý dữ liệu, bảng các lượt chơi (điểm, thời điểm), nút “Xoá người chơi này” <em>(giả định)</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="mh-admin-xoa">
+    <div class="card__header card__header--dark">4.9 · Admin: Hộp xác nhận xoá <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li>Tiêu đề: “Xoá người chơi?”. Nội dung: “Xoá vĩnh viễn N người chơi và toàn bộ điểm của họ. Không thể hoàn tác.” Nếu xoá 1 người thì ghi rõ họ tên và email.</li>
+        <li>Hai nút: “Huỷ” (mặc định được chọn) và “Xoá” (màu <code>--color-danger</code>).</li>
+        <li>Hộp vẽ trong trang (không dùng hộp thoại mặc định của trình duyệt). Bấm Esc hoặc ra ngoài = Huỷ.</li>
+        <li>Xoá xong: hộp đóng, bảng tải lại, hiện thông báo ngắn “Đã xoá N người chơi”.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="mh-admin-tai-khoan">
+    <div class="card__header card__header--dark">4.10 · Admin: Tài khoản admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td>Bảng</td><td>Họ tên · Email · Trạng thái (Hoạt động / Đã khoá) · Đăng nhập gần nhất · nút “Khoá”/“Mở khoá”, “Xoá”. Dòng của chính mình ghi “(bạn)” và không có nút Khoá/Xoá</td></tr>
+            <tr><td>Thêm admin</td><td>Nút “Thêm admin” → form họ tên, email, mật khẩu tạm (có nút “Tạo ngẫu nhiên”)</td></tr>
+            <tr><td>Đổi mật khẩu</td><td>Form: mật khẩu hiện tại, mật khẩu mới, nhập lại mật khẩu mới</td></tr>
+            <tr><td>Xác nhận</td><td>Khoá và xoá admin đều có hộp xác nhận như 4.9</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="mh-luong-moi">
+    <div class="card__header card__header--dark">4.11 · Luồng màn hình mới <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li><strong>Người chơi lần đầu:</strong> Đăng ký → Bắt đầu → Đang chơi → Kết thúc → Đang chơi (Chơi lại)…</li>
+        <li><strong>Người chơi đã đăng ký trên máy này:</strong> Bắt đầu → Đang chơi → … (như cũ).</li>
+        <li><strong>Bấm “Không phải bạn?”</strong> ở màn hình Bắt đầu → Đăng ký.</li>
+        <li><strong>Admin:</strong> <code>/admin</code> → Đăng nhập → (Đặt mật khẩu mới nếu lần đầu) → Người chơi ⇄ Tài khoản admin → Đăng xuất → Đăng nhập.</li>
+        <li>Trang game và trang admin tách riêng: người chơi không thấy đường dẫn tới admin.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="mh-admin-giao-dien">
+    <div class="card__header card__header--dark">4.12 · Yêu cầu giao diện cho trang admin <span class="badge badge--new">Mới</span></div>
+    <div class="card__body">
+      <ul>
+        <li><strong>Phong cách:</strong> dùng <code>design/tokens.css</code> (góc vuông, màu, cỡ chữ) nhưng <strong>không</strong> có nền cỏ: nền trắng/xám nhạt cho dễ đọc bảng.</li>
+        <li><strong>Màn hình:</strong> tối ưu cho máy tính (≥ 1024px). Điện thoại vẫn dùng được: bảng cuộn ngang, nút vẫn bấm được. <em>(giả định)</em></li>
+        <li><strong>Ngôn ngữ:</strong> tiếng Việt có dấu. Ngày giờ theo giờ Việt Nam, dạng <code>17/11/2026 16:30</code>.</li>
+        <li><strong>Khác với 4.4:</strong> trang admin được phép cuộn và chọn chữ (để copy email, SĐT).</li>
+      </ul>
+    </div>
+  </section>
+
   <nav class="pager" aria-label="Chuyển trang">
     <a href="02-chuc-nang.html">← 02 · Chức năng</a>
     <a href="04-quy-tac-du-lieu.html">04 · Quy tắc &amp; dữ liệu →</a>
