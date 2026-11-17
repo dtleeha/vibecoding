@@ -1,0 +1,24 @@
+== nguoiyeucu | Nói chuyện với người yêu cũ
+-- cover | Người yêu cũ nhắn tin // lúc một giờ sáng
+-- chat | NỬA ĐÊM CÓ TIN NHẮN | 01:12 | Người yêu cũ | light | Người yêu cũ nhắn lúc một giờ sáng | M1F1
+a: em ngủ chưa
+b: anh cần gì
+a: anh nhớ em
+b: anh say hả
+a: say một chút thôi
+-- meme | Nosy-Cat-Meme-Green-Screen.mp4 | Say hả? | 0.5 | 1.6 | 1
+-- chat | NHỚ DAI HƠN NHỚ NGƯỜI | 01:20 | Người yêu cũ | light | Anh muốn nói chuyện lại | M1F1
+a: hay mình nói chuyện lại đi
+b: nói chuyện gì
+a: chuyện của hai đứa mình
+b: anh còn nợ em hai triệu
+a: em nhớ dai vậy
+b: còn nhớ cả cái nồi cơm điện nữa
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Nợ hai triệu | 0.5 | 1.6 | 1
+-- chat | ĐỨNG TRƯỚC CỬA NHÀ | 01:35 | Người yêu cũ | dark | Cái kết cho người nhớ nhầm | M1F1
+a: anh đang đứng trước cửa nhà em nè
+b: em chuyển nhà ba tháng rồi
+a: sao em không nói anh
+b: anh bị chặn mà
+a: chặn rồi sao em nhắn được
+b: số này em lập để đòi nợ anh

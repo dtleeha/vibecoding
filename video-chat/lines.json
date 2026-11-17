@@ -1,112 +1,92 @@
 [
  {
-  "key": "emhaixindothu_0_vo",
+  "key": "nguoiyeucu_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Em hai xin , đủ thứ"
+  "text": "Người yêu cũ nhắn tin , lúc một giờ sáng"
  },
  {
-  "key": "emhaixindothu_1_0",
-  "voice": "Ngọc Huyền",
-  "text": "anh hai ơi, anh đang làm gì đó"
- },
- {
-  "key": "emhaixindothu_1_1",
+  "key": "nguoiyeucu_1_0",
   "voice": "Phạm Tuyên",
-  "text": "anh đang làm việc, sao vậy em"
+  "text": "em ngủ chưa"
  },
  {
-  "key": "emhaixindothu_1_2",
+  "key": "nguoiyeucu_1_1",
   "voice": "Ngọc Huyền",
-  "text": "anh cho em mượn hai trăm nghìn đi"
+  "text": "anh cần gì"
  },
  {
-  "key": "emhaixindothu_1_3",
+  "key": "nguoiyeucu_1_2",
   "voice": "Phạm Tuyên",
-  "text": "em mượn làm gì"
+  "text": "anh nhớ em"
  },
  {
-  "key": "emhaixindothu_1_4",
+  "key": "nguoiyeucu_1_3",
   "voice": "Ngọc Huyền",
-  "text": "em mua chai nước"
+  "text": "anh say hả"
  },
  {
-  "key": "emhaixindothu_1_5",
+  "key": "nguoiyeucu_1_4",
   "voice": "Phạm Tuyên",
-  "text": "chai nước hai trăm nghìn hả"
+  "text": "say một chút thôi"
  },
  {
-  "key": "emhaixindothu_1_6",
-  "voice": "Ngọc Huyền",
-  "text": "nước hoa hồng đó anh, nước thôi mà"
- },
- {
-  "key": "emhaixindothu_3_0",
-  "voice": "Ngọc Huyền",
-  "text": "anh ơi, em còn thiếu cái ốp điện thoại"
- },
- {
-  "key": "emhaixindothu_3_1",
+  "key": "nguoiyeucu_3_0",
   "voice": "Phạm Tuyên",
-  "text": "tuần trước anh mới mua cho em rồi mà"
+  "text": "hay mình nói chuyện lại đi"
  },
  {
-  "key": "emhaixindothu_3_2",
+  "key": "nguoiyeucu_3_1",
   "voice": "Ngọc Huyền",
-  "text": "cái đó em đổi gu rồi anh"
+  "text": "nói chuyện gì"
  },
  {
-  "key": "emhaixindothu_3_3",
+  "key": "nguoiyeucu_3_2",
   "voice": "Phạm Tuyên",
-  "text": "gu của em đổi nhanh hơn thời tiết nữa"
+  "text": "chuyện của hai đứa mình"
  },
  {
-  "key": "emhaixindothu_3_4",
+  "key": "nguoiyeucu_3_3",
   "voice": "Ngọc Huyền",
-  "text": "vậy anh mua cho em hai cái nha, một cái thay phiên"
+  "text": "anh còn nợ em hai triệu"
  },
  {
-  "key": "emhaixindothu_3_5",
+  "key": "nguoiyeucu_3_4",
   "voice": "Phạm Tuyên",
-  "text": "anh mua cho em cái nhà luôn cho rồi"
+  "text": "em nhớ dai vậy"
  },
  {
-  "key": "emhaixindothu_3_6",
+  "key": "nguoiyeucu_3_5",
   "voice": "Ngọc Huyền",
-  "text": "thiệt hả anh"
+  "text": "còn nhớ cả cái nồi cơm điện nữa"
  },
  {
-  "key": "emhaixindothu_3_7",
+  "key": "nguoiyeucu_5_0",
   "voice": "Phạm Tuyên",
-  "text": "anh nói chơi thôi"
+  "text": "anh đang đứng trước cửa nhà em nè"
  },
  {
-  "key": "emhaixindothu_5_0",
+  "key": "nguoiyeucu_5_1",
   "voice": "Ngọc Huyền",
-  "text": "anh hai, hôm nay em thi được chín điểm nè"
+  "text": "em chuyển nhà ba tháng rồi"
  },
  {
-  "key": "emhaixindothu_5_1",
+  "key": "nguoiyeucu_5_2",
   "voice": "Phạm Tuyên",
-  "text": "giỏi quá, em muốn anh thưởng gì"
+  "text": "sao em không nói anh"
  },
  {
-  "key": "emhaixindothu_5_2",
+  "key": "nguoiyeucu_5_3",
   "voice": "Ngọc Huyền",
-  "text": "em chỉ muốn anh khen em thôi"
+  "text": "anh bị chặn mà"
  },
  {
-  "key": "emhaixindothu_5_3",
+  "key": "nguoiyeucu_5_4",
   "voice": "Phạm Tuyên",
-  "text": "thiệt hả, vậy anh khen em hết hôm nay luôn"
+  "text": "chặn rồi sao em nhắn được"
  },
  {
-  "key": "emhaixindothu_5_4",
+  "key": "nguoiyeucu_5_5",
   "voice": "Ngọc Huyền",
-  "text": "dạ, rồi anh chuyển khoản khen luôn nha"
- },
- {
-  "key": "emhaixindothu_5_5",
-  "voice": "Phạm Tuyên",
-  "text": "khen thì miễn phí, chuyển khoản thì không"
+  "text": "số này em lập để đòi nợ anh"
  }
 ]
