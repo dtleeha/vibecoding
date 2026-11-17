@@ -6,4 +6,36 @@ services:
       - "3000:3000"
     environment:
       PORT: "3000"
+      # Kết nối database (lấy từ file .env)
+      PGHOST: db
+      PGPORT: "5432"
+      PGUSER: ${POSTGRES_USER:?Thiếu POSTGRES_USER trong file .env}
+      PGPASSWORD: ${POSTGRES_PASSWORD:?Thiếu POSTGRES_PASSWORD trong file .env}
+      PGDATABASE: ${POSTGRES_DB:?Thiếu POSTGRES_DB trong file .env}
+      # Admin đầu tiên — chỉ dùng khi database chưa có admin nào
+      ADMIN_EMAIL: ${ADMIN_EMAIL:?Thiếu ADMIN_EMAIL trong file .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Thiếu ADMIN_PASSWORD trong file .env}
+      ADMIN_NAME: ${ADMIN_NAME:-Quản trị viên}
+    depends_on:
+      db:
+        condition: service_healthy
     restart: unless-stopped
+
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?Thiếu POSTGRES_USER trong file .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Thiếu POSTGRES_PASSWORD trong file .env}
+      POSTGRES_DB: ${POSTGRES_DB:?Thiếu POSTGRES_DB trong file .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # Không mở cổng 5432 ra ngoài máy: chỉ dịch vụ app trong Docker mới kết nối được
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  pgdata:

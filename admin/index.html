@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Đập Chuột · Admin</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<!-- Thanh trên (03 · 4.8) -->
+<header class="topbar" id="topbar" hidden>
+  <span class="topbar__brand">ĐẬP CHUỘT · ADMIN</span>
+  <nav class="topbar__nav" aria-label="Menu admin">
+    <a href="#nguoi-choi" data-nav="nguoi-choi">Người chơi</a>
+    <a href="#tai-khoan" data-nav="tai-khoan">Tài khoản admin</a>
+  </nav>
+  <span class="topbar__user">
+    <span id="meName"></span>
+    <button type="button" class="link link--light" id="btnMyPassword">Đổi mật khẩu</button>
+    <button type="button" class="link link--light" id="btnLogout">Đăng xuất</button>
+  </span>
+</header>
+
+<main class="main">
+
+  <!-- 03 · 4.7 · Đăng nhập -->
+  <section class="view view--narrow" id="viewLogin" hidden>
+    <form class="card" id="loginForm" novalidate>
+      <div class="card__header card__header--dark">ĐẬP CHUỘT · ADMIN</div>
+      <div class="card__body">
+        <div class="field">
+          <label class="field__label" for="loginEmail">Email</label>
+          <input class="input" id="loginEmail" type="email" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="loginPassword">Mật khẩu</label>
+          <div class="input-group">
+            <input class="input" id="loginPassword" type="password" autocomplete="current-password" required>
+            <button type="button" class="btn btn--secondary" id="btnShowPw" aria-pressed="false">Hiện</button>
+          </div>
+        </div>
+        <p class="form__error" id="loginError" role="alert" hidden></p>
+        <button type="submit" class="btn btn--block" id="btnLogin">Đăng nhập</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Đặt / đổi mật khẩu -->
+  <section class="view view--narrow" id="viewPassword" hidden>
+    <form class="card" id="passwordForm" novalidate>
+      <div class="card__header card__header--dark" id="passwordTitle">Đổi mật khẩu</div>
+      <div class="card__body">
+        <input type="text" class="sr-only" id="pwUsername" autocomplete="username" tabindex="-1" aria-hidden="true" readonly>
+        <p class="note" id="passwordNote" hidden>Đây là lần đăng nhập đầu. Vui lòng đặt mật khẩu mới trước khi tiếp tục.</p>
+        <div class="field">
+          <label class="field__label" for="pwCurrent">Mật khẩu hiện tại</label>
+          <input class="input" id="pwCurrent" type="password" autocomplete="current-password">
+          <p class="field__error" id="errCurrent"></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="pwNext">Mật khẩu mới (ít nhất 10 ký tự)</label>
+          <input class="input" id="pwNext" type="password" autocomplete="new-password">
+          <p class="field__error" id="errNext"></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="pwAgain">Nhập lại mật khẩu mới</label>
+          <input class="input" id="pwAgain" type="password" autocomplete="new-password">
+          <p class="field__error" id="errAgain"></p>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn" id="btnSavePw">Lưu mật khẩu</button>
+          <button type="button" class="btn btn--secondary" id="btnCancelPw">Huỷ</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- 03 · 4.8 · Danh sách người chơi -->
+  <section class="view" id="viewPlayers" hidden>
+    <h1 class="view__title">Người chơi</h1>
+    <div class="toolbar">
+      <div class="search">
+        <label class="sr-only" for="searchBox">Tìm kiếm</label>
+        <input class="input" id="searchBox" type="search" placeholder="Tìm họ tên, email, SĐT…" autocomplete="off">
+        <button type="button" class="btn btn--secondary" id="btnClearSearch" hidden>Xoá tìm kiếm</button>
+      </div>
+      <div class="row">
+        <button type="button" class="btn" id="btnExport">Xuất CSV</button>
+        <button type="button" class="btn btn--danger" id="btnDeleteSelected" disabled>Xoá đã chọn</button>
+      </div>
+    </div>
+    <p class="summary" id="playersSummary"></p>
+    <div class="table-wrap">
+      <table class="table" id="playersTable">
+        <thead>
+          <tr>
+            <th class="col-check"><input type="checkbox" id="checkAll" aria-label="Chọn tất cả trên trang"></th>
+            <th><button type="button" class="sort" data-sort="name">Họ tên</button></th>
+            <th><button type="button" class="sort" data-sort="email">Email</button></th>
+            <th><button type="button" class="sort" data-sort="phone">SĐT</button></th>
+            <th><button type="button" class="sort" data-sort="created">Ngày đăng ký</button></th>
+            <th class="num"><button type="button" class="sort" data-sort="rounds">Số lượt</button></th>
+            <th class="num"><button type="button" class="sort" data-sort="best">Điểm cao nhất</button></th>
+            <th><button type="button" class="sort" data-sort="last">Chơi gần nhất</button></th>
+            <th><span class="sr-only">Thao tác</span></th>
+          </tr>
+        </thead>
+        <tbody id="playersBody"></tbody>
+      </table>
+    </div>
+    <p class="empty" id="playersEmpty" hidden></p>
+    <nav class="pager" id="pager" aria-label="Phân trang"></nav>
+  </section>
+
+  <!-- 03 · 4.10 · Tài khoản admin -->
+  <section class="view" id="viewAdmins" hidden>
+    <h1 class="view__title">Tài khoản admin</h1>
+    <div class="toolbar">
+      <span></span>
+      <button type="button" class="btn" id="btnAddAdmin">Thêm admin</button>
+    </div>
+    <form class="card" id="addAdminForm" novalidate hidden>
+      <div class="card__header card__header--primary">Thêm admin</div>
+      <div class="card__body">
+        <div class="grid3">
+          <div class="field">
+            <label class="field__label" for="newName">Họ tên</label>
+            <input class="input" id="newName" type="text" autocomplete="off">
+            <p class="field__error" id="errNewName"></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="newEmail">Email</label>
+            <input class="input" id="newEmail" type="email" autocomplete="off">
+            <p class="field__error" id="errNewEmail"></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="newPassword">Mật khẩu tạm</label>
+            <div class="input-group">
+              <input class="input" id="newPassword" type="text" autocomplete="off">
+              <button type="button" class="btn btn--secondary" id="btnGenPw">Tạo ngẫu nhiên</button>
+            </div>
+            <p class="field__error" id="errNewPassword"></p>
+          </div>
+        </div>
+        <p class="hint">Admin mới phải đổi mật khẩu ở lần đăng nhập đầu. Hãy gửi mật khẩu tạm cho họ qua kênh riêng.</p>
+        <div class="row">
+          <button type="submit" class="btn">Tạo admin</button>
+          <button type="button" class="btn btn--secondary" id="btnCancelAdd">Huỷ</button>
+        </div>
+      </div>
+    </form>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr><th>Họ tên</th><th>Email</th><th>Trạng thái</th><th>Đăng nhập gần nhất</th><th><span class="sr-only">Thao tác</span></th></tr>
+        </thead>
+        <tbody id="adminsBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<!-- Chi tiết người chơi -->
+<div class="modal" id="detailModal" hidden>
+  <div class="modal__box card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <div class="card__header card__header--dark"><span id="detailTitle">Chi tiết người chơi</span>
+      <button type="button" class="close" data-close aria-label="Đóng">×</button></div>
+    <div class="card__body">
+      <dl class="dl" id="detailInfo"></dl>
+      <h2 class="sub">Các lượt chơi</h2>
+      <div class="table-wrap table-wrap--short">
+        <table class="table"><thead><tr><th>Thời điểm</th><th class="num">Điểm</th></tr></thead><tbody id="detailRounds"></tbody></table>
+      </div>
+      <div class="row row--end">
+        <button type="button" class="btn btn--danger" id="btnDeleteOne">Xoá người chơi này</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 · 4.9 · Hộp xác nhận -->
+<div class="modal" id="confirmModal" hidden>
+  <div class="modal__box modal__box--small card" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmText">
+    <div class="card__header card__header--dark" id="confirmTitle">Xác nhận</div>
+    <div class="card__body">
+      <p id="confirmText"></p>
+      <div class="row row--end">
+        <button type="button" class="btn btn--secondary" id="btnConfirmCancel">Huỷ</button>
+        <button type="button" class="btn btn--danger" id="btnConfirmOk">Xoá</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="/validate.js"></script>
+<script src="/admin/admin.js"></script>
+</body>
+</html>

@@ -10,13 +10,50 @@
 <body>
 <main class="app">
 
+  <!-- 03 · 4.5 · Màn hình Đăng ký -->
+  <section class="screen screen--register" id="screenRegister" hidden aria-labelledby="titleRegister">
+    <form class="panel register" id="registerForm" novalidate>
+      <h1 class="game-title" id="titleRegister">Đập Chuột</h1>
+      <p class="register__sub">Đăng ký để bắt đầu chơi</p>
+
+      <div class="field" data-field="name">
+        <label class="field__label" for="regName">Họ và tên</label>
+        <input class="input" id="regName" name="name" type="text" autocomplete="name" maxlength="80" placeholder="VD: Nguyễn Văn An" aria-describedby="errName">
+        <p class="field__error" id="errName" role="alert"></p>
+      </div>
+      <div class="field" data-field="email">
+        <label class="field__label" for="regEmail">Email</label>
+        <input class="input" id="regEmail" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="VD: ban@email.com" aria-describedby="errEmail">
+        <p class="field__error" id="errEmail" role="alert"></p>
+      </div>
+      <div class="field" data-field="phone">
+        <label class="field__label" for="regPhone">Số điện thoại</label>
+        <input class="input" id="regPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="VD: 0912 345 678" aria-describedby="errPhone">
+        <p class="field__error" id="errPhone" role="alert"></p>
+      </div>
+      <div class="field" data-field="consent">
+        <label class="check">
+          <input type="checkbox" id="regConsent" name="consent" aria-describedby="errConsent">
+          <span>Tôi đồng ý cho xử lý dữ liệu cá nhân theo <button type="button" class="link" id="btnNotice">Thông báo xử lý dữ liệu</button></span>
+        </label>
+        <p class="field__error" id="errConsent" role="alert"></p>
+      </div>
+
+      <p class="form__error" id="registerError" role="alert" hidden></p>
+      <button type="submit" class="btn btn--action btn--block" id="btnRegister">Vào chơi</button>
+    </form>
+  </section>
+
   <!-- 4.1 · Màn hình Bắt đầu -->
   <section class="screen screen--start" id="screenStart" aria-labelledby="titleStart">
     <div class="panel panel--center">
       <h1 class="game-title" id="titleStart">Đập Chuột</h1>
+      <p class="greeting" id="greeting" hidden>Xin chào, <span id="greetingName"></span>!</p>
       <p class="rules">Đập trúng chuột được điểm, đập liên tiếp để nhân combo, bấm trượt bị trừ 1 điểm. Bạn có 30 giây!</p>
       <p class="record-line">Kỷ lục: <span id="startRecord">0</span></p>
       <button type="button" class="btn btn--action" id="btnStart">Bắt đầu</button>
+      <p class="pending-note" id="pendingNote" hidden></p>
+      <p class="not-me"><button type="button" class="link" id="btnNotMe" hidden>Không phải bạn? Đăng ký lại</button></p>
     </div>
   </section>
 
@@ -44,12 +81,26 @@
 
 </main>
 
+<!-- Thông báo xử lý dữ liệu cá nhân (docs 04 · 4.15) -->
+<div class="modal" id="noticeModal" hidden>
+  <div class="modal__box panel" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
+    <h2 class="modal__title" id="noticeTitle">Thông báo xử lý dữ liệu cá nhân</h2>
+    <div class="modal__body">
+      <p><strong>[Nội dung do chủ dự án cung cấp]</strong></p>
+      <p>Cần nêu: ai thu thập dữ liệu; thu thập những gì (họ tên, email, số điện thoại, điểm các lượt chơi); để làm gì; lưu trong bao lâu; ai được xem; cách yêu cầu xem, sửa hoặc xoá dữ liệu và cách liên hệ.</p>
+    </div>
+    <button type="button" class="btn btn--action btn--block" id="btnNoticeClose">Đã hiểu</button>
+  </div>
+</div>
+
 <!-- Chế độ gỡ lỗi: chỉ hiện khi mở index.html?debug=1 -->
 <aside class="debug" id="debugPanel" hidden>
   <div class="debug__head">GỠ LỖI · <span id="debugActive">ô đang có chuột: —</span></div>
   <ol class="debug__log" id="debugLog"></ol>
 </aside>
 
+<script src="validate.js"></script>
+<script src="player.js"></script>
 <script src="game.js"></script>
 </body>
 </html>

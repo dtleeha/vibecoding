@@ -5,11 +5,14 @@ ENV NODE_ENV=production \
 
 WORKDIR /srv
 
-# Server không dùng thư viện ngoài nên không cần npm install
-COPY package.json ./
+# Cài thư viện (pg, bcryptjs) đúng phiên bản trong package-lock.json
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --no-audit --no-fund && npm cache clean --force
+
 COPY server ./server
 COPY app ./app
 COPY design ./design
+COPY admin ./admin
 
 # Chạy bằng user thường, không dùng root
 USER node

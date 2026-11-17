@@ -5,9 +5,10 @@ yarn-debug.log*
 yarn-error.log*
 *.log
 
-# Biến môi trường, bí mật
+# Biến môi trường, bí mật (mật khẩu database, admin)
 .env
 .env.*
+!.env.example
 
 # Trình soạn thảo
 .vscode/

@@ -6,6 +6,9 @@
 (function () {
   "use strict";
 
+  // Phần đăng ký người chơi và gửi điểm (app/player.js)
+  const Player = window.DapChuotPlayer || null;
+
   /* ---------- 4.1 · Thông số ---------- */
   const CFG = {
     CELLS: 9,
@@ -30,7 +33,7 @@
   /* ---------- Phần tử giao diện ---------- */
   const $ = (id) => document.getElementById(id);
   const ui = {
-    screens: { start: $("screenStart"), playing: $("screenPlay"), over: $("screenOver") },
+    screens: { register: $("screenRegister"), start: $("screenStart"), playing: $("screenPlay"), over: $("screenOver") },
     startRecord: $("startRecord"),
     btnStart: $("btnStart"),
     btnRestart: $("btnRestart"),
@@ -141,6 +144,7 @@
   /* ---------- Hiển thị ---------- */
   function showScreen(name) {
     game.screen = name;
+    ui.screens.register.hidden = name !== "register";
     ui.screens.start.hidden = name !== "start";
     ui.screens.playing.hidden = name !== "playing";
     ui.screens.over.hidden = name !== "over";
@@ -292,6 +296,8 @@
   /* ---------- F02 / F11 · Bắt đầu lượt ---------- */
   function startRound() {
     if (game.screen === "playing") return; // bấm nhiều lần chỉ tạo 1 lượt
+    // F14 · Máy chưa đăng ký (hoặc người chơi đã bị xoá) → về màn hình Đăng ký
+    if (Player && !Player.canPlay()) { Player.showRegister(); return; }
     stopLoop();
     clearFx();
     if (DEBUG) dbg.log.innerHTML = "";
@@ -341,6 +347,9 @@
     ui.overRecord.textContent = String(isNew ? game.score : oldRecord);
     ui.newRecord.hidden = !isNew;
     ui.startRecord.textContent = String(isNew ? game.score : oldRecord);
+
+    // F15 · Gửi điểm lượt này lên server (chạy ngầm, không làm chậm màn hình Kết thúc)
+    if (Player) Player.roundEnded(game.score);
   }
 
   /* ---------- 4.3 · Xử lý một cú bấm ---------- */
@@ -410,7 +419,8 @@
     }
   });
 
-  /* ---------- F01 · Mở trang ---------- */
+  /* ---------- F01 / F13 / F14 · Mở trang ---------- */
   ui.startRecord.textContent = String(readRecord());
-  showScreen("start");
+  if (Player) Player.init({ showScreen });
+  else showScreen("start");
 })();
