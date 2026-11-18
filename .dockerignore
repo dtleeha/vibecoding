@@ -25,3 +25,10 @@ docker-compose.yml
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# File chỉ dùng khi deploy, không cần trong image
+Caddyfile
+docker-compose.prod.yml
+deploy
+*.bat
+*.ps1

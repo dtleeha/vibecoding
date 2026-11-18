@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Kế hoạch deploy — Đập Chuột</title>
+<link rel="stylesheet" href="../design/tokens.css">
+<link rel="stylesheet" href="docs.css">
+<style>
+  pre {
+    margin: 0 0 var(--space-3);
+    padding: var(--space-3);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    border-left: 4px solid var(--color-primary);
+  }
+  pre code { background: none; border: 0; padding: 0; color: inherit; font-size: inherit; }
+  .step { border: var(--border-width) solid var(--color-border); margin-bottom: var(--space-4); }
+  .step__head { display: flex; gap: var(--space-3); align-items: baseline; padding: var(--space-2) var(--space-3); background: var(--color-surface-alt); border-bottom: var(--border-width) solid var(--color-border); }
+  .step__num { font-family: var(--font-display); font-weight: var(--font-weight-bold); color: var(--color-primary); }
+  .step__title { font-weight: var(--font-weight-bold); }
+  .step__body { padding: var(--space-3); }
+  .step__body > :last-child { margin-bottom: 0; }
+  .check { border-left: 4px solid var(--color-success); background: #e6f4ec; padding: var(--space-2) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--font-size-sm); }
+  .check strong { color: var(--color-success); }
+  .diagram { width: 100%; height: auto; display: block; }
+  .small { font-size: var(--font-size-sm); color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <p class="topbar__title">ĐẬP CHUỘT · TÀI LIỆU</p>
+    <nav aria-label="Mục lục tài liệu">
+      <a href="index.html">Mục lục</a>
+      <a href="01-tong-quan.html">1. Tổng quan</a>
+      <a href="02-chuc-nang.html">2. Chức năng</a>
+      <a href="03-man-hinh.html">3. Màn hình</a>
+      <a href="04-quy-tac-du-lieu.html">4. Quy tắc &amp; dữ liệu</a>
+      <a href="05-ke-hoach-test.html">5. Kế hoạch test</a>
+      <a href="06-ke-hoach-deploy.html" aria-current="page">6. Kế hoạch deploy</a>
+    </nav>
+  </header>
+
+  <h1 class="hero-title">06 · Kế hoạch deploy</h1>
+  <p class="hero-sub">Đưa game lên Google Cloud qua tên miền <code>[domain]</code>, chỉ dùng gói miễn phí (Free Tier). Đây là kế hoạch, <strong>chưa chạy lệnh nào</strong>.</p>
+
+  <section class="card">
+    <div class="card__header card__header--primary">Tóm tắt</div>
+    <div class="card__body">
+      <ul>
+        <li><strong>Hạ tầng:</strong> 1 máy ảo Compute Engine <code>e2-micro</code> ở <code>us-central1</code>, đĩa standard 30 GB, IP tĩnh, chạy Docker Compose hiện có + thêm 1 dịch vụ <strong>Caddy</strong> lo HTTPS.</li>
+        <li><strong>RAM 1 GB:</strong> thêm 2 GB swap; giới hạn RAM: database 256 MB, app 192 MB, Caddy 96 MB.</li>
+        <li><strong>Mở ra Internet:</strong> chỉ cổng 80 và 443. Database và cổng 3000 không mở ra ngoài; SSH chỉ cho dải IP của Google.</li>
+        <li><strong>Chi phí:</strong> 0 đồng nếu đúng cấu hình. Các khoản có thể phát sinh và cách tránh ở mục 4.</li>
+        <li><strong>Lưu ý lớn nhất:</strong> tài khoản đang <strong>dùng thử</strong> (còn ~83 ngày). Hết dùng thử mà không nâng cấp thì máy bị dừng và xoá sau 30 ngày — kể cả phần miễn phí (mục 4.2).</li>
+      </ul>
+      <div class="note">
+        <p><strong>Đã duyệt ngày 18/11/2026:</strong> tên miền <code>game.dingdang.io.vn</code> (tên miền con của <code>dingdang.io.vn</code>, mua ở PA Việt Nam — tên miền con không mất thêm phí); project riêng; chỉ dùng phần miễn phí, không nâng cấp tài khoản trả phí.</p>
+        <p><strong>Tự động hoá:</strong> bước 7–11 do file <code>deploy/gce-startup.sh</code> tự làm mỗi lần máy ảo khởi động (swap, Docker, lấy code vào <code>/opt/dapchuot</code>, tạo <code>.env</code>, chạy Docker Compose). Tiến trình xem ở <em>VM → Serial port 1</em>, các dòng bắt đầu bằng <code>DAPCHUOT:</code>. Các lệnh ở bước 7–11 vẫn giữ để hiểu và để làm tay khi cần.</p>
+      </div>
+      <div class="note note--warn">
+        <p><strong>Thay <code>[domain]</code></strong> bằng tên miền thật (VD <code>dapchuot.example.vn</code>) ở mọi chỗ trong trang. Cần có quyền sửa bản ghi DNS của tên miền đó tại nơi mua tên miền.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 1. SƠ ĐỒ ===================== -->
+  <section class="card" id="so-do">
+    <div class="card__header card__header--dark">1 · Sơ đồ</div>
+    <div class="card__body">
+      <svg class="diagram" viewBox="0 0 880 470" role="img" aria-labelledby="sdTitle sdDesc" font-family="Segoe UI, Arial, sans-serif">
+        <title id="sdTitle">Sơ đồ deploy Đập Chuột trên Google Cloud</title>
+        <desc id="sdDesc">Người chơi và admin truy cập tên miền qua HTTPS, đi qua tường lửa chỉ mở cổng 80 và 443 tới IP tĩnh của máy ảo e2-micro. Trong máy ảo, Docker Compose chạy Caddy, app Node.js và PostgreSQL; chỉ Caddy nhận kết nối từ ngoài.</desc>
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker>
+        </defs>
+        <!-- Người dùng -->
+        <rect x="10" y="40" width="170" height="70" fill="#fff" stroke="#222" stroke-width="2"/>
+        <text x="95" y="68" text-anchor="middle" font-size="15" font-weight="700">Người chơi</text>
+        <text x="95" y="90" text-anchor="middle" font-size="12">trình duyệt / điện thoại</text>
+        <rect x="10" y="150" width="170" height="70" fill="#fff" stroke="#222" stroke-width="2"/>
+        <text x="95" y="178" text-anchor="middle" font-size="15" font-weight="700">Admin</text>
+        <text x="95" y="200" text-anchor="middle" font-size="12">https://[domain]/admin</text>
+        <!-- DNS -->
+        <rect x="10" y="290" width="170" height="70" fill="#f7f7f7" stroke="#888" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="95" y="318" text-anchor="middle" font-size="14" font-weight="700">DNS tên miền</text>
+        <text x="95" y="340" text-anchor="middle" font-size="12">bản ghi A → IP tĩnh</text>
+        <!-- Mũi tên vào -->
+        <line x1="180" y1="75" x2="262" y2="160" stroke="#222" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="180" y1="185" x2="262" y2="185" stroke="#222" stroke-width="2" marker-end="url(#ar)"/>
+        <text x="200" y="150" font-size="12" fill="#008cba" font-weight="700">HTTPS</text>
+        <line x1="95" y1="290" x2="95" y2="222" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Google Cloud -->
+        <rect x="265" y="10" width="605" height="450" fill="#d9eef6" stroke="#008cba" stroke-width="2"/>
+        <text x="280" y="34" font-size="15" font-weight="700" fill="#006687">Google Cloud · project riêng · us-central1</text>
+        <!-- Tường lửa -->
+        <rect x="280" y="120" width="120" height="130" fill="#fde6e1" stroke="#f04124" stroke-width="2"/>
+        <text x="340" y="150" text-anchor="middle" font-size="14" font-weight="700">Tường lửa</text>
+        <text x="340" y="174" text-anchor="middle" font-size="12">Mở: 80, 443</text>
+        <text x="340" y="194" text-anchor="middle" font-size="12">SSH: chỉ IP</text>
+        <text x="340" y="210" text-anchor="middle" font-size="12">của Google</text>
+        <text x="340" y="232" text-anchor="middle" font-size="12">Còn lại: chặn</text>
+        <!-- IP tĩnh -->
+        <rect x="280" y="290" width="120" height="60" fill="#fff" stroke="#008cba" stroke-width="2"/>
+        <text x="340" y="315" text-anchor="middle" font-size="14" font-weight="700">IP tĩnh</text>
+        <text x="340" y="335" text-anchor="middle" font-size="12">IPv4, Premium</text>
+        <line x1="340" y1="290" x2="340" y2="252" stroke="#008cba" stroke-width="2"/>
+        <line x1="400" y1="185" x2="438" y2="185" stroke="#222" stroke-width="2" marker-end="url(#ar)"/>
+        <!-- Máy ảo -->
+        <rect x="440" y="50" width="415" height="395" fill="#fff" stroke="#222" stroke-width="2"/>
+        <text x="455" y="74" font-size="15" font-weight="700">Máy ảo e2-micro · Debian</text>
+        <text x="455" y="94" font-size="12">1 GB RAM + 2 GB swap · đĩa standard 30 GB</text>
+        <rect x="455" y="108" width="385" height="300" fill="#f7f7f7" stroke="#555" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="468" y="128" font-size="13" font-weight="700" fill="#555">Docker Compose</text>
+        <!-- Caddy -->
+        <rect x="470" y="142" width="355" height="62" fill="#43ac6a" stroke="#3a945b" stroke-width="2"/>
+        <text x="485" y="168" font-size="14" font-weight="700" fill="#fff">caddy · cổng 80, 443</text>
+        <text x="485" y="190" font-size="12" fill="#fff">HTTPS tự động (Let's Encrypt), nén · RAM ≤ 96 MB</text>
+        <!-- app -->
+        <rect x="470" y="232" width="355" height="62" fill="#008cba" stroke="#006687" stroke-width="2"/>
+        <text x="485" y="258" font-size="14" font-weight="700" fill="#fff">app · Node.js · cổng 3000 (chỉ nội bộ)</text>
+        <text x="485" y="280" font-size="12" fill="#fff">game + /admin + API · RAM ≤ 192 MB</text>
+        <!-- db -->
+        <rect x="470" y="322" width="355" height="72" fill="#222" stroke="#000" stroke-width="2"/>
+        <text x="485" y="348" font-size="14" font-weight="700" fill="#fff">db · PostgreSQL 17 (chỉ nội bộ)</text>
+        <text x="485" y="370" font-size="12" fill="#fff">RAM ≤ 256 MB · dữ liệu trong volume pgdata</text>
+        <text x="485" y="386" font-size="12" fill="#ffee00">không mở cổng ra ngoài</text>
+        <line x1="647" y1="204" x2="647" y2="230" stroke="#222" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="647" y1="294" x2="647" y2="320" stroke="#222" stroke-width="2" marker-end="url(#ar)"/>
+        <text x="455" y="432" font-size="12" fill="#555">.env (mật khẩu) chỉ nằm trên máy ảo, quyền 600</text>
+      </svg>
+      <p class="small">Dịch vụ <code>app</code> và <code>db</code> giữ nguyên như Docker Compose hiện có. Khi deploy chỉ thêm file <code>docker-compose.prod.yml</code> (thêm Caddy, giới hạn RAM, xoay vòng log, bỏ cổng 3000 ra ngoài) và file <code>Caddyfile</code> — nội dung ở mục 3, bước 9.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 2. CẤU HÌNH ===================== -->
+  <section class="card" id="cau-hinh">
+    <div class="card__header card__header--dark">2 · Cấu hình Free Tier</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mục</th><th>Chọn</th><th>Vì sao / lưu ý</th></tr></thead>
+          <tbody>
+            <tr><td>Project</td><td>Tạo project mới, VD <code>dap-chuot</code>, gắn “My Billing Account”</td><td>Tách riêng khỏi các project Gemini đang có; xoá sạch sau khoá học chỉ cần tắt cả project</td></tr>
+            <tr><td>Vùng / zone</td><td><code>us-central1</code> (Iowa), zone <code>us-central1-a</code></td><td>Chỉ <code>us-west1</code>, <code>us-central1</code>, <code>us-east1</code> được miễn phí. Server ở Mỹ nên người chơi ở Việt Nam sẽ chậm hơn chút (~200 ms), game vẫn chơi bình thường</td></tr>
+            <tr><td>Loại máy</td><td><code>e2-micro</code> (2 vCPU dùng chung, 1 GB RAM)</td><td>Loại duy nhất được miễn phí; miễn phí tính theo <em>giờ chạy</em> cho 1 máy/tháng → chỉ tạo <strong>1</strong> máy</td></tr>
+            <tr><td>Hệ điều hành</td><td>Debian 12 hoặc 13 (bản mới nhất có trong danh sách)</td><td>Nhẹ, ít tốn RAM</td></tr>
+            <tr><td>Đĩa khởi động</td><td><strong>Standard persistent disk</strong>, 30 GB</td><td>Mặc định Console thường chọn <em>Balanced</em> — loại này <strong>tính phí</strong>. Phải đổi sang <em>Standard</em></td></tr>
+            <tr><td>Mạng</td><td>VPC <code>default</code>, Network tier <strong>Premium</strong> (mặc định)</td><td>Hạn mức 1 GB dữ liệu đi ra miễn phí áp dụng cho Premium</td></tr>
+            <tr><td>IP</td><td>IP tĩnh IPv4, vùng <code>us-central1</code>, gắn vào máy ảo</td><td>Giữ địa chỉ cố định để trỏ tên miền. Đừng để IP tĩnh đứng không (xem 4.1)</td></tr>
+            <tr><td>Tường lửa</td><td>Tick <em>Allow HTTP traffic</em> và <em>Allow HTTPS traffic</em> khi tạo máy</td><td>Tự tạo luật mở cổng 80 và 443 cho máy có nhãn <code>http-server</code>, <code>https-server</code></td></tr>
+            <tr><td>SSH</td><td>Dùng nút <strong>SSH</strong> trên Console (mở cửa sổ dòng lệnh trong trình duyệt)</td><td>Không cần cài gcloud. Luật SSH thu hẹp còn dải IP của Google (mục 6)</td></tr>
+            <tr><td>Snapshot / sao lưu đĩa</td><td><strong>Không</strong> bật lịch snapshot</td><td>Sao lưu bằng <code>pg_dump</code> tải về máy (mục 3, bước 14)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ngân sách RAM (1 GB + 2 GB swap)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Giới hạn</th><th>Thực tế ước tính</th><th>Cách giới hạn</th></tr></thead>
+          <tbody>
+            <tr><td>Debian + Docker</td><td>—</td><td>~200–250 MB</td><td>Không cài thêm phần mềm nặng</td></tr>
+            <tr><td>db (PostgreSQL)</td><td><strong>256 MB</strong></td><td>~60–120 MB</td><td><code>mem_limit: 256m</code>, <code>shared_buffers=32MB</code>, <code>max_connections=20</code>, <code>work_mem=2MB</code></td></tr>
+            <tr><td>app (Node.js)</td><td>192 MB</td><td>~50–80 MB</td><td><code>mem_limit: 192m</code></td></tr>
+            <tr><td>caddy</td><td>96 MB</td><td>~20–40 MB</td><td><code>mem_limit: 96m</code></td></tr>
+            <tr><td>Swap</td><td>2 GB (file <code>/swapfile</code>)</td><td>Chủ yếu dùng lúc build image</td><td><code>vm.swappiness=10</code>: chỉ đẩy ra swap khi thật sự thiếu RAM</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">Tổng giới hạn của 3 container là 544 MB, còn chỗ cho hệ điều hành. Nếu app hoặc db vượt giới hạn, Docker sẽ khởi động lại riêng container đó (<code>restart: unless-stopped</code>) thay vì làm treo cả máy.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 3. CÁC BƯỚC ===================== -->
+  <section class="card" id="cac-buoc">
+    <div class="card__header card__header--dark">3 · Các bước deploy và cách kiểm tra</div>
+    <div class="card__body">
+      <p>Bước 1–6 làm trên trang <strong>Google Cloud Console</strong> (console.cloud.google.com). Bước 7 trở đi gõ lệnh trong cửa sổ <strong>SSH</strong> của máy ảo. Mỗi bước có ô <span class="badge badge--ok">Kiểm tra</span>: chỉ làm bước sau khi bước trước đạt.</p>
+
+      <div class="step"><div class="step__head"><span class="step__num">1</span><span class="step__title">Tạo project riêng và gắn tài khoản thanh toán</span></div><div class="step__body">
+        <p>Console → chọn project ở thanh trên → <em>New project</em> → tên <code>dap-chuot</code>. Sau đó <em>Billing</em> → <em>Link a billing account</em> → “My Billing Account”. Vào <em>Compute Engine</em> → bấm <em>Enable</em> để bật Compute Engine API.</p>
+        <p class="check"><strong>Kiểm tra:</strong> trang <em>Billing → Account management → Projects</em> thấy <code>dap-chuot</code> gắn “My Billing Account”; trang <em>Compute Engine → VM instances</em> mở được, danh sách trống.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">2</span><span class="step__title">Đặt cảnh báo ngân sách</span></div><div class="step__body">
+        <p><em>Billing → Budgets &amp; alerts → Create budget</em>: phạm vi project <code>dap-chuot</code>, số tiền <strong>25.000 ₫</strong>, cảnh báo ở 50%, 90%, 100%, gửi email cho bạn. Bỏ tick “Include credits” để thấy cả phần đang trừ vào tín dụng dùng thử.</p>
+        <p class="check"><strong>Kiểm tra:</strong> budget hiện trong danh sách. <em>Lưu ý:</em> budget chỉ <strong>báo</strong>, không tự dừng chi tiêu.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">3</span><span class="step__title">Giữ một IP tĩnh</span></div><div class="step__body">
+        <p><em>VPC network → IP addresses → Reserve external static IP address</em>: tên <code>dapchuot-ip</code>, IPv4, Network tier <strong>Premium</strong>, Type <strong>Regional</strong>, Region <code>us-central1</code>. Làm bước 4 ngay sau đó (IP để không lâu sẽ bị tính phí).</p>
+        <p class="check"><strong>Kiểm tra:</strong> thấy <code>dapchuot-ip</code> và địa chỉ số (VD <code>34.x.x.x</code>). Ghi lại địa chỉ này.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">4</span><span class="step__title">Tạo máy ảo</span></div><div class="step__body">
+        <p><em>Compute Engine → VM instances → Create instance</em>:</p>
+        <ul>
+          <li>Name <code>dapchuot-vm</code>; Region <code>us-central1</code>; Zone <code>us-central1-a</code>.</li>
+          <li>Machine: series <strong>E2</strong>, type <strong>e2-micro</strong>.</li>
+          <li>Boot disk → <em>Change</em>: Debian (bản mới nhất), disk type <strong>Standard persistent disk</strong>, size <strong>30 GB</strong>.</li>
+          <li>Firewall: tick <strong>Allow HTTP traffic</strong> và <strong>Allow HTTPS traffic</strong>.</li>
+          <li>Networking → network interface <code>default</code> → External IPv4 address: chọn <code>dapchuot-ip</code>.</li>
+        </ul>
+        <p class="check"><strong>Kiểm tra trước khi bấm Create:</strong> khung ước tính giá bên phải có dòng kiểu “Your first 744 hours of e2-micro instance usage are free this month” và đĩa ghi <em>Standard</em>. <strong>Sau khi tạo:</strong> máy có dấu xanh, cột External IP đúng địa chỉ ở bước 3.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">5</span><span class="step__title">Thu hẹp SSH, bỏ cổng không dùng</span></div><div class="step__body">
+        <p><em>VPC network → Firewall</em>:</p>
+        <ul>
+          <li>Sửa luật <code>default-allow-ssh</code>: Source IPv4 ranges đổi từ <code>0.0.0.0/0</code> thành <code>35.235.240.0/20</code> (dải Google dùng cho nút SSH trên Console).</li>
+          <li>Xoá luật <code>default-allow-rdp</code> (cổng 3389, dành cho Windows, không dùng).</li>
+        </ul>
+        <p class="check"><strong>Kiểm tra:</strong> danh sách còn mở ra Internet chỉ có <code>default-allow-http</code> (80), <code>default-allow-https</code> (443), <code>default-allow-icmp</code>; bấm nút <strong>SSH</strong> của máy ảo vẫn vào được. Nếu SSH không vào được → tạm trả luật về <code>0.0.0.0/0</code>, làm tiếp, rồi xem lại ở mục 6.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">6</span><span class="step__title">Trỏ tên miền về IP tĩnh</span></div><div class="step__body">
+        <p>Tại trang quản lý DNS của nơi mua tên miền (<strong>không</strong> dùng Cloud DNS của Google vì có tính phí): tạo bản ghi <code>A</code>, tên <code>[domain]</code> (hoặc <code>@</code>), giá trị = IP tĩnh, TTL 300.</p>
+        <p class="check"><strong>Kiểm tra:</strong> trên máy bạn mở PowerShell gõ <code>nslookup [domain]</code> → ra đúng IP tĩnh. Có thể mất vài phút đến vài giờ.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">7</span><span class="step__title">Bật 2 GB swap</span></div><div class="step__body">
+        <p>Bấm <strong>SSH</strong> ở máy ảo, rồi chạy:</p>
+<pre><code>sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+echo 'vm.swappiness=10' | sudo tee /etc/sysctl.d/99-swap.conf
+sudo sysctl --system</code></pre>
+        <p class="check"><strong>Kiểm tra:</strong> <code>free -h</code> → dòng <code>Swap:</code> tổng <code>2.0Gi</code>. Khởi động lại máy (<code>sudo reboot</code>), SSH lại, <code>free -h</code> vẫn còn 2.0Gi.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">8</span><span class="step__title">Cài Docker, Git và tự cập nhật bảo mật</span></div><div class="step__body">
+<pre><code>sudo apt-get update
+sudo apt-get install -y ca-certificates curl git unattended-upgrades
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release &amp;&amp; echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo usermod -aG docker $USER
+sudo dpkg-reconfigure -f noninteractive unattended-upgrades</code></pre>
+        <p>Đóng cửa sổ SSH rồi mở lại (để quyền dùng Docker có hiệu lực).</p>
+        <p class="check"><strong>Kiểm tra:</strong> <code>docker compose version</code> ra số phiên bản; <code>docker run --rm hello-world</code> in “Hello from Docker!”; <code>systemctl is-enabled unattended-upgrades</code> ra <code>enabled</code>.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">9</span><span class="step__title">Lấy code, tạo file cấu hình chạy thật</span></div><div class="step__body">
+<pre><code>git clone https://github.com/dtleeha/vibecoding.git
+cd vibecoding</code></pre>
+        <p>Hai file sau sẽ được thêm vào repo trước khi deploy (chưa tạo — chờ duyệt kế hoạch):</p>
+        <p><strong><code>Caddyfile</code></strong></p>
+<pre><code>{$DOMAIN} {
+    encode zstd gzip
+    reverse_proxy app:3000
+    header {
+        Strict-Transport-Security "max-age=31536000"
+        -Server
+    }
+}</code></pre>
+        <p><strong><code>docker-compose.prod.yml</code></strong> (ghép thêm vào <code>docker-compose.yml</code> hiện có)</p>
+<pre><code>services:
+  app:
+    ports: !reset []            # không mở cổng 3000 ra ngoài
+    expose: ["3000"]
+    mem_limit: 192m
+    logging: &amp;log
+      driver: json-file
+      options: { max-size: "10m", max-file: "3" }
+
+  db:
+    mem_limit: 256m
+    command: ["postgres",
+      "-c", "shared_buffers=32MB", "-c", "max_connections=20",
+      "-c", "work_mem=2MB", "-c", "maintenance_work_mem=16MB",
+      "-c", "effective_cache_size=128MB"]
+    logging: *log
+
+  caddy:
+    image: caddy:2-alpine
+    ports: ["80:80", "443:443"]
+    environment:
+      DOMAIN: ${DOMAIN:?Thiếu DOMAIN trong .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [app]
+    mem_limit: 96m
+    logging: *log
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:</code></pre>
+        <p class="check"><strong>Kiểm tra:</strong> <code>ls</code> thấy <code>docker-compose.yml</code>, <code>docker-compose.prod.yml</code>, <code>Caddyfile</code>, thư mục <code>app</code>, <code>server</code>, <code>admin</code>.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">10</span><span class="step__title">Tạo file .env trên máy ảo (mật khẩu ngẫu nhiên)</span></div><div class="step__body">
+<pre><code>umask 077
+cat &gt; .env &lt;&lt;EOF
+POSTGRES_USER=dapchuot
+POSTGRES_PASSWORD=$(openssl rand -hex 24)
+POSTGRES_DB=dapchuot
+ADMIN_EMAIL=admin@[domain]
+ADMIN_PASSWORD=$(openssl rand -hex 8)
+ADMIN_NAME=Quan tri vien
+DOMAIN=[domain]
+EOF
+grep ADMIN_PASSWORD .env</code></pre>
+        <p>Ghi lại mật khẩu admin tạm (dòng cuối in ra). Không gửi file này đi đâu, không đưa lên GitHub.</p>
+        <p class="check"><strong>Kiểm tra:</strong> <code>ls -l .env</code> → quyền <code>-rw-------</code>; <code>docker compose -f docker-compose.yml -f docker-compose.prod.yml config --quiet</code> không báo lỗi.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">11</span><span class="step__title">Build và khởi động</span></div><div class="step__body">
+<pre><code>docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+docker compose -f docker-compose.yml -f docker-compose.prod.yml ps
+docker compose -f docker-compose.yml -f docker-compose.prod.yml logs caddy | grep -i certificate</code></pre>
+        <p>Lần đầu build trên e2-micro có thể mất 3–8 phút (dùng tới swap là bình thường).</p>
+        <p class="check"><strong>Kiểm tra:</strong> <code>app</code> và <code>db</code> là <code>healthy</code>, <code>caddy</code> là <code>Up</code>; log Caddy có dòng <em>certificate obtained successfully</em>; <code>free -h</code> còn RAM trống; <code>docker stats --no-stream</code> mỗi container dưới giới hạn RAM.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">12</span><span class="step__title">Kiểm tra từ bên ngoài</span></div><div class="step__body">
+        <ul>
+          <li>Mở <code>https://[domain]</code> trên máy tính và điện thoại (dùng 4G, không qua Wi-Fi nhà): hiện form đăng ký, có ổ khoá HTTPS.</li>
+          <li>Mở <code>http://[domain]</code> → tự chuyển sang <code>https://</code>.</li>
+          <li>Mở <code>https://[domain]/admin</code> → trang đăng nhập.</li>
+          <li>Mở <code>http://[IP tĩnh]:3000</code> → <strong>không</strong> vào được (cổng 3000 không mở ra ngoài).</li>
+        </ul>
+        <p class="check"><strong>Kiểm tra:</strong> chạy lại các ca TC31, TC37, TC46, TC52, TC58 (cookie có <code>Secure</code>), TC65 trong <a href="05-ke-hoach-test.html">05 · Kế hoạch test</a> trên link thật.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">13</span><span class="step__title">Việc phải làm trước khi mời người chơi</span></div><div class="step__body">
+        <ul>
+          <li>Đăng nhập admin, đặt mật khẩu mới thật mạnh.</li>
+          <li>Điền nội dung thật cho “Thông báo xử lý dữ liệu” (đang để chỗ trống) — xem 04 · 4.15.</li>
+          <li>Xoá dữ liệu thử (nếu có).</li>
+        </ul>
+        <p class="check"><strong>Kiểm tra:</strong> trên form đăng ký bấm “Thông báo xử lý dữ liệu” → không còn chữ “[Nội dung do chủ dự án cung cấp]”.</p>
+      </div></div>
+
+      <div class="step"><div class="step__head"><span class="step__num">14</span><span class="step__title">Sao lưu và theo dõi chi phí (định kỳ hằng tuần)</span></div><div class="step__body">
+<pre><code>docker compose -f docker-compose.yml -f docker-compose.prod.yml exec -T db \
+  sh -c 'pg_dump -U "$POSTGRES_USER" "$POSTGRES_DB"' | gzip &gt; ~/backup-$(date +%F).sql.gz</code></pre>
+        <p>Tải file về bằng nút <em>Download file</em> trong cửa sổ SSH. File chứa thông tin cá nhân: cất nơi an toàn, xoá khi không cần.</p>
+        <p class="check"><strong>Kiểm tra:</strong> <em>Billing → Reports</em>, lọc project <code>dap-chuot</code>, nhóm theo <em>SKU</em>: sau 24–48 giờ đầu, mọi dòng phải có chi phí ròng 0 ₫ (dòng nào khác 0 → xem mục 4). <code>df -h /</code> còn trống trên 50%.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. CHI PHÍ ===================== -->
+  <section class="card" id="chi-phi">
+    <div class="card__header card__header--dark">4 · Khoản có thể tính phí và cách tránh</div>
+    <div class="card__body">
+      <h3 style="margin-top:0">4.1 · Các khoản</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Khoản</th><th>Miễn phí trong giới hạn</th><th>Bị tính phí khi</th><th>Cách tránh</th></tr></thead>
+          <tbody>
+            <tr><td>Máy ảo</td><td>1 máy <code>e2-micro</code> chạy cả tháng ở <code>us-west1</code>/<code>us-central1</code>/<code>us-east1</code></td><td>Chọn loại máy khác, vùng khác, hoặc chạy từ 2 máy e2-micro trở lên (hạn mức tính theo tổng giờ)</td><td>Chỉ 1 máy; kiểm tra ước tính giá ở bước 4</td></tr>
+            <tr><td>Đĩa</td><td>30 GB-tháng <strong>standard</strong></td><td>Chọn <em>Balanced</em>/<em>SSD</em>, hoặc tổng đĩa &gt; 30 GB</td><td>Đĩa standard đúng 30 GB; không tạo đĩa phụ</td></tr>
+            <tr><td>Snapshot, machine image</td><td>—</td><td>Tạo snapshot hoặc bật lịch snapshot</td><td>Không dùng; sao lưu bằng <code>pg_dump</code> (bước 14)</td></tr>
+            <tr><td>IP tĩnh</td><td>Theo trang Compute Engine Free Tier hiện hành: IP ngoài của máy miễn phí không bị tính phí</td><td>IP tĩnh đã giữ nhưng <strong>không gắn</strong> vào máy nào (VD xoá máy mà quên giải phóng IP)</td><td>Gắn ngay sau khi giữ; khi xoá máy thì <em>Release</em> IP. Xác nhận ở Billing Reports sau 48 giờ (SKU có chữ “External IP”)</td></tr>
+            <tr><td>Dữ liệu đi ra Internet</td><td>1 GB/tháng từ Bắc Mỹ (trừ Trung Quốc, Úc)</td><td>Vượt 1 GB/tháng</td><td>Trang game ~60 KB, Caddy nén còn ~20 KB → khoảng 15.000–50.000 lượt mở/tháng. Theo dõi ở Billing Reports; budget báo sớm</td></tr>
+            <tr><td>DNS</td><td>—</td><td>Dùng Cloud DNS của Google</td><td>Dùng DNS của nơi mua tên miền</td></tr>
+            <tr><td>Load balancer, Cloud NAT, Cloud Armor, CDN</td><td>—</td><td>Bật bất kỳ dịch vụ nào trong số này</td><td>Không cần: Caddy trên máy ảo đã lo HTTPS</td></tr>
+            <tr><td>Logging / Monitoring</td><td>Có hạn mức miễn phí hằng tháng</td><td>Cài agent ghi log dồn dập</td><td>Không cài Ops Agent; log Docker xoay vòng 10 MB × 3</td></tr>
+            <tr><td>Tên miền</td><td>—</td><td>Phí mua/gia hạn tên miền (ngoài Google Cloud)</td><td>Tuỳ nơi mua</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>4.2 · Dùng thử và gói miễn phí là hai thứ khác nhau</h3>
+      <div class="note note--warn">
+        <ul>
+          <li>Tài khoản thanh toán hiện đang <strong>dùng thử</strong>: còn ~7,75 triệu ₫ tín dụng và ~83 ngày (đã kiểm tra ngày 18/11/2026). Dùng trong giới hạn Free Tier thì không trừ tín dụng.</li>
+          <li><strong>Hết dùng thử mà không nâng cấp:</strong> thanh toán bị tắt, máy ảo bị dừng → web ngừng chạy; sau 30 ngày tài nguyên bị xoá vĩnh viễn.</li>
+          <li><strong>Nâng cấp lên tài khoản trả phí</strong> thì máy tiếp tục chạy miễn phí trong giới hạn Free Tier; nhưng mọi khoản vượt giới hạn sẽ trừ vào thẻ.</li>
+          <li>Kết luận: nếu khoá học kết thúc trước khi hết dùng thử → <strong>không cần nâng cấp</strong>, xoá sạch theo mục 5. Nếu cần chạy lâu hơn → quyết định nâng cấp là của bạn.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. XOÁ SẠCH ===================== -->
+  <section class="card" id="xoa-sach">
+    <div class="card__header card__header--dark">5 · Xoá sạch sau khoá học</div>
+    <div class="card__body">
+      <ol>
+        <li><strong>Sao lưu nếu cần</strong> (bước 14) hoặc xuất CSV từ trang admin. Sau đó thông báo/xử lý dữ liệu người chơi theo nội dung đã cam kết.</li>
+        <li><strong>Xoá máy ảo:</strong> <em>VM instances</em> → chọn <code>dapchuot-vm</code> → <em>Delete</em> (đĩa khởi động bị xoá cùng).</li>
+        <li><strong>Giải phóng IP tĩnh:</strong> <em>VPC network → IP addresses</em> → <code>dapchuot-ip</code> → <em>Release static address</em>. <strong>Đây là bước hay bị quên nhất.</strong></li>
+        <li><strong>Gỡ bản ghi DNS</strong> <code>[domain]</code> tại nơi mua tên miền.</li>
+        <li><strong>Tắt cả project</strong> <code>dap-chuot</code>: <em>IAM &amp; Admin → Settings → Shut down</em>. Google xoá hẳn sau 30 ngày. Không đụng tới các project Gemini.</li>
+        <li><strong>Kiểm tra thanh toán:</strong> 2–3 ngày sau, <em>Billing → Reports</em> không còn chi phí cho <code>dap-chuot</code>. Nếu đã nâng cấp tài khoản trả phí và không dùng nữa: <em>Billing → Account management → Close billing account</em>.</li>
+        <li><strong>Trên máy bạn:</strong> xoá các file sao lưu <code>.sql.gz</code>, file <code>.env</code>, file log có thông tin người chơi.</li>
+      </ol>
+      <p class="check"><strong>Kiểm tra cuối:</strong> <em>Compute Engine</em> không còn máy; <em>IP addresses</em> không còn IP tĩnh; project hiện “Pending deletion”; <code>nslookup [domain]</code> không còn ra IP cũ.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 6. BẢO MẬT ===================== -->
+  <section class="card" id="bao-mat">
+    <div class="card__header card__header--dark">6 · Rủi ro bảo mật và cách xử lý</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rủi ro</th><th>Hậu quả</th><th>Cách xử lý</th></tr></thead>
+          <tbody>
+            <tr><td>Cổng SSH mở cho cả Internet</td><td>Bị dò mật khẩu, chiếm máy</td><td>Chỉ cho dải <code>35.235.240.0/20</code> (bước 5); đăng nhập bằng khoá do Google quản lý, không đặt mật khẩu cho user Linux</td></tr>
+            <tr><td>Database lộ ra ngoài</td><td>Lộ toàn bộ thông tin người chơi</td><td>db không mở cổng; tường lửa chỉ mở 80/443; mật khẩu db ngẫu nhiên 48 ký tự</td></tr>
+            <tr><td>Trang <code>/admin</code> công khai trên Internet</td><td>Bị thử mật khẩu</td><td>Đã có khoá 15 phút sau 5 lần sai, mật khẩu băm bcrypt, cookie <code>Secure</code>/<code>HttpOnly</code>/<code>SameSite=Strict</code>. Đặt mật khẩu admin dài; có thể thêm giới hạn IP cho <code>/admin</code> trong Caddyfile nếu bạn có IP cố định</td></tr>
+            <tr><td>Lộ file <code>.env</code></td><td>Lộ mật khẩu db và admin</td><td>Chỉ nằm trên máy ảo, quyền 600, không lên GitHub (đã kiểm tra). Nếu lộ: đổi mật khẩu admin trên trang admin; đổi mật khẩu db rồi khởi động lại</td></tr>
+            <tr><td>Phần mềm cũ có lỗ hổng</td><td>Bị tấn công qua lỗi đã biết</td><td><code>unattended-upgrades</code> cho Debian; mỗi tháng chạy lại bước 11 với <code>--pull</code> để lấy image mới</td></tr>
+            <tr><td>Đăng ký rác hàng loạt (bot)</td><td>Database phình, tốn dữ liệu đi ra (có thể vượt 1 GB)</td><td>Hiện <strong>chưa</strong> có giới hạn số lần đăng ký theo IP. Theo dõi số người chơi trên trang admin; nếu bị spam: tạm dừng app (<code>docker compose stop app</code>) và thêm giới hạn tần suất (cần sửa code)</td></tr>
+            <tr><td>Hết RAM / đầy đĩa</td><td>Web ngừng chạy</td><td>Swap 2 GB + giới hạn RAM từng container; log xoay vòng; kiểm tra <code>df -h</code>, <code>free -h</code> hằng tuần</td></tr>
+            <tr><td>Chế độ gỡ lỗi <code>?debug=1</code> mở công khai</td><td>Người rành kỹ thuật thấy ô đang có chuột → gian lận điểm</td><td>Chấp nhận được cho khoá học; nếu có trao giải thì tắt chế độ này ở bản chạy thật (cần sửa code)</td></tr>
+            <tr><td>Dữ liệu cá nhân (Luật BVDLCN 91/2025/QH15)</td><td>Vi phạm nghĩa vụ thông báo, đồng ý, xoá</td><td>Có HTTPS, ô đồng ý, nút xoá; còn thiếu <strong>nội dung thông báo</strong> và <strong>thời hạn lưu</strong> (bước 13, mục 5)</td></tr>
+            <tr><td>Mất tài khoản Google quản lý project</td><td>Người khác điều khiển được toàn bộ project và thanh toán</td><td>Bật xác minh 2 bước, dùng mật khẩu mạnh, không để mật khẩu hiện trên màn hình khi chia sẻ máy</td></tr>
+            <tr><td>Không có sao lưu tự động</td><td>Mất dữ liệu nếu máy hỏng</td><td><code>pg_dump</code> hằng tuần (bước 14)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card__header card__header--primary">Cần anh/chị duyệt trước khi làm</div>
+    <div class="card__body">
+      <ul>
+        <li>Tên miền thật thay cho <code>[domain]</code>, và anh/chị có quyền sửa DNS của nó.</li>
+        <li>Đồng ý tạo project riêng <code>dap-chuot</code> (thay vì dùng “My First Project”).</li>
+        <li>Đồng ý thêm 2 file <code>Caddyfile</code> và <code>docker-compose.prod.yml</code> vào repo (bước 9).</li>
+        <li>Khoá học kết thúc trước hay sau khi hết dùng thử (~83 ngày) — quyết định có nâng cấp tài khoản trả phí hay không (4.2).</li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Chuyển trang">
+    <a href="05-ke-hoach-test.html">← 05 · Kế hoạch test</a>
+    <a href="index.html">Mục lục →</a>
+  </nav>
+  <p class="footer">Kế hoạch deploy, chưa chạy lệnh nào. Giá và hạn mức Free Tier có thể thay đổi — kiểm tra lại trên trang giá của Google Cloud trước khi làm.</p>
+</div>
+</body>
+</html>
