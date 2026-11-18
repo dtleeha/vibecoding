@@ -1,162 +1,72 @@
 [
  {
-  "key": "emtraichoigame_0_vo",
+  "key": "trieuhoinguoiyeu_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Em trai xin chơi game , đủ mọi chiêu"
+  "text": "Cách triệu hồi , em người yêu"
  },
  {
-  "key": "emtraichoigame_1_0",
+  "key": "trieuhoinguoiyeu_1_0",
   "voice": "Phạm Tuyên",
-  "text": "mẹ ơi cho con chơi game nửa tiếng thôi"
+  "text": "sao vợ onl mà không rep chồng"
  },
  {
-  "key": "emtraichoigame_1_1",
+  "key": "trieuhoinguoiyeu_1_1",
+  "voice": "Phạm Tuyên",
+  "text": "vợ ơi"
+ },
+ {
+  "key": "trieuhoinguoiyeu_1_2",
+  "voice": "Phạm Tuyên",
+  "text": "ai muốn tiêu tiền của chồng nào"
+ },
+ {
+  "key": "trieuhoinguoiyeu_1_3",
   "voice": "Ngọc Huyền",
-  "text": "con làm bài tập chưa"
+  "text": "có em đây"
  },
  {
-  "key": "emtraichoigame_1_2",
-  "voice": "Phạm Tuyên",
-  "text": "xong rồi ạ"
- },
- {
-  "key": "emtraichoigame_1_3",
+  "key": "trieuhoinguoiyeu_1_4",
   "voice": "Ngọc Huyền",
-  "text": "chụp bài gửi mẹ xem"
+  "text": "chồng nói lại em nghe coi"
  },
  {
-  "key": "emtraichoigame_1_4",
+  "key": "trieuhoinguoiyeu_1_5",
   "voice": "Phạm Tuyên",
-  "text": "dạ đây ạ"
+  "text": "đó thấy chưa, thần chú hiệu nghiệm luôn"
  },
  {
-  "key": "emtraichoigame_1_5",
+  "key": "trieuhoinguoiyeu_3_0",
   "voice": "Ngọc Huyền",
-  "text": "sao mẹ chỉ thấy cái tay cầm game"
+  "text": "chồng hứa đi chơi mà lại quên"
  },
  {
-  "key": "emtraichoigame_1_6",
+  "key": "trieuhoinguoiyeu_3_1",
   "voice": "Phạm Tuyên",
-  "text": "tay cầm là dụng cụ học tập ạ"
+  "text": "anh xin lỗi, anh có quà chuộc lỗi"
  },
  {
-  "key": "emtraichoigame_3_0",
-  "voice": "Phạm Tuyên",
-  "text": "chị ơi cho em mượn máy chơi game"
- },
- {
-  "key": "emtraichoigame_3_1",
-  "voice": "Trúc Ly",
-  "text": "em trả chị cái gì"
- },
- {
-  "key": "emtraichoigame_3_2",
-  "voice": "Phạm Tuyên",
-  "text": "em rửa chén giùm chị một bữa"
- },
- {
-  "key": "emtraichoigame_3_3",
-  "voice": "Trúc Ly",
-  "text": "ba tuần"
- },
- {
-  "key": "emtraichoigame_3_4",
-  "voice": "Phạm Tuyên",
-  "text": "sao chị đổi giá vậy"
- },
- {
-  "key": "emtraichoigame_3_5",
-  "voice": "Trúc Ly",
-  "text": "giá cũ lỗi thời rồi"
- },
- {
-  "key": "emtraichoigame_3_6",
-  "voice": "Phạm Tuyên",
-  "text": "chị là doanh nhân hả"
- },
- {
-  "key": "emtraichoigame_3_7",
-  "voice": "Trúc Ly",
-  "text": "chị tính thêm phí thuê máy"
- },
- {
-  "key": "emtraichoigame_5_0",
-  "voice": "Phạm Tuyên",
-  "text": "bố ơi chơi game cùng con không"
- },
- {
-  "key": "emtraichoigame_5_1",
-  "voice": "Hải Đăng",
-  "text": "được, bố vào rồi"
- },
- {
-  "key": "emtraichoigame_5_2",
-  "voice": "Phạm Tuyên",
-  "text": "sao bố đứng yên vậy"
- },
- {
-  "key": "emtraichoigame_5_3",
-  "voice": "Hải Đăng",
-  "text": "bố đang ngắm cái cây đẹp"
- },
- {
-  "key": "emtraichoigame_5_4",
-  "voice": "Phạm Tuyên",
-  "text": "bố ơi địch bắn bố rồi"
- },
- {
-  "key": "emtraichoigame_5_5",
-  "voice": "Hải Đăng",
-  "text": "ủa bố chết rồi à"
- },
- {
-  "key": "emtraichoigame_5_6",
-  "voice": "Phạm Tuyên",
-  "text": "bố ơi con xin chơi một mình"
- },
- {
-  "key": "emtraichoigame_7_0",
-  "voice": "Phạm Tuyên",
-  "text": "mẹ ơi con nộp đơn xin chơi game"
- },
- {
-  "key": "emtraichoigame_7_1",
+  "key": "trieuhoinguoiyeu_3_3",
   "voice": "Ngọc Huyền",
-  "text": "đơn đâu con"
+  "text": "gì đây, khoai tây hả"
  },
  {
-  "key": "emtraichoigame_7_2",
+  "key": "trieuhoinguoiyeu_3_4",
   "voice": "Phạm Tuyên",
-  "text": "ba trang mẹ ạ, lý do, cam kết, và hình con đáng yêu"
+  "text": "squishy khoai tây, bóp mềm mềm lắm"
  },
  {
-  "key": "emtraichoigame_7_3",
+  "key": "trieuhoinguoiyeu_3_5",
   "voice": "Ngọc Huyền",
-  "text": "cam kết gì"
+  "text": "bóp thử xem sao"
  },
  {
-  "key": "emtraichoigame_7_4",
-  "voice": "Phạm Tuyên",
-  "text": "con cam kết chơi đúng một tiếng"
- },
- {
-  "key": "emtraichoigame_7_5",
+  "key": "trieuhoinguoiyeu_3_6",
   "voice": "Ngọc Huyền",
-  "text": "mẹ duyệt, nhưng mẹ giữ máy"
+  "text": "ừ cũng đỡ giận được một xíu"
  },
  {
-  "key": "emtraichoigame_7_6",
-  "voice": "Phạm Tuyên",
-  "text": "dạ được ạ"
- },
- {
-  "key": "emtraichoigame_7_7",
+  "key": "trieuhoinguoiyeu_5_vo",
   "voice": "Ngọc Huyền",
-  "text": "một tiếng của mẹ là đến khi mẹ thắng"
- },
- {
-  "key": "emtraichoigame_7_8",
-  "voice": "Phạm Tuyên",
-  "text": "mẹ ơi"
+  "text": "Squishy khoai tây bóp mềm mềm, dỗi cỡ nào cũng đỡ. Muốn có một em thì giỏ hàng ở góc trái video nha."
  }
 ]
