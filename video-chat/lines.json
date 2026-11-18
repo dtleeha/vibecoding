@@ -67,40 +67,60 @@
  {
   "key": "chuaconguoiyeu_5_0",
   "voice": "Ngọc Huyền",
-  "text": "Con đang crush Sư Tử nè mẹ"
+  "text": "Bố ơi, con nói thật nha"
  },
  {
   "key": "chuaconguoiyeu_5_1",
+  "voice": "Ngọc Huyền",
+  "text": "Con không thích con người bố ạ"
+ },
+ {
+  "key": "chuaconguoiyeu_5_2",
+  "voice": "Phạm Tuyên",
+  "text": "Bố biết mà"
+ },
+ {
+  "key": "chuaconguoiyeu_5_3",
+  "voice": "Phạm Tuyên",
+  "text": "Con gái bố là người giỏi chứ có phải người trần đâu"
+ },
+ {
+  "key": "chuaconguoiyeu_7_0",
+  "voice": "Ngọc Huyền",
+  "text": "Con đang crush Sư Tử nè mẹ"
+ },
+ {
+  "key": "chuaconguoiyeu_7_1",
   "voice": "Trúc Ly",
   "text": "Người thật hả con"
  },
  {
-  "key": "chuaconguoiyeu_5_2",
+  "key": "chuaconguoiyeu_7_2",
   "voice": "Ngọc Huyền",
   "text": "người thật chứ mẹ"
  },
  {
-  "key": "chuaconguoiyeu_5_3",
+  "key": "chuaconguoiyeu_7_3",
   "voice": "Trúc Ly",
   "text": "vậy sao con chưa dẫn về"
  },
  {
-  "key": "chuaconguoiyeu_5_4",
+  "key": "chuaconguoiyeu_7_4",
   "voice": "Ngọc Huyền",
   "text": "người ta chưa biết con tồn tại mà mẹ"
  },
  {
-  "key": "chuaconguoiyeu_5_5",
+  "key": "chuaconguoiyeu_7_5",
   "voice": "Trúc Ly",
   "text": "thôi mẹ mua cái này cho con ôm đỡ"
  },
  {
-  "key": "chuaconguoiyeu_5_7",
+  "key": "chuaconguoiyeu_7_7",
   "voice": "Ngọc Huyền",
   "text": "squishy khoai tây, bóp mềm mềm quá"
  },
  {
-  "key": "chuaconguoiyeu_7_vo",
+  "key": "chuaconguoiyeu_9_vo",
   "voice": "Ngọc Huyền",
   "text": "Lâu chưa có người yêu thì có squishy khoai tây bóp cho đỡ trống. Muốn có một em thì giỏ hàng ở góc trái video nha."
  }
