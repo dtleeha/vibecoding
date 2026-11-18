@@ -47,6 +47,18 @@ Admin đầu tiên chỉ được tạo khi database **chưa có admin nào**. S
 
 Dữ liệu người chơi nằm trong volume Docker `pgdata`, nên vẫn còn sau khi `docker compose down` rồi chạy lại. Lệnh `docker compose down -v` sẽ **xoá hết dữ liệu**.
 
+### Trên Windows: bấm đúp, không cần gõ lệnh
+
+| File | Việc nó làm |
+|---|---|
+| `CHAY-DOCKER.bat` | Tạo `.env` với mật khẩu ngẫu nhiên (nếu chưa có), build và khởi động game; in mật khẩu admin tạm |
+| `KIEM-TRA.bat` | Chỉ đọc: trạng thái container, số người chơi, 3 người đăng ký mới nhất, log gần nhất → ghi vào `kiem-tra.log` |
+| `DAT-LAI-MAT-KHAU-ADMIN.bat` | Quên mật khẩu hoặc bị khoá: mở khoá admin trong `.env`, đưa mật khẩu về `ADMIN_PASSWORD`, copy sẵn mật khẩu vào bộ nhớ tạm |
+
+Trên máy Mac/Linux, đặt lại admin bằng lệnh: `docker compose exec -T app node server/reset-admin.js`
+
+`kiem-tra.log` chứa thông tin người chơi, không đưa lên GitHub (đã có trong `.gitignore`).
+
 ### Các lệnh thường dùng
 
 | Việc cần làm | Lệnh |
