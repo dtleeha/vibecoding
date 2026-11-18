@@ -131,7 +131,7 @@ def chat_scene(i,s,vid):
     sh(f"ffmpeg -y -loglevel error -f concat -safe 0 -i audio/_v.txt -c copy {clip}")
     return clip,dur(clip),a,lines
 
-MD=os.environ.get("MEME_DIR","/home/claude/memezip/MEME").rstrip("/")+"/"
+MD=os.environ.get("MEME_DIR",os.path.join(os.path.dirname(os.path.abspath(__file__)),"memes")).rstrip("/")+"/"
 def meme_clip(s,vid,i):
     src=MD+s["file"]; d=s.get("dur",1.6); ss=s.get("ss",1.0)
     ov=f"audio/{vid}_{i}_txt.png"

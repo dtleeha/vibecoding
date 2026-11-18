@@ -1,7 +1,7 @@
 # video-chat: video TikTok 9:16 kiểu đọc tin nhắn
 1. Viết kịch bản `scripts/ten.txt` (cú pháp bên dưới).
 2. `./make.sh scripts/ten.txt` -> tạo giọng VieNeu trên GitHub Actions (chỉ dòng mới), kéo về, dựng ra `out2/<id>.mp4` + `.srt`.
-Cần: ffmpeg, playwright chromium, font Inter, thư mục `products/` (ảnh sản phẩm), `MEME_DIR` (thư mục meme; mặc định /home/claude/memezip/MEME), `gh` đăng nhập.
+Cần: ffmpeg, playwright chromium, font Inter, thư mục `products/` (ảnh sản phẩm), `MEME_DIR` (thư mục meme; mặc định video-chat/memes/ ngay trong repo), `gh` đăng nhập.
 Tuỳ chọn: `VOICE_SPEED` (mặc định 1.3).
 ## Cú pháp kịch bản
 ```
