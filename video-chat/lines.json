@@ -1,136 +1,106 @@
 [
  {
-  "key": "lauchuacoyeu_0_vo",
+  "key": "chuaconguoiyeu_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Lâu rồi chưa có , người yêu thì sao"
+  "text": "Lâu rồi chưa có , người yêu"
  },
  {
-  "key": "lauchuacoyeu_1_0",
-  "voice": "Trúc Ly",
-  "text": "con ơi, mẹ hỏi này"
- },
- {
-  "key": "lauchuacoyeu_1_1",
-  "voice": "Trúc Ly",
-  "text": "lâu rồi sao chưa thấy con dẫn ai về"
- },
- {
-  "key": "lauchuacoyeu_1_2",
-  "voice": "Ngọc Huyền",
-  "text": "con bận mà mẹ"
- },
- {
-  "key": "lauchuacoyeu_1_3",
-  "voice": "Trúc Ly",
-  "text": "bận gì mà bận, nhà bên cạnh có con còn chạy lon ton rồi"
- },
- {
-  "key": "lauchuacoyeu_1_4",
-  "voice": "Ngọc Huyền",
-  "text": "người ta là người ta, con là con"
- },
- {
-  "key": "lauchuacoyeu_1_5",
-  "voice": "Trúc Ly",
-  "text": "tuổi con bây giờ yêu tìm hiểu là vừa đó"
- },
- {
-  "key": "lauchuacoyeu_1_6",
-  "voice": "Ngọc Huyền",
-  "text": "con đang tìm hiểu mà mẹ"
- },
- {
-  "key": "lauchuacoyeu_1_7",
-  "voice": "Trúc Ly",
-  "text": "tìm hiểu ai, mẹ có thấy ai đâu"
- },
- {
-  "key": "lauchuacoyeu_1_8",
-  "voice": "Ngọc Huyền",
-  "text": "tìm hiểu cái bàn học với cái giường thôi mẹ"
- },
- {
-  "key": "lauchuacoyeu_3_0",
+  "key": "chuaconguoiyeu_1_0",
   "voice": "Phạm Tuyên",
-  "text": "bố hỏi thật nha"
+  "text": "Bố hỏi này"
  },
  {
-  "key": "lauchuacoyeu_3_1",
+  "key": "chuaconguoiyeu_1_1",
   "voice": "Phạm Tuyên",
-  "text": "con kén hay là chưa gặp đúng người"
+  "text": "Con thích con gái phải không"
  },
  {
-  "key": "lauchuacoyeu_3_2",
+  "key": "chuaconguoiyeu_1_2",
   "voice": "Ngọc Huyền",
-  "text": "con kén chứ sao bố"
+  "text": "ai bảo bố vậy"
  },
  {
-  "key": "lauchuacoyeu_3_3",
+  "key": "chuaconguoiyeu_1_3",
+  "voice": "Ngọc Huyền",
+  "text": "con thích con trai bình thường mà"
+ },
+ {
+  "key": "chuaconguoiyeu_1_4",
   "voice": "Phạm Tuyên",
-  "text": "kén cỡ nào, nói bố nghe thử"
+  "text": "Thế à"
  },
  {
-  "key": "lauchuacoyeu_3_4",
-  "voice": "Ngọc Huyền",
-  "text": "phải đẹp, phải hiền, phải nhắn tin trả lời liền"
- },
- {
-  "key": "lauchuacoyeu_3_5",
+  "key": "chuaconguoiyeu_1_5",
   "voice": "Phạm Tuyên",
-  "text": "đòi hỏi vậy sao không tự mình thành người đó đi"
+  "text": "Tình hình tệ hơn bố nghĩ"
  },
  {
-  "key": "lauchuacoyeu_3_6",
+  "key": "chuaconguoiyeu_3_0",
   "voice": "Ngọc Huyền",
-  "text": "bố ơi, bố nói vậy là con không biết đáp gì luôn"
+  "text": "Đẹp gái không mẹ ơi"
  },
  {
-  "key": "lauchuacoyeu_3_7",
-  "voice": "Phạm Tuyên",
-  "text": "đó, tình hình tệ hơn bố nghĩ rồi"
- },
- {
-  "key": "lauchuacoyeu_5_0",
+  "key": "chuaconguoiyeu_3_1",
   "voice": "Trúc Ly",
-  "text": "mẹ mới mua cho con cái này nè"
+  "text": "Đẹp nhưng mà không có người yêu thì kém"
  },
  {
-  "key": "lauchuacoyeu_5_2",
+  "key": "chuaconguoiyeu_3_2",
   "voice": "Ngọc Huyền",
-  "text": "khoai tây hả mẹ"
+  "text": "chuyện tình cảm không ép buộc được đâu mẹ"
  },
  {
-  "key": "lauchuacoyeu_5_3",
+  "key": "chuaconguoiyeu_3_3",
   "voice": "Trúc Ly",
-  "text": "squishy khoai tây, bóp mềm mềm lắm"
+  "text": "Ủa tuổi con bây giờ yêu được rồi"
  },
  {
-  "key": "lauchuacoyeu_5_4",
-  "voice": "Ngọc Huyền",
-  "text": "mẹ mua cho con chi vậy"
- },
- {
-  "key": "lauchuacoyeu_5_5",
+  "key": "chuaconguoiyeu_3_4",
   "voice": "Trúc Ly",
-  "text": "để con ôm bóp thay người yêu"
+  "text": "Hay con không thích con trai"
  },
  {
-  "key": "lauchuacoyeu_5_6",
-  "voice": "Ngọc Huyền",
-  "text": "mẹ nói vậy con tủi thân đó"
- },
- {
-  "key": "lauchuacoyeu_5_7",
+  "key": "chuaconguoiyeu_3_5",
   "voice": "Trúc Ly",
-  "text": "thì thôi con bóp cho đỡ tủi"
+  "text": "Tuổi con bây giờ yêu tìm hiểu là vừa"
  },
  {
-  "key": "lauchuacoyeu_5_8",
+  "key": "chuaconguoiyeu_5_0",
   "voice": "Ngọc Huyền",
-  "text": "ừ bóp thử xem, cũng mềm mềm đáng yêu thật"
+  "text": "Con đang crush Sư Tử nè mẹ"
  },
  {
-  "key": "lauchuacoyeu_7_vo",
+  "key": "chuaconguoiyeu_5_1",
+  "voice": "Trúc Ly",
+  "text": "Người thật hả con"
+ },
+ {
+  "key": "chuaconguoiyeu_5_2",
+  "voice": "Ngọc Huyền",
+  "text": "người thật chứ mẹ"
+ },
+ {
+  "key": "chuaconguoiyeu_5_3",
+  "voice": "Trúc Ly",
+  "text": "vậy sao con chưa dẫn về"
+ },
+ {
+  "key": "chuaconguoiyeu_5_4",
+  "voice": "Ngọc Huyền",
+  "text": "người ta chưa biết con tồn tại mà mẹ"
+ },
+ {
+  "key": "chuaconguoiyeu_5_5",
+  "voice": "Trúc Ly",
+  "text": "thôi mẹ mua cái này cho con ôm đỡ"
+ },
+ {
+  "key": "chuaconguoiyeu_5_7",
+  "voice": "Ngọc Huyền",
+  "text": "squishy khoai tây, bóp mềm mềm quá"
+ },
+ {
+  "key": "chuaconguoiyeu_7_vo",
   "voice": "Ngọc Huyền",
   "text": "Lâu chưa có người yêu thì có squishy khoai tây bóp cho đỡ trống. Muốn có một em thì giỏ hàng ở góc trái video nha."
  }

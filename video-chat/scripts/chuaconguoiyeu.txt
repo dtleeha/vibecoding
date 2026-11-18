@@ -1,0 +1,30 @@
+== chuaconguoiyeu | Chưa có người yêu bị hỏi
+-- cover | Lâu rồi chưa có // người yêu
+-- chat | BỐ HỎI NÀY | 21:10 | Bố | dark | Bố hỏi thẳng một câu | M1F1
+a: Bố hỏi này
+a: Con thích con gái phải không
+b: ai bảo bố vậy
+b: con thích con trai bình thường mà
+a: Thế à
+a: Tình hình tệ hơn bố nghĩ
+-- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Tệ hơn bố nghĩ | 1 | 1.6 | 1
+-- chat | ĐẸP MÀ KHÔNG CÓ NGƯỜI YÊU | 20:00 | Mẹ | light | Mẹ hỏi chuyện tình cảm | F2F1
+b: Đẹp gái không mẹ ơi
+a: Đẹp nhưng mà không có người yêu thì kém
+b: chuyện tình cảm không ép buộc được đâu mẹ
+a: Ủa tuổi con bây giờ yêu được rồi
+a: Hay con không thích con trai
+a: Tuổi con bây giờ yêu tìm hiểu là vừa
+-- meme | Depressed-cat-Green-Screen-Meme-.mp4 | Kém thật hả mẹ | 1 | 1.6 | 1
+-- chat | CON ĐANG CRUSH SƯ TỬ | 22:30 | Mẹ | light | Chưa có người yêu thì ôm cái này | F2F1
+b: Con đang crush Sư Tử nè mẹ
+a: Người thật hả con
+b: người thật chứ mẹ
+a: vậy sao con chưa dẫn về
+b: người ta chưa biết con tồn tại mà mẹ
+a: thôi mẹ mua cái này cho con ôm đỡ
+a: IMG:squishy1
+b: squishy khoai tây, bóp mềm mềm quá
+-- meme | Cat-laughing-Green-Screen-Meme.mp4 | Ôm cho đỡ trống | 1 | 1.6 | 1
+-- product | Squishy khoai tây | Giỏ hàng ở góc trái video 👈 | squishy2
+vo: Lâu chưa có người yêu thì có squishy khoai tây bóp cho đỡ trống. Muốn có một em thì giỏ hàng ở góc trái video nha.
