@@ -17,55 +17,115 @@
  {
   "key": "trieuhoinguoiyeu_1_2",
   "voice": "Phạm Tuyên",
-  "text": "ai muốn tiêu tiền của chồng nào"
+  "text": "vợ ơi, vợ đâu rồi"
  },
  {
   "key": "trieuhoinguoiyeu_1_3",
-  "voice": "Ngọc Huyền",
-  "text": "có em đây"
+  "voice": "Phạm Tuyên",
+  "text": "ai muốn tiêu tiền của chồng nào"
  },
  {
   "key": "trieuhoinguoiyeu_1_4",
   "voice": "Ngọc Huyền",
-  "text": "chồng nói lại em nghe coi"
+  "text": "có em đây"
  },
  {
   "key": "trieuhoinguoiyeu_1_5",
+  "voice": "Ngọc Huyền",
+  "text": "chồng nói lại em nghe coi"
+ },
+ {
+  "key": "trieuhoinguoiyeu_1_6",
   "voice": "Phạm Tuyên",
   "text": "đó thấy chưa, thần chú hiệu nghiệm luôn"
  },
  {
-  "key": "trieuhoinguoiyeu_3_0",
+  "key": "trieuhoinguoiyeu_1_7",
   "voice": "Ngọc Huyền",
-  "text": "chồng hứa đi chơi mà lại quên"
+  "text": "nhắn đúng câu đó là em hiện hình liền"
+ },
+ {
+  "key": "trieuhoinguoiyeu_3_0",
+  "voice": "Phạm Tuyên",
+  "text": "em ơi, em giận anh hả"
  },
  {
   "key": "trieuhoinguoiyeu_3_1",
+  "voice": "Ngọc Huyền",
+  "text": "không có, em bận"
+ },
+ {
+  "key": "trieuhoinguoiyeu_3_2",
   "voice": "Phạm Tuyên",
-  "text": "anh xin lỗi, anh có quà chuộc lỗi"
+  "text": "bận mà thấy đang online"
  },
  {
   "key": "trieuhoinguoiyeu_3_3",
   "voice": "Ngọc Huyền",
-  "text": "gì đây, khoai tây hả"
+  "text": "thì em đang bận nhìn điện thoại"
  },
  {
   "key": "trieuhoinguoiyeu_3_4",
   "voice": "Phạm Tuyên",
-  "text": "squishy khoai tây, bóp mềm mềm lắm"
+  "text": "anh vừa đặt hai ly trà sữa, em uống không"
  },
  {
   "key": "trieuhoinguoiyeu_3_5",
   "voice": "Ngọc Huyền",
-  "text": "bóp thử xem sao"
+  "text": "anh đặt mấy giờ, giao tới chưa"
  },
  {
   "key": "trieuhoinguoiyeu_3_6",
+  "voice": "Phạm Tuyên",
+  "text": "tới cổng rồi, em xuống lấy đi"
+ },
+ {
+  "key": "trieuhoinguoiyeu_3_7",
+  "voice": "Ngọc Huyền",
+  "text": "chờ em, em xuống liền"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_0",
+  "voice": "Ngọc Huyền",
+  "text": "chồng hứa đi chơi mà lại quên"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_1",
+  "voice": "Phạm Tuyên",
+  "text": "anh xin lỗi, anh có quà chuộc lỗi"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_3",
+  "voice": "Ngọc Huyền",
+  "text": "gì đây, khoai tây hả"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_4",
+  "voice": "Phạm Tuyên",
+  "text": "squishy khoai tây, bóp mềm mềm lắm"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_5",
+  "voice": "Ngọc Huyền",
+  "text": "sao anh mua cái này"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_6",
+  "voice": "Phạm Tuyên",
+  "text": "để em bóp thay vì giận anh"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_7",
+  "voice": "Ngọc Huyền",
+  "text": "bóp thử xem sao"
+ },
+ {
+  "key": "trieuhoinguoiyeu_5_8",
   "voice": "Ngọc Huyền",
   "text": "ừ cũng đỡ giận được một xíu"
  },
  {
-  "key": "trieuhoinguoiyeu_5_vo",
+  "key": "trieuhoinguoiyeu_7_vo",
   "voice": "Ngọc Huyền",
   "text": "Squishy khoai tây bóp mềm mềm, dỗi cỡ nào cũng đỡ. Muốn có một em thì giỏ hàng ở góc trái video nha."
  }

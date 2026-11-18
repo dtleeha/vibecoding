@@ -3,17 +3,31 @@
 -- chat | VỢ ONLINE MÀ KHÔNG REP | 08:26 | Vợ yêu | light | Chiêu triệu hồi người yêu mất tích | M1F1
 a: sao vợ onl mà không rep chồng
 a: vợ ơi
+a: vợ ơi, vợ đâu rồi
 a: ai muốn tiêu tiền của chồng nào
 b: có em đây
 b: chồng nói lại em nghe coi
 a: đó thấy chưa, thần chú hiệu nghiệm luôn
+b: nhắn đúng câu đó là em hiện hình liền
 -- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | Hiện hình liền | 0.5 | 1.6 | 1
--- chat | BÓP CHO ĐỠ GIẬN | 21:40 | Vợ yêu | light | Người yêu dỗi thì làm sao | M1F1
+-- chat | CHIÊU THỨ HAI | 12:10 | Vợ yêu | light | Triệu hồi lúc đang giận | M1F1
+a: em ơi, em giận anh hả
+b: không có, em bận
+a: bận mà thấy đang online
+b: thì em đang bận nhìn điện thoại
+a: anh vừa đặt hai ly trà sữa, em uống không
+b: anh đặt mấy giờ, giao tới chưa
+a: tới cổng rồi, em xuống lấy đi
+b: chờ em, em xuống liền
+-- meme | Cat-sipping-tea-green-screen.mp4 | Có trà sữa là xuống | 1 | 1.6 | 1
+-- chat | BÓP CHO ĐỠ GIẬN | 21:40 | Vợ yêu | dark | Người yêu dỗi thì làm sao | M1F1
 b: chồng hứa đi chơi mà lại quên
 a: anh xin lỗi, anh có quà chuộc lỗi
 a: IMG:squishy1
 b: gì đây, khoai tây hả
 a: squishy khoai tây, bóp mềm mềm lắm
+b: sao anh mua cái này
+a: để em bóp thay vì giận anh
 b: bóp thử xem sao
 b: ừ cũng đỡ giận được một xíu
 -- meme | Cat-laughing-Green-Screen-Meme.mp4 | Đỡ giận rồi nè | 1 | 1.6 | 1
