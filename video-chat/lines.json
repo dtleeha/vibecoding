@@ -1,127 +1,67 @@
 [
  {
-  "key": "chuaconguoiyeu_0_vo",
+  "key": "fdq_0",
   "voice": "Ngọc Huyền",
-  "text": "Lâu rồi chưa có , người yêu"
+  "text": "Buổi hẹn đầu mà bị rủ đi gội đầu. Chuyện gì vậy trời?"
  },
  {
-  "key": "chuaconguoiyeu_1_0",
-  "voice": "Phạm Tuyên",
-  "text": "Bố hỏi này"
- },
- {
-  "key": "chuaconguoiyeu_1_1",
-  "voice": "Phạm Tuyên",
-  "text": "Con thích con gái phải không"
- },
- {
-  "key": "chuaconguoiyeu_1_2",
-  "voice": "Ngọc Huyền",
-  "text": "ai bảo bố vậy"
- },
- {
-  "key": "chuaconguoiyeu_1_3",
-  "voice": "Ngọc Huyền",
-  "text": "con thích con trai bình thường mà"
- },
- {
-  "key": "chuaconguoiyeu_1_4",
-  "voice": "Phạm Tuyên",
-  "text": "Thế à"
- },
- {
-  "key": "chuaconguoiyeu_1_5",
-  "voice": "Phạm Tuyên",
-  "text": "Tình hình tệ hơn bố nghĩ"
- },
- {
-  "key": "chuaconguoiyeu_3_0",
-  "voice": "Ngọc Huyền",
-  "text": "Đẹp gái không mẹ ơi"
- },
- {
-  "key": "chuaconguoiyeu_3_1",
+  "key": "fdq_1",
   "voice": "Trúc Ly",
-  "text": "Đẹp nhưng mà không có người yêu thì kém"
+  "text": "Sao rồi, buổi hẹn đầu với anh hàng xóm hôm qua?"
  },
  {
-  "key": "chuaconguoiyeu_3_2",
+  "key": "fdq_2",
   "voice": "Ngọc Huyền",
-  "text": "chuyện tình cảm không ép buộc được đâu mẹ"
+  "text": "Đang vui ổng nói: Ê bé, tóc em bết kìa. Rồi rủ đi gội đầu luôn."
  },
  {
-  "key": "chuaconguoiyeu_3_3",
+  "key": "fdq_3",
   "voice": "Trúc Ly",
-  "text": "Ủa tuổi con bây giờ yêu được rồi"
+  "text": "Vô duyên dữ vậy! Rồi mày đi hả?"
  },
  {
-  "key": "chuaconguoiyeu_3_4",
+  "key": "fdq_4",
+  "voice": "Ngọc Huyền",
+  "text": "Đi thiệt. Tiệm đó miễn phí cho cư dân chung cư, ổng mượn thẻ cư dân của tao."
+ },
+ {
+  "key": "fdq_5",
+  "voice": "Ngọc Huyền",
+  "text": "Gội miễn phí xong, ổng nhắn tao chuyển khoản một trăm nghìn."
+ },
+ {
+  "key": "fdq_6",
   "voice": "Trúc Ly",
-  "text": "Hay con không thích con trai"
+  "text": "Khoan, gội miễn phí mà còn đòi tiền mày?"
  },
  {
-  "key": "chuaconguoiyeu_3_5",
+  "key": "fdq_7",
   "voice": "Trúc Ly",
-  "text": "Tuổi con bây giờ yêu tìm hiểu là vừa"
+  "text": "Đi gội đầu mà bị gội luôn cái ví."
  },
  {
-  "key": "chuaconguoiyeu_5_0",
-  "voice": "Ngọc Huyền",
-  "text": "Bố ơi, con nói thật nha"
- },
- {
-  "key": "chuaconguoiyeu_5_1",
-  "voice": "Ngọc Huyền",
-  "text": "Con không thích con người bố ạ"
- },
- {
-  "key": "chuaconguoiyeu_5_2",
-  "voice": "Phạm Tuyên",
-  "text": "Bố biết mà"
- },
- {
-  "key": "chuaconguoiyeu_5_3",
-  "voice": "Phạm Tuyên",
-  "text": "Con gái bố là người giỏi chứ có phải người trần đâu"
- },
- {
-  "key": "chuaconguoiyeu_7_0",
-  "voice": "Ngọc Huyền",
-  "text": "Con đang crush Sư Tử nè mẹ"
- },
- {
-  "key": "chuaconguoiyeu_7_1",
+  "key": "fdq_8",
   "voice": "Trúc Ly",
-  "text": "Người thật hả con"
+  "text": "Thôi quên ổng đi. Mà sao tóc mày bết thiệt vậy?"
  },
  {
-  "key": "chuaconguoiyeu_7_2",
+  "key": "fdq_9",
   "voice": "Ngọc Huyền",
-  "text": "người thật chứ mẹ"
+  "text": "Tại dầu gội cũ đó. Giờ tao đổi cái này, ai chê cũng hết cửa."
  },
  {
-  "key": "chuaconguoiyeu_7_3",
+  "key": "fdq_10",
+  "voice": "Ngọc Huyền",
+  "text": "Dầu gội dược liệu Nguyên Xuân bồng bềnh. Có tầm ma, tóc vệ nữ, cải xoong, giúp cân bằng lượng dầu trên tóc và da đầu."
+ },
+ {
+  "key": "fdq_11",
   "voice": "Trúc Ly",
-  "text": "vậy sao con chưa dẫn về"
+  "text": "Ô kê lắm hả? Tao mua liền dùng thử."
  },
  {
-  "key": "chuaconguoiyeu_7_4",
+  "key": "fdq_12",
   "voice": "Ngọc Huyền",
-  "text": "người ta chưa biết con tồn tại mà mẹ"
- },
- {
-  "key": "chuaconguoiyeu_7_5",
-  "voice": "Trúc Ly",
-  "text": "thôi mẹ mua cái này cho con ôm đỡ"
- },
- {
-  "key": "chuaconguoiyeu_7_7",
-  "voice": "Ngọc Huyền",
-  "text": "squishy khoai tây, bóp mềm mềm quá"
- },
- {
-  "key": "chuaconguoiyeu_9_vo",
-  "voice": "Ngọc Huyền",
-  "text": "Lâu chưa có người yêu thì có squishy khoai tây bóp cho đỡ trống. Muốn có một em thì giỏ hàng ở góc trái video nha."
+  "text": "Gội ở nhà cho khỏi mất một trăm nghìn. Bấm giỏ hàng ở góc trái video nhé."
  }
 ]
