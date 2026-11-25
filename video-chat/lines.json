@@ -1,22 +1,97 @@
 [
  {
-  "key": "fdq_8",
-  "voice": "Trúc Ly",
-  "text": "Thôi quên ổng đi. Mà tóc mày giờ sao rồi?"
- },
- {
-  "key": "fdq_9",
+  "key": "anhtraisaivat_0_vo",
   "voice": "Ngọc Huyền",
-  "text": "Tao đổi dầu gội này nè."
+  "text": "Anh trai sai vặt , kiểu nói chuyện"
  },
  {
-  "key": "fdq_10",
-  "voice": "Trúc Ly",
-  "text": "Ô kê lắm hả? Tao mua liền dùng thử."
+  "key": "anhtraisaivat_1_0",
+  "voice": "Phạm Tuyên",
+  "text": "em ơi, đang làm gì đó"
  },
  {
-  "key": "fdq_11",
+  "key": "anhtraisaivat_1_1",
   "voice": "Ngọc Huyền",
-  "text": "Dầu gội dược liệu Nguyên Xuân bồng bềnh, có tầm ma, tóc vệ nữ, cải xoong, giúp cân bằng lượng dầu trên tóc và da đầu. Muốn thử thì bấm giỏ hàng ở góc trái video nhé."
+  "text": "em đang học bài nè"
+ },
+ {
+  "key": "anhtraisaivat_1_2",
+  "voice": "Phạm Tuyên",
+  "text": "vậy tiện thể mua giúp anh ly trà sữa"
+ },
+ {
+  "key": "anhtraisaivat_1_3",
+  "voice": "Ngọc Huyền",
+  "text": "tiệm trà sữa cách nhà hai cây số đó"
+ },
+ {
+  "key": "anhtraisaivat_1_4",
+  "voice": "Phạm Tuyên",
+  "text": "thì tiện đường mà"
+ },
+ {
+  "key": "anhtraisaivat_1_5",
+  "voice": "Ngọc Huyền",
+  "text": "đường nào của em, anh nói em nghe"
+ },
+ {
+  "key": "anhtraisaivat_3_0",
+  "voice": "Phạm Tuyên",
+  "text": "em gái xinh nhất nhà"
+ },
+ {
+  "key": "anhtraisaivat_3_1",
+  "voice": "Ngọc Huyền",
+  "text": "anh cần gì, nói nhanh đi"
+ },
+ {
+  "key": "anhtraisaivat_3_2",
+  "voice": "Phạm Tuyên",
+  "text": "lấy giùm anh cái sạc trên bàn"
+ },
+ {
+  "key": "anhtraisaivat_3_3",
+  "voice": "Ngọc Huyền",
+  "text": "bàn anh đó, anh tự lấy đi"
+ },
+ {
+  "key": "anhtraisaivat_3_4",
+  "voice": "Phạm Tuyên",
+  "text": "anh đang nằm, đứng dậy là mất công lắm"
+ },
+ {
+  "key": "anhtraisaivat_3_5",
+  "voice": "Ngọc Huyền",
+  "text": "vậy em đứng dậy thì không mất công hả"
+ },
+ {
+  "key": "anhtraisaivat_5_0",
+  "voice": "Phạm Tuyên",
+  "text": "em ơi, tối nay anh dẫn em đi ăn nha"
+ },
+ {
+  "key": "anhtraisaivat_5_1",
+  "voice": "Ngọc Huyền",
+  "text": "thiệt hả, sao hôm nay tốt vậy"
+ },
+ {
+  "key": "anhtraisaivat_5_2",
+  "voice": "Phạm Tuyên",
+  "text": "ừ, em xuống lấy xe giùm anh trước"
+ },
+ {
+  "key": "anhtraisaivat_5_3",
+  "voice": "Ngọc Huyền",
+  "text": "rồi anh dẫn em đi ăn chứ gì"
+ },
+ {
+  "key": "anhtraisaivat_5_4",
+  "voice": "Phạm Tuyên",
+  "text": "ừ, em đổ xăng với trả tiền luôn nha"
+ },
+ {
+  "key": "anhtraisaivat_5_5",
+  "voice": "Ngọc Huyền",
+  "text": "vậy là em dẫn anh đi ăn rồi"
  }
 ]
