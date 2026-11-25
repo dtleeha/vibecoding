@@ -4,9 +4,9 @@
 a: em ơi, đang làm gì đó
 b: em đang học bài nè
 a: vậy tiện thể mua giúp anh ly trà sữa
-b: tiệm trà sữa cách nhà hai cây số đó
+b: {wow} tiệm trà sữa cách nhà hai cây số đó
 a: thì tiện đường mà
-b: đường nào của em, anh nói em nghe
+b: {meu} đường nào của em, anh nói em nghe
 -- meme | Shocked-cat-looking-at-phone-Green-Screen.mp4 | | 0.5 | 1.6 | 1
 -- chat | KHEN TRƯỚC NHỜ SAU | 20:45 | Anh Hai | dark | Kiểu 2: Khen trước rồi nhờ sau | M1F1
 a: em gái xinh nhất nhà
@@ -14,12 +14,12 @@ b: anh cần gì, nói nhanh đi
 a: lấy giùm anh cái sạc trên bàn
 b: bàn anh đó, anh tự lấy đi
 a: anh đang nằm, đứng dậy là mất công lắm
-b: vậy em đứng dậy thì không mất công hả
+b: {khoc} vậy em đứng dậy thì không mất công hả
 -- meme | Depressed-cat-Green-Screen-Meme-.mp4 | | 0.5 | 1.6 | 1
 -- chat | ĐI ĂN KIỂU ANH TRAI | 19:20 | Anh Hai | light | Kiểu 3: Anh dẫn đi ăn, em trả tiền | M1F1
 a: em ơi, tối nay anh dẫn em đi ăn nha
-b: thiệt hả, sao hôm nay tốt vậy
+b: {wow} thiệt hả, sao hôm nay tốt vậy
 a: ừ, em xuống lấy xe giùm anh trước
 b: rồi anh dẫn em đi ăn chứ gì
-a: ừ, em đổ xăng với trả tiền luôn nha
-b: vậy là em dẫn anh đi ăn rồi
+a: {cuoi} ừ, em đổ xăng với trả tiền luôn nha
+b: {khoc} vậy là em dẫn anh đi ăn rồi

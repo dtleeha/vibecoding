@@ -24,7 +24,10 @@ def load_script(path):
                 sc={"product":True,"name":p[1],"note":p[2] or "Giỏ hàng ở góc trái video 👈","img":p[3],"vo":""}
             cur["scenes"].append(sc); continue
         m=re.match(r"^(a|b):\s*(.*)$",l)
-        if m: sc["msgs"].append(["in" if m.group(1)=="a" else "out",m.group(2)]); continue
+        if m:
+            t=m.group(2); e=re.match(r"^\{(\w+)\}\s*(.*)$",t)
+            if e: sc.setdefault("emo",{})[len(sc["msgs"])]=e.group(1); t=e.group(2)
+            sc["msgs"].append(["in" if m.group(1)=="a" else "out",t]); continue
         if l.startswith("vo:"): sc["vo"]=l[3:].strip()
     return vids
 def lines_for(path,voices):

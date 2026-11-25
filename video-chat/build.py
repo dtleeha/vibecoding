@@ -84,11 +84,16 @@ def say(text,spk,out,key=None):
     w.close()
     sh(f"ffmpeg -y -loglevel error -i audio/_raw.wav -af '{VF[spk]}' -ar 44100 -ac 1 {out}")
 def mksfx():
-    if os.path.exists("audio/sfx_in.wav"): return
+    if os.path.exists("audio/sfx_wow.wav"): return
     G=lambda e,d,o: sh(f"ffmpeg -y -loglevel error -f lavfi -i \"aevalsrc='{e}':d={d}:s=44100\" -ac 1 audio/{o}.wav")
     G("0.55*sin(2*PI*1046*t)*exp(-14*t)+0.45*sin(2*PI*1568*max(t-0.08,0))*exp(-14*max(t-0.08,0))*gte(t,0.08)",0.35,"sfx_in")
     G("0.6*sin(2*PI*(450+1500*t)*t)*exp(-16*t)",0.22,"sfx_out")
     G("(2*random(0)-1)*0.5*exp(-70*t)+(2*random(1)-1)*0.5*exp(-70*max(t-0.07,0))*gte(t,0.07)",0.2,"sfx_img")
+    # cảm xúc: wow / cuoi / khoc / meu (tổng hợp bằng ffmpeg)
+    G("0.5*sin(2*PI*(330+260*sin(PI*t/0.6))*t)*sin(PI*t/0.6)+0.25*sin(4*PI*(330+260*sin(PI*t/0.6))*t)*sin(PI*t/0.6)",0.6,"sfx_wow")
+    G("(0.45*sin(2*PI*260*t)+0.3*sin(2*PI*520*t)+0.25*(2*random(0)-1))*gt(sin(2*PI*5*t),0)*exp(-2.5*t)*sin(PI*mod(t*5,1))",0.95,"sfx_cuoi")
+    G("(0.5*sin(2*PI*(520-120*t)*t+4*sin(2*PI*6*t))+0.2*sin(4*PI*(520-120*t)*t))*sin(PI*min(t/1.1,1))",1.1,"sfx_khoc")
+    G("0.5*sin(2*PI*(420-90*mod(t,0.35))*t+2*sin(2*PI*10*t))*sin(PI*mod(t,0.35)/0.35)",0.7,"sfx_meu")
 
 def chat_scene(i,s,vid):
     segs=[];wavs=[];lines=[];t=0.0
@@ -112,14 +117,15 @@ def chat_scene(i,s,vid):
             gap="audio/_s06.wav" if j==n-1 else "audio/_s035.wav"
             wavs+= ["audio/_s012.wav",a,gap]; d=dur(a)+0.12+(0.6 if j==n-1 else GAP)
             lines.append((t+0.12,t+0.12+dur(a),txt))
+            if j in s.get("emo",{}): sfxs.append((t+0.12+dur(a)+0.05,s["emo"][j]))
         if j==0: d+=0.3
         segs.append((png,d)); t+=d if j>0 else d-0.3
     open("audio/_l.txt","w").write("".join(f"file '{os.path.abspath(p)}'\n" for p in wavs))
     a=f"audio/{vid}_{i}.wav"
     sh(f"ffmpeg -y -loglevel error -f concat -safe 0 -i audio/_l.txt -c copy audio/{vid}_{i}_v.wav")
     tot=dur(f"audio/{vid}_{i}_v.wav")
-    ins=" ".join(f"-i audio/sfx_{ {"in":"in","out":"out","img":"img"}[n_] }.wav" for _,n_ in sfxs)
-    fc="".join(f"[{q+1}:a]adelay={int(tt*1000)}|{int(tt*1000)},volume=0.4[x{q}];" for q,(tt,_) in enumerate(sfxs))
+    ins=" ".join(f"-i audio/sfx_{ n_ }.wav" for _,n_ in sfxs)
+    fc="".join(f"[{q+1}:a]adelay={int(tt*1000)}|{int(tt*1000)},volume={0.4 if _n in ("in","out","img") else 0.6}[x{q}];" for q,(tt,_n) in enumerate(sfxs))
     fc+="[0:a]"+"".join(f"[x{q}]" for q in range(len(sfxs)))+f"amix=inputs={len(sfxs)+1}:normalize=0:duration=first[sx]"
     sh(f"ffmpeg -y -loglevel error -i audio/{vid}_{i}_v.wav {ins} -filter_complex \"{fc}\" -map '[sx]' -ar 44100 -ac 1 {a}")
     mp=[]
